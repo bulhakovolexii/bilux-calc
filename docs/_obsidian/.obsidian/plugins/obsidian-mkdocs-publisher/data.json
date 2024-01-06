@@ -15,7 +15,7 @@
     },
     "otherRepo": [],
     "verifiedRepo": true,
-    "rateLimit": 4994
+    "rateLimit": 4936
   },
   "upload": {
     "behavior": "obsidian",
@@ -83,5 +83,5 @@
     "displayModalRepoEditing": false,
     "migrated": true
   },
-  "tabsID": "embed-configuration"
+  "tabsID": "upload-configuration"
 }
