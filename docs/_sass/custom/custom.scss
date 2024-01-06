@@ -1,0 +1,27 @@
+// Centering Images
+img {
+  display: block;
+  margin: auto;
+}
+
+// Showing light and dark theme images separately
+@media (prefers-color-scheme: light) {
+  img[src$="gh-dark-mode-only"] {
+    display: none;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  img[src$="gh-light-mode-only"] {
+    display: none;
+  }
+}
+
+// Styling tables
+th,
+td {
+  min-width: 1rem;
+}
+.table-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
