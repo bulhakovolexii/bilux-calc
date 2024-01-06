@@ -1,0 +1,158 @@
+{
+  "main": {
+    "id": "a3492329185ce8f4",
+    "type": "split",
+    "children": [
+      {
+        "id": "5837da3ab4f01cd8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8e22e1b4931dbf39",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "calculation-method/calculation-method.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "1ee7a6042d13da88",
+    "type": "split",
+    "children": [
+      {
+        "id": "5eb2218b1f3b4285",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "79108e1565e24d52",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "0b4c8959f4f0c135",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "617f1b736a5156f7",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "0da2cd0212dbcab5",
+    "type": "split",
+    "children": [
+      {
+        "id": "278bcada3ac6fd96",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c2e2afb6e520c2e3",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "calculation-method/calculation-method.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "bf4c43a90bd67841",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "calculation-method/calculation-method.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "6e4c11fb7ab37e0a",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "3f1d5359c305fcb3",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "calculation-method/calculation-method.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Відкрити провідник файлів": false,
+      "graph:Граф": false,
+      "canvas:Створити нове полотно": false,
+      "daily-notes:Сьогоднішня нотатка": false,
+      "templates:Вставити шаблон": false,
+      "command-palette:Відкрити меню команд": false
+    }
+  },
+  "active": "8e22e1b4931dbf39",
+  "lastOpenFiles": [
+    "calculation-method/appendix-a.md",
+    "calculation-method/calculation-method.md",
+    "index.md",
+    "calculation-method",
+    "Welcome.md",
+    "create a link.md"
+  ]
+}
