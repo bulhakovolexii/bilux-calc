@@ -1,0 +1,87 @@
+{
+  "github": {
+    "user": "bulhakovolexii",
+    "repo": "bilux-calc",
+    "branch": "main",
+    "automaticallyMergePR": true,
+    "tokenPath": "%configDir%/plugins/%pluginID%/env",
+    "api": {
+      "tiersForApi": "Github Free/Pro/Team (default)",
+      "hostname": ""
+    },
+    "workflow": {
+      "commitMessage": "[PUBLISHER] Merge",
+      "name": ""
+    },
+    "otherRepo": [],
+    "verifiedRepo": true,
+    "rateLimit": 4998
+  },
+  "upload": {
+    "behavior": "obsidian",
+    "defaultName": "docs",
+    "rootFolder": "",
+    "yamlFolderKey": "",
+    "frontmatterTitle": {
+      "enable": false,
+      "key": "title"
+    },
+    "replaceTitle": [],
+    "replacePath": [],
+    "autoclean": {
+      "enable": false,
+      "excluded": []
+    },
+    "folderNote": {
+      "enable": true,
+      "rename": "index.md",
+      "addTitle": {
+        "enable": false,
+        "key": "title"
+      }
+    },
+    "metadataExtractorPath": ""
+  },
+  "conversion": {
+    "hardbreak": false,
+    "dataview": true,
+    "censorText": [],
+    "tags": {
+      "inline": false,
+      "exclude": [],
+      "fields": []
+    },
+    "links": {
+      "internal": true,
+      "unshared": true,
+      "wiki": true,
+      "slugify": true
+    }
+  },
+  "embed": {
+    "attachments": true,
+    "overrideAttachments": [],
+    "keySendFile": [],
+    "notes": false,
+    "folder": "",
+    "convertEmbedToLinks": "keep",
+    "charConvert": "->",
+    "useObsidianFolder": true
+  },
+  "plugin": {
+    "shareKey": "share",
+    "fileMenu": false,
+    "editorMenu": false,
+    "excludedFolder": [],
+    "copyLink": {
+      "enable": false,
+      "links": "",
+      "removePart": [],
+      "addCmd": false
+    },
+    "noticeError": false,
+    "displayModalRepoEditing": false,
+    "migrated": true
+  },
+  "tabsID": "plugin-settings"
+}
