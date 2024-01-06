@@ -15,7 +15,7 @@
     },
     "otherRepo": [],
     "verifiedRepo": true,
-    "rateLimit": 4998
+    "rateLimit": 4994
   },
   "upload": {
     "behavior": "obsidian",
@@ -66,7 +66,7 @@
     "folder": "",
     "convertEmbedToLinks": "keep",
     "charConvert": "->",
-    "useObsidianFolder": true
+    "useObsidianFolder": false
   },
   "plugin": {
     "shareKey": "share",
@@ -83,5 +83,5 @@
     "displayModalRepoEditing": false,
     "migrated": true
   },
-  "tabsID": "plugin-settings"
+  "tabsID": "embed-configuration"
 }
