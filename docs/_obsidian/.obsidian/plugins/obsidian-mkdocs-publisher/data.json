@@ -3,7 +3,7 @@
     "user": "bulhakovolexii",
     "repo": "bilux-calc",
     "branch": "main",
-    "automaticallyMergePR": true,
+    "automaticallyMergePR": false,
     "tokenPath": "%configDir%/plugins/%pluginID%/env",
     "api": {
       "tiersForApi": "Github Free/Pro/Team (default)",
@@ -15,7 +15,7 @@
     },
     "otherRepo": [],
     "verifiedRepo": true,
-    "rateLimit": 4970
+    "rateLimit": 4937
   },
   "upload": {
     "behavior": "obsidian",
@@ -82,5 +82,5 @@
     "displayModalRepoEditing": false,
     "migrated": true
   },
-  "tabsID": "plugin-settings"
+  "tabsID": "upload-configuration"
 }
