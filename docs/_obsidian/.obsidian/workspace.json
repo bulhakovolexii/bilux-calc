@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "441c5cb30cdca4aa",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "calculation-method/calculation-method.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -69,7 +82,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "0da2cd0212dbcab5",
@@ -146,11 +159,12 @@
       "command-palette:Відкрити меню команд": false
     }
   },
-  "active": "95a82c972e21e604",
+  "active": "441c5cb30cdca4aa",
   "lastOpenFiles": [
+    "nazva.md",
+    "calculation-method/calculation-method.md",
     "index.md",
     "calculation-method/appendix-a.md",
-    "calculation-method/calculation-method.md",
     "calculation-method",
     "Welcome.md",
     "create a link.md"
