@@ -3,7 +3,7 @@
     "user": "bulhakovolexii",
     "repo": "bilux-calc",
     "branch": "main",
-    "automaticallyMergePR": false,
+    "automaticallyMergePR": true,
     "tokenPath": "%configDir%/plugins/%pluginID%/env",
     "api": {
       "tiersForApi": "Github Free/Pro/Team (default)",
@@ -118,5 +118,5 @@
     "displayModalRepoEditing": false,
     "migrated": true
   },
-  "tabsID": "text-conversion"
+  "tabsID": "github-configuration"
 }
