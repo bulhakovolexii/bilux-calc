@@ -15,7 +15,7 @@
     },
     "otherRepo": [],
     "verifiedRepo": true,
-    "rateLimit": 4937
+    "rateLimit": 0
   },
   "upload": {
     "behavior": "obsidian",
@@ -45,7 +45,43 @@
   "conversion": {
     "hardbreak": false,
     "dataview": true,
-    "censorText": [],
+    "censorText": [
+      {
+        "entry": "/> \\[!HIGHLIGHT\\]/g",
+        "replace": "{: .highlight }",
+        "flags": "",
+        "after": true,
+        "inCodeBlocks": true
+      },
+      {
+        "entry": "/> \\[!IMPORTANT\\]/g",
+        "replace": "{: .important }",
+        "flags": "",
+        "after": true,
+        "inCodeBlocks": true
+      },
+      {
+        "entry": "/> \\[!NEW\\]/g",
+        "replace": "{: .new }",
+        "flags": "",
+        "after": true,
+        "inCodeBlocks": true
+      },
+      {
+        "entry": "/> \\[!NOTE\\]/g",
+        "replace": "{: .note }",
+        "flags": "",
+        "after": true,
+        "inCodeBlocks": true
+      },
+      {
+        "entry": "/> \\[!WARNING\\]/g",
+        "replace": "{: .warning }",
+        "flags": "",
+        "after": true,
+        "inCodeBlocks": true
+      }
+    ],
     "tags": {
       "inline": false,
       "exclude": [],
@@ -82,5 +118,5 @@
     "displayModalRepoEditing": false,
     "migrated": true
   },
-  "tabsID": "upload-configuration"
+  "tabsID": "text-conversion"
 }
