@@ -1,0 +1,71 @@
+title: bilux-calc Docs
+theme: just-the-docs
+email: bulhakovolexii@gmail.com
+description: >-
+  Онлайн-калькулятор для розрахунку потенційної економії та строку окупності
+  системи стельового променевого опалення. Введіть параметри приміщення та
+  поточної системи опалення і отримайте оцінку витрат та строку окупності для
+  переходу на інноваційне опалювання «Білюкс»
+baseurl: "/bilux-calc"
+domain: bulhakovolexii.github.io
+url: "https://bulhakovolexii.github.io"
+repository: bulhakovolexii/bilux-calc
+permalink: pretty
+
+plugins:
+  - jekyll-relative-links # plugin to convert relative links to Markdown files to their rendered equivalents.
+
+# Theme settings
+# Enable or disable the site search
+search_enabled: false
+
+# Aux links for the upper right navigation
+aux_links:
+  "bilux-calc on GitHub":
+    - "https://github.com/bulhakovolexii/bilux-calc"
+
+# Makes Aux links open in a new tab. Default is false
+aux_links_new_tab: true
+
+# Footer "Edit this page on GitHub" link text
+gh_edit_link: true # show or hide edit this page link
+gh_edit_link_text: "Edit this page on GitHub"
+gh_edit_repository: "https://github.com/bulhakovolexii/bilux-calc" # the github URL for your repo
+gh_edit_branch: "main" # the branch that your docs is served from
+gh_edit_source: docs # the source that your files originate from
+gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
+
+#  Callouts
+callouts_level: quiet # or loud
+callouts:
+  highlight:
+    color: yellow
+  important:
+    title: Важливо
+    color: blue
+  new:
+    title: Новинка
+    color: green
+  note:
+    title: Примітка
+    color: purple
+  warning:
+    title: Увага
+    color: red
+
+# Settings required to display mathematical equations
+compress_html:
+  blanklines: true
+mathjax:
+  source: https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML
+  config: 'MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "AMS" } } })'
+
+# LaTeX rendering via "katex" (KaTeX, default) or "mathjax" (MathJax) or "none" / "off" (NO rendering)
+latex: katex
+
+# Back to top link
+back_to_top: true
+back_to_top_text: "Вгору"
+
+#  Footer content
+footer_content: 'Copyright &copy; 2023 Olexii Bulhakov, Oleh Lytvynov. Distributed by an <a href="https://github.com/bulhakovolexii/bilux-calc/tree/main/LICENSE">MIT license.</a>'
