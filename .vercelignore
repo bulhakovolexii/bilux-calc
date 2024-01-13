@@ -1,0 +1,2 @@
+# exclude docs folred from deployments to Vercel
+/docs
