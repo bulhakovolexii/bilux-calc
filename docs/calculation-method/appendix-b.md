@@ -6,38 +6,7 @@ parent: Методика розрахунку
 ---
 
 # Таблиця Б — Приведений опір теплопередачі склопакетів
-
-<table>
-
-<thead>
-
-<tr>
-
-<th rowspan="2">Кількість камер у склопакеті</th>
-
-<th rowspan="2">Варіанти скління*</th>
-
-<th colspan="3">Газовий склад середовища камер склопакетів, %</th>
-
-<th rowspan="2">Опір теплопередачі, м²·К/Вт</th>
-
-</tr>
-
-<tr>
-
-<th>Повітря</th>
-
-<th>Криптон</th>
-
-<th>Аргон</th>
-
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr>
+<tr style="text-align: center">
 
 <td>1</td>
 
@@ -53,7 +22,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>1</td>
 
@@ -69,7 +38,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>1</td>
 
@@ -85,7 +54,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>1</td>
 
@@ -101,7 +70,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>1</td>
 
@@ -117,7 +86,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>1</td>
 
@@ -133,7 +102,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>1</td>
 
@@ -149,7 +118,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>1</td>
 
@@ -165,7 +134,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>1</td>
 
@@ -181,7 +150,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>1</td>
 
@@ -197,7 +166,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>1</td>
 
@@ -213,7 +182,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>1</td>
 
@@ -229,7 +198,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>1</td>
 
@@ -245,7 +214,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>1</td>
 
@@ -261,7 +230,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>1</td>
 
@@ -277,7 +246,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>1</td>
 
@@ -293,7 +262,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>1</td>
 
@@ -309,7 +278,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>1</td>
 
@@ -325,7 +294,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>1</td>
 
@@ -341,7 +310,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>1</td>
 
@@ -357,7 +326,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>1</td>
 
@@ -373,7 +342,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>1</td>
 
@@ -389,7 +358,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>1</td>
 
@@ -405,7 +374,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>1</td>
 
@@ -421,7 +390,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>1</td>
 
@@ -437,7 +406,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>1</td>
 
@@ -453,7 +422,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>1</td>
 
@@ -469,7 +438,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>1</td>
 
@@ -485,7 +454,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>1</td>
 
@@ -501,7 +470,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>1</td>
 
@@ -517,7 +486,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>1</td>
 
@@ -533,7 +502,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -549,7 +518,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -565,7 +534,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -581,7 +550,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -597,7 +566,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -613,7 +582,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -629,7 +598,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -645,7 +614,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -661,7 +630,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -677,7 +646,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -693,7 +662,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -709,7 +678,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -725,7 +694,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -741,7 +710,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -757,7 +726,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -773,7 +742,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -789,7 +758,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -805,7 +774,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -821,7 +790,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -837,7 +806,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -853,7 +822,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -869,7 +838,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -885,7 +854,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -901,7 +870,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -917,7 +886,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -933,7 +902,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -949,7 +918,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -965,7 +934,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -981,7 +950,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -997,7 +966,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -1013,7 +982,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -1029,7 +998,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -1045,7 +1014,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -1061,7 +1030,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -1077,7 +1046,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -1093,7 +1062,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -1109,7 +1078,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -1125,7 +1094,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -1141,7 +1110,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -1157,7 +1126,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -1173,7 +1142,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -1189,7 +1158,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -1205,7 +1174,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -1221,7 +1190,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -1237,7 +1206,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -1253,7 +1222,7 @@ parent: Методика розрахунку
 
 </tr>
 
-<tr>
+<tr style="text-align: center">
 
 <td>2</td>
 
@@ -1268,7 +1237,3 @@ parent: Методика розрахунку
 <td>1,14</td>
 
 </tr>
-
-</tbody>
-
-</table>
