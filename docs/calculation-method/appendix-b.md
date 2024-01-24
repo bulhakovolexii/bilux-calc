@@ -3,6 +3,7 @@ share: "true"
 layout: minimal
 title: Додаток B
 parent: Методика розрахунку
+nav_order: "7"
 ---
 
 # Таблиця B — Приведений опір теплопередачі склопакетів
