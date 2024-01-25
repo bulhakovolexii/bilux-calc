@@ -258,9 +258,10 @@ $i\dots I$ — кількість шарів огороджувальної ко
 ### Підлога на ґрунті
 
 Приклад підлоги на ґрунті зображено на рисунку:
+check
 
-![ground-floor-light.png > gh-light-mode-only](../../assets/ground-floor-light.png.md#gh-light-mode-only)
-![ground-floor-dark.png > gh-dark-mode-only](../../assets/ground-floor-dark.png.md#gh-dark-mode-only)
+![](../../assets/ground-floor-dark.png)
+
 # Список використаних джерел
 
 [^1]: [ДСТУ Б EN ISO 13790:2011 Енергетична ефективність будівель. Розрахунок енергоспоживання на опалення та охолодження (EN ISO 13790:2008, IDT)](https://online.budstandart.com/ua/catalog/doc-page?id_doc=28005)
