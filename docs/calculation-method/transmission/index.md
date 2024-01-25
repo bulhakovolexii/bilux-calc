@@ -258,9 +258,9 @@ $i\dots I$ — кількість шарів огороджувальної ко
 ### Підлога на ґрунті
 
 Приклад підлоги на ґрунті зображено на рисунку:
-check
 
-![](../../assets/ground-floor-dark.png)
+![ground-floor-light.png > gh-light-mode-only](../../assets/ground-floor-light.png.md#gh-light-mode-only)
+
 
 # Список використаних джерел
 
