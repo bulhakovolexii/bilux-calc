@@ -261,6 +261,7 @@ $i\dots I$ — кількість шарів огороджувальної ко
 
 
 ![ground-floor-light.png](../../assets/light/ground-floor-light.png)
+![ground-floor-dark.png](../../assets/dark/ground-floor-dark.png)
 
 # Список використаних джерел
 
