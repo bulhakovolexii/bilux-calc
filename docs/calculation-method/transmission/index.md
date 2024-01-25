@@ -259,8 +259,8 @@ $i\dots I$ — кількість шарів огороджувальної ко
 
 Приклад підлоги на ґрунті зображено на рисунку:
 
-![ground-floor-light.drawio.png > gh-light-mode-only](../../assets/ground-floor-light.drawio.png.md#gh-light-mode-only)
-![ground-floor-dark.drawio.png > gh-dark-mode-only](../../assets/ground-floor-dark.drawio.png.md#gh-dark-mode-only)
+![](../../assets/ground-floor-light.png)
+![](../../assets/ground-floor-dark.png)
 
 # Список використаних джерел
 
