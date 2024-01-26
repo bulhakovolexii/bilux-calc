@@ -14,6 +14,10 @@ img {
   img[src$="gh-light-mode-only"] {
     display: none;
   }
+  img[src$=".svg"] {
+    -webkit-filter: invert(100%); /* safari 6.0 - 9.0 */
+    filter: invert(100%);
+  }
 }
 
 // Styling tables
