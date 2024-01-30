@@ -3,7 +3,7 @@ share: "true"
 layout: default
 title: Методика розрахунку
 nav_order: "2"
-has_children: "true"
+has_children: true
 ---
 
 
