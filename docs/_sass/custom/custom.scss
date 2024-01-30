@@ -4,6 +4,14 @@ img {
   margin: auto;
 }
 
+h4,
+.text-delta {
+  @include fs-4;
+  font-weight: 500;
+  text-transform: unset;
+  letter-spacing: unset;
+}
+
 // Showing light and dark theme images separately
 @media (prefers-color-scheme: light) {
   img[src$="gh-dark-mode-only"] {
