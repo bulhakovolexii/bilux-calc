@@ -2,7 +2,7 @@
 share: "true"
 layout: minimal
 title: Додаток C
-parent: Методика розрахунку
+parent: Додатки
 nav_order: "3"
 ---
 
