@@ -4,12 +4,19 @@ img {
   margin: auto;
 }
 
+// Reset h4 styles to normal
 h4,
 .text-delta {
   @include fs-4;
   font-weight: 500;
   text-transform: unset;
   letter-spacing: unset;
+}
+
+// A wrapper for a minimal layout
+.main-content-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 // Showing light and dark theme images separately
