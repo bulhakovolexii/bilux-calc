@@ -19,18 +19,6 @@ h4,
   margin: 0 auto;
 }
 
-th,
-td {
-  &:first-of-type {
-    border-left: $border $border-color;
-  }
-}
-
-table {
-  outline: $border $body-background-color;
-  outline-offset: -3px;
-}
-
 // Showing light and dark theme images separately
 @media (prefers-color-scheme: light) {
   img[src$="gh-dark-mode-only"] {
@@ -51,8 +39,26 @@ table {
 th,
 td {
   min-width: 1rem;
+
+  &:first-of-type {
+    border-left: $border $border-color;
+  }
 }
 .table-wrapper {
   max-width: 1200px;
   margin: 0 auto;
+  overflow-x: unset;
+  outline: $border $body-background-color;
+  outline-offset: -3px;
+}
+
+thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  outline: $border $body-background-color;
+  outline-offset: -1px;
+  & th {
+    border-bottom-width: 2px;
+  }
 }
