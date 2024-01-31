@@ -19,6 +19,18 @@ h4,
   margin: 0 auto;
 }
 
+th,
+td {
+  &:first-of-type {
+    border-left: $border $border-color;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  border-style: hidden;
+}
+
 // Showing light and dark theme images separately
 @media (prefers-color-scheme: light) {
   img[src$="gh-dark-mode-only"] {
