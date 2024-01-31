@@ -27,8 +27,8 @@ td {
 }
 
 table {
-  border-collapse: collapse;
-  border-style: hidden;
+  outline: $border $body-background-color;
+  outline-offset: -3px;
 }
 
 // Showing light and dark theme images separately
