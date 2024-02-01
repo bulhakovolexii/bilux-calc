@@ -37,27 +37,23 @@ h4,
 }
 
 // Styling tables
+.table-wrapper {
+  overflow-x: unset;
+  box-shadow: none;
+}
+
+table {
+  outline: $border $table-background-color;
+  outline-offset: -3px;
+  border-radius: $border-radius;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
 th,
 td {
   min-width: 1rem;
   &:first-of-type {
     border-left: $border $border-color;
-  }
-}
-
-.table-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  overflow-x: unset;
-}
-
-thead {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  & th {
-    box-shadow: 0px -2px $body-background-color, 2px 0px $body-background-color,
-      2px -2px $body-background-color;
   }
 }
 
@@ -69,5 +65,17 @@ tbody {
         border-bottom: $border $border-color;
       }
     }
+  }
+}
+
+thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  outline: $border $table-background-color;
+  outline-offset: -1px;
+  & th {
+    box-shadow: 0px -2px $body-background-color, 2px 0px $body-background-color,
+      2px -2px $body-background-color, 0px 1px $border-color;
   }
 }
