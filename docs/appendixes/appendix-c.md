@@ -13,7 +13,7 @@ nav_order: "3"
   td {
     vertical-align: top;
   }
-  td:nth-last-child(2) {
+  td:nth-last-child(-n+2) {
     text-align: center;
   }
 </style>
