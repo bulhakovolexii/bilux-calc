@@ -234,7 +234,7 @@ $i\dots I$ — кількість шарів огороджувальної ко
     </tr>
     <tr>
       <td style="text-align: center;" rowspan="4">6</td>
-      <td style="vertical-align: top;" rowspan="4">
+      <td rowspan="4">
         Горизонтальні непрозорі огороджувальні конструкції за тепловогопотоку
         зверху донизу
       </td>
