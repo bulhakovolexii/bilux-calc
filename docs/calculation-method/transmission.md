@@ -161,7 +161,7 @@ $i\dots I$ — кількість шарів огороджувальної ко
 
 <style>
   .table-wrapper:nth-of-type(5) td:nth-last-child(-n+2),
-  .table-wrapper:nth-of-type(5) td:nth-last-child(1) {
+  .table-wrapper:nth-of-type(5) td:first-child {
     text-align: center;
   }
 </style>
