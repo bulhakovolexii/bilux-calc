@@ -178,7 +178,7 @@ $i\dots I$ — кількість шарів огороджувальної ко
   </thead>
   <tbody>
     <tr>
-      <td style="align-text: center;" rowspan="2">1</td>
+      <td style="text-align: center;" rowspan="2">1</td>
       <td rowspan="2">
         Вертикальні непрозорі огороджувальні конструкції (зовнішні стіни)
       </td>
@@ -192,14 +192,14 @@ $i\dots I$ — кількість шарів огороджувальної ко
       <td>12</td>
     </tr>
     <tr>
-      <td style="align-text: center;">2</td>
+      <td style="text-align: center;">2</td>
       <td>Те саме (зовнішні двері, ворота)</td>
       <td>непрозорі</td>
       <td>8,7</td>
       <td>23</td>
     </tr>
     <tr>
-      <td style="align-text: center;">3</td>
+      <td style="text-align: center;">3</td>
       <td colspan="2">
         Вертикальні світлопрозорі огороджувальні конструкції (вікна,
         дверібалконні, світлопрозорі зовнішні двері, вітражі,
@@ -209,7 +209,7 @@ $i\dots I$ — кількість шарів огороджувальної ко
       <td>23</td>
     </tr>
     <tr>
-      <td style="align-text: center;">4</td>
+      <td style="text-align: center;">4</td>
       <td colspan="2">
         Горизонтальні світлопрозорі огороджувальні конструкції (зенітніліхтарі,
         покриття атріумів, оранжерей)
@@ -218,7 +218,7 @@ $i\dots I$ — кількість шарів огороджувальної ко
       <td>23</td>
     </tr>
     <tr>
-      <td style="align-text: center;" rowspan="2">5</td>
+      <td style="text-align: center;" rowspan="2">5</td>
       <td rowspan="2">
         Горизонтальні непрозорі огороджувальні конструкції за тепловогопотоку
         знизу догори
@@ -233,7 +233,7 @@ $i\dots I$ — кількість шарів огороджувальної ко
       <td>6</td>
     </tr>
     <tr>
-      <td style="align-text: center;" rowspan="4">6</td>
+      <td style="text-align: center; vertical-align: top;" rowspan="4">6</td>
       <td rowspan="4">
         Горизонтальні непрозорі огороджувальні конструкції за тепловогопотоку
         зверху донизу
