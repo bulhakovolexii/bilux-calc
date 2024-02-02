@@ -13,6 +13,9 @@ nav_order: "2"
   td {
     text-align: center;
   }
+  tr:last-child td {
+     text-align: start;
+  }
 </style>
 <table>
   <thead>
