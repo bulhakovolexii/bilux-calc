@@ -160,11 +160,11 @@ $i\dots I$ — кількість шарів огороджувальної ко
 #### 3.2.2 Розрахункові значення коефіцієнтів теплопередачі внутрішньої $h_{si}$ та зовнішньої $h_{se}$ поверхонь огороджувальних конструкцій
 
 <style>
-  td:nth-last-child(-n+2) {
+  .table-3-2-2 td:nth-last-child(-n+2) {
     text-align: center;
   }
 </style>
-<table>
+<table class="table-3-2-2">
   <thead>
     <tr>
       <th rowspan="2">Ч.ч.</th>
