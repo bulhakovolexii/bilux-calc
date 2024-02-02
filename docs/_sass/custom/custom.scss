@@ -37,14 +37,35 @@ h4,
 }
 
 // Styling tables
-.table-wrapper {
-  outline: $border $body-background-color;
-  outline-offset: -3px;
+table {
+  border-collapse: collapse;
+  border-style: hidden;
 }
 
 th,
 td {
   min-width: 1rem;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    background: $body-background-color;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    box-shadow: 0px 2px $body-background-color;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    background: $body-background-color;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: -2px 0px $body-background-color;
+  }
   &:first-of-type {
     border-left: $border $border-color;
   }
@@ -62,15 +83,7 @@ tbody {
 }
 
 thead {
-  tr:first-of-type {
-    th:first-of-type {
-      border-left: 0;
-    }
-  }
   th {
     text-align: center !important;
-    border-bottom: $border $border-color;
-    box-shadow: 2px -2px $body-background-color, 2px 0px $body-background-color,
-      0px -2px $body-background-color;
   }
 }
