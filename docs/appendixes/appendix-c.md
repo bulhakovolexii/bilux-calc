@@ -17,7 +17,7 @@ nav_order: "3"
     text-align: center;
   }
 </style>
-<table>
+<table class="js-table">
   <thead>
     <tr>
       <th>Тип матеріалу</th>
