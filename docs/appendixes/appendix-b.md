@@ -17,7 +17,7 @@ nav_order: "2"
      text-align: start;
   }
 </style>
-<table>
+<table class="js-table">
   <thead>
     <tr>
       <th rowspan="2">Кількість камер<br />у склопакеті</th>

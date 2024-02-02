@@ -14,7 +14,7 @@ nav_order: "1"
     text-align: center;
   }
 </style>
-<table>
+<table class="js-table">
   <thead>
     <tr>
       <th rowspan="2">Область, місто</th>
