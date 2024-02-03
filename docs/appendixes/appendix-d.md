@@ -28,7 +28,7 @@ nav_order: "4"
 </thead>
 <tbody>
   <tr>
-    <td colspan="9">Автономна Республіка Крим</td>
+    <td colspan="9"><b>Автономна Республіка Крим</b></td>
   </tr>
   <tr>
     <td>Ай-Петрі</td>
@@ -75,7 +75,7 @@ nav_order: "4"
     <td style="text-align: center;">16,2</td>
   </tr>
   <tr>
-    <td colspan="9">Вінницька область</td>
+    <td colspan="9"><b>Вінницька область</b></td>
   </tr>
   <tr>
     <td>Вінниця</td>
@@ -89,7 +89,7 @@ nav_order: "4"
     <td style="text-align: center;">14,8</td>
   </tr>
   <tr>
-    <td colspan="9">Волинська область</td>
+    <td colspan="9"><b>Волинська область</b></td>
   </tr>
   <tr>
     <td>Луцьк</td>
@@ -103,7 +103,7 @@ nav_order: "4"
     <td style="text-align: center;">10,6</td>
   </tr>
   <tr>
-    <td colspan="9">Дніпропетровська область</td>
+    <td colspan="9"><b>Дніпропетровська область</b></td>
   </tr>
   <tr>
     <td>Дніпропетровськ</td>
@@ -117,7 +117,7 @@ nav_order: "4"
     <td style="text-align: center;">9,9</td>
   </tr>
   <tr>
-    <td colspan="9">Донецька область</td>
+    <td colspan="9"><b>Донецька область</b></td>
   </tr>
   <tr>
     <td>Дебальцеве</td>
@@ -142,7 +142,7 @@ nav_order: "4"
     <td style="text-align: center;">7,4</td>
   </tr>
   <tr>
-    <td colspan="9">Житомирська область</td>
+    <td colspan="9"><b>Житомирська область</b></td>
   </tr>
   <tr>
     <td>Житомир</td>
@@ -156,7 +156,7 @@ nav_order: "4"
     <td style="text-align: center;">17,4</td>
   </tr>
   <tr>
-    <td colspan="9">Закарпатська область</td>
+    <td colspan="9"><b>Закарпатська область</b></td>
   </tr>
   <tr>
     <td>Плай</td>
@@ -181,7 +181,7 @@ nav_order: "4"
     <td style="text-align: center;">15,4</td>
   </tr>
   <tr>
-    <td colspan="9">Запорізька область</td>
+    <td colspan="9"><b>Запорізька область</b></td>
   </tr>
   <tr>
     <td>Запоріжжя</td>
@@ -206,7 +206,7 @@ nav_order: "4"
     <td style="text-align: center;">9,3</td>
   </tr>
   <tr>
-    <td colspan="9">Івано-Франківська область</td>
+    <td colspan="9"><b>Івано-Франківська область</b></td>
   </tr>
   <tr>
     <td>Івано-Франківськ</td>
@@ -231,7 +231,7 @@ nav_order: "4"
     <td style="text-align: center;">6,0</td>
   </tr>
   <tr>
-    <td colspan="9">Кіровоградська область</td>
+    <td colspan="9"><b>Кіровоградська область</b></td>
   </tr>
   <tr>
     <td>Кіровоград</td>
@@ -245,7 +245,7 @@ nav_order: "4"
     <td style="text-align: center;">17,8</td>
   </tr>
   <tr>
-    <td colspan="9">Київська область</td>
+    <td colspan="9"><b>Київська область</b></td>
   </tr>
   <tr>
     <td>Київ</td>
@@ -259,7 +259,7 @@ nav_order: "4"
     <td style="text-align: center;">14,9</td>
   </tr>
   <tr>
-    <td colspan="9">Луганська область</td>
+    <td colspan="9"><b>Луганська область</b></td>
   </tr>
   <tr>
     <td>Дар’ївка </td>
@@ -284,7 +284,7 @@ nav_order: "4"
     <td style="text-align: center;">8,7</td>
   </tr>
   <tr>
-    <td colspan="9">Львівська область</td>
+    <td colspan="9"><b>Львівська область</b></td>
   </tr>
   <tr>
     <td>Львів</td>
@@ -298,7 +298,7 @@ nav_order: "4"
     <td style="text-align: center;">12,4</td>
   </tr>
   <tr>
-    <td colspan="9">Миколаївська область</td>
+    <td colspan="9"><b>Миколаївська область</b></td>
   </tr>
   <tr>
     <td>Миколаїв</td>
@@ -312,7 +312,7 @@ nav_order: "4"
     <td style="text-align: center;">12,8</td>
   </tr>
   <tr>
-    <td colspan="9">Одеська область</td>
+    <td colspan="9"><b>Одеська область</b></td>
   </tr>
   <tr>
     <td>Одеса</td>
@@ -337,7 +337,7 @@ nav_order: "4"
     <td style="text-align: center;">19,3</td>
   </tr>
   <tr>
-    <td colspan="9">Полтавська область</td>
+    <td colspan="9"><b>Полтавська область</b></td>
   </tr>
   <tr>
     <td>Полтава</td>
@@ -351,7 +351,7 @@ nav_order: "4"
     <td style="text-align: center;">10,6</td>
   </tr>
   <tr>
-    <td colspan="9">Рівненська область</td>
+    <td colspan="9"><b>Рівненська область</b></td>
   </tr>
   <tr>
     <td>Рівне</td>
@@ -365,7 +365,7 @@ nav_order: "4"
     <td style="text-align: center;">8,1</td>
   </tr>
   <tr>
-    <td colspan="9">Сумська область</td>
+    <td colspan="9"><b>Сумська область</b></td>
   </tr>
   <tr>
     <td>Суми</td>
@@ -379,7 +379,7 @@ nav_order: "4"
     <td style="text-align: center;">11,5</td>
   </tr>
   <tr>
-    <td colspan="9">Тернопільська область</td>
+    <td colspan="9"><b>Тернопільська область</b></td>
   </tr>
   <tr>
     <td>Тернопіль</td>
@@ -393,7 +393,7 @@ nav_order: "4"
     <td style="text-align: center;">14,0</td>
   </tr>
   <tr>
-    <td colspan="9">Харківська область</td>
+    <td colspan="9"><b>Харківська область</b></td>
   </tr>
   <tr>
     <td>Харків</td>
@@ -407,7 +407,7 @@ nav_order: "4"
     <td style="text-align: center;">10,6</td>
   </tr>
   <tr>
-    <td colspan="9">Херсонська область</td>
+    <td colspan="9"><b>Херсонська область</b></td>
   </tr>
   <tr>
     <td>Генічеськ</td>
@@ -432,7 +432,7 @@ nav_order: "4"
     <td style="text-align: center;">11,9</td>
   </tr>
   <tr>
-    <td colspan="9">Хмельницька область</td>
+    <td colspan="9"><b>Хмельницька область</b></td>
   </tr>
   <tr>
     <td>Хмельницький</td>
@@ -446,7 +446,7 @@ nav_order: "4"
     <td style="text-align: center;">16,7</td>
   </tr>
   <tr>
-    <td colspan="9">Черкаська область</td>
+    <td colspan="9"><b>Черкаська область</b></td>
   </tr>
   <tr>
     <td>Умань</td>
@@ -460,7 +460,7 @@ nav_order: "4"
     <td style="text-align: center;">22,4</td>
   </tr>
   <tr>
-    <td colspan="9">Чернівецька область</td>
+    <td colspan="9"><b>Чернівецька область</b></td>
   </tr>
   <tr>
     <td>Чернівці</td>
@@ -474,7 +474,7 @@ nav_order: "4"
     <td style="text-align: center;">25,0</td>
   </tr>
   <tr>
-    <td colspan="9">Чернігівська область</td>
+    <td colspan="9"><b>Чернігівська область</b></td>
   </tr>
   <tr>
     <td>Чернігів</td>
@@ -511,7 +511,7 @@ nav_order: "4"
 </thead>
 <tbody>
   <tr>
-    <td colspan="9">Автономна Республіка Крим</td>
+    <td colspan="9"><b>Автономна Республіка Крим</b></td>
   </tr>
   <tr>
     <td>Ай-Петрі</td>
@@ -558,7 +558,7 @@ nav_order: "4"
     <td style="text-align: center;">2,1</td>
   </tr>
   <tr>
-    <td colspan="9">Вінницька область</td>
+    <td colspan="9"><b>Вінницька область</b></td>
   </tr>
   <tr>
     <td>Вінниця</td>
@@ -572,7 +572,7 @@ nav_order: "4"
     <td style="text-align: center;">5,0</td>
   </tr>
   <tr>
-    <td colspan="9">Волинська область</td>
+    <td colspan="9"><b>Волинська область</b></td>
   </tr>
   <tr>
     <td>Луцьк</td>
@@ -586,7 +586,7 @@ nav_order: "4"
     <td style="text-align: center;">4,5</td>
   </tr>
   <tr>
-    <td colspan="9">Дніпропетровська область</td>
+    <td colspan="9"><b>Дніпропетровська область</b></td>
   </tr>
   <tr>
     <td>Дніпропетровськ</td>
@@ -600,7 +600,7 @@ nav_order: "4"
     <td style="text-align: center;">5,6</td>
   </tr>
   <tr>
-    <td colspan="9">Донецька область</td>
+    <td colspan="9"><b>Донецька область</b></td>
   </tr>
   <tr>
     <td>Дебальцеве</td>
@@ -625,7 +625,7 @@ nav_order: "4"
     <td style="text-align: center;">4,7</td>
   </tr>
   <tr>
-    <td colspan="9">Житомирська область</td>
+    <td colspan="9"><b>Житомирська область</b></td>
   </tr>
   <tr>
     <td>Житомир</td>
@@ -639,7 +639,7 @@ nav_order: "4"
     <td style="text-align: center;">4,7</td>
   </tr>
   <tr>
-    <td colspan="9">Закарпатська область</td>
+    <td colspan="9"><b>Закарпатська область</b></td>
   </tr>
   <tr>
     <td>Плай</td>
@@ -664,7 +664,7 @@ nav_order: "4"
     <td style="text-align: center;">3,0</td>
   </tr>
   <tr>
-    <td colspan="9">Запорізька область</td>
+    <td colspan="9"><b>Запорізька область</b></td>
   </tr>
   <tr>
     <td>Запоріжжя</td>
@@ -689,7 +689,7 @@ nav_order: "4"
     <td style="text-align: center;">3,7</td>
   </tr>
   <tr>
-    <td colspan="9">Івано-Франківська область</td>
+    <td colspan="9"><b>Івано-Франківська область</b></td>
   </tr>
   <tr>
     <td>Івано-Франківськ</td>
@@ -714,7 +714,7 @@ nav_order: "4"
     <td style="text-align: center;">7,0</td>
   </tr>
   <tr>
-    <td colspan="9">Кіровоградська область</td>
+    <td colspan="9"><b>Кіровоградська область</b></td>
   </tr>
   <tr>
     <td>Кіровоград</td>
@@ -728,7 +728,7 @@ nav_order: "4"
     <td style="text-align: center;">4,2</td>
   </tr>
   <tr>
-    <td colspan="9">Київська область</td>
+    <td colspan="9"><b>Київська область</b></td>
   </tr>
   <tr>
     <td>Київ</td>
@@ -742,7 +742,7 @@ nav_order: "4"
     <td style="text-align: center;">2,9</td>
   </tr>
   <tr>
-    <td colspan="9">Луганська область</td>
+    <td colspan="9"><b>Луганська область</b></td>
   </tr>
   <tr>
     <td>Дар’ївка </td>
@@ -767,7 +767,7 @@ nav_order: "4"
     <td style="text-align: center;">2,5</td>
   </tr>
   <tr>
-    <td colspan="9">Львівська область</td>
+    <td colspan="9"><b>Львівська область</b></td>
   </tr>
   <tr>
     <td>Львів</td>
@@ -781,7 +781,7 @@ nav_order: "4"
     <td style="text-align: center;">4,5</td>
   </tr>
   <tr>
-    <td colspan="9">Миколаївська область</td>
+    <td colspan="9"><b>Миколаївська область</b></td>
   </tr>
   <tr>
     <td>Миколаїв</td>
@@ -795,7 +795,7 @@ nav_order: "4"
     <td style="text-align: center;">3,5</td>
   </tr>
   <tr>
-    <td colspan="9">Одеська область</td>
+    <td colspan="9"><b>Одеська область</b></td>
   </tr>
   <tr>
     <td>Одеса</td>
@@ -820,7 +820,7 @@ nav_order: "4"
     <td style="text-align: center;">3,0</td>
   </tr>
   <tr>
-    <td colspan="9">Полтавська область</td>
+    <td colspan="9"><b>Полтавська область</b></td>
   </tr>
   <tr>
     <td>Полтава</td>
@@ -834,7 +834,7 @@ nav_order: "4"
     <td style="text-align: center;">3,6</td>
   </tr>
   <tr>
-    <td colspan="9">Рівненська область</td>
+    <td colspan="9"><b>Рівненська область</b></td>
   </tr>
   <tr>
     <td>Рівне</td>
@@ -848,7 +848,7 @@ nav_order: "4"
     <td style="text-align: center;">5,1</td>
   </tr>
   <tr>
-    <td colspan="9">Сумська область</td>
+    <td colspan="9"><b>Сумська область</b></td>
   </tr>
   <tr>
     <td>Суми</td>
@@ -862,7 +862,7 @@ nav_order: "4"
     <td style="text-align: center;">4,4</td>
   </tr>
   <tr>
-    <td colspan="9">Тернопільська область</td>
+    <td colspan="9"><b>Тернопільська область</b></td>
   </tr>
   <tr>
     <td>Тернопіль</td>
@@ -876,7 +876,7 @@ nav_order: "4"
     <td style="text-align: center;">5,0</td>
   </tr>
   <tr>
-    <td colspan="9">Харківська область</td>
+    <td colspan="9"><b>Харківська область</b></td>
   </tr>
   <tr>
     <td>Харків</td>
@@ -890,7 +890,7 @@ nav_order: "4"
     <td style="text-align: center;">4,2</td>
   </tr>
   <tr>
-    <td colspan="9">Херсонська область</td>
+    <td colspan="9"><b>Херсонська область</b></td>
   </tr>
   <tr>
     <td>Генічеськ</td>
@@ -915,7 +915,7 @@ nav_order: "4"
     <td style="text-align: center;">3,9</td>
   </tr>
   <tr>
-    <td colspan="9">Хмельницька область</td>
+    <td colspan="9"><b>Хмельницька область</b></td>
   </tr>
   <tr>
     <td>Хмельницький</td>
@@ -929,7 +929,7 @@ nav_order: "4"
     <td style="text-align: center;">5,5</td>
   </tr>
   <tr>
-    <td colspan="9">Черкаська область</td>
+    <td colspan="9"><b>Черкаська область</b></td>
   </tr>
   <tr>
     <td>Умань</td>
@@ -943,7 +943,7 @@ nav_order: "4"
     <td style="text-align: center;">4,3</td>
   </tr>
   <tr>
-    <td colspan="9">Чернівецька область</td>
+    <td colspan="9"><b>Чернівецька область</b></td>
   </tr>
   <tr>
     <td>Чернівці</td>
@@ -957,7 +957,7 @@ nav_order: "4"
     <td style="text-align: center;">4,7</td>
   </tr>
   <tr>
-    <td colspan="9">Чернігівська область</td>
+    <td colspan="9"><b>Чернігівська область</b></td>
   </tr>
   <tr>
     <td>Чернігів</td>
