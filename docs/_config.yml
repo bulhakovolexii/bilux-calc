@@ -11,6 +11,7 @@ domain: bulhakovolexii.github.io
 url: "https://bulhakovolexii.github.io"
 repository: bulhakovolexii/bilux-calc
 permalink: pretty
+lang: uk
 
 plugins:
   - jekyll-relative-links # plugin to convert relative links to Markdown files to their rendered equivalents.
