@@ -159,11 +159,6 @@ $i\dots I$ — кількість шарів огороджувальної ко
 
 #### 3.2.2 Розрахункові значення коефіцієнтів теплопередачі внутрішньої $h_{si}$ та зовнішньої $h_{se}$ поверхонь огороджувальних конструкцій
 
-<style>
-  .table-wrapper:nth-of-type(5) td:nth-last-child(-n+2) {
-    text-align: center;
-  }
-</style>
 <table class="table-3-2-2">
   <thead>
     <tr>
@@ -183,20 +178,20 @@ $i\dots I$ — кількість шарів огороджувальної ко
         Вертикальні непрозорі огороджувальні конструкції (зовнішні стіни)
       </td>
       <td>з опорядженням штукатурками</td>
-      <td>8,7</td>
-      <td>23</td>
+      <td style="text-align: center;">8,7</td>
+      <td style="text-align: center;">23</td>
     </tr>
     <tr>
       <td>з вентильованими повітряними прошрками</td>
-      <td>8,7</td>
-      <td>12</td>
+      <td style="text-align: center;">8,7</td>
+      <td style="text-align: center;">12</td>
     </tr>
     <tr>
       <td style="text-align: center;">2</td>
       <td>Те саме (зовнішні двері, ворота)</td>
       <td>непрозорі</td>
-      <td>8,7</td>
-      <td>23</td>
+      <td style="text-align: center;">8,7</td>
+      <td style="text-align: center;">23</td>
     </tr>
     <tr>
       <td style="text-align: center;">3</td>
@@ -205,8 +200,8 @@ $i\dots I$ — кількість шарів огороджувальної ко
         дверібалконні, світлопрозорі зовнішні двері, вітражі,
         світлопрозоріфасади)
       </td>
-      <td>8,0</td>
-      <td>23</td>
+      <td style="text-align: center;">8,0</td>
+      <td style="text-align: center;">23</td>
     </tr>
     <tr>
       <td style="text-align: center;">4</td>
@@ -214,8 +209,8 @@ $i\dots I$ — кількість шарів огороджувальної ко
         Горизонтальні світлопрозорі огороджувальні конструкції (зенітніліхтарі,
         покриття атріумів, оранжерей)
       </td>
-      <td>9,9</td>
-      <td>23</td>
+      <td style="text-align: center;">9,9</td>
+      <td style="text-align: center;">23</td>
     </tr>
     <tr>
       <td style="text-align: center;" rowspan="2">5</td>
@@ -224,13 +219,13 @@ $i\dots I$ — кількість шарів огороджувальної ко
         знизу догори
       </td>
       <td>плоскі (суміщені) покриття</td>
-      <td>10,0</td>
-      <td>23</td>
+      <td style="text-align: center;">10,0</td>
+      <td style="text-align: center;">23</td>
     </tr>
     <tr>
       <td>горищні перекриття</td>
-      <td>10,0</td>
-      <td>6</td>
+      <td style="text-align: center;">10,0</td>
+      <td style="text-align: center;">6</td>
     </tr>
     <tr>
       <td style="text-align: center;" rowspan="4">6</td>
@@ -242,27 +237,27 @@ $i\dots I$ — кількість шарів огороджувальної ко
         перекриття над неопалюваними підвалами та техпідпіллями, що
         не вентилюються зовнішнім повітрям
       </td>
-      <td>5,9</td>
-      <td>6</td>
+      <td style="text-align: center;">5,9</td>
+      <td style="text-align: center;">6</td>
     </tr>
     <tr>
       <td>
         перекриття над неопалюваними підвалами зі світловими прорізами встінах
       </td>
-      <td>5,9</td>
-      <td>12</td>
+      <td style="text-align: center;">5,9</td>
+      <td style="text-align: center;">12</td>
     </tr>
     <tr>
       <td>
         перекриття над неопалюваними підвалами, що межують із зовнішнім повітрям
       </td>
-      <td>5,9</td>
-      <td>17</td>
+      <td style="text-align: center;">5,9</td>
+      <td style="text-align: center;">17</td>
     </tr>
     <tr>
       <td>перекриття, що межують із зовнішнім повітрям (еркери, проїзди)</td>
-      <td>5,9</td>
-      <td>23</td>
+      <td style="text-align: center;">5,9</td>
+      <td style="text-align: center;">23</td>
     </tr>
   </tbody>
 </table>

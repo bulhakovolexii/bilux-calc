@@ -9,11 +9,6 @@ nav_order: "1"
 
 # Таблиця А — Середньомісячна температура зовнішнього повітря
 
-<style>
-  td:not(:first-child) {
-    text-align: center;
-  }
-</style>
 <table class="js-table">
   <thead>
     <tr>
@@ -42,987 +37,987 @@ nav_order: "1"
     </tr>
     <tr>
       <td>Ай-Петрі</td>
-      <td>-3,40</td>
-      <td>-3,30</td>
-      <td>-0,70</td>
-      <td>4,80</td>
-      <td>9,60</td>
-      <td>13,00</td>
-      <td>15,50</td>
-      <td>15,10</td>
-      <td>11,00</td>
-      <td>6,70</td>
-      <td>2,50</td>
-      <td>-1,60</td>
-      <td>5,80</td>
+      <td style="text-align: center;">-3,40</td>
+      <td style="text-align: center;">-3,30</td>
+      <td style="text-align: center;">-0,70</td>
+      <td style="text-align: center;">4,80</td>
+      <td style="text-align: center;">9,60</td>
+      <td style="text-align: center;">13,00</td>
+      <td style="text-align: center;">15,50</td>
+      <td style="text-align: center;">15,10</td>
+      <td style="text-align: center;">11,00</td>
+      <td style="text-align: center;">6,70</td>
+      <td style="text-align: center;">2,50</td>
+      <td style="text-align: center;">-1,60</td>
+      <td style="text-align: center;">5,80</td>
     </tr>
     <tr>
       <td>Клепиніне</td>
-      <td>-1,00</td>
-      <td>-0,20</td>
-      <td>3,40</td>
-      <td>10,00</td>
-      <td>15,70</td>
-      <td>20,00</td>
-      <td>22,70</td>
-      <td>21,80</td>
-      <td>16,70</td>
-      <td>10,70</td>
-      <td>5,70</td>
-      <td>1,60</td>
-      <td>10,60</td>
+      <td style="text-align: center;">-1,00</td>
+      <td style="text-align: center;">-0,20</td>
+      <td style="text-align: center;">3,40</td>
+      <td style="text-align: center;">10,00</td>
+      <td style="text-align: center;">15,70</td>
+      <td style="text-align: center;">20,00</td>
+      <td style="text-align: center;">22,70</td>
+      <td style="text-align: center;">21,80</td>
+      <td style="text-align: center;">16,70</td>
+      <td style="text-align: center;">10,70</td>
+      <td style="text-align: center;">5,70</td>
+      <td style="text-align: center;">1,60</td>
+      <td style="text-align: center;">10,60</td>
     </tr>
     <tr>
       <td>Сімферополь</td>
-      <td>-0,30</td>
-      <td>0,40</td>
-      <td>3,70</td>
-      <td>10,10</td>
-      <td>16,10</td>
-      <td>19,20</td>
-      <td>21,80</td>
-      <td>21,30</td>
-      <td>16,70</td>
-      <td>11,00</td>
-      <td>6,10</td>
-      <td>2,10</td>
-      <td>10,60</td>
+      <td style="text-align: center;">-0,30</td>
+      <td style="text-align: center;">0,40</td>
+      <td style="text-align: center;">3,70</td>
+      <td style="text-align: center;">10,10</td>
+      <td style="text-align: center;">16,10</td>
+      <td style="text-align: center;">19,20</td>
+      <td style="text-align: center;">21,80</td>
+      <td style="text-align: center;">21,30</td>
+      <td style="text-align: center;">16,70</td>
+      <td style="text-align: center;">11,00</td>
+      <td style="text-align: center;">6,10</td>
+      <td style="text-align: center;">2,10</td>
+      <td style="text-align: center;">10,60</td>
     </tr>
     <tr>
       <td>Феодосія</td>
-      <td>1,20</td>
-      <td>1,60</td>
-      <td>4,60</td>
-      <td>10,60</td>
-      <td>16,10</td>
-      <td>20,80</td>
-      <td>23,20</td>
-      <td>23,10</td>
-      <td>18,40</td>
-      <td>12,60</td>
-      <td>7,60</td>
-      <td>3,80</td>
-      <td>12,00</td>
+      <td style="text-align: center;">1,20</td>
+      <td style="text-align: center;">1,60</td>
+      <td style="text-align: center;">4,60</td>
+      <td style="text-align: center;">10,60</td>
+      <td style="text-align: center;">16,10</td>
+      <td style="text-align: center;">20,80</td>
+      <td style="text-align: center;">23,20</td>
+      <td style="text-align: center;">23,10</td>
+      <td style="text-align: center;">18,40</td>
+      <td style="text-align: center;">12,60</td>
+      <td style="text-align: center;">7,60</td>
+      <td style="text-align: center;">3,80</td>
+      <td style="text-align: center;">12,00</td>
     </tr>
     <tr>
       <td>Ялта</td>
-      <td>4,10</td>
-      <td>4,20</td>
-      <td>6,00</td>
-      <td>10,60</td>
-      <td>15,70</td>
-      <td>19,80</td>
-      <td>23,60</td>
-      <td>23,20</td>
-      <td>19,00</td>
-      <td>13,60</td>
-      <td>9,50</td>
-      <td>6,10</td>
-      <td>13,00</td>
+      <td style="text-align: center;">4,10</td>
+      <td style="text-align: center;">4,20</td>
+      <td style="text-align: center;">6,00</td>
+      <td style="text-align: center;">10,60</td>
+      <td style="text-align: center;">15,70</td>
+      <td style="text-align: center;">19,80</td>
+      <td style="text-align: center;">23,60</td>
+      <td style="text-align: center;">23,20</td>
+      <td style="text-align: center;">19,00</td>
+      <td style="text-align: center;">13,60</td>
+      <td style="text-align: center;">9,50</td>
+      <td style="text-align: center;">6,10</td>
+      <td style="text-align: center;">13,00</td>
     </tr>
     <tr>
       <td colspan="14"><b>Вінницька область</b></td>
     </tr>
     <tr>
       <td>Вінниця</td>
-      <td>-5,10</td>
-      <td>-3,80</td>
-      <td>0,50</td>
-      <td>8,10</td>
-      <td>14,20</td>
-      <td>17,20</td>
-      <td>18,70</td>
-      <td>18,00</td>
-      <td>13,30</td>
-      <td>7,60</td>
-      <td>1,80</td>
-      <td>-2,90</td>
-      <td>7,30</td>
+      <td style="text-align: center;">-5,10</td>
+      <td style="text-align: center;">-3,80</td>
+      <td style="text-align: center;">0,50</td>
+      <td style="text-align: center;">8,10</td>
+      <td style="text-align: center;">14,20</td>
+      <td style="text-align: center;">17,20</td>
+      <td style="text-align: center;">18,70</td>
+      <td style="text-align: center;">18,00</td>
+      <td style="text-align: center;">13,30</td>
+      <td style="text-align: center;">7,60</td>
+      <td style="text-align: center;">1,80</td>
+      <td style="text-align: center;">-2,90</td>
+      <td style="text-align: center;">7,30</td>
     </tr>
     <tr>
       <td colspan="14"><b>Волинська область</b></td>
     </tr>
     <tr>
       <td>Ковель</td>
-      <td>-3,90</td>
-      <td>-2,70</td>
-      <td>1,30</td>
-      <td>8,10</td>
-      <td>13,90</td>
-      <td>16,90</td>
-      <td>18,20</td>
-      <td>17,60</td>
-      <td>13,00</td>
-      <td>7,90</td>
-      <td>2,50</td>
-      <td>-1,90</td>
-      <td>7,60</td>
+      <td style="text-align: center;">-3,90</td>
+      <td style="text-align: center;">-2,70</td>
+      <td style="text-align: center;">1,30</td>
+      <td style="text-align: center;">8,10</td>
+      <td style="text-align: center;">13,90</td>
+      <td style="text-align: center;">16,90</td>
+      <td style="text-align: center;">18,20</td>
+      <td style="text-align: center;">17,60</td>
+      <td style="text-align: center;">13,00</td>
+      <td style="text-align: center;">7,90</td>
+      <td style="text-align: center;">2,50</td>
+      <td style="text-align: center;">-1,90</td>
+      <td style="text-align: center;">7,60</td>
     </tr>
     <tr>
       <td>Луцьк</td>
-      <td>-4,20</td>
-      <td>-3,00</td>
-      <td>1,10</td>
-      <td>8,10</td>
-      <td>13,90</td>
-      <td>16,90</td>
-      <td>18,40</td>
-      <td>17,70</td>
-      <td>13,20</td>
-      <td>7,90</td>
-      <td>2,40</td>
-      <td>-2,40</td>
-      <td>7,50</td>
+      <td style="text-align: center;">-4,20</td>
+      <td style="text-align: center;">-3,00</td>
+      <td style="text-align: center;">1,10</td>
+      <td style="text-align: center;">8,10</td>
+      <td style="text-align: center;">13,90</td>
+      <td style="text-align: center;">16,90</td>
+      <td style="text-align: center;">18,40</td>
+      <td style="text-align: center;">17,70</td>
+      <td style="text-align: center;">13,20</td>
+      <td style="text-align: center;">7,90</td>
+      <td style="text-align: center;">2,40</td>
+      <td style="text-align: center;">-2,40</td>
+      <td style="text-align: center;">7,50</td>
     </tr>
     <tr>
       <td colspan="14"><b>Дніпропетровська область</b></td>
     </tr>
     <tr>
       <td>Дніпро</td>
-      <td>-4,70</td>
-      <td>-3,80</td>
-      <td>1,10</td>
-      <td>9,60</td>
-      <td>16,00</td>
-      <td>19,60</td>
-      <td>21,60</td>
-      <td>20,70</td>
-      <td>15,40</td>
-      <td>8,60</td>
-      <td>2,20</td>
-      <td>-2,50</td>
-      <td>8,70</td>
+      <td style="text-align: center;">-4,70</td>
+      <td style="text-align: center;">-3,80</td>
+      <td style="text-align: center;">1,10</td>
+      <td style="text-align: center;">9,60</td>
+      <td style="text-align: center;">16,00</td>
+      <td style="text-align: center;">19,60</td>
+      <td style="text-align: center;">21,60</td>
+      <td style="text-align: center;">20,70</td>
+      <td style="text-align: center;">15,40</td>
+      <td style="text-align: center;">8,60</td>
+      <td style="text-align: center;">2,20</td>
+      <td style="text-align: center;">-2,50</td>
+      <td style="text-align: center;">8,70</td>
     </tr>
     <tr>
       <td>Комісарівка</td>
-      <td>-4,90</td>
-      <td>-3,80</td>
-      <td>1,00</td>
-      <td>9,30</td>
-      <td>16,60</td>
-      <td>19,00</td>
-      <td>20,90</td>
-      <td>20,00</td>
-      <td>14,70</td>
-      <td>8,20</td>
-      <td>2,20</td>
-      <td>-2,40</td>
-      <td>8,30</td>
+      <td style="text-align: center;">-4,90</td>
+      <td style="text-align: center;">-3,80</td>
+      <td style="text-align: center;">1,00</td>
+      <td style="text-align: center;">9,30</td>
+      <td style="text-align: center;">16,60</td>
+      <td style="text-align: center;">19,00</td>
+      <td style="text-align: center;">20,90</td>
+      <td style="text-align: center;">20,00</td>
+      <td style="text-align: center;">14,70</td>
+      <td style="text-align: center;">8,20</td>
+      <td style="text-align: center;">2,20</td>
+      <td style="text-align: center;">-2,40</td>
+      <td style="text-align: center;">8,30</td>
     </tr>
     <tr>
       <td>Кривий Ріг</td>
-      <td>-4,30</td>
-      <td>-3,30</td>
-      <td>1,60</td>
-      <td>9,60</td>
-      <td>16,80</td>
-      <td>19,40</td>
-      <td>21,50</td>
-      <td>20,70</td>
-      <td>15,50</td>
-      <td>8,90</td>
-      <td>2,70</td>
-      <td>-2,00</td>
-      <td>8,80</td>
+      <td style="text-align: center;">-4,30</td>
+      <td style="text-align: center;">-3,30</td>
+      <td style="text-align: center;">1,60</td>
+      <td style="text-align: center;">9,60</td>
+      <td style="text-align: center;">16,80</td>
+      <td style="text-align: center;">19,40</td>
+      <td style="text-align: center;">21,50</td>
+      <td style="text-align: center;">20,70</td>
+      <td style="text-align: center;">15,50</td>
+      <td style="text-align: center;">8,90</td>
+      <td style="text-align: center;">2,70</td>
+      <td style="text-align: center;">-2,00</td>
+      <td style="text-align: center;">8,80</td>
     </tr>
     <tr>
       <td colspan="14"><b>Донецька область</b></td>
     </tr>
     <tr>
       <td>Донецьк</td>
-      <td>-5,20</td>
-      <td>-4,40</td>
-      <td>0,70</td>
-      <td>9,40</td>
-      <td>16,40</td>
-      <td>19,00</td>
-      <td>21,20</td>
-      <td>19,80</td>
-      <td>14,90</td>
-      <td>8,00</td>
-      <td>1,80</td>
-      <td>-2,90</td>
-      <td>8,10</td>
+      <td style="text-align: center;">-5,20</td>
+      <td style="text-align: center;">-4,40</td>
+      <td style="text-align: center;">0,70</td>
+      <td style="text-align: center;">9,40</td>
+      <td style="text-align: center;">16,40</td>
+      <td style="text-align: center;">19,00</td>
+      <td style="text-align: center;">21,20</td>
+      <td style="text-align: center;">19,80</td>
+      <td style="text-align: center;">14,90</td>
+      <td style="text-align: center;">8,00</td>
+      <td style="text-align: center;">1,80</td>
+      <td style="text-align: center;">-2,90</td>
+      <td style="text-align: center;">8,10</td>
     </tr>
     <tr>
       <td colspan="14"><b>Житомирська область</b></td>
     </tr>
     <tr>
       <td>Житомир</td>
-      <td>-5,10</td>
-      <td>-4,00</td>
-      <td>0,40</td>
-      <td>7,90</td>
-      <td>14,00</td>
-      <td>17,10</td>
-      <td>18,50</td>
-      <td>17,70</td>
-      <td>13,00</td>
-      <td>7,40</td>
-      <td>1,70</td>
-      <td>-2,80</td>
-      <td>7,20</td>
+      <td style="text-align: center;">-5,10</td>
+      <td style="text-align: center;">-4,00</td>
+      <td style="text-align: center;">0,40</td>
+      <td style="text-align: center;">7,90</td>
+      <td style="text-align: center;">14,00</td>
+      <td style="text-align: center;">17,10</td>
+      <td style="text-align: center;">18,50</td>
+      <td style="text-align: center;">17,70</td>
+      <td style="text-align: center;">13,00</td>
+      <td style="text-align: center;">7,40</td>
+      <td style="text-align: center;">1,70</td>
+      <td style="text-align: center;">-2,80</td>
+      <td style="text-align: center;">7,20</td>
     </tr>
     <tr>
       <td>Овруч</td>
-      <td>-5,10</td>
-      <td>-4,10</td>
-      <td>0,30</td>
-      <td>7,90</td>
-      <td>14,10</td>
-      <td>17,10</td>
-      <td>18,50</td>
-      <td>17,60</td>
-      <td>12,80</td>
-      <td>7,10</td>
-      <td>1,50</td>
-      <td>-3,10</td>
-      <td>7,10</td>
+      <td style="text-align: center;">-5,10</td>
+      <td style="text-align: center;">-4,10</td>
+      <td style="text-align: center;">0,30</td>
+      <td style="text-align: center;">7,90</td>
+      <td style="text-align: center;">14,10</td>
+      <td style="text-align: center;">17,10</td>
+      <td style="text-align: center;">18,50</td>
+      <td style="text-align: center;">17,60</td>
+      <td style="text-align: center;">12,80</td>
+      <td style="text-align: center;">7,10</td>
+      <td style="text-align: center;">1,50</td>
+      <td style="text-align: center;">-3,10</td>
+      <td style="text-align: center;">7,10</td>
     </tr>
     <tr>
       <td colspan="14"><b>Закарпатська область</b></td>
     </tr>
     <tr>
       <td>Берегове</td>
-      <td>-2,70</td>
-      <td>0,10</td>
-      <td>5,00</td>
-      <td>10,90</td>
-      <td>16,90</td>
-      <td>18,70</td>
-      <td>20,20</td>
-      <td>19,60</td>
-      <td>15,70</td>
-      <td>10,30</td>
-      <td>4,80</td>
-      <td>-0,20</td>
-      <td>9,90</td>
+      <td style="text-align: center;">-2,70</td>
+      <td style="text-align: center;">0,10</td>
+      <td style="text-align: center;">5,00</td>
+      <td style="text-align: center;">10,90</td>
+      <td style="text-align: center;">16,90</td>
+      <td style="text-align: center;">18,70</td>
+      <td style="text-align: center;">20,20</td>
+      <td style="text-align: center;">19,60</td>
+      <td style="text-align: center;">15,70</td>
+      <td style="text-align: center;">10,30</td>
+      <td style="text-align: center;">4,80</td>
+      <td style="text-align: center;">-0,20</td>
+      <td style="text-align: center;">9,90</td>
     </tr>
     <tr>
       <td>Міжгір'я</td>
-      <td>-5,00</td>
-      <td>-2,60</td>
-      <td>1,40</td>
-      <td>7,20</td>
-      <td>12,30</td>
-      <td>15,00</td>
-      <td>16,40</td>
-      <td>15,80</td>
-      <td>12,30</td>
-      <td>7,40</td>
-      <td>2,50</td>
-      <td>2,40</td>
-      <td>6,70</td>
+      <td style="text-align: center;">-5,00</td>
+      <td style="text-align: center;">-2,60</td>
+      <td style="text-align: center;">1,40</td>
+      <td style="text-align: center;">7,20</td>
+      <td style="text-align: center;">12,30</td>
+      <td style="text-align: center;">15,00</td>
+      <td style="text-align: center;">16,40</td>
+      <td style="text-align: center;">15,80</td>
+      <td style="text-align: center;">12,30</td>
+      <td style="text-align: center;">7,40</td>
+      <td style="text-align: center;">2,50</td>
+      <td style="text-align: center;">2,40</td>
+      <td style="text-align: center;">6,70</td>
     </tr>
     <tr>
       <td>Плай</td>
-      <td>-6,30</td>
-      <td>-6,00</td>
-      <td>-2,90</td>
-      <td>1,90</td>
-      <td>7,60</td>
-      <td>9,90</td>
-      <td>11,40</td>
-      <td>11,50</td>
-      <td>7,70</td>
-      <td>3,60</td>
-      <td>-1,40</td>
-      <td>-5,10</td>
-      <td>2,70</td>
+      <td style="text-align: center;">-6,30</td>
+      <td style="text-align: center;">-6,00</td>
+      <td style="text-align: center;">-2,90</td>
+      <td style="text-align: center;">1,90</td>
+      <td style="text-align: center;">7,60</td>
+      <td style="text-align: center;">9,90</td>
+      <td style="text-align: center;">11,40</td>
+      <td style="text-align: center;">11,50</td>
+      <td style="text-align: center;">7,70</td>
+      <td style="text-align: center;">3,60</td>
+      <td style="text-align: center;">-1,40</td>
+      <td style="text-align: center;">-5,10</td>
+      <td style="text-align: center;">2,70</td>
     </tr>
     <tr>
       <td>Рахів</td>
-      <td>-4,30</td>
-      <td>-1,70</td>
-      <td>2,30</td>
-      <td>8,00</td>
-      <td>13,00</td>
-      <td>15,60</td>
-      <td>17,00</td>
-      <td>16,40</td>
-      <td>12,90</td>
-      <td>7,80</td>
-      <td>2,80</td>
-      <td>-1,80</td>
-      <td>7,30</td>
+      <td style="text-align: center;">-4,30</td>
+      <td style="text-align: center;">-1,70</td>
+      <td style="text-align: center;">2,30</td>
+      <td style="text-align: center;">8,00</td>
+      <td style="text-align: center;">13,00</td>
+      <td style="text-align: center;">15,60</td>
+      <td style="text-align: center;">17,00</td>
+      <td style="text-align: center;">16,40</td>
+      <td style="text-align: center;">12,90</td>
+      <td style="text-align: center;">7,80</td>
+      <td style="text-align: center;">2,80</td>
+      <td style="text-align: center;">-1,80</td>
+      <td style="text-align: center;">7,30</td>
     </tr>
     <tr>
       <td>Ужгород</td>
-      <td>-2,40</td>
-      <td>-0,20</td>
-      <td>4,70</td>
-      <td>10,80</td>
-      <td>16,80</td>
-      <td>18,70</td>
-      <td>20,30</td>
-      <td>19,80</td>
-      <td>15,50</td>
-      <td>10,20</td>
-      <td>4,70</td>
-      <td>-0,50</td>
-      <td>9,80</td>
+      <td style="text-align: center;">-2,40</td>
+      <td style="text-align: center;">-0,20</td>
+      <td style="text-align: center;">4,70</td>
+      <td style="text-align: center;">10,80</td>
+      <td style="text-align: center;">16,80</td>
+      <td style="text-align: center;">18,70</td>
+      <td style="text-align: center;">20,30</td>
+      <td style="text-align: center;">19,80</td>
+      <td style="text-align: center;">15,50</td>
+      <td style="text-align: center;">10,20</td>
+      <td style="text-align: center;">4,70</td>
+      <td style="text-align: center;">-0,50</td>
+      <td style="text-align: center;">9,80</td>
     </tr>
     <tr>
       <td>Хуст</td>
-      <td>-4,30</td>
-      <td>-1,30</td>
-      <td>3,80</td>
-      <td>10,10</td>
-      <td>16,10</td>
-      <td>17,80</td>
-      <td>19,20</td>
-      <td>18,50</td>
-      <td>14,50</td>
-      <td>8,90</td>
-      <td>3,70</td>
-      <td>-1,30</td>
-      <td>8,70</td>
+      <td style="text-align: center;">-4,30</td>
+      <td style="text-align: center;">-1,30</td>
+      <td style="text-align: center;">3,80</td>
+      <td style="text-align: center;">10,10</td>
+      <td style="text-align: center;">16,10</td>
+      <td style="text-align: center;">17,80</td>
+      <td style="text-align: center;">19,20</td>
+      <td style="text-align: center;">18,50</td>
+      <td style="text-align: center;">14,50</td>
+      <td style="text-align: center;">8,90</td>
+      <td style="text-align: center;">3,70</td>
+      <td style="text-align: center;">-1,30</td>
+      <td style="text-align: center;">8,70</td>
     </tr>
     <tr>
       <td colspan="14"><b>Запорізька область</b></td>
     </tr>
     <tr>
       <td>Гуляйполе</td>
-      <td>-4,10</td>
-      <td>-3,40</td>
-      <td>1,50</td>
-      <td>9,60</td>
-      <td>16,60</td>
-      <td>19,40</td>
-      <td>21,60</td>
-      <td>20,50</td>
-      <td>15,10</td>
-      <td>8,40</td>
-      <td>2,50</td>
-      <td>-1,90</td>
-      <td>8,70</td>
+      <td style="text-align: center;">-4,10</td>
+      <td style="text-align: center;">-3,40</td>
+      <td style="text-align: center;">1,50</td>
+      <td style="text-align: center;">9,60</td>
+      <td style="text-align: center;">16,60</td>
+      <td style="text-align: center;">19,40</td>
+      <td style="text-align: center;">21,60</td>
+      <td style="text-align: center;">20,50</td>
+      <td style="text-align: center;">15,10</td>
+      <td style="text-align: center;">8,40</td>
+      <td style="text-align: center;">2,50</td>
+      <td style="text-align: center;">-1,90</td>
+      <td style="text-align: center;">8,70</td>
     </tr>
     <tr>
       <td>Запоріжжя</td>
-      <td>-3,50</td>
-      <td>-2,60</td>
-      <td>2,00</td>
-      <td>10,10</td>
-      <td>16,40</td>
-      <td>20,20</td>
-      <td>22,40</td>
-      <td>21,40</td>
-      <td>16,20</td>
-      <td>9,60</td>
-      <td>3,50</td>
-      <td>-1,10</td>
-      <td>9,60</td>
+      <td style="text-align: center;">-3,50</td>
+      <td style="text-align: center;">-2,60</td>
+      <td style="text-align: center;">2,00</td>
+      <td style="text-align: center;">10,10</td>
+      <td style="text-align: center;">16,40</td>
+      <td style="text-align: center;">20,20</td>
+      <td style="text-align: center;">22,40</td>
+      <td style="text-align: center;">21,40</td>
+      <td style="text-align: center;">16,20</td>
+      <td style="text-align: center;">9,60</td>
+      <td style="text-align: center;">3,50</td>
+      <td style="text-align: center;">-1,10</td>
+      <td style="text-align: center;">9,60</td>
     </tr>
     <tr>
       <td>Кирилівка</td>
-      <td>-4,40</td>
-      <td>-3,80</td>
-      <td>1,00</td>
-      <td>9,10</td>
-      <td>15,00</td>
-      <td>18,80</td>
-      <td>20,60</td>
-      <td>20,10</td>
-      <td>14,90</td>
-      <td>8,10</td>
-      <td>2,30</td>
-      <td>-2,20</td>
-      <td>8,30</td>
+      <td style="text-align: center;">-4,40</td>
+      <td style="text-align: center;">-3,80</td>
+      <td style="text-align: center;">1,00</td>
+      <td style="text-align: center;">9,10</td>
+      <td style="text-align: center;">15,00</td>
+      <td style="text-align: center;">18,80</td>
+      <td style="text-align: center;">20,60</td>
+      <td style="text-align: center;">20,10</td>
+      <td style="text-align: center;">14,90</td>
+      <td style="text-align: center;">8,10</td>
+      <td style="text-align: center;">2,30</td>
+      <td style="text-align: center;">-2,20</td>
+      <td style="text-align: center;">8,30</td>
     </tr>
     <tr>
       <td colspan="14"><b>Івано-Франківська область</b></td>
     </tr>
     <tr>
       <td>Івано-Франківськ</td>
-      <td>-4,30</td>
-      <td>-2,60</td>
-      <td>1,70</td>
-      <td>8,10</td>
-      <td>13,60</td>
-      <td>16,70</td>
-      <td>18,30</td>
-      <td>17,70</td>
-      <td>13,40</td>
-      <td>8,00</td>
-      <td>2,50</td>
-      <td>-2,40</td>
-      <td>7,60</td>
+      <td style="text-align: center;">-4,30</td>
+      <td style="text-align: center;">-2,60</td>
+      <td style="text-align: center;">1,70</td>
+      <td style="text-align: center;">8,10</td>
+      <td style="text-align: center;">13,60</td>
+      <td style="text-align: center;">16,70</td>
+      <td style="text-align: center;">18,30</td>
+      <td style="text-align: center;">17,70</td>
+      <td style="text-align: center;">13,40</td>
+      <td style="text-align: center;">8,00</td>
+      <td style="text-align: center;">2,50</td>
+      <td style="text-align: center;">-2,40</td>
+      <td style="text-align: center;">7,60</td>
     </tr>
     <tr>
       <td>Пожежівська</td>
-      <td>-6,20</td>
-      <td>-6,00</td>
-      <td>-3,30</td>
-      <td>1,80</td>
-      <td>7,20</td>
-      <td>10,10</td>
-      <td>11,70</td>
-      <td>11,80</td>
-      <td>8,00</td>
-      <td>4,10</td>
-      <td>-0,70</td>
-      <td>-4,90</td>
-      <td>2,80</td>
+      <td style="text-align: center;">-6,20</td>
+      <td style="text-align: center;">-6,00</td>
+      <td style="text-align: center;">-3,30</td>
+      <td style="text-align: center;">1,80</td>
+      <td style="text-align: center;">7,20</td>
+      <td style="text-align: center;">10,10</td>
+      <td style="text-align: center;">11,70</td>
+      <td style="text-align: center;">11,80</td>
+      <td style="text-align: center;">8,00</td>
+      <td style="text-align: center;">4,10</td>
+      <td style="text-align: center;">-0,70</td>
+      <td style="text-align: center;">-4,90</td>
+      <td style="text-align: center;">2,80</td>
     </tr>
     <tr>
       <td colspan="14"><b>Кіровоградська область</b></td>
     </tr>
     <tr>
       <td>Гайворон</td>
-      <td>-4,30</td>
-      <td>-3,00</td>
-      <td>1,60</td>
-      <td>9,40</td>
-      <td>15,30</td>
-      <td>18,40</td>
-      <td>20,00</td>
-      <td>19,20</td>
-      <td>14,40</td>
-      <td>8,40</td>
-      <td>2,70</td>
-      <td>-1,90</td>
-      <td>8,40</td>
+      <td style="text-align: center;">-4,30</td>
+      <td style="text-align: center;">-3,00</td>
+      <td style="text-align: center;">1,60</td>
+      <td style="text-align: center;">9,40</td>
+      <td style="text-align: center;">15,30</td>
+      <td style="text-align: center;">18,40</td>
+      <td style="text-align: center;">20,00</td>
+      <td style="text-align: center;">19,20</td>
+      <td style="text-align: center;">14,40</td>
+      <td style="text-align: center;">8,40</td>
+      <td style="text-align: center;">2,70</td>
+      <td style="text-align: center;">-1,90</td>
+      <td style="text-align: center;">8,40</td>
     </tr>
     <tr>
       <td>Знам'янка</td>
-      <td>-5,30</td>
-      <td>-4,20</td>
-      <td>0,70</td>
-      <td>8,80</td>
-      <td>15,10</td>
-      <td>18,50</td>
-      <td>20,30</td>
-      <td>19,50</td>
-      <td>14,40</td>
-      <td>7,90</td>
-      <td>2,00</td>
-      <td>-2,80</td>
-      <td>7,90</td>
+      <td style="text-align: center;">-5,30</td>
+      <td style="text-align: center;">-4,20</td>
+      <td style="text-align: center;">0,70</td>
+      <td style="text-align: center;">8,80</td>
+      <td style="text-align: center;">15,10</td>
+      <td style="text-align: center;">18,50</td>
+      <td style="text-align: center;">20,30</td>
+      <td style="text-align: center;">19,50</td>
+      <td style="text-align: center;">14,40</td>
+      <td style="text-align: center;">7,90</td>
+      <td style="text-align: center;">2,00</td>
+      <td style="text-align: center;">-2,80</td>
+      <td style="text-align: center;">7,90</td>
     </tr>
     <tr>
       <td>Кропивницький</td>
-      <td>-4,90</td>
-      <td>-3,90</td>
-      <td>0,80</td>
-      <td>9,10</td>
-      <td>15,20</td>
-      <td>18,60</td>
-      <td>20,40</td>
-      <td>19,70</td>
-      <td>14,70</td>
-      <td>8,20</td>
-      <td>2,10</td>
-      <td>-2,60</td>
-      <td>8,10</td>
+      <td style="text-align: center;">-4,90</td>
+      <td style="text-align: center;">-3,90</td>
+      <td style="text-align: center;">0,80</td>
+      <td style="text-align: center;">9,10</td>
+      <td style="text-align: center;">15,20</td>
+      <td style="text-align: center;">18,60</td>
+      <td style="text-align: center;">20,40</td>
+      <td style="text-align: center;">19,70</td>
+      <td style="text-align: center;">14,70</td>
+      <td style="text-align: center;">8,20</td>
+      <td style="text-align: center;">2,10</td>
+      <td style="text-align: center;">-2,60</td>
+      <td style="text-align: center;">8,10</td>
     </tr>
     <tr>
       <td colspan="14"><b>Київська область</b></td>
     </tr>
     <tr>
       <td>Київ</td>
-      <td>-4,70</td>
-      <td>-3,60</td>
-      <td>1,00</td>
-      <td>9,00</td>
-      <td>15,20</td>
-      <td>18,30</td>
-      <td>19,80</td>
-      <td>19,00</td>
-      <td>13,90</td>
-      <td>8,10</td>
-      <td>1,90</td>
-      <td>-2,50</td>
-      <td>8,00</td>
+      <td style="text-align: center;">-4,70</td>
+      <td style="text-align: center;">-3,60</td>
+      <td style="text-align: center;">1,00</td>
+      <td style="text-align: center;">9,00</td>
+      <td style="text-align: center;">15,20</td>
+      <td style="text-align: center;">18,30</td>
+      <td style="text-align: center;">19,80</td>
+      <td style="text-align: center;">19,00</td>
+      <td style="text-align: center;">13,90</td>
+      <td style="text-align: center;">8,10</td>
+      <td style="text-align: center;">1,90</td>
+      <td style="text-align: center;">-2,50</td>
+      <td style="text-align: center;">8,00</td>
     </tr>
     <tr>
       <td>Миронівка</td>
-      <td>-5,00</td>
-      <td>-4,40</td>
-      <td>0,80</td>
-      <td>8,80</td>
-      <td>15,00</td>
-      <td>18,00</td>
-      <td>19,80</td>
-      <td>19,00</td>
-      <td>14,10</td>
-      <td>8,00</td>
-      <td>1,80</td>
-      <td>-2,70</td>
-      <td>7,80</td>
+      <td style="text-align: center;">-5,00</td>
+      <td style="text-align: center;">-4,40</td>
+      <td style="text-align: center;">0,80</td>
+      <td style="text-align: center;">8,80</td>
+      <td style="text-align: center;">15,00</td>
+      <td style="text-align: center;">18,00</td>
+      <td style="text-align: center;">19,80</td>
+      <td style="text-align: center;">19,00</td>
+      <td style="text-align: center;">14,10</td>
+      <td style="text-align: center;">8,00</td>
+      <td style="text-align: center;">1,80</td>
+      <td style="text-align: center;">-2,70</td>
+      <td style="text-align: center;">7,80</td>
     </tr>
     <tr>
       <td colspan="14"><b>Луганська область</b></td>
     </tr>
     <tr>
       <td>Луганськ</td>
-      <td>-5,00</td>
-      <td>-4,20</td>
-      <td>1,10</td>
-      <td>10,10</td>
-      <td>16,10</td>
-      <td>19,90</td>
-      <td>22,00</td>
-      <td>20,70</td>
-      <td>15,10</td>
-      <td>8,20</td>
-      <td>2,20</td>
-      <td>-2,50</td>
-      <td>8,60</td>
+      <td style="text-align: center;">-5,00</td>
+      <td style="text-align: center;">-4,20</td>
+      <td style="text-align: center;">1,10</td>
+      <td style="text-align: center;">10,10</td>
+      <td style="text-align: center;">16,10</td>
+      <td style="text-align: center;">19,90</td>
+      <td style="text-align: center;">22,00</td>
+      <td style="text-align: center;">20,70</td>
+      <td style="text-align: center;">15,10</td>
+      <td style="text-align: center;">8,20</td>
+      <td style="text-align: center;">2,20</td>
+      <td style="text-align: center;">-2,50</td>
+      <td style="text-align: center;">8,60</td>
     </tr>
     <tr>
       <td colspan="14"><b>Львівська область</b></td>
     </tr>
     <tr>
       <td>Львів</td>
-      <td>-4,00</td>
-      <td>-2,70</td>
-      <td>1,40</td>
-      <td>7,90</td>
-      <td>13,40</td>
-      <td>16,30</td>
-      <td>17,70</td>
-      <td>17,20</td>
-      <td>13,00</td>
-      <td>8,00</td>
-      <td>2,50</td>
-      <td>-2,20</td>
-      <td>7,40</td>
+      <td style="text-align: center;">-4,00</td>
+      <td style="text-align: center;">-2,70</td>
+      <td style="text-align: center;">1,40</td>
+      <td style="text-align: center;">7,90</td>
+      <td style="text-align: center;">13,40</td>
+      <td style="text-align: center;">16,30</td>
+      <td style="text-align: center;">17,70</td>
+      <td style="text-align: center;">17,20</td>
+      <td style="text-align: center;">13,00</td>
+      <td style="text-align: center;">8,00</td>
+      <td style="text-align: center;">2,50</td>
+      <td style="text-align: center;">-2,20</td>
+      <td style="text-align: center;">7,40</td>
     </tr>
     <tr>
       <td colspan="14"><b>Миколаївська область</b></td>
     </tr>
     <tr>
       <td>Миколаїв</td>
-      <td>-2,60</td>
-      <td>-1,60</td>
-      <td>2,80</td>
-      <td>10,20</td>
-      <td>16,40</td>
-      <td>20,30</td>
-      <td>22,70</td>
-      <td>22,00</td>
-      <td>16,80</td>
-      <td>10,40</td>
-      <td>4,20</td>
-      <td>-0,40</td>
-      <td>10,10</td>
+      <td style="text-align: center;">-2,60</td>
+      <td style="text-align: center;">-1,60</td>
+      <td style="text-align: center;">2,80</td>
+      <td style="text-align: center;">10,20</td>
+      <td style="text-align: center;">16,40</td>
+      <td style="text-align: center;">20,30</td>
+      <td style="text-align: center;">22,70</td>
+      <td style="text-align: center;">22,00</td>
+      <td style="text-align: center;">16,80</td>
+      <td style="text-align: center;">10,40</td>
+      <td style="text-align: center;">4,20</td>
+      <td style="text-align: center;">-0,40</td>
+      <td style="text-align: center;">10,10</td>
     </tr>
     <tr>
       <td colspan="14"><b>Одеська область</b></td>
     </tr>
     <tr>
       <td>Ізмаїл</td>
-      <td>-1,30</td>
-      <td>0,20</td>
-      <td>4,30</td>
-      <td>10,60</td>
-      <td>16,30</td>
-      <td>20,30</td>
-      <td>22,30</td>
-      <td>21,70</td>
-      <td>17,00</td>
-      <td>11,20</td>
-      <td>5,70</td>
-      <td>0,70</td>
-      <td>10,80</td>
+      <td style="text-align: center;">-1,30</td>
+      <td style="text-align: center;">0,20</td>
+      <td style="text-align: center;">4,30</td>
+      <td style="text-align: center;">10,60</td>
+      <td style="text-align: center;">16,30</td>
+      <td style="text-align: center;">20,30</td>
+      <td style="text-align: center;">22,30</td>
+      <td style="text-align: center;">21,70</td>
+      <td style="text-align: center;">17,00</td>
+      <td style="text-align: center;">11,20</td>
+      <td style="text-align: center;">5,70</td>
+      <td style="text-align: center;">0,70</td>
+      <td style="text-align: center;">10,80</td>
     </tr>
     <tr>
       <td>Любашівка</td>
-      <td>-4,30</td>
-      <td>-3,00</td>
-      <td>1,50</td>
-      <td>9,30</td>
-      <td>15,30</td>
-      <td>18,60</td>
-      <td>20,50</td>
-      <td>19,90</td>
-      <td>15,10</td>
-      <td>8,90</td>
-      <td>2,80</td>
-      <td>-1,90</td>
-      <td>8,60</td>
+      <td style="text-align: center;">-4,30</td>
+      <td style="text-align: center;">-3,00</td>
+      <td style="text-align: center;">1,50</td>
+      <td style="text-align: center;">9,30</td>
+      <td style="text-align: center;">15,30</td>
+      <td style="text-align: center;">18,60</td>
+      <td style="text-align: center;">20,50</td>
+      <td style="text-align: center;">19,90</td>
+      <td style="text-align: center;">15,10</td>
+      <td style="text-align: center;">8,90</td>
+      <td style="text-align: center;">2,80</td>
+      <td style="text-align: center;">-1,90</td>
+      <td style="text-align: center;">8,60</td>
     </tr>
     <tr>
       <td>Одеса</td>
-      <td>-1,30</td>
-      <td>-0,60</td>
-      <td>2,90</td>
-      <td>9,20</td>
-      <td>15,30</td>
-      <td>19,60</td>
-      <td>22,00</td>
-      <td>21,60</td>
-      <td>17,00</td>
-      <td>11,30</td>
-      <td>5,80</td>
-      <td>1,10</td>
-      <td>10,30</td>
+      <td style="text-align: center;">-1,30</td>
+      <td style="text-align: center;">-0,60</td>
+      <td style="text-align: center;">2,90</td>
+      <td style="text-align: center;">9,20</td>
+      <td style="text-align: center;">15,30</td>
+      <td style="text-align: center;">19,60</td>
+      <td style="text-align: center;">22,00</td>
+      <td style="text-align: center;">21,60</td>
+      <td style="text-align: center;">17,00</td>
+      <td style="text-align: center;">11,30</td>
+      <td style="text-align: center;">5,80</td>
+      <td style="text-align: center;">1,10</td>
+      <td style="text-align: center;">10,30</td>
     </tr>
     <tr>
       <td>Роздільна</td>
-      <td>-3,10</td>
-      <td>-1,90</td>
-      <td>2,50</td>
-      <td>9,80</td>
-      <td>15,80</td>
-      <td>19,40</td>
-      <td>21,50</td>
-      <td>21,00</td>
-      <td>16,10</td>
-      <td>9,90</td>
-      <td>3,90</td>
-      <td>-0,90</td>
-      <td>9,50</td>
+      <td style="text-align: center;">-3,10</td>
+      <td style="text-align: center;">-1,90</td>
+      <td style="text-align: center;">2,50</td>
+      <td style="text-align: center;">9,80</td>
+      <td style="text-align: center;">15,80</td>
+      <td style="text-align: center;">19,40</td>
+      <td style="text-align: center;">21,50</td>
+      <td style="text-align: center;">21,00</td>
+      <td style="text-align: center;">16,10</td>
+      <td style="text-align: center;">9,90</td>
+      <td style="text-align: center;">3,90</td>
+      <td style="text-align: center;">-0,90</td>
+      <td style="text-align: center;">9,50</td>
     </tr>
     <tr>
       <td>Сарата</td>
-      <td>-1,80</td>
-      <td>-0,50</td>
-      <td>3,60</td>
-      <td>10,00</td>
-      <td>16,00</td>
-      <td>20,00</td>
-      <td>22,10</td>
-      <td>21,30</td>
-      <td>16,40</td>
-      <td>10,50</td>
-      <td>5,10</td>
-      <td>0,20</td>
-      <td>10,20</td>
+      <td style="text-align: center;">-1,80</td>
+      <td style="text-align: center;">-0,50</td>
+      <td style="text-align: center;">3,60</td>
+      <td style="text-align: center;">10,00</td>
+      <td style="text-align: center;">16,00</td>
+      <td style="text-align: center;">20,00</td>
+      <td style="text-align: center;">22,10</td>
+      <td style="text-align: center;">21,30</td>
+      <td style="text-align: center;">16,40</td>
+      <td style="text-align: center;">10,50</td>
+      <td style="text-align: center;">5,10</td>
+      <td style="text-align: center;">0,20</td>
+      <td style="text-align: center;">10,20</td>
     </tr>
     <tr>
       <td colspan="14"><b>Полтавська область</b></td>
     </tr>
     <tr>
       <td>Лубни</td>
-      <td>-5,40</td>
-      <td>-4,60</td>
-      <td>0,30</td>
-      <td>8,60</td>
-      <td>15,30</td>
-      <td>18,50</td>
-      <td>20,20</td>
-      <td>19,10</td>
-      <td>13,70</td>
-      <td>7,60</td>
-      <td>1,30</td>
-      <td>-3,30</td>
-      <td>7,60</td>
+      <td style="text-align: center;">-5,40</td>
+      <td style="text-align: center;">-4,60</td>
+      <td style="text-align: center;">0,30</td>
+      <td style="text-align: center;">8,60</td>
+      <td style="text-align: center;">15,30</td>
+      <td style="text-align: center;">18,50</td>
+      <td style="text-align: center;">20,20</td>
+      <td style="text-align: center;">19,10</td>
+      <td style="text-align: center;">13,70</td>
+      <td style="text-align: center;">7,60</td>
+      <td style="text-align: center;">1,30</td>
+      <td style="text-align: center;">-3,30</td>
+      <td style="text-align: center;">7,60</td>
     </tr>
     <tr>
       <td>Полтава</td>
-      <td>-5,60</td>
-      <td>-4,70</td>
-      <td>0,30</td>
-      <td>9,00</td>
-      <td>15,40</td>
-      <td>18,70</td>
-      <td>20,50</td>
-      <td>19,70</td>
-      <td>14,30</td>
-      <td>7,70</td>
-      <td>1,30</td>
-      <td>-3,30</td>
-      <td>7,80</td>
+      <td style="text-align: center;">-5,60</td>
+      <td style="text-align: center;">-4,70</td>
+      <td style="text-align: center;">0,30</td>
+      <td style="text-align: center;">9,00</td>
+      <td style="text-align: center;">15,40</td>
+      <td style="text-align: center;">18,70</td>
+      <td style="text-align: center;">20,50</td>
+      <td style="text-align: center;">19,70</td>
+      <td style="text-align: center;">14,30</td>
+      <td style="text-align: center;">7,70</td>
+      <td style="text-align: center;">1,30</td>
+      <td style="text-align: center;">-3,30</td>
+      <td style="text-align: center;">7,80</td>
     </tr>
     <tr>
       <td colspan="14"><b>Рівненська область</b></td>
     </tr>
     <tr>
       <td>Рівне</td>
-      <td>-4,60</td>
-      <td>-3,40</td>
-      <td>0,70</td>
-      <td>8,00</td>
-      <td>13,80</td>
-      <td>16,70</td>
-      <td>18,20</td>
-      <td>17,50</td>
-      <td>13,10</td>
-      <td>7,70</td>
-      <td>2,10</td>
-      <td>-2,60</td>
-      <td>7,30</td>
+      <td style="text-align: center;">-4,60</td>
+      <td style="text-align: center;">-3,40</td>
+      <td style="text-align: center;">0,70</td>
+      <td style="text-align: center;">8,00</td>
+      <td style="text-align: center;">13,80</td>
+      <td style="text-align: center;">16,70</td>
+      <td style="text-align: center;">18,20</td>
+      <td style="text-align: center;">17,50</td>
+      <td style="text-align: center;">13,10</td>
+      <td style="text-align: center;">7,70</td>
+      <td style="text-align: center;">2,10</td>
+      <td style="text-align: center;">-2,60</td>
+      <td style="text-align: center;">7,30</td>
     </tr>
     <tr>
       <td>Сарни</td>
-      <td>-4,50</td>
-      <td>-3,40</td>
-      <td>0,90</td>
-      <td>8,20</td>
-      <td>14,40</td>
-      <td>17,10</td>
-      <td>18,60</td>
-      <td>17,70</td>
-      <td>13,00</td>
-      <td>7,70</td>
-      <td>2,10</td>
-      <td>-2,40</td>
-      <td>7,40</td>
+      <td style="text-align: center;">-4,50</td>
+      <td style="text-align: center;">-3,40</td>
+      <td style="text-align: center;">0,90</td>
+      <td style="text-align: center;">8,20</td>
+      <td style="text-align: center;">14,40</td>
+      <td style="text-align: center;">17,10</td>
+      <td style="text-align: center;">18,60</td>
+      <td style="text-align: center;">17,70</td>
+      <td style="text-align: center;">13,00</td>
+      <td style="text-align: center;">7,70</td>
+      <td style="text-align: center;">2,10</td>
+      <td style="text-align: center;">-2,40</td>
+      <td style="text-align: center;">7,40</td>
     </tr>
     <tr>
       <td colspan="14"><b>Сумська область</b></td>
     </tr>
     <tr>
       <td>Ромни</td>
-      <td>-6,20</td>
-      <td>-5,40</td>
-      <td>-0,40</td>
-      <td>8,20</td>
-      <td>14,60</td>
-      <td>18,00</td>
-      <td>19,40</td>
-      <td>18,40</td>
-      <td>13,10</td>
-      <td>6,80</td>
-      <td>0,70</td>
-      <td>-4,00</td>
-      <td>6,90</td>
+      <td style="text-align: center;">-6,20</td>
+      <td style="text-align: center;">-5,40</td>
+      <td style="text-align: center;">-0,40</td>
+      <td style="text-align: center;">8,20</td>
+      <td style="text-align: center;">14,60</td>
+      <td style="text-align: center;">18,00</td>
+      <td style="text-align: center;">19,40</td>
+      <td style="text-align: center;">18,40</td>
+      <td style="text-align: center;">13,10</td>
+      <td style="text-align: center;">6,80</td>
+      <td style="text-align: center;">0,70</td>
+      <td style="text-align: center;">-4,00</td>
+      <td style="text-align: center;">6,90</td>
     </tr>
     <tr>
       <td>Суми</td>
-      <td>-6,60</td>
-      <td>-5,80</td>
-      <td>-0,80</td>
-      <td>8,10</td>
-      <td>14,60</td>
-      <td>17,90</td>
-      <td>19,50</td>
-      <td>18,40</td>
-      <td>13,00</td>
-      <td>6,70</td>
-      <td>0,40</td>
-      <td>-4,30</td>
-      <td>6,80</td>
+      <td style="text-align: center;">-6,60</td>
+      <td style="text-align: center;">-5,80</td>
+      <td style="text-align: center;">-0,80</td>
+      <td style="text-align: center;">8,10</td>
+      <td style="text-align: center;">14,60</td>
+      <td style="text-align: center;">17,90</td>
+      <td style="text-align: center;">19,50</td>
+      <td style="text-align: center;">18,40</td>
+      <td style="text-align: center;">13,00</td>
+      <td style="text-align: center;">6,70</td>
+      <td style="text-align: center;">0,40</td>
+      <td style="text-align: center;">-4,30</td>
+      <td style="text-align: center;">6,80</td>
     </tr>
     <tr>
       <td colspan="14"><b>Тернопільська область</b></td>
     </tr>
     <tr>
       <td>Тернопіль</td>
-      <td>-5,00</td>
-      <td>-3,70</td>
-      <td>0,40</td>
-      <td>7,60</td>
-      <td>13,50</td>
-      <td>16,40</td>
-      <td>17,80</td>
-      <td>17,20</td>
-      <td>12,80</td>
-      <td>7,50</td>
-      <td>1,80</td>
-      <td>-3,10</td>
-      <td>6,90</td>
+      <td style="text-align: center;">-5,00</td>
+      <td style="text-align: center;">-3,70</td>
+      <td style="text-align: center;">0,40</td>
+      <td style="text-align: center;">7,60</td>
+      <td style="text-align: center;">13,50</td>
+      <td style="text-align: center;">16,40</td>
+      <td style="text-align: center;">17,80</td>
+      <td style="text-align: center;">17,20</td>
+      <td style="text-align: center;">12,80</td>
+      <td style="text-align: center;">7,50</td>
+      <td style="text-align: center;">1,80</td>
+      <td style="text-align: center;">-3,10</td>
+      <td style="text-align: center;">6,90</td>
     </tr>
     <tr>
       <td colspan="14"><b>Харківська область</b></td>
     </tr>
     <tr>
       <td>Лозова</td>
-      <td>-5,60</td>
-      <td>-3,70</td>
-      <td>0,40</td>
-      <td>7,60</td>
-      <td>13,50</td>
-      <td>16,40</td>
-      <td>17,80</td>
-      <td>17,20</td>
-      <td>12,80</td>
-      <td>7,50</td>
-      <td>1,80</td>
-      <td>-3,10</td>
-      <td>6,90</td>
+      <td style="text-align: center;">-5,60</td>
+      <td style="text-align: center;">-3,70</td>
+      <td style="text-align: center;">0,40</td>
+      <td style="text-align: center;">7,60</td>
+      <td style="text-align: center;">13,50</td>
+      <td style="text-align: center;">16,40</td>
+      <td style="text-align: center;">17,80</td>
+      <td style="text-align: center;">17,20</td>
+      <td style="text-align: center;">12,80</td>
+      <td style="text-align: center;">7,50</td>
+      <td style="text-align: center;">1,80</td>
+      <td style="text-align: center;">-3,10</td>
+      <td style="text-align: center;">6,90</td>
     </tr>
     <tr>
       <td>Харків</td>
-      <td>-5,90</td>
-      <td>-5,10</td>
-      <td>0,00</td>
-      <td>9,00</td>
-      <td>15,50</td>
-      <td>18,90</td>
-      <td>20,70</td>
-      <td>19,70</td>
-      <td>14,10</td>
-      <td>7,50</td>
-      <td>1,00</td>
-      <td>-3,70</td>
-      <td>7,60</td>
+      <td style="text-align: center;">-5,90</td>
+      <td style="text-align: center;">-5,10</td>
+      <td style="text-align: center;">0,00</td>
+      <td style="text-align: center;">9,00</td>
+      <td style="text-align: center;">15,50</td>
+      <td style="text-align: center;">18,90</td>
+      <td style="text-align: center;">20,70</td>
+      <td style="text-align: center;">19,70</td>
+      <td style="text-align: center;">14,10</td>
+      <td style="text-align: center;">7,50</td>
+      <td style="text-align: center;">1,00</td>
+      <td style="text-align: center;">-3,70</td>
+      <td style="text-align: center;">7,60</td>
     </tr>
     <tr>
       <td colspan="14"><b>Херсонська область</b></td>
     </tr>
     <tr>
       <td>Асканія-Нова</td>
-      <td>-2,50</td>
-      <td>-1,70</td>
-      <td>2,60</td>
-      <td>9,60</td>
-      <td>15,60</td>
-      <td>20,00</td>
-      <td>22,50</td>
-      <td>21,80</td>
-      <td>16,50</td>
-      <td>9,90</td>
-      <td>4,20</td>
-      <td>0,00</td>
-      <td>9,90</td>
+      <td style="text-align: center;">-2,50</td>
+      <td style="text-align: center;">-1,70</td>
+      <td style="text-align: center;">2,60</td>
+      <td style="text-align: center;">9,60</td>
+      <td style="text-align: center;">15,60</td>
+      <td style="text-align: center;">20,00</td>
+      <td style="text-align: center;">22,50</td>
+      <td style="text-align: center;">21,80</td>
+      <td style="text-align: center;">16,50</td>
+      <td style="text-align: center;">9,90</td>
+      <td style="text-align: center;">4,20</td>
+      <td style="text-align: center;">0,00</td>
+      <td style="text-align: center;">9,90</td>
     </tr>
     <tr>
       <td>Генічеськ</td>
-      <td>-1,80</td>
-      <td>-1,30</td>
-      <td>2,40</td>
-      <td>9,50</td>
-      <td>16,10</td>
-      <td>20,60</td>
-      <td>23,10</td>
-      <td>22,40</td>
-      <td>17,50</td>
-      <td>11,00</td>
-      <td>6,20</td>
-      <td>6,70</td>
-      <td>10,50</td>
+      <td style="text-align: center;">-1,80</td>
+      <td style="text-align: center;">-1,30</td>
+      <td style="text-align: center;">2,40</td>
+      <td style="text-align: center;">9,50</td>
+      <td style="text-align: center;">16,10</td>
+      <td style="text-align: center;">20,60</td>
+      <td style="text-align: center;">23,10</td>
+      <td style="text-align: center;">22,40</td>
+      <td style="text-align: center;">17,50</td>
+      <td style="text-align: center;">11,00</td>
+      <td style="text-align: center;">6,20</td>
+      <td style="text-align: center;">6,70</td>
+      <td style="text-align: center;">10,50</td>
     </tr>
     <tr>
       <td>Херсон</td>
-      <td>-2,50</td>
-      <td>-1,60</td>
-      <td>2,80</td>
-      <td>10,10</td>
-      <td>16,10</td>
-      <td>20,00</td>
-      <td>22,40</td>
-      <td>21,60</td>
-      <td>16,50</td>
-      <td>10,10</td>
-      <td>4,30</td>
-      <td>-0,20</td>
-      <td>10,00</td>
+      <td style="text-align: center;">-2,50</td>
+      <td style="text-align: center;">-1,60</td>
+      <td style="text-align: center;">2,80</td>
+      <td style="text-align: center;">10,10</td>
+      <td style="text-align: center;">16,10</td>
+      <td style="text-align: center;">20,00</td>
+      <td style="text-align: center;">22,40</td>
+      <td style="text-align: center;">21,60</td>
+      <td style="text-align: center;">16,50</td>
+      <td style="text-align: center;">10,10</td>
+      <td style="text-align: center;">4,30</td>
+      <td style="text-align: center;">-0,20</td>
+      <td style="text-align: center;">10,00</td>
     </tr>
     <tr>
       <td colspan="14"><b>Хмельницька область</b></td>
     </tr>
     <tr>
       <td>Хмельницький</td>
-      <td>-4,90</td>
-      <td>-3,60</td>
-      <td>0,60</td>
-      <td>7,90</td>
-      <td>13,90</td>
-      <td>16,80</td>
-      <td>18,40</td>
-      <td>17,70</td>
-      <td>13,10</td>
-      <td>7,60</td>
-      <td>1,90</td>
-      <td>-2,90</td>
-      <td>7,20</td>
+      <td style="text-align: center;">-4,90</td>
+      <td style="text-align: center;">-3,60</td>
+      <td style="text-align: center;">0,60</td>
+      <td style="text-align: center;">7,90</td>
+      <td style="text-align: center;">13,90</td>
+      <td style="text-align: center;">16,80</td>
+      <td style="text-align: center;">18,40</td>
+      <td style="text-align: center;">17,70</td>
+      <td style="text-align: center;">13,10</td>
+      <td style="text-align: center;">7,60</td>
+      <td style="text-align: center;">1,90</td>
+      <td style="text-align: center;">-2,90</td>
+      <td style="text-align: center;">7,20</td>
     </tr>
     <tr>
       <td colspan="14"><b>Черкаська область</b></td>
     </tr>
     <tr>
       <td>Золотоноша</td>
-      <td>-4,90</td>
-      <td>-4,00</td>
-      <td>0,90</td>
-      <td>9,10</td>
-      <td>15,40</td>
-      <td>18,60</td>
-      <td>20,20</td>
-      <td>19,10</td>
-      <td>14,00</td>
-      <td>7,80</td>
-      <td>1,90</td>
-      <td>-2,90</td>
-      <td>7,20</td>
+      <td style="text-align: center;">-4,90</td>
+      <td style="text-align: center;">-4,00</td>
+      <td style="text-align: center;">0,90</td>
+      <td style="text-align: center;">9,10</td>
+      <td style="text-align: center;">15,40</td>
+      <td style="text-align: center;">18,60</td>
+      <td style="text-align: center;">20,20</td>
+      <td style="text-align: center;">19,10</td>
+      <td style="text-align: center;">14,00</td>
+      <td style="text-align: center;">7,80</td>
+      <td style="text-align: center;">1,90</td>
+      <td style="text-align: center;">-2,90</td>
+      <td style="text-align: center;">7,20</td>
     </tr>
     <tr>
       <td>Умань</td>
-      <td>-4,80</td>
-      <td>-3,70</td>
-      <td>0,90</td>
-      <td>8,70</td>
-      <td>14,60</td>
-      <td>17,80</td>
-      <td>19,40</td>
-      <td>18,60</td>
-      <td>13,60</td>
-      <td>7,70</td>
-      <td>2,00</td>
-      <td>-2,50</td>
-      <td>7,70</td>
+      <td style="text-align: center;">-4,80</td>
+      <td style="text-align: center;">-3,70</td>
+      <td style="text-align: center;">0,90</td>
+      <td style="text-align: center;">8,70</td>
+      <td style="text-align: center;">14,60</td>
+      <td style="text-align: center;">17,80</td>
+      <td style="text-align: center;">19,40</td>
+      <td style="text-align: center;">18,60</td>
+      <td style="text-align: center;">13,60</td>
+      <td style="text-align: center;">7,70</td>
+      <td style="text-align: center;">2,00</td>
+      <td style="text-align: center;">-2,50</td>
+      <td style="text-align: center;">7,70</td>
     </tr>
     <tr>
       <td>Черкаси</td>
-      <td>-5,00</td>
-      <td>-4,00</td>
-      <td>0,70</td>
-      <td>8,90</td>
-      <td>15,20</td>
-      <td>18,40</td>
-      <td>20,10</td>
-      <td>19,30</td>
-      <td>14,20</td>
-      <td>7,90</td>
-      <td>2,00</td>
-      <td>-2,70</td>
-      <td>7,90</td>
+      <td style="text-align: center;">-5,00</td>
+      <td style="text-align: center;">-4,00</td>
+      <td style="text-align: center;">0,70</td>
+      <td style="text-align: center;">8,90</td>
+      <td style="text-align: center;">15,20</td>
+      <td style="text-align: center;">18,40</td>
+      <td style="text-align: center;">20,10</td>
+      <td style="text-align: center;">19,30</td>
+      <td style="text-align: center;">14,20</td>
+      <td style="text-align: center;">7,90</td>
+      <td style="text-align: center;">2,00</td>
+      <td style="text-align: center;">-2,70</td>
+      <td style="text-align: center;">7,90</td>
     </tr>
     <tr>
       <td colspan="14"><b>Чернівецька область</b></td>
     </tr>
     <tr>
       <td>Чернівці</td>
-      <td>-4,10</td>
-      <td>-2,40</td>
-      <td>2,00</td>
-      <td>8,90</td>
-      <td>14,50</td>
-      <td>17,60</td>
-      <td>19,10</td>
-      <td>18,40</td>
-      <td>14,10</td>
-      <td>8,70</td>
-      <td>2,70</td>
-      <td>-2,10</td>
-      <td>8,10</td>
+      <td style="text-align: center;">-4,10</td>
+      <td style="text-align: center;">-2,40</td>
+      <td style="text-align: center;">2,00</td>
+      <td style="text-align: center;">8,90</td>
+      <td style="text-align: center;">14,50</td>
+      <td style="text-align: center;">17,60</td>
+      <td style="text-align: center;">19,10</td>
+      <td style="text-align: center;">18,40</td>
+      <td style="text-align: center;">14,10</td>
+      <td style="text-align: center;">8,70</td>
+      <td style="text-align: center;">2,70</td>
+      <td style="text-align: center;">-2,10</td>
+      <td style="text-align: center;">8,10</td>
     </tr>
     <tr>
       <td colspan="14"><b>Чернігівська область</b></td>
     </tr>
     <tr>
       <td>Семенівка</td>
-      <td>-6,70</td>
-      <td>-5,80</td>
-      <td>-1,00</td>
-      <td>7,30</td>
-      <td>13,70</td>
-      <td>17,00</td>
-      <td>18,50</td>
-      <td>17,40</td>
-      <td>12,20</td>
-      <td>6,20</td>
-      <td>0,20</td>
-      <td>-4,00</td>
-      <td>6,30</td>
+      <td style="text-align: center;">-6,70</td>
+      <td style="text-align: center;">-5,80</td>
+      <td style="text-align: center;">-1,00</td>
+      <td style="text-align: center;">7,30</td>
+      <td style="text-align: center;">13,70</td>
+      <td style="text-align: center;">17,00</td>
+      <td style="text-align: center;">18,50</td>
+      <td style="text-align: center;">17,40</td>
+      <td style="text-align: center;">12,20</td>
+      <td style="text-align: center;">6,20</td>
+      <td style="text-align: center;">0,20</td>
+      <td style="text-align: center;">-4,00</td>
+      <td style="text-align: center;">6,30</td>
     </tr>
     <tr>
       <td>Чернігів</td>
-      <td>-5,90</td>
-      <td>-4,90</td>
-      <td>-0,10</td>
-      <td>8,00</td>
-      <td>14,40</td>
-      <td>17,60</td>
-      <td>19,20</td>
-      <td>18,10</td>
-      <td>12,90</td>
-      <td>6,90</td>
-      <td>1,00</td>
-      <td>-3,50</td>
-      <td>7,00</td>
+      <td style="text-align: center;">-5,90</td>
+      <td style="text-align: center;">-4,90</td>
+      <td style="text-align: center;">-0,10</td>
+      <td style="text-align: center;">8,00</td>
+      <td style="text-align: center;">14,40</td>
+      <td style="text-align: center;">17,60</td>
+      <td style="text-align: center;">19,20</td>
+      <td style="text-align: center;">18,10</td>
+      <td style="text-align: center;">12,90</td>
+      <td style="text-align: center;">6,90</td>
+      <td style="text-align: center;">1,00</td>
+      <td style="text-align: center;">-3,50</td>
+      <td style="text-align: center;">7,00</td>
     </tr>
   </tbody>
 </table>
