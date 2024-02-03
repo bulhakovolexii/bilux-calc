@@ -85,5 +85,7 @@ tbody {
 thead {
   th {
     text-align: center !important;
+    border-bottom: 0;
+    box-shadow: inset 0px -1px $border-color;
   }
 }
