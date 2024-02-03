@@ -651,4 +651,4 @@ nav_order: "2"
   </tbody>
 </table>
 
-[^3]: [ДСТУ 9191:2022 Теплоізоляція будівель. Метод вибору теплоізоляційного матеріалу для утеплення будівель](https://online.budstandart.com/ua/catalog/doc-page.html?id_doc=98996)
+[^1]: [ДСТУ 9191:2022 Теплоізоляція будівель. Метод вибору теплоізоляційного матеріалу для утеплення будівель](https://online.budstandart.com/ua/catalog/doc-page.html?id_doc=98996)
