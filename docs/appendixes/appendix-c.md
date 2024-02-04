@@ -9,7 +9,7 @@ nav_order: "3"
 
 ## Таблиця C — Розрахункові теплофізичні характеристики будівельних матеріалів[^1]
 
-<table class="js-table">
+<table class="js-table" style="vertical-align: top;">
   <thead>
     <tr>
       <th>Тип матеріалу</th>
