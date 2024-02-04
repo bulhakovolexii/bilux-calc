@@ -9,7 +9,7 @@ nav_order: "3"
 
 ## Таблиця C — Розрахункові теплофізичні характеристики будівельних матеріалів[^1]
 
-<table class="js-table" style="vertical-align: top;">
+<table class="js-table">
   <thead>
     <tr>
       <th>Тип матеріалу</th>
@@ -19,7 +19,7 @@ nav_order: "3"
       <th>теплопровідність $λ_р$, Вт/(м∙К)</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody style="vertical-align: top;">
     <tr>
       <td rowspan="111">
         Теплоізоляційні матеріали
