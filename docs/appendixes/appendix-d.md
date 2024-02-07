@@ -15,7 +15,7 @@ nav_order: "4"
 1. TOC
 {:toc}
 
-<table class="js-table">
+<table>
 <thead>
   <tr>
     <th rowspan="2">Область, місто</th>
@@ -498,7 +498,7 @@ nav_order: "4"
 
 ## Таблиця D.2 — Характеристики вітру в січні. Середня швидкість вітру.
 
-<table class="js-table">
+<table>
 <thead>
   <tr>
     <th rowspan="2">Область, місто</th>
