@@ -9,7 +9,7 @@ nav_order: "1"
 
 ## Таблиця A — Середньомісячна температура зовнішнього повітря[^1]
 
-<table class="js-table">
+<table>
   <thead>
     <tr>
       <th rowspan="2">Область, місто</th>
