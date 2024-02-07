@@ -31,13 +31,21 @@ layout: table_wrappers
     {% include components/mermaid.html %}
   {% endif %}
   <script>
-      document.addEventListener('DOMContentLoaded', () => {
-          const tableElements = document.querySelectorAll('.js-table');
-
-          tableElements.forEach(tableElement => {
-              new window.StickyTable(tableElement);
-          })
-      });
+    const tables = document.querySelectorAll("table");
+    const addStickyHeaders = (tables) => {
+      tables.forEach((table) => {
+        if (table.offsetHeight >= 900) {
+          table.classList.add("js-table")
+        }
+      })
+    };
+    addStickyHeaders(tables);
+    document.addEventListener('DOMContentLoaded', () => {
+      const tableElements = document.querySelectorAll('.js-table');
+      tableElements.forEach(tableElement => {
+        new window.StickyTable(tableElement);
+      })
+    });
   </script>
 </body>
 </html>
