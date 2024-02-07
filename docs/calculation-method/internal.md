@@ -12,6 +12,7 @@ nav_order: "3"
 Внутрішні теплонадходження, теплонадходження від внутрішніх теплових джерел, від'ємні теплонадходження (розсіяна теплота від внутрішнього середовища до холодних джерел або «стоки»), формують з будь-якої теплоти, що утворюється в кондиціонованому об'ємі внутрішніми джерелами, крім тієї, що навмисно використовують для опалення, охолодження або ГВП (гаряче водопостачання).
 
 ДСТУ 9190[^1] враховує такі теплонадходження:
+
 - внутрішній тепловий потік від людей $\Phi_{int,Oc}$;
 - внутрішній тепловий потік від освітлення $\Phi_{int,L}$;
 - внутрішній тепловий потік від обладнання $\Phi_{int,A}$.
@@ -24,7 +25,7 @@ $$Q_{int}=\frac{N}{168}\left(\sum \Phi_{int,mn}A_{f}\right)t,\tag{1}$$
 
 де $N$ — графік використання, залежно від призначення будівлі, може бути прийнятий згідно з таблицею [1.1](internal.md#11-теплонадходження-від-людей-освітлення-та-обладнання-значення-за-замовчуванням), год/тиждень;  
 $\Phi_{int,mn}$ — усереднена за часом щільність теплового потоку від внутрішніх джерел, залежно від призначення будівлі, що може бути прийнята згідно з таблицею [1.1](internal.md#11-теплонадходження-від-людей-освітлення-та-обладнання-значення-за-замовчуванням) як сума метаболічної теплоти, освітлення та обладнання, Вт/м²;  
-$A_f$ — кондиціонована площа будівлі, м²;
+$A_f$ — кондиціонована площа будівлі, м²;  
 $t$ — тривалість місяця, для якого проводять розрахунок, год, визначена згідно з [таблицею 2 розділу теплопередача трансміссією](./transmission.md#2-щомісячна-тривалість-часових-інтервалів).
 
 {: .note }
@@ -55,80 +56,80 @@ $t$ — тривалість місяця, для якого проводять 
   </tr>
   <tr>
     <td>Багатоквартирні будинки, гуртожитки</td>
-    <td>112</td>
-    <td>1,8</td>
-    <td>2,0</td>
-    <td>2,0</td>
+    <td style="text=align: center;">112</td>
+    <td style="text=align: center;">1,8</td>
+    <td style="text=align: center;">2,0</td>
+    <td style="text=align: center;">2,0</td>
   </tr>
   <tr>
     <td>Громадські будівлі адміністративного призначення, офіси</td>
-    <td>50</td>
-    <td>4,0</td>
-    <td>7,0</td>
-    <td>6,0</td>
+    <td style="text=align: center;">50</td>
+    <td style="text=align: center;">4,0</td>
+    <td style="text=align: center;">7,0</td>
+    <td style="text=align: center;">6,0</td>
   </tr>
   <tr>
     <td>Будівлі навчальних закладів</td>
-    <td>50</td>
-    <td>7,0</td>
-    <td>7,0</td>
-    <td>6,0</td>
+    <td style="text=align: center;">50</td>
+    <td style="text=align: center;">7,0</td>
+    <td style="text=align: center;">7,0</td>
+    <td style="text=align: center;">6,0</td>
   </tr>
   <tr>
     <td>Будівлі дитячих навчальних закладів</td>
-    <td>50</td>
-    <td>7,0</td>
-    <td>7,0</td>
-    <td>3,0</td>
+    <td style="text=align: center;">50</td>
+    <td style="text=align: center;">7,0</td>
+    <td style="text=align: center;">7,0</td>
+    <td style="text=align: center;">3,0</td>
   </tr>
   <tr>
     <td>Будівлі закладів охорони здоровʼя</td>
-    <td>168</td>
-    <td>2,7</td>
-    <td>7,0</td>
-    <td>6,0</td>
+    <td style="text=align: center;">168</td>
+    <td style="text=align: center;">2,7</td>
+    <td style="text=align: center;">7,0</td>
+    <td style="text=align: center;">6,0</td>
   </tr>
   <tr>
     <td>Готелі</td>
-    <td>168</td>
-    <td>4,0</td>
-    <td>8,0</td>
-    <td>2,0</td>
+    <td style="text=align: center;">168</td>
+    <td style="text=align: center;">4,0</td>
+    <td style="text=align: center;">8,0</td>
+    <td style="text=align: center;">2,0</td>
   </tr>
   <tr>
     <td>Ресторани</td>
-    <td>84</td>
-    <td>5,0</td>
-    <td>8,0</td>
-    <td>4,0</td>
+    <td style="text=align: center;">84</td>
+    <td style="text=align: center;">5,0</td>
+    <td style="text=align: center;">8,0</td>
+    <td style="text=align: center;">4,0</td>
   </tr>
   <tr>
     <td>Спортивні заклади</td>
-    <td>84</td>
-    <td>5,0</td>
-    <td>8,0</td>
-    <td>1,0</td>
+    <td style="text=align: center;">84</td>
+    <td style="text=align: center;">5,0</td>
+    <td style="text=align: center;">8,0</td>
+    <td style="text=align: center;">1,0</td>
   </tr>
   <tr>
     <td>Будівлі закладів гуртової та роздрібної торгівлі</td>
-    <td>84</td>
-    <td>7,0</td>
-    <td>12,0</td>
-    <td>2,0</td>
+    <td style="text=align: center;">84</td>
+    <td style="text=align: center;">7,0</td>
+    <td style="text=align: center;">12,0</td>
+    <td style="text=align: center;">2,0</td>
   </tr>
   <tr>
     <td>Будівлі культурно-розважальних закладів та дозвільних установ</td>
-    <td>56</td>
-    <td>5,0</td>
-    <td>8,0</td>
-    <td>2,0</td>
+    <td style="text=align: center;">56</td>
+    <td style="text=align: center;">5,0</td>
+    <td style="text=align: center;">8,0</td>
+    <td style="text=align: center;">2,0</td>
   </tr>
   <tr>
     <td>Інші види будівель</td>
-    <td>60</td>
-    <td>3,0</td>
-    <td>7,0</td>
-    <td>2,0</td>
+    <td style="text=align: center;">60</td>
+    <td style="text=align: center;">3,0</td>
+    <td style="text=align: center;">7,0</td>
+    <td style="text=align: center;">2,0</td>
   </tr>
 </tbody>
 </table>
