@@ -15,7 +15,7 @@ nav_order: "1"
     <th rowspan="2">   Область, місто</th>
     <th colspan="12">   Середньомісячна температура зовнішнього   повітря, ℃</th>
     <th rowspan="2">Середня за рік</th>
-    <th colspan="2">Період із середньою добовою температурою повітря [^2]</th>
+    <th colspan="2">Період із середньою добовою температурою повітря<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">1</a></sup></th>
   </tr>
   <tr>
     <th>I</th>
