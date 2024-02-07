@@ -56,80 +56,80 @@ $t$ — тривалість місяця, для якого проводять 
   </tr>
   <tr>
     <td>Багатоквартирні будинки, гуртожитки</td>
-    <td style="text=align: center;">112</td>
-    <td style="text=align: center;">1,8</td>
-    <td style="text=align: center;">2,0</td>
-    <td style="text=align: center;">2,0</td>
+    <td style="text-align: center;">112</td>
+    <td style="text-align: center;">1,8</td>
+    <td style="text-align: center;">2,0</td>
+    <td style="text-align: center;">2,0</td>
   </tr>
   <tr>
     <td>Громадські будівлі адміністративного призначення, офіси</td>
-    <td style="text=align: center;">50</td>
-    <td style="text=align: center;">4,0</td>
-    <td style="text=align: center;">7,0</td>
-    <td style="text=align: center;">6,0</td>
+    <td style="text-align: center;">50</td>
+    <td style="text-align: center;">4,0</td>
+    <td style="text-align: center;">7,0</td>
+    <td style="text-align: center;">6,0</td>
   </tr>
   <tr>
     <td>Будівлі навчальних закладів</td>
-    <td style="text=align: center;">50</td>
-    <td style="text=align: center;">7,0</td>
-    <td style="text=align: center;">7,0</td>
-    <td style="text=align: center;">6,0</td>
+    <td style="text-align: center;">50</td>
+    <td style="text-align: center;">7,0</td>
+    <td style="text-align: center;">7,0</td>
+    <td style="text-align: center;">6,0</td>
   </tr>
   <tr>
     <td>Будівлі дитячих навчальних закладів</td>
-    <td style="text=align: center;">50</td>
-    <td style="text=align: center;">7,0</td>
-    <td style="text=align: center;">7,0</td>
-    <td style="text=align: center;">3,0</td>
+    <td style="text-align: center;">50</td>
+    <td style="text-align: center;">7,0</td>
+    <td style="text-align: center;">7,0</td>
+    <td style="text-align: center;">3,0</td>
   </tr>
   <tr>
     <td>Будівлі закладів охорони здоровʼя</td>
-    <td style="text=align: center;">168</td>
-    <td style="text=align: center;">2,7</td>
-    <td style="text=align: center;">7,0</td>
-    <td style="text=align: center;">6,0</td>
+    <td style="text-align: center;">168</td>
+    <td style="text-align: center;">2,7</td>
+    <td style="text-align: center;">7,0</td>
+    <td style="text-align: center;">6,0</td>
   </tr>
   <tr>
     <td>Готелі</td>
-    <td style="text=align: center;">168</td>
-    <td style="text=align: center;">4,0</td>
-    <td style="text=align: center;">8,0</td>
-    <td style="text=align: center;">2,0</td>
+    <td style="text-align: center;">168</td>
+    <td style="text-align: center;">4,0</td>
+    <td style="text-align: center;">8,0</td>
+    <td style="text-align: center;">2,0</td>
   </tr>
   <tr>
     <td>Ресторани</td>
-    <td style="text=align: center;">84</td>
-    <td style="text=align: center;">5,0</td>
-    <td style="text=align: center;">8,0</td>
-    <td style="text=align: center;">4,0</td>
+    <td style="text-align: center;">84</td>
+    <td style="text-align: center;">5,0</td>
+    <td style="text-align: center;">8,0</td>
+    <td style="text-align: center;">4,0</td>
   </tr>
   <tr>
     <td>Спортивні заклади</td>
-    <td style="text=align: center;">84</td>
-    <td style="text=align: center;">5,0</td>
-    <td style="text=align: center;">8,0</td>
-    <td style="text=align: center;">1,0</td>
+    <td style="text-align: center;">84</td>
+    <td style="text-align: center;">5,0</td>
+    <td style="text-align: center;">8,0</td>
+    <td style="text-align: center;">1,0</td>
   </tr>
   <tr>
     <td>Будівлі закладів гуртової та роздрібної торгівлі</td>
-    <td style="text=align: center;">84</td>
-    <td style="text=align: center;">7,0</td>
-    <td style="text=align: center;">12,0</td>
-    <td style="text=align: center;">2,0</td>
+    <td style="text-align: center;">84</td>
+    <td style="text-align: center;">7,0</td>
+    <td style="text-align: center;">12,0</td>
+    <td style="text-align: center;">2,0</td>
   </tr>
   <tr>
     <td>Будівлі культурно-розважальних закладів та дозвільних установ</td>
-    <td style="text=align: center;">56</td>
-    <td style="text=align: center;">5,0</td>
-    <td style="text=align: center;">8,0</td>
-    <td style="text=align: center;">2,0</td>
+    <td style="text-align: center;">56</td>
+    <td style="text-align: center;">5,0</td>
+    <td style="text-align: center;">8,0</td>
+    <td style="text-align: center;">2,0</td>
   </tr>
   <tr>
     <td>Інші види будівель</td>
-    <td style="text=align: center;">60</td>
-    <td style="text=align: center;">3,0</td>
-    <td style="text=align: center;">7,0</td>
-    <td style="text=align: center;">2,0</td>
+    <td style="text-align: center;">60</td>
+    <td style="text-align: center;">3,0</td>
+    <td style="text-align: center;">7,0</td>
+    <td style="text-align: center;">2,0</td>
   </tr>
 </tbody>
 </table>
