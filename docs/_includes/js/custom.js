@@ -15,3 +15,21 @@ if (
 ) {
   jtd.setTheme("dark");
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const tables = document.querySelectorAll("table");
+  const addStickyHeaders = (tables) => {
+    tables.forEach((table) => {
+      if (table.offsetHeight >= 700) {
+        table.classList.add("js-table");
+      }
+    });
+  };
+  addStickyHeaders(tables);
+  setTimeout(() => {
+    const tableElements = document.querySelectorAll(".js-table");
+    tableElements.forEach((tableElement) => {
+      new window.StickyTable(tableElement);
+    });
+  }, 500);
+});
