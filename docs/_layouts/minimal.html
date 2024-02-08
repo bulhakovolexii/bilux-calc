@@ -40,12 +40,12 @@ layout: table_wrappers
       })
     };
     addStickyHeaders(tables);
-    document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(()=>{
       const tableElements = document.querySelectorAll('.js-table');
       tableElements.forEach(tableElement => {
         new window.StickyTable(tableElement);
       })
-    });
+    }, 500);
   </script>
 </body>
 </html>
