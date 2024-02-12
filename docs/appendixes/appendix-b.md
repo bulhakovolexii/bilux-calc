@@ -23,625 +23,625 @@ nav_order: "2"
       <th>Аргон</th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center;">1</td>
-      <td style="text-align: center;">4М₁-8-4М₁</td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">0,28</td>
+  <tbody style="text-align: center;">
+    <tr>
+      <td>1</td>
+      <td>4М₁-8-4М₁</td>
+      <td>100</td>
+      <td></td>
+      <td></td>
+      <td>0,28</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">1</td>
-      <td style="text-align: center;">4М₁-10-4М₁</td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">0,29</td>
+    <tr>
+      <td>1</td>
+      <td>4М₁-10-4М₁</td>
+      <td>100</td>
+      <td></td>
+      <td></td>
+      <td>0,29</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">1</td>
-      <td style="text-align: center;">4М₁-12-4М₁</td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">0,3</td>
+    <tr>
+      <td>1</td>
+      <td>4М₁-12-4М₁</td>
+      <td>100</td>
+      <td></td>
+      <td></td>
+      <td>0,3</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">1</td>
-      <td style="text-align: center;">4М₁-16-4М₁</td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">0,32</td>
+    <tr>
+      <td>1</td>
+      <td>4М₁-16-4М₁</td>
+      <td>100</td>
+      <td></td>
+      <td></td>
+      <td>0,32</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">1</td>
-      <td style="text-align: center;">4М₁-8-4М₁</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;">0,3</td>
+    <tr>
+      <td>1</td>
+      <td>4М₁-8-4М₁</td>
+      <td></td>
+      <td></td>
+      <td>100</td>
+      <td>0,3</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">1</td>
-      <td style="text-align: center;">4М₁-10-4М₁</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;">0,31</td>
+    <tr>
+      <td>1</td>
+      <td>4М₁-10-4М₁</td>
+      <td></td>
+      <td></td>
+      <td>100</td>
+      <td>0,31</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">1</td>
-      <td style="text-align: center;">4М₁-12-4М₁</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;">0,32</td>
+    <tr>
+      <td>1</td>
+      <td>4М₁-12-4М₁</td>
+      <td></td>
+      <td></td>
+      <td>100</td>
+      <td>0,32</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">1</td>
-      <td style="text-align: center;">4М₁-16-4М₁</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;">0,34</td>
+    <tr>
+      <td>1</td>
+      <td>4М₁-16-4М₁</td>
+      <td></td>
+      <td></td>
+      <td>100</td>
+      <td>0,34</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">1</td>
-      <td style="text-align: center;">4М₁-16-4М,</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">0,38</td>
+    <tr>
+      <td>1</td>
+      <td>4М₁-16-4М,</td>
+      <td></td>
+      <td>100</td>
+      <td></td>
+      <td>0,38</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">1</td>
-      <td style="text-align: center;">4М₁-8-4К</td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">0,47</td>
+    <tr>
+      <td>1</td>
+      <td>4М₁-8-4К</td>
+      <td>100</td>
+      <td></td>
+      <td></td>
+      <td>0,47</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">1</td>
-      <td style="text-align: center;">4М₁-10-4К</td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">0,49</td>
+    <tr>
+      <td>1</td>
+      <td>4М₁-10-4К</td>
+      <td>100</td>
+      <td></td>
+      <td></td>
+      <td>0,49</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">1</td>
-      <td style="text-align: center;">4М₁-12-4К</td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">0,51</td>
+    <tr>
+      <td>1</td>
+      <td>4М₁-12-4К</td>
+      <td>100</td>
+      <td></td>
+      <td></td>
+      <td>0,51</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">1</td>
-      <td style="text-align: center;">4М₁-16-4К</td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">0,53</td>
+    <tr>
+      <td>1</td>
+      <td>4М₁-16-4К</td>
+      <td>100</td>
+      <td></td>
+      <td></td>
+      <td>0,53</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">1</td>
-      <td style="text-align: center;">4М₁-8-4К</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;">0,53</td>
+    <tr>
+      <td>1</td>
+      <td>4М₁-8-4К</td>
+      <td></td>
+      <td></td>
+      <td>100</td>
+      <td>0,53</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">1</td>
-      <td style="text-align: center;">4М₁-10-4К</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;">0,55</td>
+    <tr>
+      <td>1</td>
+      <td>4М₁-10-4К</td>
+      <td></td>
+      <td></td>
+      <td>100</td>
+      <td>0,55</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">1</td>
-      <td style="text-align: center;">4М₁-12-4К</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;">0,57</td>
+    <tr>
+      <td>1</td>
+      <td>4М₁-12-4К</td>
+      <td></td>
+      <td></td>
+      <td>100</td>
+      <td>0,57</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">1</td>
-      <td style="text-align: center;">4М₁-16-4К</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;">0,59</td>
+    <tr>
+      <td>1</td>
+      <td>4М₁-16-4К</td>
+      <td></td>
+      <td></td>
+      <td>100</td>
+      <td>0,59</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">1</td>
-      <td style="text-align: center;">4М₁-16-4К</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">0,62</td>
+    <tr>
+      <td>1</td>
+      <td>4М₁-16-4К</td>
+      <td></td>
+      <td>100</td>
+      <td></td>
+      <td>0,62</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">1</td>
-      <td style="text-align: center;">4К-16-4К</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">0,67</td>
+    <tr>
+      <td>1</td>
+      <td>4К-16-4К</td>
+      <td></td>
+      <td>100</td>
+      <td></td>
+      <td>0,67</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">1</td>
-      <td style="text-align: center;">4М₁–8-4і</td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">0,51</td>
+    <tr>
+      <td>1</td>
+      <td>4М₁–8-4і</td>
+      <td>100</td>
+      <td></td>
+      <td></td>
+      <td>0,51</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">1</td>
-      <td style="text-align: center;">4М₁-10-4і</td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">0,53</td>
+    <tr>
+      <td>1</td>
+      <td>4М₁-10-4і</td>
+      <td>100</td>
+      <td></td>
+      <td></td>
+      <td>0,53</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">1</td>
-      <td style="text-align: center;">4М₁-12-4і</td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">0,56</td>
+    <tr>
+      <td>1</td>
+      <td>4М₁-12-4і</td>
+      <td>100</td>
+      <td></td>
+      <td></td>
+      <td>0,56</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">1</td>
-      <td style="text-align: center;">4М₁-16-4i</td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">0,59</td>
+    <tr>
+      <td>1</td>
+      <td>4М₁-16-4i</td>
+      <td>100</td>
+      <td></td>
+      <td></td>
+      <td>0,59</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">1</td>
-      <td style="text-align: center;">4М₁-8-4і</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;">0,57</td>
+    <tr>
+      <td>1</td>
+      <td>4М₁-8-4і</td>
+      <td></td>
+      <td></td>
+      <td>100</td>
+      <td>0,57</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">1</td>
-      <td style="text-align: center;">4М₁-10-4і</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;">0,6</td>
+    <tr>
+      <td>1</td>
+      <td>4М₁-10-4і</td>
+      <td></td>
+      <td></td>
+      <td>100</td>
+      <td>0,6</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">1</td>
-      <td style="text-align: center;">4М₁-12-4і</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;">0,63</td>
+    <tr>
+      <td>1</td>
+      <td>4М₁-12-4і</td>
+      <td></td>
+      <td></td>
+      <td>100</td>
+      <td>0,63</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">1</td>
-      <td style="text-align: center;">4М₁-16-4І</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;">0,66</td>
+    <tr>
+      <td>1</td>
+      <td>4М₁-16-4І</td>
+      <td></td>
+      <td></td>
+      <td>100</td>
+      <td>0,66</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">1</td>
-      <td style="text-align: center;">4М₁-16-4і</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">0,75</td>
+    <tr>
+      <td>1</td>
+      <td>4М₁-16-4і</td>
+      <td></td>
+      <td>100</td>
+      <td></td>
+      <td>0,75</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">1</td>
-      <td style="text-align: center;">4М₁-16-4І</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">75</td>
-      <td style="text-align: center;">25</td>
-      <td style="text-align: center;">0,72</td>
+    <tr>
+      <td>1</td>
+      <td>4М₁-16-4І</td>
+      <td></td>
+      <td>75</td>
+      <td>25</td>
+      <td>0,72</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">1</td>
-      <td style="text-align: center;">4М₁-16-4і</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">50</td>
-      <td style="text-align: center;">50</td>
-      <td style="text-align: center;">0,7</td>
+    <tr>
+      <td>1</td>
+      <td>4М₁-16-4і</td>
+      <td></td>
+      <td>50</td>
+      <td>50</td>
+      <td>0,7</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">1</td>
-      <td style="text-align: center;">4М₁-16-4і</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">25</td>
-      <td style="text-align: center;">75</td>
-      <td style="text-align: center;">0,67</td>
+    <tr>
+      <td>1</td>
+      <td>4М₁-16-4і</td>
+      <td></td>
+      <td>25</td>
+      <td>75</td>
+      <td>0,67</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-6-4М₁-6-4М₁</td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">0,42</td>
+    <tr>
+      <td>2</td>
+      <td>4М₁-6-4М₁-6-4М₁</td>
+      <td>100</td>
+      <td></td>
+      <td></td>
+      <td>0,42</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-8-4М₁-8-4М₁</td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">0,45</td>
+    <tr>
+      <td>2</td>
+      <td>4М₁-8-4М₁-8-4М₁</td>
+      <td>100</td>
+      <td></td>
+      <td></td>
+      <td>0,45</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-10-4М₁-10-4М₁</td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">0,47</td>
+    <tr>
+      <td>2</td>
+      <td>4М₁-10-4М₁-10-4М₁</td>
+      <td>100</td>
+      <td></td>
+      <td></td>
+      <td>0,47</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-12-4М₁-12-4М₁</td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">0,49</td>
+    <tr>
+      <td>2</td>
+      <td>4М₁-12-4М₁-12-4М₁</td>
+      <td>100</td>
+      <td></td>
+      <td></td>
+      <td>0,49</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-16-4М₁-16-4М₁</td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">0,52</td>
+    <tr>
+      <td>2</td>
+      <td>4М₁-16-4М₁-16-4М₁</td>
+      <td>100</td>
+      <td></td>
+      <td></td>
+      <td>0,52</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-6-4М₁-6-4М₁</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;">0,44</td>
+    <tr>
+      <td>2</td>
+      <td>4М₁-6-4М₁-6-4М₁</td>
+      <td></td>
+      <td></td>
+      <td>100</td>
+      <td>0,44</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-8-4М₁-8-4М₁</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;">0,47</td>
+    <tr>
+      <td>2</td>
+      <td>4М₁-8-4М₁-8-4М₁</td>
+      <td></td>
+      <td></td>
+      <td>100</td>
+      <td>0,47</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-8-4М₁-8-4М₁</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">0,51</td>
+    <tr>
+      <td>2</td>
+      <td>4М₁-8-4М₁-8-4М₁</td>
+      <td></td>
+      <td>100</td>
+      <td></td>
+      <td>0,51</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-10-4М₁-10-4М₁</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;">0,49</td>
+    <tr>
+      <td>2</td>
+      <td>4М₁-10-4М₁-10-4М₁</td>
+      <td></td>
+      <td></td>
+      <td>100</td>
+      <td>0,49</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-12-4М₁-12-4М₁</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;">0,52</td>
+    <tr>
+      <td>2</td>
+      <td>4М₁-12-4М₁-12-4М₁</td>
+      <td></td>
+      <td></td>
+      <td>100</td>
+      <td>0,52</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-16-4М₁-16-4М₁</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;">0,55</td>
+    <tr>
+      <td>2</td>
+      <td>4М₁-16-4М₁-16-4М₁</td>
+      <td></td>
+      <td></td>
+      <td>100</td>
+      <td>0,55</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-6-4М₁-6-4К</td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">0,53</td>
+    <tr>
+      <td>2</td>
+      <td>4М₁-6-4М₁-6-4К</td>
+      <td>100</td>
+      <td></td>
+      <td></td>
+      <td>0,53</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-8-4М₁-8-4К</td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">0,55</td>
+    <tr>
+      <td>2</td>
+      <td>4М₁-8-4М₁-8-4К</td>
+      <td>100</td>
+      <td></td>
+      <td></td>
+      <td>0,55</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-10-4М₁-10-4К</td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">0,59</td>
+    <tr>
+      <td>2</td>
+      <td>4М₁-10-4М₁-10-4К</td>
+      <td>100</td>
+      <td></td>
+      <td></td>
+      <td>0,59</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-12-4М₁-12-4К</td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">0,61</td>
+    <tr>
+      <td>2</td>
+      <td>4М₁-12-4М₁-12-4К</td>
+      <td>100</td>
+      <td></td>
+      <td></td>
+      <td>0,61</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-16-4М₁-16-4К</td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">0,65</td>
+    <tr>
+      <td>2</td>
+      <td>4М₁-16-4М₁-16-4К</td>
+      <td>100</td>
+      <td></td>
+      <td></td>
+      <td>0,65</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-6-4М₁-6-4К</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;">0,6</td>
+    <tr>
+      <td>2</td>
+      <td>4М₁-6-4М₁-6-4К</td>
+      <td></td>
+      <td></td>
+      <td>100</td>
+      <td>0,6</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-8-4М₁-8-4К</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;">0,62</td>
+    <tr>
+      <td>2</td>
+      <td>4М₁-8-4М₁-8-4К</td>
+      <td></td>
+      <td></td>
+      <td>100</td>
+      <td>0,62</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4Μ1-10-4Μ1-10-4Κ</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;">0,65</td>
+    <tr>
+      <td>2</td>
+      <td>4Μ1-10-4Μ1-10-4Κ</td>
+      <td></td>
+      <td></td>
+      <td>100</td>
+      <td>0,65</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-12-4М₁-12-4К</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;">0,68</td>
+    <tr>
+      <td>2</td>
+      <td>4М₁-12-4М₁-12-4К</td>
+      <td></td>
+      <td></td>
+      <td>100</td>
+      <td>0,68</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-16-4М₁-16-4К</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;">0,72</td>
+    <tr>
+      <td>2</td>
+      <td>4М₁-16-4М₁-16-4К</td>
+      <td></td>
+      <td></td>
+      <td>100</td>
+      <td>0,72</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4Μ1-10-4Μ1-10-4Κ</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">0,85</td>
+    <tr>
+      <td>2</td>
+      <td>4Μ1-10-4Μ1-10-4Κ</td>
+      <td></td>
+      <td>100</td>
+      <td></td>
+      <td>0,85</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-10-4М₁-10-4К</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">75</td>
-      <td style="text-align: center;">25</td>
-      <td style="text-align: center;">0,82</td>
+    <tr>
+      <td>2</td>
+      <td>4М₁-10-4М₁-10-4К</td>
+      <td></td>
+      <td>75</td>
+      <td>25</td>
+      <td>0,82</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-10-4М₁-10-4К</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">50</td>
-      <td style="text-align: center;">50</td>
-      <td style="text-align: center;">0,8</td>
+    <tr>
+      <td>2</td>
+      <td>4М₁-10-4М₁-10-4К</td>
+      <td></td>
+      <td>50</td>
+      <td>50</td>
+      <td>0,8</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-10-4М₁-10-4К</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">25</td>
-      <td style="text-align: center;">75</td>
-      <td style="text-align: center;">0,78</td>
+    <tr>
+      <td>2</td>
+      <td>4М₁-10-4М₁-10-4К</td>
+      <td></td>
+      <td>25</td>
+      <td>75</td>
+      <td>0,78</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4К-10-4М₁-10-4К</td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">0,73</td>
+    <tr>
+      <td>2</td>
+      <td>4К-10-4М₁-10-4К</td>
+      <td>100</td>
+      <td></td>
+      <td></td>
+      <td>0,73</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4Мг10-4К-10-4К</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">1,28</td>
+    <tr>
+      <td>2</td>
+      <td>4Мг10-4К-10-4К</td>
+      <td></td>
+      <td>100</td>
+      <td></td>
+      <td>1,28</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4К-10-4М₁-10-4К</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">1,32</td>
+    <tr>
+      <td>2</td>
+      <td>4К-10-4М₁-10-4К</td>
+      <td></td>
+      <td>100</td>
+      <td></td>
+      <td>1,32</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-8-4М₁-8-4і</td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">0,61</td>
+    <tr>
+      <td>2</td>
+      <td>4М₁-8-4М₁-8-4і</td>
+      <td>100</td>
+      <td></td>
+      <td></td>
+      <td>0,61</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-10-4М₁-10-4і</td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">0,64</td>
+    <tr>
+      <td>2</td>
+      <td>4М₁-10-4М₁-10-4і</td>
+      <td>100</td>
+      <td></td>
+      <td></td>
+      <td>0,64</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-12-4М₁-12-4i</td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">0,68</td>
+    <tr>
+      <td>2</td>
+      <td>4М₁-12-4М₁-12-4i</td>
+      <td>100</td>
+      <td></td>
+      <td></td>
+      <td>0,68</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-16-4М₁-16-4i</td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">0,72</td>
+    <tr>
+      <td>2</td>
+      <td>4М₁-16-4М₁-16-4i</td>
+      <td>100</td>
+      <td></td>
+      <td></td>
+      <td>0,72</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-6-4М₁-6-4і</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;">0,64</td>
+    <tr>
+      <td>2</td>
+      <td>4М₁-6-4М₁-6-4і</td>
+      <td></td>
+      <td></td>
+      <td>100</td>
+      <td>0,64</td>
     </tr>
-    <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-8-4М₁-8-4і</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;">0,67</td>
+    <tr>
+      <td>2</td>
+      <td>4М₁-8-4М₁-8-4і</td>
+      <td></td>
+      <td></td>
+      <td>100</td>
+      <td>0,67</td>
     </tr>
     <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-10-4М₁-10-4і</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;">0,71</td>
+      <td>2</td>
+      <td>4М₁-10-4М₁-10-4і</td>
+      <td></td>
+      <td></td>
+      <td>100</td>
+      <td>0,71</td>
     </tr>
     <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-12-4М₁-12-4i</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;">0,75</td>
+      <td>2</td>
+      <td>4М₁-12-4М₁-12-4i</td>
+      <td></td>
+      <td></td>
+      <td>100</td>
+      <td>0,75</td>
     </tr>
     <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-16-4М₁-16-4i</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;">0,8</td>
+      <td>2</td>
+      <td>4М₁-16-4М₁-16-4i</td>
+      <td></td>
+      <td></td>
+      <td>100</td>
+      <td>0,8</td>
     </tr>
     <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-10-4М₁-10-4i</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">0,94</td>
+      <td>2</td>
+      <td>4М₁-10-4М₁-10-4i</td>
+      <td></td>
+      <td>100</td>
+      <td></td>
+      <td>0,94</td>
     </tr>
     <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-10-4М₁-10-4і</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">75</td>
-      <td style="text-align: center;">25</td>
-      <td style="text-align: center;">0,9</td>
+      <td>2</td>
+      <td>4М₁-10-4М₁-10-4і</td>
+      <td></td>
+      <td>75</td>
+      <td>25</td>
+      <td>0,9</td>
     </tr>
     <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-10-4М₁-10-4і</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">50</td>
-      <td style="text-align: center;">50</td>
-      <td style="text-align: center;">0,85</td>
+      <td>2</td>
+      <td>4М₁-10-4М₁-10-4і</td>
+      <td></td>
+      <td>50</td>
+      <td>50</td>
+      <td>0,85</td>
     </tr>
     <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4М₁-10-4М₁-10-4і</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">25</td>
-      <td style="text-align: center;">75</td>
-      <td style="text-align: center;">0,78</td>
+      <td>2</td>
+      <td>4М₁-10-4М₁-10-4і</td>
+      <td></td>
+      <td>25</td>
+      <td>75</td>
+      <td>0,78</td>
     </tr>
     <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4і-10-4М₁-10-4і</td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">0,93</td>
+      <td>2</td>
+      <td>4і-10-4М₁-10-4і</td>
+      <td>100</td>
+      <td></td>
+      <td></td>
+      <td>0,93</td>
     </tr>
     <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4і-10-4М₁-10-4і</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">100</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">1,35</td>
+      <td>2</td>
+      <td>4і-10-4М₁-10-4і</td>
+      <td></td>
+      <td>100</td>
+      <td></td>
+      <td>1,35</td>
     </tr>
     <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4і-10-4М₁-10-4i</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">75</td>
-      <td style="text-align: center;">25</td>
-      <td style="text-align: center;">1,28</td>
+      <td>2</td>
+      <td>4і-10-4М₁-10-4i</td>
+      <td></td>
+      <td>75</td>
+      <td>25</td>
+      <td>1,28</td>
     </tr>
     <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4І-10-4М₁-10-4і</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">50</td>
-      <td style="text-align: center;">50</td>
-      <td style="text-align: center;">1,18</td>
+      <td>2</td>
+      <td>4І-10-4М₁-10-4і</td>
+      <td></td>
+      <td>50</td>
+      <td>50</td>
+      <td>1,18</td>
     </tr>
     <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: center;">4і-10-4М₁-10-4і</td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;">25</td>
-      <td style="text-align: center;">75</td>
-      <td style="text-align: center;">1,14</td>
+      <td>2</td>
+      <td>4і-10-4М₁-10-4і</td>
+      <td></td>
+      <td>25</td>
+      <td>75</td>
+      <td>1,14</td>
     </tr>
     <tr>
-      <td colspan="6">
+      <td colspan="6" style="text-align: start;">
         <b><sup>*</sup>Примітка.</b> Порядок скління — від
         зовніьньоїповерхні.<br />Позначення скла: 4М₁ — листове стандартне, К —
         енергозберігаюче зтвердим покриттям<br />i — енергозберігаюче з мʼяким
