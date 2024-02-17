@@ -145,11 +145,8 @@ $$U_{op}=\frac{1}{R_{\Sigma}}\tag{6},$$
 
 
 $$
-\begin{aligned}
-&R_{\Sigma}=\frac{1}{h_{si}}+\displaystyle\sum_{i=1}^IR_i+\frac{1}{h_{se}}=\\\
-&=\frac{1}{h_{si}}+\displaystyle\sum_{i=1}^I\frac{d_i}{\lambda_{ip}}+\frac{1}{h_{se}},
-\end{aligned}
-\tag{7}\label{eq7}
+R_{\Sigma}=\frac{1}{h_{si}}+\displaystyle\sum_{i=1}^IR_i+\frac{1}{h_{se}}=\frac{1}{h_{si}}+\displaystyle\sum_{i=1}^I\frac{d_i}{\lambda_{ip}}+\frac{1}{h_{se}},\tag{7}
+\label{eq7}
 $$
 
 де $h_{si}$, $h_{se}$ — коефіцієнти теплообміну внутрішньої і зовнішньої поверхонь огороджувальної конструкції, Вт/(м²·К), які приймають згідно з [таблицею 3.2.2](transmission.md#322-розрахункові-значення-коефіцієнтів-теплопередачі-внутрішньої-h_si-та-зовнішньої-h_se-поверхонь-огороджувальних-конструкцій);  
