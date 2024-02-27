@@ -29,7 +29,11 @@ export default class Building {
 
   // Енергопотреба
   Q_nd(month) {
-    return this.Q_ht(month) - this.eta_gn(month) * this.Q_gn(month);
+    const Q_nd = this.Q_ht(month) - this.eta_gn(month) * this.Q_gn(month);
+    if (Q_nd < 0) {
+      return 0;
+    }
+    return Q_nd;
   }
 
   // Тепловтрати
