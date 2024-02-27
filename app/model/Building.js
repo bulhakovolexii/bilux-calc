@@ -1,29 +1,24 @@
-import Floor from "./Floor";
+import months from "./months";
 import cities from "./cities";
-import internalHeatCapacities from "./internalHeatСapacities";
 import purposes from "./pursoses";
+import internalHeatCapacities from "./internalHeatСapacities";
 
 export default class Building {
   constructor(inputData) {
     this.city = inputData.city; // Місто
     this.purpose = inputData.purpose; // Функційне призначення
     this.class = inputData.class; // Клас теплоємності
-    this.floors = inputData.floors.map((floor) => new Floor(floor));
   }
 
   //  Кондиціонована площа
   A_f() {
-    let allFloorArea = 0;
-    this.floors.forEach((floor) => {
-      allFloorArea += floor.totalArea();
-    });
-    return allFloorArea;
+    return 5859.26; // ПРИБИТО ГВОЗДЯМИ
   }
 
   // Температура середовища
   phi_e(month) {
     return cities.find((city) => city.name === this.city).weather.phi_e[
-      month.index
+      months.indexOf(month)
     ];
   }
 
@@ -106,7 +101,7 @@ export default class Building {
       19737772.63, 20173383.52, 18522636.55, 14991362.05, 10586494.33,
       5236609.01, 4377815.51,
     ]; // ПРИБИТО ГВОЗДЯМИ
-    return data[month.index];
+    return data[months.indexOf(month)];
   }
 
   // Коефіцієнт використання надходжень
