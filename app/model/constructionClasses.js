@@ -1,4 +1,4 @@
-const internalHeatCapacities = [
+const constructionClasses = [
   {
     class: "Середній",
     C: 50,
@@ -7,4 +7,4 @@ const internalHeatCapacities = [
   },
 ];
 
-export default internalHeatCapacities;
+export default constructionClasses;

@@ -1,7 +1,7 @@
 import months from "./months";
 import cities from "./cities";
 import purposes from "./pursoses";
-import internalHeatCapacities from "./internalHeatСapacities";
+import constructionClasses from "./constructionClasses";
 
 export default class Building {
   constructor(inputData) {
@@ -125,8 +125,8 @@ export default class Building {
   // Внутрішня теплоємність
   C_m() {
     return (
-      internalHeatCapacities.find((capacite) => capacite.class === this.class)
-        .C * this.A_f()
+      constructionClasses.find((capacite) => capacite.class === this.class).C *
+      this.A_f()
     );
   }
 
