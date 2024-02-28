@@ -1,3 +1,5 @@
+"use client";
+
 import Building from "../model/Building";
 import months from "../model/months";
 import styles from "../page.module.css";
@@ -11,13 +13,13 @@ export default function Test() {
     length: 16.67,
     numberOfFloors: 9,
     heightOfFLoor: 3,
-    constructions: [
-      {
-        type: "floor",
-      },
-      {
-        type: "ceil",
-      },
+    floor: {},
+    ceil: {},
+    facades: [
+      { direction: "north" },
+      { direction: "east" },
+      { direction: "south" },
+      { direction: "west" },
     ],
   };
   const building = new Building(inputData);

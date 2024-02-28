@@ -13,8 +13,8 @@ export default class Building {
     this.length = inputData.length; // Довжина будівлі
     this.numberOfFloors = inputData.numberOfFloors; // Кількість поверхів
     this.heightOfFLoor = inputData.heightOfFLoor; // Висота поверху
-    this.floor = new Floor(inputData.floor);
-    this.ceil = new Ceil(inputData.ceil);
+    this.floor = new Floor(inputData.floor); // Підлога
+    this.ceil = new Ceil(inputData.ceil); // Стеля
     this.facades = inputData.facades.map((facade) => {
       if (facade.direction === "north" || facade.direction === "south") {
         return new Facade({
@@ -28,8 +28,10 @@ export default class Building {
         });
       }
     });
+    Фасади;
   }
 
+  // Загальна висота
   heigth() {
     return this.heightOfFLoor * this.numberOfFloors;
   }
