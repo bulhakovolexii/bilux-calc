@@ -7,7 +7,8 @@ export default class Building {
   constructor(inputData) {
     this.city = inputData.city; // Місто
     this.purpose = inputData.purpose; // Функційне призначення
-    this.class = inputData.class; // Клас теплоємності
+    this.constructionClass = inputData.constructionClass; // Клас теплоємності
+    this.constructions = inputData.constructions;
   }
 
   //  Кондиціонована площа
@@ -129,8 +130,10 @@ export default class Building {
   // Внутрішня теплоємність
   C_m() {
     return (
-      constructionClasses.find((capacite) => capacite.class === this.class).C *
-      this.A_f()
+      constructionClasses.find(
+        (constructionClass) =>
+          constructionClass.class === this.constructionClass
+      ).C * this.A_f()
     );
   }
 

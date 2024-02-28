@@ -6,7 +6,19 @@ export default function Test() {
   const inputData = {
     city: "Kharkiv",
     purpose: "Багатоквартирні будинки",
-    class: "Середній",
+    constructionClass: "Середній",
+    width: 44.51,
+    length: 16.67,
+    numberOfFloors: 9,
+    heightOfFLoor: 3,
+    constructions: [
+      {
+        type: "floor",
+      },
+      {
+        type: "ceil",
+      },
+    ],
   };
   const building = new Building(inputData);
   console.log(building);
