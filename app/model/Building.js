@@ -1,8 +1,8 @@
 import months from "./months";
 import cities from "./cities";
-import purposes from "./pursoses";
+import purposes from "./purposes";
 import constructionClasses from "./constructionClasses";
-import { Ceil, Facade, Floor } from "./Construction";
+import { Ceil, Facade, Floor } from "./Constructions";
 
 export default class Building {
   constructor(inputData) {
