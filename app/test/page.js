@@ -1,28 +1,12 @@
 "use client";
 
 import Building from "../model/Building";
+import mockData from "../model/mockData";
 import months from "../model/months";
 import styles from "../page.module.css";
 
 export default function Test() {
-  const inputData = {
-    city: "Kharkiv",
-    purpose: "Багатоквартирні будинки",
-    constructionClass: "Середній",
-    width: 44.51,
-    length: 16.67,
-    numberOfFloors: 9,
-    heightOfFLoor: 3,
-    floor: {},
-    ceil: {},
-    facades: [
-      { direction: "north" },
-      { direction: "east" },
-      { direction: "south" },
-      { direction: "west" },
-    ],
-  };
-  const building = new Building(inputData);
+  const building = new Building(mockData);
   console.log(building);
   return (
     <main className={styles.main}>

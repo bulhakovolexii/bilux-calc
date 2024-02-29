@@ -2,7 +2,7 @@ import months from "./months";
 import cities from "./cities";
 import purposes from "./purposes";
 import constructionClasses from "./constructionClasses";
-import { Ceil, Facade, Floor } from "./Constructions";
+import { Ceil, Wall, Floor } from "./Constructions";
 
 export default class Building {
   constructor(inputData) {
@@ -13,30 +13,36 @@ export default class Building {
     this.length = inputData.length; // Довжина будівлі
     this.numberOfFloors = inputData.numberOfFloors; // Кількість поверхів
     this.heightOfFLoor = inputData.heightOfFLoor; // Висота поверху
-    this.floor = new Floor(inputData.floor);
-    this.ceil = new Ceil(inputData.ceil);
+    this.floor = new Floor({ ...inputData.floor, area: this.floorArea() });
+    this.ceil = new Ceil({ ...inputData.ceil, area: this.floorArea() });
     this.facades = inputData.facades.map((facade) => {
-      if (facade.direction === "north" || facade.direction === "south") {
-        return new Facade({
+      if (facade.direction === "Пн" || facade.direction === "Пд") {
+        return new Wall({
           ...facade,
-          area: this.width * this.heigth(),
+          area: this.width * this.totalHeight(),
         });
       } else {
-        return new Facade({
+        return new Wall({
           ...facade,
-          area: this.length * this.heigth(),
+          area: this.length * this.totalHeight(),
         });
       }
     });
   }
 
-  heigth() {
+  // Загальна висота
+  totalHeight() {
     return this.heightOfFLoor * this.numberOfFloors;
+  }
+
+  // Площа поверху
+  floorArea() {
+    return this.width * this.length;
   }
 
   //  Кондиціонована площа
   A_f() {
-    return this.width * this.length * this.numberOfFloors;
+    return this.floorArea() * this.numberOfFloors;
   }
 
   // Температура середовища
@@ -72,8 +78,9 @@ export default class Building {
     );
   }
 
+  // Узагальнений коефіцієнт теплопередачі трансмісією
   H_tr_adj() {
-    return 2851.80144357191; // ПРИБИТО ГВОЗДЯМИ
+    return this.ceil.H_X() + this.floor.H_X(); // ПРИБИТО ГВОЗДЯМИ
   }
 
   // Тепловтрати вентиляцією
