@@ -33,7 +33,20 @@ const mockData = {
   facades: [
     {
       direction: "Пн",
-      layers: [],
+      includes: [
+        {
+          layers: [],
+        },
+      ],
+      layers: [
+        {
+          thickness: 0.01,
+          type: "Теплоізоляційні матеріали",
+          subtype: "Волокнисті матеріали",
+          name: "Вироби теплоізоляційні з мінеральної вати на основі базальтовоговолокна",
+          density: 30,
+        },
+      ],
     },
     {
       direction: "Сх",

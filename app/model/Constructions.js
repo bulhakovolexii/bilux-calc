@@ -1,6 +1,6 @@
-import materials from "./metials";
+import Layer from "./Layer";
 
-export class Construction {
+class Construction {
   constructor(inputData) {
     this.area = inputData.area;
     this.layers = inputData.layers.map((layer) => new Layer(layer));
@@ -10,30 +10,6 @@ export class Construction {
   }
   U_i() {
     return this.U_op();
-  }
-}
-
-class Layer {
-  constructor(inputData) {
-    this.thickness = inputData.thickness;
-    this.type = inputData.type;
-    this.subtype = inputData.subtype;
-    this.name = inputData.name;
-    this.density = inputData.density;
-    this.conductivity = materials
-      .find((material) => {
-        return (
-          material.type === this.type &&
-          material.subtype === this.subtype &&
-          material.name === this.name
-        );
-      })
-      .variants.find(
-        (variant) => variant.density === this.density
-      ).conductivity;
-  }
-  R() {
-    return this.thickness / this.conductivity;
   }
 }
 
@@ -57,13 +33,17 @@ export class Floor extends Construction {
     }
   }
 
+  b_U() {
+    return 0.3;
+  }
+
   H_X() {
     if (this.type === "Підлога на ґругті") {
       // розрахунок підлоги на ґрунті
     } else if (this.type === "Опалюваний підвал (цокольний поверх)") {
       // розрахунок цоколя
     } else {
-      return 0.3 * this.area * this.U_i();
+      return this.b_U() * this.area * this.U_i();
     }
   }
 }
@@ -108,6 +88,19 @@ export class Ceil extends Construction {
 }
 
 export class Wall extends Construction {
+  constructor(inputData) {
+    super(inputData);
+    this.direction = inputData.direction;
+    this.includes =
+      inputData.includes?.map(
+        (include) => new Wall({ ...include, direction: this.direction })
+      ) || [];
+    this.windows =
+      inputData.windows?.map(
+        (window) => new Window({ ...window, direction: this.direction })
+      ) || [];
+    this.doors = inputData.doors?.map((door) => new Door(door)) || [];
+  }
   static h_si = 8.7;
   static h_se = 23;
 
@@ -129,3 +122,7 @@ export class Wall extends Construction {
     }
   }
 }
+
+class Window {}
+
+class Door {}
