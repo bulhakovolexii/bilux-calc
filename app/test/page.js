@@ -7,7 +7,7 @@ import styles from "../page.module.css";
 
 export default function Test() {
   const building = new Building(mockData);
-  console.log(building);
+  console.log(building.floor.H_X());
   return (
     <main className={styles.main}>
       {months.map((month) => (

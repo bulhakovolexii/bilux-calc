@@ -1,4 +1,4 @@
-import materials from "./metials";
+import materials from "./metrials";
 
 export default class Layer {
   constructor(inputData) {
