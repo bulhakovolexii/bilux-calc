@@ -1,7 +1,7 @@
-import months from "./months";
-import cities from "./cities";
-import purposes from "./purposes";
-import constructionClasses from "./constructionClasses";
+import months from "./reference-data/months";
+import cities from "./reference-data/cities";
+import purposes from "./reference-data/purposes";
+import constructionClasses from "./reference-data/constructionClasses";
 import { Ceil, Wall, Floor } from "./Constructions";
 
 export default class Building {

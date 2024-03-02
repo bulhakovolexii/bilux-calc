@@ -2,7 +2,7 @@
 
 import Building from "../model/Building";
 import mockData from "../model/mockData";
-import months from "../model/months";
+import months from "../model/reference-data/months";
 import styles from "../page.module.css";
 
 export default function Test() {
