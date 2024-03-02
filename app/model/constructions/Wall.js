@@ -1,5 +1,7 @@
-import Construction from "./Constructions";
 import enviromentTypes from "../reference-data/enviroment-types";
+import Construction from "./Construction";
+import Window from "./Window";
+import Door from "./Door";
 
 export default class Wall extends Construction {
   constructor(inputData) {

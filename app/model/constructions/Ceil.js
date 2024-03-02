@@ -1,4 +1,4 @@
-import Construction from "./Constructions";
+import Construction from "./Construction";
 
 export default class Ceil extends Construction {
   constructor(inputData) {

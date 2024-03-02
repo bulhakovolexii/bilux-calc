@@ -1,4 +1,4 @@
-import Construction from "./Constructions";
+import Construction from "./Construction";
 
 export default class Floor extends Construction {
   constructor(inputData) {
