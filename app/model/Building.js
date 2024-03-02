@@ -2,7 +2,9 @@ import months from "./reference-data/months";
 import cities from "./reference-data/cities";
 import purposes from "./reference-data/purposes";
 import constructionClasses from "./reference-data/constructionClasses";
-import { Ceil, Wall, Floor } from "./Constructions";
+import Floor from "./constructions/Floor";
+import Ceil from "./constructions/Ceil";
+import Wall from "./constructions/Wall";
 
 export default class Building {
   constructor(inputData) {
