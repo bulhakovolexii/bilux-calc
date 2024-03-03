@@ -1,12 +1,13 @@
 import Construction from "./Construction";
 
 export default class Ceil extends Construction {
+  static h_si = 10;
+
   constructor(inputData) {
     super(inputData);
     this.type = inputData.type;
+    this.area = this.totalArea();
   }
-
-  static h_si = 10;
 
   h_se() {
     if (this.type === "Cуміщене покриття") {
@@ -34,6 +35,7 @@ export default class Ceil extends Construction {
         return 0.9;
     }
   }
+
   H_X() {
     return this.b_U() * this.area * this.U_i();
   }

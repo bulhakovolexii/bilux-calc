@@ -15,18 +15,28 @@ export default class Building {
     this.length = inputData.length; // Довжина будівлі
     this.numberOfFloors = inputData.numberOfFloors; // Кількість поверхів
     this.heightOfFLoor = inputData.heightOfFLoor; // Висота поверху
-    this.floor = new Floor({ ...inputData.floor, area: this.floorArea() });
-    this.ceil = new Ceil({ ...inputData.ceil, area: this.floorArea() });
+    this.floor = new Floor({
+      ...inputData.floor,
+      width: this.width,
+      height: this.length,
+    });
+    this.ceil = new Ceil({
+      ...inputData.ceil,
+      width: this.width,
+      height: this.length,
+    });
     this.facades = inputData.facades.map((facade) => {
       if (facade.direction === "Пн" || facade.direction === "Пд") {
         return new Wall({
           ...facade,
-          area: this.width * this.totalHeight(),
+          width: this.width,
+          height: this.totalHeight(),
         });
       } else {
         return new Wall({
           ...facade,
-          area: this.length * this.totalHeight(),
+          width: this.length,
+          height: this.totalHeight(),
         });
       }
     });
@@ -37,14 +47,9 @@ export default class Building {
     return this.heightOfFLoor * this.numberOfFloors;
   }
 
-  // Площа поверху
-  floorArea() {
-    return this.width * this.length;
-  }
-
   //  Кондиціонована площа
   A_f() {
-    return this.floorArea() * this.numberOfFloors;
+    return this.width * this.length * this.numberOfFloors;
   }
 
   // Температура середовища

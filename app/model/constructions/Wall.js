@@ -4,6 +4,9 @@ import Window from "./Window";
 import Door from "./Door";
 
 export default class Wall extends Construction {
+  static h_si = 8.7;
+  static h_se = 23;
+
   constructor(inputData) {
     super(inputData);
     this.direction = inputData.direction;
@@ -18,8 +21,24 @@ export default class Wall extends Construction {
       ) || [];
     this.doors = inputData.doors?.map((door) => new Door(door)) || [];
   }
-  static h_si = 8.7;
-  static h_se = 23;
+
+  area() {
+    const includesArea = this.includes.reduce(
+      (sum, obj) => sum + obj.totalArea(),
+      0
+    );
+    const windowsArea = this.windows.reduce(
+      (sum, obj) => sum + obj.totalArea(),
+      0
+    );
+    const doorsArea = this.doors.reduce((sum, obj) => sum + obj.totalArea(), 0);
+    const totalIndludesArea = includesArea + windowsArea + doorsArea;
+    if (this.totalArea() >= totalIndludesArea) {
+      return this.totalArea() - totalIndludesArea;
+    } else {
+      throw new Error("Площа включень перевищує площу стіни");
+    }
+  }
 
   R_sum() {
     let R_sum = 0;

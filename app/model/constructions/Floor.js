@@ -1,12 +1,14 @@
 import Construction from "./Construction";
 
 export default class Floor extends Construction {
+  static h_si = 5.9;
+  static h_se = 17;
+
   constructor(inputData) {
     super(inputData);
     this.type = inputData.type;
+    this.area = this.totalArea();
   }
-  static h_si = 5.9;
-  static h_se = 17;
 
   R_sum() {
     let R_sum = 0;

@@ -1,3 +1,5 @@
+"use client";
+
 import Building from "../model/Building";
 import mockData from "../model/mockData";
 import months from "../model/reference-data/months";
