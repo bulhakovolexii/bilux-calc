@@ -87,7 +87,11 @@ export default class Building {
 
   // Узагальнений коефіцієнт теплопередачі трансмісією
   H_tr_adj() {
-    return this.ceil.H_X() + this.floor.H_X(); // ПРИБИТО ГВОЗДЯМИ
+    return (
+      this.ceil.H_X() +
+      this.floor.H_X() +
+      this.facades.reduce((sum, obj) => sum + obj.H_X(), 0)
+    );
   }
 
   // Тепловтрати вентиляцією

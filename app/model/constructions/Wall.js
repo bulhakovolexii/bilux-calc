@@ -13,13 +13,26 @@ export default class Wall extends Construction {
     this.enviroment = inputData.enviroment;
     this.includes =
       inputData.includes?.map(
-        (include) => new Wall({ ...include, direction: this.direction })
+        (include) =>
+          new Wall({
+            ...include,
+            direction: this.direction,
+            enviroment: this.enviroment,
+          })
       ) || [];
     this.windows =
       inputData.windows?.map(
-        (window) => new Window({ ...window, direction: this.direction })
+        (window) =>
+          new Window({
+            ...window,
+            direction: this.direction,
+            enviroment: this.enviroment,
+          })
       ) || [];
-    this.doors = inputData.doors?.map((door) => new Door(door)) || [];
+    this.doors =
+      inputData.doors?.map(
+        (door) => new Door({ ...door, enviroment: this.enviroment })
+      ) || [];
   }
 
   area() {
@@ -64,5 +77,14 @@ export default class Wall extends Construction {
           (enviroment) => enviroment.type === this.enviroment
         ).b_U
       : 1;
+  }
+
+  H_X() {
+    const includesH_X =
+      this.includes.reduce((sum, obj) => sum + obj.H_X(), 0) +
+      this.windows.reduce((sum, obj) => sum + obj.H_X(), 0) +
+      this.doors.reduce((sum, obj) => sum + obj.H_X(), 0);
+
+    return this.b_U() * this.area() * this.U_i() + includesH_X;
   }
 }

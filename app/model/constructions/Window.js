@@ -2,6 +2,8 @@ import windows from "../reference-data/windows";
 
 export default class Window {
   constructor(inputData) {
+    this.enviroment = inputData.enviroment;
+    this.direction = inputData.direction;
     this.width = inputData.width;
     this.height = inputData.height;
     this.quantity = inputData.quantity;
@@ -35,5 +37,17 @@ export default class Window {
 
   U_i() {
     return this.U_op();
+  }
+
+  b_U() {
+    return this.enviroment
+      ? enviromentTypes.find(
+          (enviroment) => enviroment.type === this.enviroment
+        ).b_U
+      : 1;
+  }
+
+  H_X() {
+    return this.b_U() * this.totalArea() * this.U_i();
   }
 }
