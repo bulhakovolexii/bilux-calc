@@ -5,7 +5,6 @@ import Door from "./Door";
 
 export default class Wall extends Construction {
   static h_si = 8.7;
-  static h_se = 23;
 
   constructor(inputData) {
     super(inputData);
@@ -17,7 +16,6 @@ export default class Wall extends Construction {
           new Wall({
             ...include,
             direction: this.direction,
-            enviroment: this.enviroment,
           })
       ) || [];
     this.windows =
@@ -53,12 +51,16 @@ export default class Wall extends Construction {
     }
   }
 
+  h_se() {
+    return this.enviroment !== undefined ? 12 : 23;
+  }
+
   R_sum() {
     let R_sum = 0;
     this.layers.forEach((layer) => {
       R_sum += layer.R();
     });
-    return 1 / Wall.h_si + R_sum + 1 / Wall.h_se;
+    return 1 / Wall.h_si + R_sum + 1 / this.h_se();
   }
 
   U_i() {

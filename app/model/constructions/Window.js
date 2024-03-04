@@ -1,3 +1,4 @@
+import enviromentTypes from "../reference-data/enviroment-types";
 import windows from "../reference-data/windows";
 
 export default class Window {
