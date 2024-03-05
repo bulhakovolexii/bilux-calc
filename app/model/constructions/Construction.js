@@ -5,6 +5,7 @@ export default class Construction {
     this.width = inputData.width;
     this.height = inputData.height;
     this.layers = inputData.layers.map((layer) => new Layer(layer));
+    this.buildingHeight = inputData.buildingHeight;
   }
 
   totalArea() {

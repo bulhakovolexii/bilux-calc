@@ -11,6 +11,7 @@ export default class Building {
     this.city = inputData.city; // Місто
     this.purpose = inputData.purpose; // Функційне призначення
     this.constructionClass = inputData.constructionClass; // Клас теплоємності
+    this.typeAndCondition = inputData.typeAndCondition;
     this.width = inputData.width; // Ширина будівлі
     this.length = inputData.length; // Довжина будівлі
     this.numberOfFloors = inputData.numberOfFloors; // Кількість поверхів
@@ -29,14 +30,19 @@ export default class Building {
       if (facade.direction === "Пн" || facade.direction === "Пд") {
         return new Wall({
           ...facade,
+          city: this.city,
           width: this.width,
           height: this.totalHeight(),
+          phi_int_set: this.phi_int_set(),
         });
       } else {
         return new Wall({
           ...facade,
+          city: this.city,
           width: this.length,
           height: this.totalHeight(),
+          buildingHeight: this.totalHeight(),
+          phi_int_set: this.phi_int_set(),
         });
       }
     });
@@ -50,6 +56,11 @@ export default class Building {
   //  Кондиціонована площа
   A_f() {
     return this.width * this.length * this.numberOfFloors;
+  }
+
+  // Кондиціонований обʼєм будівлі
+  V_ve() {
+    return this.width * this.length * this.totalHeight();
   }
 
   // Температура середовища
@@ -100,9 +111,25 @@ export default class Building {
       this.H_ve_adj() * (this.phi_int_set() - this.phi_e(month)) * month.hours
     );
   }
-
+  // Узагальнений коефіцієнт теплопередачі вентиляцією
   H_ve_adj() {
-    return 2208.19636375854; // ПРИБИТО ГВОЗДЯМИ
+    return 0.336 * this.q_inf_mn(); // ПРИБИТО ГВОЗДЯМИ
+  }
+
+  // Витрата повітря за рахунок інфільтрації
+  q_inf_mn() {
+    return this.n_inf() * this.V_ve() * 0.85;
+  }
+
+  // Кратність повітрообміну за рахунок інфільтрації
+  n_inf() {
+    return (
+      this.facades.reduce(
+        (sum, obj) => sum + obj.q_inf_m(this.typeAndCondition),
+        0
+      ) /
+      (this.V_ve() * 0.85)
+    );
   }
 
   // Теплонадходження

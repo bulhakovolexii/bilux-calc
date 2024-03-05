@@ -1,9 +1,8 @@
-import windows from "./reference-data/windows";
-
 const mockData = {
   city: "Харків",
   purpose: "Багатоквартирні будинки",
   constructionClass: "Середній",
+  typeAndCondition: "утеплені мінераловатними матеріалами в задовільному стані",
   width: 44.295,
   length: 14.495,
   numberOfFloors: 9,
