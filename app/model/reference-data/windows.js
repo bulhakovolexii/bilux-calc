@@ -6,6 +6,7 @@ const windows = [
     krypton: 0,
     argon: 0,
     R_sum: 0.28,
+    g_n: 0.75,
   },
   {
     variant: "4М₁-10-4М₁",
@@ -14,6 +15,7 @@ const windows = [
     krypton: 0,
     argon: 0,
     R_sum: 0.29,
+    g_n: 0.75,
   },
   {
     variant: "4М₁-12-4М₁",
@@ -22,6 +24,7 @@ const windows = [
     krypton: 0,
     argon: 0,
     R_sum: 0.3,
+    g_n: 0.75,
   },
   {
     variant: "4М₁-16-4М₁",
@@ -30,6 +33,7 @@ const windows = [
     krypton: 0,
     argon: 0,
     R_sum: 0.32,
+    g_n: 0.75,
   },
   {
     variant: "4М₁-8-4М₁",
@@ -38,6 +42,7 @@ const windows = [
     krypton: 0,
     argon: 100,
     R_sum: 0.3,
+    g_n: 0.75,
   },
   {
     variant: "4М₁-10-4М₁",
@@ -46,6 +51,7 @@ const windows = [
     krypton: 0,
     argon: 100,
     R_sum: 0.31,
+    g_n: 0.75,
   },
   {
     variant: "4М₁-12-4М₁",
@@ -54,6 +60,7 @@ const windows = [
     krypton: 0,
     argon: 100,
     R_sum: 0.32,
+    g_n: 0.75,
   },
   {
     variant: "4М₁-16-4М₁",
@@ -62,6 +69,7 @@ const windows = [
     krypton: 0,
     argon: 100,
     R_sum: 0.34,
+    g_n: 0.75,
   },
   {
     variant: "4М₁-16-4М,",
@@ -70,6 +78,7 @@ const windows = [
     krypton: 100,
     argon: 0,
     R_sum: 0.38,
+    g_n: 0.75,
   },
   {
     variant: "4М₁-8-4К",
@@ -78,6 +87,7 @@ const windows = [
     krypton: 0,
     argon: 0,
     R_sum: 0.47,
+    g_n: 0.67,
   },
   {
     variant: "4М₁-10-4К",
@@ -86,6 +96,7 @@ const windows = [
     krypton: 0,
     argon: 0,
     R_sum: 0.49,
+    g_n: 0.67,
   },
   {
     variant: "4М₁-12-4К",
@@ -94,6 +105,7 @@ const windows = [
     krypton: 0,
     argon: 0,
     R_sum: 0.51,
+    g_n: 0.67,
   },
   {
     variant: "4М₁-16-4К",
@@ -102,6 +114,7 @@ const windows = [
     krypton: 0,
     argon: 0,
     R_sum: 0.53,
+    g_n: 0.67,
   },
   {
     variant: "4М₁-8-4К",
@@ -110,6 +123,7 @@ const windows = [
     krypton: 0,
     argon: 100,
     R_sum: 0.53,
+    g_n: 0.67,
   },
   {
     variant: "4М₁-10-4К",
@@ -118,6 +132,7 @@ const windows = [
     krypton: 0,
     argon: 100,
     R_sum: 0.55,
+    g_n: 0.67,
   },
   {
     variant: "4М₁-12-4К",
@@ -126,6 +141,7 @@ const windows = [
     krypton: 0,
     argon: 100,
     R_sum: 0.57,
+    g_n: 0.67,
   },
   {
     variant: "4М₁-16-4К",
@@ -134,6 +150,7 @@ const windows = [
     krypton: 0,
     argon: 100,
     R_sum: 0.59,
+    g_n: 0.67,
   },
   {
     variant: "4М₁-16-4К",
@@ -142,6 +159,7 @@ const windows = [
     krypton: 100,
     argon: 0,
     R_sum: 0.62,
+    g_n: 0.67,
   },
   {
     variant: "4К-16-4К",
@@ -150,6 +168,7 @@ const windows = [
     krypton: 100,
     argon: 0,
     R_sum: 0.67,
+    g_n: 0.67,
   },
   {
     variant: "4М₁–8-4і",
@@ -158,6 +177,7 @@ const windows = [
     krypton: 0,
     argon: 0,
     R_sum: 0.51,
+    g_n: 0.75,
   },
   {
     variant: "4М₁-10-4і",
@@ -166,6 +186,7 @@ const windows = [
     krypton: 0,
     argon: 0,
     R_sum: 0.53,
+    g_n: 0.75,
   },
   {
     variant: "4М₁-12-4і",
@@ -174,6 +195,7 @@ const windows = [
     krypton: 0,
     argon: 0,
     R_sum: 0.56,
+    g_n: 0.75,
   },
   {
     variant: "4М₁-16-4i",
@@ -182,6 +204,7 @@ const windows = [
     krypton: 0,
     argon: 0,
     R_sum: 0.59,
+    g_n: 0.67,
   },
   {
     variant: "4М₁-8-4і",
@@ -190,6 +213,7 @@ const windows = [
     krypton: 0,
     argon: 100,
     R_sum: 0.57,
+    g_n: 0.75,
   },
   {
     variant: "4М₁-10-4і",
@@ -198,6 +222,7 @@ const windows = [
     krypton: 0,
     argon: 100,
     R_sum: 0.6,
+    g_n: 0.75,
   },
   {
     variant: "4М₁-12-4і",
@@ -206,6 +231,7 @@ const windows = [
     krypton: 0,
     argon: 100,
     R_sum: 0.63,
+    g_n: 0.75,
   },
   {
     variant: "4М₁-16-4І",
@@ -214,6 +240,7 @@ const windows = [
     krypton: 0,
     argon: 100,
     R_sum: 0.66,
+    g_n: 0.75,
   },
   {
     variant: "4М₁-16-4і",
@@ -222,6 +249,7 @@ const windows = [
     krypton: 100,
     argon: 0,
     R_sum: 0.75,
+    g_n: 0.75,
   },
   {
     variant: "4М₁-16-4і",
@@ -230,6 +258,7 @@ const windows = [
     krypton: 75,
     argon: 25,
     R_sum: 0.72,
+    g_n: 0.75,
   },
   {
     variant: "4М₁-16-4і",
@@ -238,6 +267,7 @@ const windows = [
     krypton: 50,
     argon: 50,
     R_sum: 0.7,
+    g_n: 0.75,
   },
   {
     variant: "4М₁-16-4і",
@@ -246,6 +276,7 @@ const windows = [
     krypton: 25,
     argon: 75,
     R_sum: 0.67,
+    g_n: 0.75,
   },
   {
     variant: "4М₁-6-4М₁-6-4М₁",
@@ -254,6 +285,7 @@ const windows = [
     krypton: 0,
     argon: 0,
     R_sum: 0.42,
+    g_n: 0.7,
   },
   {
     variant: "4М₁-8-4М₁-8-4М₁",
@@ -262,6 +294,7 @@ const windows = [
     krypton: 0,
     argon: 0,
     R_sum: 0.45,
+    g_n: 0.7,
   },
   {
     variant: "4М₁-10-4М₁-10-4М₁",
@@ -270,6 +303,7 @@ const windows = [
     krypton: 0,
     argon: 0,
     R_sum: 0.47,
+    g_n: 0.7,
   },
   {
     variant: "4М₁-12-4М₁-12-4М₁",
@@ -278,6 +312,7 @@ const windows = [
     krypton: 0,
     argon: 0,
     R_sum: 0.49,
+    g_n: 0.7,
   },
   {
     variant: "4М₁-16-4М₁-16-4М₁",
@@ -286,6 +321,7 @@ const windows = [
     krypton: 0,
     argon: 0,
     R_sum: 0.52,
+    g_n: 0.7,
   },
   {
     variant: "4М₁-6-4М₁-6-4М₁",
@@ -294,6 +330,7 @@ const windows = [
     krypton: 0,
     argon: 100,
     R_sum: 0.44,
+    g_n: 0.7,
   },
   {
     variant: "4М₁-8-4М₁-8-4М₁",
@@ -302,6 +339,7 @@ const windows = [
     krypton: 0,
     argon: 100,
     R_sum: 0.47,
+    g_n: 0.7,
   },
   {
     variant: "4М₁-8-4М₁-8-4М₁",
@@ -310,6 +348,7 @@ const windows = [
     krypton: 100,
     argon: 0,
     R_sum: 0.51,
+    g_n: 0.7,
   },
   {
     variant: "4М₁-10-4М₁-10-4М₁",
@@ -318,6 +357,7 @@ const windows = [
     krypton: 0,
     argon: 100,
     R_sum: 0.49,
+    g_n: 0.7,
   },
   {
     variant: "4М₁-12-4М₁-12-4М₁",
@@ -326,6 +366,7 @@ const windows = [
     krypton: 0,
     argon: 100,
     R_sum: 0.52,
+    g_n: 0.7,
   },
   {
     variant: "4М₁-16-4М₁-16-4М₁",
@@ -334,6 +375,7 @@ const windows = [
     krypton: 0,
     argon: 100,
     R_sum: 0.55,
+    g_n: 0.7,
   },
   {
     variant: "4М₁-6-4М₁-6-4К",
@@ -342,6 +384,7 @@ const windows = [
     krypton: 0,
     argon: 0,
     R_sum: 0.53,
+    g_n: 0.58,
   },
   {
     variant: "4М₁-8-4М₁-8-4К",
@@ -350,6 +393,7 @@ const windows = [
     krypton: 0,
     argon: 0,
     R_sum: 0.55,
+    g_n: 0.58,
   },
   {
     variant: "4М₁-10-4М₁-10-4К",
@@ -358,6 +402,7 @@ const windows = [
     krypton: 0,
     argon: 0,
     R_sum: 0.59,
+    g_n: 0.58,
   },
   {
     variant: "4М₁-12-4М₁-12-4К",
@@ -366,6 +411,7 @@ const windows = [
     krypton: 0,
     argon: 0,
     R_sum: 0.61,
+    g_n: 0.58,
   },
   {
     variant: "4М₁-16-4М₁-16-4К",
@@ -374,6 +420,7 @@ const windows = [
     krypton: 0,
     argon: 0,
     R_sum: 0.65,
+    g_n: 0.58,
   },
   {
     variant: "4М₁-6-4М₁-6-4К",
@@ -382,6 +429,7 @@ const windows = [
     krypton: 0,
     argon: 100,
     R_sum: 0.6,
+    g_n: 0.58,
   },
   {
     variant: "4М₁-8-4М₁-8-4К",
@@ -390,6 +438,7 @@ const windows = [
     krypton: 0,
     argon: 100,
     R_sum: 0.62,
+    g_n: 0.58,
   },
   {
     variant: "4Μ₁-10-4Μ₁-10-4Κ",
@@ -398,6 +447,7 @@ const windows = [
     krypton: 0,
     argon: 100,
     R_sum: 0.65,
+    g_n: 0.7,
   },
   {
     variant: "4М₁-12-4М₁-12-4К",
@@ -406,6 +456,7 @@ const windows = [
     krypton: 0,
     argon: 100,
     R_sum: 0.68,
+    g_n: 0.58,
   },
   {
     variant: "4М₁-16-4М₁-16-4К",
@@ -414,6 +465,7 @@ const windows = [
     krypton: 0,
     argon: 100,
     R_sum: 0.72,
+    g_n: 0.58,
   },
   {
     variant: "4Μ₁-10-4Μ₁-10-4Κ",
@@ -422,6 +474,7 @@ const windows = [
     krypton: 100,
     argon: 0,
     R_sum: 0.85,
+    g_n: 0.7,
   },
   {
     variant: "4М₁-10-4М₁-10-4К",
@@ -430,6 +483,7 @@ const windows = [
     krypton: 75,
     argon: 25,
     R_sum: 0.82,
+    g_n: 0.58,
   },
   {
     variant: "4М₁-10-4М₁-10-4К",
@@ -438,6 +492,7 @@ const windows = [
     krypton: 50,
     argon: 50,
     R_sum: 0.8,
+    g_n: 0.58,
   },
   {
     variant: "4М₁-10-4М₁-10-4К",
@@ -446,6 +501,7 @@ const windows = [
     krypton: 25,
     argon: 75,
     R_sum: 0.78,
+    g_n: 0.58,
   },
   {
     variant: "4К-10-4М₁-10-4К",
@@ -454,14 +510,16 @@ const windows = [
     krypton: 0,
     argon: 0,
     R_sum: 0.73,
+    g_n: 0.5,
   },
   {
-    variant: "4М-10-4К-10-4К",
+    variant: "4М₁-10-4К-10-4К",
     numberOfCameras: 2,
     air: 0,
     krypton: 100,
     argon: 0,
     R_sum: 1.28,
+    g_n: 0.5,
   },
   {
     variant: "4К-10-4М₁-10-4К",
@@ -470,6 +528,7 @@ const windows = [
     krypton: 100,
     argon: 0,
     R_sum: 1.32,
+    g_n: 0.5,
   },
   {
     variant: "4М₁-8-4М₁-8-4і",
@@ -478,6 +537,7 @@ const windows = [
     krypton: 0,
     argon: 0,
     R_sum: 0.61,
+    g_n: 0.7,
   },
   {
     variant: "4М₁-10-4М₁-10-4і",
@@ -486,6 +546,7 @@ const windows = [
     krypton: 0,
     argon: 0,
     R_sum: 0.64,
+    g_n: 0.7,
   },
   {
     variant: "4М₁-12-4М₁-12-4i",
@@ -494,6 +555,7 @@ const windows = [
     krypton: 0,
     argon: 0,
     R_sum: 0.68,
+    g_n: 0.58,
   },
   {
     variant: "4М₁-16-4М₁-16-4i",
@@ -502,6 +564,7 @@ const windows = [
     krypton: 0,
     argon: 0,
     R_sum: 0.72,
+    g_n: 0.58,
   },
   {
     variant: "4М₁-6-4М₁-6-4і",
@@ -510,6 +573,7 @@ const windows = [
     krypton: 0,
     argon: 100,
     R_sum: 0.64,
+    g_n: 0.7,
   },
   {
     variant: "4М₁-8-4М₁-8-4і",
@@ -518,6 +582,7 @@ const windows = [
     krypton: 0,
     argon: 100,
     R_sum: 0.67,
+    g_n: 0.7,
   },
   {
     variant: "4М₁-10-4М₁-10-4і",
@@ -526,6 +591,7 @@ const windows = [
     krypton: 0,
     argon: 100,
     R_sum: 0.71,
+    g_n: 0.7,
   },
   {
     variant: "4М₁-12-4М₁-12-4i",
@@ -534,6 +600,7 @@ const windows = [
     krypton: 0,
     argon: 100,
     R_sum: 0.75,
+    g_n: 0.58,
   },
   {
     variant: "4М₁-16-4М₁-16-4i",
@@ -542,6 +609,7 @@ const windows = [
     krypton: 0,
     argon: 100,
     R_sum: 0.8,
+    g_n: 0.58,
   },
   {
     variant: "4М₁-10-4М₁-10-4i",
@@ -550,6 +618,7 @@ const windows = [
     krypton: 100,
     argon: 0,
     R_sum: 0.94,
+    g_n: 0.58,
   },
   {
     variant: "4М₁-10-4М₁-10-4і",
@@ -558,6 +627,7 @@ const windows = [
     krypton: 75,
     argon: 25,
     R_sum: 0.9,
+    g_n: 0.7,
   },
   {
     variant: "4М₁-10-4М₁-10-4і",
@@ -566,6 +636,7 @@ const windows = [
     krypton: 50,
     argon: 50,
     R_sum: 0.85,
+    g_n: 0.7,
   },
   {
     variant: "4М₁-10-4М₁-10-4і",
@@ -574,6 +645,7 @@ const windows = [
     krypton: 25,
     argon: 75,
     R_sum: 0.78,
+    g_n: 0.7,
   },
   {
     variant: "4і-10-4М₁-10-4і",
@@ -582,6 +654,7 @@ const windows = [
     krypton: 0,
     argon: 0,
     R_sum: 0.93,
+    g_n: 0.7,
   },
   {
     variant: "4і-10-4М₁-10-4і",
@@ -590,6 +663,7 @@ const windows = [
     krypton: 100,
     argon: 0,
     R_sum: 1.35,
+    g_n: 0.7,
   },
   {
     variant: "4і-10-4М₁-10-4i",
@@ -598,6 +672,7 @@ const windows = [
     krypton: 75,
     argon: 25,
     R_sum: 1.28,
+    g_n: 0.5,
   },
   {
     variant: "4і-10-4М₁-10-4і",
@@ -606,6 +681,7 @@ const windows = [
     krypton: 50,
     argon: 50,
     R_sum: 1.18,
+    g_n: 0.7,
   },
   {
     variant: "4і-10-4М₁-10-4і",
@@ -614,6 +690,7 @@ const windows = [
     krypton: 25,
     argon: 75,
     R_sum: 1.14,
+    g_n: 0.7,
   },
 ];
 export default windows;

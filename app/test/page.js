@@ -18,6 +18,10 @@ export default function Test() {
           {building.Q_tr(month).toFixed(2)}
           <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
           {building.Q_ve(month).toFixed(2)}
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          {building.Q_int(month).toFixed(2)}
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          {building.Q_sol(month).toFixed(2)}
         </p>
       ))}
     </main>

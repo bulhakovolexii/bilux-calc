@@ -123,7 +123,7 @@ export default class Building {
 
   // Узагальнений коефіцієнт теплопередачі вентиляцією
   H_ve_adj() {
-    return 0.336 * this.q_inf_mn(); // ПРИБИТО ГВОЗДЯМИ
+    return 0.336 * this.q_inf_mn();
   }
 
   // Витрата повітря за рахунок інфільтрації
@@ -179,12 +179,18 @@ export default class Building {
 
   // Сонячні теплонадходження
   Q_sol(month) {
-    const data = [
-      5299355.07, 8978578.69, 13801040.11, 14864674.27, 19019702.17,
-      19202619.68, 19603464.76, 17982063.7, 14554765.27, 10294289.26, 5025278.2,
-      4177088.25,
-    ]; // ПРИБИТО ГВОЗДЯМИ
-    return data[months.indexOf(month)];
+    return (
+      month.hours *
+      this.facades.reduce(
+        (sum, facade) =>
+          sum +
+          facade.windows.reduce(
+            (sum, window) => sum + window.Phi_sol_k(this.city, month),
+            0
+          ),
+        0
+      )
+    );
   }
 
   // Коефіцієнт використання надходжень
