@@ -12,6 +12,8 @@ export default class Building {
     this.purpose = inputData.purpose; // Функційне призначення
     this.constructionClass = inputData.constructionClass; // Клас теплоємності
     this.typeAndCondition = inputData.typeAndCondition;
+    this.typeOfArea = inputData.typeOfArea;
+    this.airtightness = inputData.airtightness;
     this.width = inputData.width; // Ширина будівлі
     this.length = inputData.length; // Довжина будівлі
     this.numberOfFloors = inputData.numberOfFloors; // Кількість поверхів
@@ -33,7 +35,11 @@ export default class Building {
           city: this.city,
           width: this.width,
           height: this.totalHeight(),
+          buildingHeight: this.totalHeight(),
           phi_int_set: this.phi_int_set(),
+          buildingPurpose: this.purpose,
+          typeOfArea: this.typeOfArea,
+          airtightness: this.airtightness,
         });
       } else {
         return new Wall({
@@ -43,6 +49,9 @@ export default class Building {
           height: this.totalHeight(),
           buildingHeight: this.totalHeight(),
           phi_int_set: this.phi_int_set(),
+          buildingPurpose: this.purpose,
+          typeOfArea: this.typeOfArea,
+          airtightness: this.airtightness,
         });
       }
     });
@@ -81,7 +90,7 @@ export default class Building {
     if (Q_nd < 0) {
       return 0;
     }
-    return Q_nd;
+    return Q_nd / 1000;
   }
 
   // Тепловтрати
@@ -111,6 +120,7 @@ export default class Building {
       this.H_ve_adj() * (this.phi_int_set() - this.phi_e(month)) * month.hours
     );
   }
+
   // Узагальнений коефіцієнт теплопередачі вентиляцією
   H_ve_adj() {
     return 0.336 * this.q_inf_mn(); // ПРИБИТО ГВОЗДЯМИ
@@ -170,9 +180,9 @@ export default class Building {
   // Сонячні теплонадходження
   Q_sol(month) {
     const data = [
-      5513398.57, 9207368.88, 14154325.33, 15299064.73, 19556223.74,
-      19737772.63, 20173383.52, 18522636.55, 14991362.05, 10586494.33,
-      5236609.01, 4377815.51,
+      5299355.07, 8978578.69, 13801040.11, 14864674.27, 19019702.17,
+      19202619.68, 19603464.76, 17982063.7, 14554765.27, 10294289.26, 5025278.2,
+      4177088.25,
     ]; // ПРИБИТО ГВОЗДЯМИ
     return data[months.indexOf(month)];
   }

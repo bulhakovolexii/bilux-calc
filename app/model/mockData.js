@@ -3,6 +3,8 @@ const mockData = {
   purpose: "Багатоквартирні будинки",
   constructionClass: "Середній",
   typeAndCondition: "утеплені мінераловатними матеріалами в задовільному стані",
+  typeOfArea: "C",
+  airtightness: "герметична",
   width: 44.295,
   length: 14.495,
   numberOfFloors: 9,

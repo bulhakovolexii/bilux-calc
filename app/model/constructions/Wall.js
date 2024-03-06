@@ -3,6 +3,7 @@ import Construction from "./Construction";
 import Window from "./Window";
 import Door from "./Door";
 import cities from "../reference-data/cities";
+import windSpeedCoefficient from "../reference-data/wind-speed-coefficients";
 
 export default class Wall extends Construction {
   static h_si = 8.7;
@@ -12,16 +13,23 @@ export default class Wall extends Construction {
     this.direction = inputData.direction;
     this.enviroment = inputData.enviroment;
     this.city = inputData.city;
-    (this.phi_int_set = inputData.phi_int_set),
-      (this.includes =
-        inputData.includes?.map(
-          (include) =>
-            new Wall({
-              ...include,
-              direction: this.direction,
-              city: cities,
-            })
-        ) || []);
+    this.phi_int_set = inputData.phi_int_set;
+    this.buildingPurpose = inputData.buildingPurpose;
+    this.typeOfArea = inputData.typeOfArea;
+    this.airtightness = inputData.airtightness;
+    this.includes =
+      inputData.includes?.map(
+        (include) =>
+          new Wall({
+            ...include,
+            direction: this.direction,
+            city: cities,
+            phi_int_set: this.phi_int_set,
+            buildingPurpose: this.buildingPurpose,
+            typeOfArea: this.typeOfArea,
+            airtightness: this.airtightness,
+          })
+      ) || [];
     this.windows =
       inputData.windows?.map(
         (window) =>
@@ -126,22 +134,75 @@ export default class Wall extends Construction {
       .repeatabilityOfWindDirection[this.direction];
   }
   deltaP_gr_mn() {
-    return 1;
+    return (
+      0.5 * this.buildingHeight * (this.lambda_e_seas() - this.lambda_int_set())
+    );
   }
   deltaP_wd_m() {
-    return 1;
+    return 0.03 * this.lambda_e_seas() * this.beta_v() * this.V_e_seas_m() ** 2;
   }
+
+  V_e_seas_m() {
+    return cities.find((citie) => citie.name === this.city).weather
+      .averageWindSpeedForJanuary[this.direction];
+  }
+
+  beta_v() {
+    return windSpeedCoefficient.find(
+      (height) =>
+        this.buildingHeight > height.lower &&
+        this.buildingHeight <= height.upper
+    )[this.typeOfArea];
+  }
+
   lambda_e_seas() {
-    return 3463 / (273 + this.Phi_e_seas());
+    return 3463 / (273 + this.phi_e_seas());
   }
   lambda_int_set() {
-    return 3463 / (273 + this.Phi_int_set);
+    return 3463 / (273 + this.phi_int_set);
   }
-  Phi_e_seas() {
-    return 1;
+  phi_e_seas() {
+    if (
+      this.buildingPurpose === "Будівлі навчальних закладів" ||
+      this.buildingPurpose === "Будівлі дитячих навчальних закладів" ||
+      this.buildingPurpose === "Будівлі закладів охорони здоровʼя"
+    ) {
+      return cities.find((citie) => citie.name === this.city).weather
+        .phi_e_seas_10;
+    } else {
+      return cities.find((citie) => citie.name === this.city).weather
+        .phi_e_seas_8;
+    }
   }
 
   Q_100_s_m() {
-    return 1;
+    let airtightness;
+    switch (this.airtightness) {
+      case "продувна":
+        airtightness = 50;
+        break;
+      case "не герметична":
+        airtightness = 27;
+        break;
+      case "слабо герметична":
+        airtightness = 9;
+        break;
+      case "герметична":
+        airtightness = 3;
+        break;
+    }
+    const this_Q_100 = this.windows.reduce((sum, window) => {
+      return sum + airtightness * window.totalArea();
+    }, 0);
+    let includes_Q_100 = 0;
+    this.includes.forEach((include) => {
+      if (!include.enviroment) {
+        includes_Q_100 += include.windows.reduce(
+          (sum, window) => sum + airtightness * window.totalArea(),
+          0
+        );
+      }
+    });
+    return this_Q_100 + includes_Q_100;
   }
 }

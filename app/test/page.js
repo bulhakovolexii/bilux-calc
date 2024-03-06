@@ -7,12 +7,16 @@ import styles from "../page.module.css";
 
 export default function Test() {
   const building = new Building(mockData);
-  // console.log(building.H_ve_adj());
+  console.log(building);
   return (
     <main className={styles.main}>
       {months.map((month) => (
         <p key={month.name}>
           <span>{month.name}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          {building.Q_nd(month).toFixed(2)}
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          {building.Q_tr(month).toFixed(2)}
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
           {building.Q_ve(month).toFixed(2)}
         </p>
       ))}
