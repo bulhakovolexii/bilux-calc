@@ -21,6 +21,14 @@ const cities = [
         [10, 19, 46, 19],
         [9, 14, 37, 15],
       ],
+      heatedPeriod_8: {
+        start: [14, 10],
+        end: [11, 4],
+      },
+      heatedPeriod_10: {
+        start: [5, 10],
+        end: [19, 4],
+      },
     },
   },
 ];

@@ -235,4 +235,39 @@ export default class Building {
   alpha() {
     return 1 + this.tau() / 15;
   }
+
+  // Енергоспоживання
+  Q_use(month) {
+    let period;
+
+    if (
+      this.purpose === "Будівлі навчальних закладів" ||
+      this.purpose === "Будівлі дитячих навчальних закладів" ||
+      this.purpose === "Будівлі закладів охорони здоровʼя"
+    ) {
+      period = cities.find((city) => city.name === this.city).weather
+        .heatedPeriod_10;
+    } else {
+      period = cities.find((city) => city.name === this.city).weather
+        .heatedPeriod_8;
+    }
+
+    let hours;
+
+    if (
+      months.indexOf(month) < period.end[1] - 1 ||
+      months.indexOf(month) > period.start[1] - 1
+    ) {
+      hours = month.hours;
+    } else if (months.indexOf(month) === period.end[1] - 1) {
+      hours = period.end[0] * 24;
+    } else if (months.indexOf(month) === period.start[1] - 1) {
+      hours = month.hours - period.start[0] * 24;
+    } else {
+      hours = 0;
+    }
+    return hours;
+  }
+
+  Q_dis_in(month) {}
 }
