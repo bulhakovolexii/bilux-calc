@@ -5,6 +5,7 @@ import constructionClasses from "./reference-data/constructionClasses";
 import Floor from "./constructions/Floor";
 import Ceil from "./constructions/Ceil";
 import Wall from "./constructions/Wall";
+import System from "./System";
 
 export default class Building {
   constructor(inputData) {
@@ -55,6 +56,10 @@ export default class Building {
         });
       }
     });
+    this.userSystem = new System({
+      ...inputData.system,
+      Q_nd: months.map((month) => this.Q_nd(month)),
+    });
   }
 
   // Загальна висота
@@ -84,13 +89,47 @@ export default class Building {
     return purposes[this.purpose].phi_int_set;
   }
 
+  // Тривалість опалювального періоду
+  hours(month) {
+    let period;
+
+    if (
+      this.purpose === "Будівлі навчальних закладів" ||
+      this.purpose === "Будівлі дитячих навчальних закладів" ||
+      this.purpose === "Будівлі закладів охорони здоровʼя"
+    ) {
+      period = cities.find((city) => city.name === this.city).weather
+        .heatedPeriod_10;
+    } else {
+      period = cities.find((city) => city.name === this.city).weather
+        .heatedPeriod_8;
+    }
+
+    let hours;
+
+    if (
+      months.indexOf(month) < period.end[1] - 1 ||
+      months.indexOf(month) > period.start[1] - 1
+    ) {
+      hours = month.hours;
+    } else if (months.indexOf(month) === period.end[1] - 1) {
+      hours = period.end[0] * 24;
+    } else if (months.indexOf(month) === period.start[1] - 1) {
+      hours = month.hours - period.start[0] * 24;
+    } else {
+      hours = 0;
+    }
+    return hours;
+  }
+
   // Енергопотреба
   Q_nd(month) {
     const Q_nd = this.Q_ht(month) - this.eta_gn(month) * this.Q_gn(month);
     if (Q_nd < 0) {
       return 0;
     }
-    return Q_nd / 1000;
+
+    return (Q_nd * (this.hours(month) / month.hours)) / 1000;
   }
 
   // Тепловтрати
@@ -235,39 +274,4 @@ export default class Building {
   alpha() {
     return 1 + this.tau() / 15;
   }
-
-  // Енергоспоживання
-  Q_use(month) {
-    let period;
-
-    if (
-      this.purpose === "Будівлі навчальних закладів" ||
-      this.purpose === "Будівлі дитячих навчальних закладів" ||
-      this.purpose === "Будівлі закладів охорони здоровʼя"
-    ) {
-      period = cities.find((city) => city.name === this.city).weather
-        .heatedPeriod_10;
-    } else {
-      period = cities.find((city) => city.name === this.city).weather
-        .heatedPeriod_8;
-    }
-
-    let hours;
-
-    if (
-      months.indexOf(month) < period.end[1] - 1 ||
-      months.indexOf(month) > period.start[1] - 1
-    ) {
-      hours = month.hours;
-    } else if (months.indexOf(month) === period.end[1] - 1) {
-      hours = period.end[0] * 24;
-    } else if (months.indexOf(month) === period.start[1] - 1) {
-      hours = month.hours - period.start[0] * 24;
-    } else {
-      hours = 0;
-    }
-    return hours;
-  }
-
-  Q_dis_in(month) {}
 }

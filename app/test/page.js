@@ -12,7 +12,7 @@ export default function Test() {
       {months.map((month) => (
         <p key={month.name}>
           <span>{month.name}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-          {building.Q_use(month)}
+          {building.Q_nd(month).toFixed(2)}
         </p>
       ))}
     </main>

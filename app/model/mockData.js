@@ -9,6 +9,9 @@ const mockData = {
   length: 14.495,
   numberOfFloors: 9,
   heightOfFLoor: 3,
+  system: {
+    eta_gen: 0.85,
+  },
   floor: {
     type: "Перекриття над неопалюваним підвалом",
     layers: [
