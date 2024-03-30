@@ -8,16 +8,9 @@ export const FormDataProvider = ({ children }) => {
   const [formData, setFormData] = useState({
     // initial data
   });
-  const [activeStep, setActiveStep] = useState(0);
 
-  const value = {
-    formData,
-    setFormData,
-    activeStep,
-    setActiveStep,
-  };
   return (
-    <FormDataContext.Provider value={value}>
+    <FormDataContext.Provider value={[formData, setFormData]}>
       {children}
     </FormDataContext.Provider>
   );
