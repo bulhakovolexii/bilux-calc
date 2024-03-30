@@ -72,7 +72,13 @@ export default function StepsLayout({ children }) {
   };
   return (
     <Box
-      sx={{ height: "100%", display: "flex", flexDirection: "column", gap: 2 }}
+      sx={{
+        height: "100%",
+        position: "relative",
+        display: "flex",
+        flexDirection: "column",
+        gap: 2,
+      }}
     >
       <MyStepper
         steps={steps}
@@ -87,7 +93,7 @@ export default function StepsLayout({ children }) {
         handleNext={handleNext}
         stepsAvalible={stepsAvalible}
       />
-      <Box flexGrow={1}>{children}</Box>
+      <Box sx={{ flexGrow: 1, display: "flex", gap: 4 }}>{children}</Box>
       <NavButtons
         activeStep={activeStep}
         stepsAvalible={stepsAvalible}
