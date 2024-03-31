@@ -49,26 +49,26 @@ export default function StepsLayout({ children }) {
   const handleNext = () => {
     const nextStep = activeStep + 1;
     if (activeStep === steps.length - 1) {
-      router.push("/results");
+      router.replace("/results");
     } else {
       setActiveStep(nextStep);
-      router.push(`/steps/step-${nextStep + 1}`);
+      router.replace(`/steps/step-${nextStep + 1}`);
     }
   };
 
   const handleBack = () => {
     const previousStep = activeStep - 1;
     if (activeStep === 0) {
-      router.push("/");
+      router.replace("/");
     } else {
       setActiveStep(previousStep);
-      router.push(`/steps/step-${previousStep + 1}`);
+      router.replace(`/steps/step-${previousStep + 1}`);
     }
   };
 
   const handleStep = (step) => {
     setActiveStep(step);
-    router.push(`/steps/step-${step + 1}`);
+    router.replace(`/steps/step-${step + 1}`);
   };
   return (
     <Box
