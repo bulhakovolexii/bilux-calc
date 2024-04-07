@@ -1,7 +1,7 @@
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import { Box, CssBaseline, ThemeProvider } from "@mui/material";
 
-import { FormDataProvider } from "@/contexts/FormDataContext";
+import { ModelProvider } from "@/app/contexts/ModelContext";
 import theme from "./theme";
 
 export default function RootLayout({ children }) {
@@ -11,11 +11,11 @@ export default function RootLayout({ children }) {
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <CssBaseline />
-            <FormDataProvider>
-              <Box maxWidth="1100px" height="600px" mx="auto">
+            <ModelProvider>
+              <Box maxWidth="1100px" height="600px" py={1} mx="auto">
                 {children}
               </Box>
-            </FormDataProvider>
+            </ModelProvider>
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>

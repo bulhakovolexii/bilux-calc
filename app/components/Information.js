@@ -1,23 +1,26 @@
 "use client";
 
 import { Close, InfoOutlined } from "@mui/icons-material";
-import { Box, Drawer, Fab, Hidden, IconButton, Paper } from "@mui/material";
+import { Box, Drawer, Fab, Hidden, Paper } from "@mui/material";
 import { useState } from "react";
 
-export default function ({ children }) {
+export default function Information({ children }) {
   const [open, setOpen] = useState(false);
-
   return (
     <>
       <Hidden mdDown>
-        <Box sx={{ flex: "1 1 50%", height: "506px" }}>
-          <Paper
-            variant="outlined"
-            sx={{ height: "100%", overflowY: "auto", px: 2, py: 1 }}
-          >
-            {children}
-          </Paper>
-        </Box>
+        <Paper
+          variant="outlined"
+          sx={{
+            height: "100%",
+            flex: "1 0 50%",
+            px: 2,
+            py: 1,
+            overflowY: "auto",
+          }}
+        >
+          {children}
+        </Paper>
       </Hidden>
       <Hidden mdUp>
         <Fab
