@@ -13,15 +13,16 @@ import {
 import { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import Step1 from "../components/steps/Step1";
+import Step2 from "../components/steps/Step2";
 
-const steps = ["Step 1", "Step 2", "Step 3", "Step 4"];
+const steps = ["Локація", "Загальне", "Геометрія", "Підлога та дах", "Фасади"];
 
-const FormSteps = ({ activeStep }) => {
+const FormSteps = ({ activeStep, handleNext }) => {
   switch (activeStep) {
     case 0:
-      return <Step1 />;
+      return <Step1 onSubmit={handleNext} />;
     case 1:
-      return <></>;
+      return <Step2 onSubmit={handleNext} />;
     case 2:
       return <></>;
     case 3:
@@ -94,7 +95,7 @@ export default function Questionnarie() {
             [theme.breakpoints.down("md")]: { height: "523.5px" },
           }}
         >
-          <FormSteps activeStep={activeStep} />
+          <FormSteps activeStep={activeStep} handleNext={handleNext} />
         </Box>
         <Hidden mdDown>
           <Box pt={2} display="flex" justifyContent="space-between">

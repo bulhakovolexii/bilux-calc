@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
           <ThemeProvider theme={theme}>
             <CssBaseline />
             <ModelProvider>
-              <Box maxWidth="1100px" height="600px" py={1} mx="auto">
+              <Box maxWidth="1100px" height="600px" p={2} mx="auto">
                 {children}
               </Box>
             </ModelProvider>
