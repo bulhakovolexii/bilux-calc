@@ -1,3 +1,10 @@
+import Link from "next/link";
+
 export default function Home() {
-  return <>Головна</>;
+  return (
+    <>
+      <h1>Головна</h1>
+      <Link href="/questionnaire">Опитувальний лист</Link>
+    </>
+  );
 }

@@ -17,15 +17,15 @@ import { Controller, useFormContext } from "react-hook-form";
 
 const Info1 = () => {
   return (
-    <>
-      <Typography variant="h5">Hello, World!</Typography>
+    <Stack spacing={2}>
+      <Typography variant="h5">Характеристика місцевості</Typography>
       <Typography variant="body1">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem iusto
         amet beatae aut sapiente recusandae ratione consequuntur maiores,
         commodi autem reiciendis illo nostrum adipisci accusantium sunt quidem
         voluptate illum voluptatum?
       </Typography>
-    </>
+    </Stack>
   );
 };
 
@@ -89,9 +89,8 @@ const cities = [
   { city: "Чернігів", region: "Чернігівська область" },
 ];
 
-export default function Step1({ onSubmit }) {
+export default function Step1() {
   const {
-    handleSubmit,
     formState: { errors },
     control,
   } = useFormContext();
@@ -99,79 +98,77 @@ export default function Step1({ onSubmit }) {
   return (
     <Box height="100%" display="flex" gap={3}>
       <InputsContainer>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <Stack spacing={2}>
-            <Typography variant="h4">Дані про місцевість</Typography>
-            <Controller
-              name="city"
-              control={control}
-              rules={{ required: "Оберіть місто" }}
-              render={({ field }) => (
-                <Autocomplete
-                  {...field}
-                  options={cities}
-                  groupBy={(option) => option.region}
-                  getOptionLabel={(option) => option.city}
-                  renderInput={(params) => (
-                    <TextField
-                      {...params}
-                      label="Місто"
-                      variant="filled"
-                      error={!!errors.city}
-                      helperText={errors.city?.message}
-                    />
-                  )}
-                  onChange={(e, value) => {
-                    field.onChange(value?.city);
-                  }}
-                  value={
-                    cities.find((option) => option.city === field.value) || null
-                  }
-                />
-              )}
-            />
+        <Stack spacing={2}>
+          <Typography variant="h4">Дані про місцевість</Typography>
+          <Controller
+            name="city"
+            control={control}
+            rules={{ required: "Оберіть місто" }}
+            render={({ field }) => (
+              <Autocomplete
+                {...field}
+                options={cities}
+                groupBy={(option) => option.region}
+                getOptionLabel={(option) => option.city}
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    label="Місто"
+                    variant="filled"
+                    error={!!errors.city}
+                    helperText={errors.city?.message || " "}
+                  />
+                )}
+                onChange={(e, value) => {
+                  field.onChange(value?.city);
+                }}
+                value={
+                  cities.find((option) => option.city === field.value) || null
+                }
+              />
+            )}
+          />
+          <FormControl error={!!errors.terrain}>
+            <FormLabel>Тип місцевості</FormLabel>
             <Controller
               name="terrain"
               control={control}
               defaultValue=""
               rules={{ required: "Оберіть варіант місцевості" }}
               render={({ field }) => (
-                <FormControl error={!!errors.terrain}>
-                  <FormLabel>Тип місцевості</FormLabel>
-                  <RadioGroup
-                    aria-label="options"
-                    row
-                    {...field}
-                    sx={{ justifyContent: "space-around" }}
-                  >
-                    <FormControlLabel
-                      value="A"
-                      control={<Radio />}
-                      label="A"
-                      labelPlacement="top"
-                    />
-                    <FormControlLabel
-                      value="B"
-                      control={<Radio />}
-                      label="B"
-                      labelPlacement="top"
-                    />
-                    <FormControlLabel
-                      value="C"
-                      control={<Radio />}
-                      label="C"
-                      labelPlacement="top"
-                    />
-                  </RadioGroup>
-                  <FormHelperText sx={{ mx: 0 }}>
-                    {errors.terrain?.message ||
-                      "У разі невизначенності оберіть тип B"}
-                  </FormHelperText>
-                </FormControl>
+                <RadioGroup
+                  aria-label="options"
+                  row
+                  {...field}
+                  sx={{ justifyContent: "space-around" }}
+                >
+                  <FormControlLabel
+                    value="A"
+                    control={<Radio />}
+                    label="A"
+                    labelPlacement="top"
+                  />
+                  <FormControlLabel
+                    value="B"
+                    control={<Radio />}
+                    label="B"
+                    labelPlacement="top"
+                  />
+                  <FormControlLabel
+                    value="C"
+                    control={<Radio />}
+                    label="C"
+                    labelPlacement="top"
+                  />
+                </RadioGroup>
               )}
             />
-          </Stack>
-        </form>
+            <FormHelperText sx={{ mx: 0 }}>
+              {errors.terrain?.message ||
+                "У разі невизначенності оберіть тип B"}
+            </FormHelperText>
+          </FormControl>
+        </Stack>
       </InputsContainer>
       <Information>
         <Info1 />
