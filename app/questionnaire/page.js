@@ -17,6 +17,7 @@ import { FormProvider, useForm } from "react-hook-form";
 import Step1 from "../components/steps/Step1";
 import Step2 from "../components/steps/Step2";
 import Step3 from "../components/steps/Step3";
+import Step4 from "../components/steps/Step4";
 
 const steps = [
   { id: "step1", label: "Локація", fields: ["city", "terrain"] },
@@ -38,7 +39,7 @@ const steps = [
   {
     id: "step4",
     label: "Підлога та дах",
-    fields: [],
+    fields: ["ceiling.type", "ceiling.type1"],
   },
   {
     id: "step5",
@@ -61,28 +62,31 @@ const FormSteps = ({ activeStep }) => {
     case 2:
       return <Step3 />;
     case 3:
-      return <></>;
+      return <Step4 />;
   }
 };
 
 export default function Questionnarie() {
   const theme = useTheme();
   const router = useRouter();
-  const [activeStep, setActiveStep] = useState(0);
+  const [activeStep, setActiveStep] = useState(3);
   const methods = useForm({
     mode: "onChange",
-    // defaultValues: {
-    //   city: "Харків",
-    //   terrain: "B",
-    //   purpose: "Багатоквартирні будинки, гуртожитки",
-    //   heatCapacityClass: "Середній",
-    //   tightness: "Герметична",
-    //   typeAndCondition: "Утеплені органічними матеріалами в задовільному стані",
-    //   buildingWidth: "44.295",
-    //   buildingLenght: "14.495",
-    //   floorHeight: "3",
-    //   numbersOfFloors: "9",
-    // },
+    defaultValues: {
+      city: "Харків",
+      terrain: "B",
+      purpose: "Багатоквартирні будинки, гуртожитки",
+      heatCapacityClass: "Середній",
+      tightness: "Герметична",
+      typeAndCondition: "Утеплені органічними матеріалами в задовільному стані",
+      buildingWidth: "44.295",
+      buildingLength: "14.495",
+      floorHeight: "3",
+      numbersOfFloors: "9",
+      // ceiling: {
+      //   type: ""
+      // }
+    },
   });
 
   const {
