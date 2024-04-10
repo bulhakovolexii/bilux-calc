@@ -14,6 +14,7 @@ import { useTheme } from "@emotion/react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { FormProvider, useForm } from "react-hook-form";
+import { AnimatePresence, cubicBezier, motion } from "framer-motion";
 import Step1 from "../components/steps/Step1";
 import Step2 from "../components/steps/Step2";
 import Step3 from "../components/steps/Step3";
@@ -69,24 +70,21 @@ const FormSteps = ({ activeStep }) => {
 export default function Questionnarie() {
   const theme = useTheme();
   const router = useRouter();
-  const [activeStep, setActiveStep] = useState(3);
+  const [activeStep, setActiveStep] = useState(0);
   const methods = useForm({
     mode: "onChange",
-    defaultValues: {
-      city: "Харків",
-      terrain: "B",
-      purpose: "Багатоквартирні будинки, гуртожитки",
-      heatCapacityClass: "Середній",
-      tightness: "Герметична",
-      typeAndCondition: "Утеплені органічними матеріалами в задовільному стані",
-      buildingWidth: "44.295",
-      buildingLength: "14.495",
-      floorHeight: "3",
-      numbersOfFloors: "9",
-      // ceiling: {
-      //   type: ""
-      // }
-    },
+    // defaultValues: {
+    //   city: "Харків",
+    //   terrain: "B",
+    //   purpose: "Багатоквартирні будинки, гуртожитки",
+    //   heatCapacityClass: "Середній",
+    //   tightness: "Герметична",
+    //   typeAndCondition: "Утеплені органічними матеріалами в задовільному стані",
+    //   buildingWidth: "44.295",
+    //   buildingLength: "14.495",
+    //   floorHeight: "3",
+    //   numbersOfFloors: "9",
+    // },
   });
 
   const {
@@ -165,13 +163,29 @@ export default function Questionnarie() {
             />
           </Box>
         </Hidden>
+
         <Box
           sx={{
+            overflow: "hidden",
             [theme.breakpoints.up("md")]: { height: "496px" },
             [theme.breakpoints.down("md")]: { height: "523.5px" },
           }}
         >
-          <FormSteps activeStep={activeStep} handleNext={handleNext} />
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeStep}
+              initial={{ x: "100%", opacity: 0 }}
+              animate={{ x: "0", opacity: 1 }}
+              exit={{ x: "-100%", opacity: 0 }}
+              transition={{
+                duration: `${theme.transitions.duration.shortest / 1000}`,
+                ease: cubicBezier(0.4, 0, 0.6, 1),
+              }}
+              style={{ position: "relative", width: "100%", height: "100%" }}
+            >
+              <FormSteps activeStep={activeStep} handleNext={handleNext} />
+            </motion.div>
+          </AnimatePresence>
         </Box>
         <Hidden mdDown>
           <Box pt={2} display="flex" justifyContent="space-between">
