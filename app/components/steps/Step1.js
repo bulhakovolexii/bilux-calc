@@ -108,6 +108,7 @@ export default function Step1() {
               <Autocomplete
                 {...field}
                 options={cities}
+                disableClearable
                 noOptionsText="Місто не знайдено"
                 groupBy={(option) => option.region}
                 getOptionLabel={(option) => option.city}
