@@ -19,6 +19,7 @@ import Step1 from "../components/steps/Step1";
 import Step2 from "../components/steps/Step2";
 import Step3 from "../components/steps/Step3";
 import Step4 from "../components/steps/Step4";
+import { useModel } from "../contexts/ModelContext";
 
 const steps = [
   { id: "step1", label: "Локація", fields: ["city", "terrain"] },
@@ -40,17 +41,7 @@ const steps = [
   {
     id: "step4",
     label: "Підлога та дах",
-    fields: ["ceiling.type", "ceiling.type1"],
-  },
-  {
-    id: "step5",
-    label: "Фасади",
-    fields: [],
-  },
-  {
-    id: "step6",
-    label: "Step 6",
-    fields: [],
+    fields: ["ceiling.type", "floor.type"],
   },
 ];
 
@@ -71,6 +62,7 @@ export default function Questionnarie() {
   const theme = useTheme();
   const router = useRouter();
   const [activeStep, setActiveStep] = useState(0);
+  const [modelData, setModelData] = useModel();
   const methods = useForm({
     mode: "onChange",
     // defaultValues: {
@@ -94,7 +86,7 @@ export default function Questionnarie() {
   } = methods;
 
   const onSubmit = (data) => {
-    console.log(data);
+    setModelData({ ...modelData, ...data });
   };
 
   const handleNext = async () => {

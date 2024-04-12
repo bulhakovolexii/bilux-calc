@@ -108,6 +108,7 @@ export default function Step1() {
               <Autocomplete
                 {...field}
                 options={cities}
+                noOptionsText="Місто не знайдено"
                 groupBy={(option) => option.region}
                 getOptionLabel={(option) => option.city}
                 renderInput={(params) => (
@@ -140,7 +141,7 @@ export default function Step1() {
                   aria-label="options"
                   row
                   {...field}
-                  sx={{ justifyContent: "space-around" }}
+                  sx={{ gap: 1, justifyContent: "center" }}
                 >
                   <FormControlLabel
                     value="A"
