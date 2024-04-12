@@ -51,7 +51,6 @@ export default function AutocompleteWithModal() {
           multiple
           fullWidth
           options={options}
-          disableClearable
           noOptionsText="Немає шарів"
           getOptionLabel={(option) => option.name}
           renderTags={(value, getTagProps) =>
@@ -62,7 +61,6 @@ export default function AutocompleteWithModal() {
                 key={option.id}
                 label={option.name}
                 {...getTagProps({ index })}
-                // onDelete={handleDelete}
               />
             ))
           }
@@ -72,11 +70,10 @@ export default function AutocompleteWithModal() {
               variant="filled"
               label="Шари конструкції"
               placeholder={"Оберіть або додайте шар"}
+              inputProps={{ ...params.inputProps, readOnly: true }}
               InputProps={{
                 ...params.InputProps,
-                onKeyDown: (e) => e.preventDefault(),
                 sx: {
-                  caretColor: "transparent",
                   cursor: "pointer",
                   input: { cursor: "pointer" },
                 },
@@ -90,7 +87,7 @@ export default function AutocompleteWithModal() {
       </Stack>
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Добавить опцию</DialogTitle>
-        <DialogContent></DialogContent>
+        <DialogContent>Тут должны быть поля для создания шару</DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Отмена</Button>
           <Button onClick={onSubmit}>Добавить</Button>
