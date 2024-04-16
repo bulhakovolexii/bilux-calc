@@ -55,6 +55,7 @@ export default function Step4() {
 
   useEffect(() => {
     control.register("ceiling.type", { required: "Оберіть тип даху" });
+    control.register("ceiling.layers", { required: "Додайте хоча б один шар" });
     control.register("floor.type", { required: "Оберіть тип підлоги" });
   }, [control, value]);
 
@@ -126,7 +127,13 @@ export default function Step4() {
                   {errors.ceiling?.type?.message || " "}
                 </FormHelperText>
               </FormControl>
-              <AutocompleteWithModal />
+              <AutocompleteWithModal
+                name="ceiling.layers"
+                label="Шари конструкції"
+                optionLabel="Шар"
+              >
+                123
+              </AutocompleteWithModal>
             </TabPanel>
             <TabPanel value="floor" sx={{ p: 0 }}>
               <FormControl error={!!errors.floor?.type} fullWidth>

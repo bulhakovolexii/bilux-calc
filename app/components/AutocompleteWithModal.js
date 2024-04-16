@@ -1,97 +1,93 @@
 "use client";
 
 import { Add } from "@mui/icons-material";
-import {
-  Autocomplete,
-  Button,
-  Chip,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
-  Stack,
-  TextField,
-} from "@mui/material";
+import { Autocomplete, Chip, Dialog, TextField } from "@mui/material";
 import { useState } from "react";
+import { Controller, get, useFormContext } from "react-hook-form";
 
-export default function AutocompleteWithModal() {
+export default function AutocompleteWithModal({
+  name,
+  label,
+  children,
+  optionLabel,
+}) {
+  const {
+    control,
+    formState: { errors },
+    setValue,
+    watch,
+  } = useFormContext();
+
+  const error = get(errors, name);
+
   const [open, setOpen] = useState(false);
-  const [options, setOptions] = useState([]);
 
-  const handleClickOpen = () => {
-    // Добавляем пустой объект в опции и открываем модальное окно
-    setOptions([
-      ...options,
-      { id: Math.random(), name: "Option 1", value: "1" },
-    ]);
+  const handleOpen = () => {
     setOpen(true);
   };
 
   const handleClose = () => {
-    // Удаляем последний добавленный объект, если он не заполнен
-    if (options.length > 0 && !options[options.length - 1].name) {
-      setOptions(options.slice(0, -1));
-    }
     setOpen(false);
   };
 
-  const onSubmit = (data) => {
-    // Обновляем последний объект в опциях с данными из формы
-    handleClose();
-  };
-
-  const handleDelete = (chipToDelete) => () => {
-    setOptions((chips) => chips.filter((chip) => chip.id !== chipToDelete.id));
+  const handleDeleteChip = (deletedValue) => {
+    const updatedValue = watch(name).filter(
+      (option) => option.id !== deletedValue.id
+    );
+    setValue(name, updatedValue);
   };
 
   return (
     <>
-      <Stack direction="row" spacing={1}>
-        <Autocomplete
-          multiple
-          fullWidth
-          options={options}
-          noOptionsText="Немає шарів"
-          getOptionLabel={(option) => option.name}
-          renderTags={(value, getTagProps) =>
-            value.map((option, index) => (
-              <Chip
-                size="small"
-                color="secondary"
-                key={option.id}
-                label={option.name}
-                {...getTagProps({ index })}
+      <Controller
+        name={name}
+        control={control}
+        render={({ field }) => (
+          <Autocomplete
+            {...field}
+            multiple
+            disableClearable
+            fullWidth
+            options={[]}
+            value={watch(name)}
+            open={open}
+            onOpen={handleOpen}
+            PopperComponent={() => <></>}
+            popupIcon={<Add />}
+            openText="Додати"
+            renderTags={(value) =>
+              value.map((option, index) => (
+                <Chip
+                  className="MuiAutocomplete-tag"
+                  size="small"
+                  color="secondary"
+                  key={option.id}
+                  label={`${optionLabel} ${index + 1}`}
+                  onDelete={() => handleDeleteChip(option)}
+                />
+              ))
+            }
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                variant="filled"
+                label={label}
+                error={!!error}
+                helperText={error?.message || " "}
+                InputProps={{
+                  ...params.InputProps,
+                  sx: {
+                    cursor: "pointer",
+                    input: { cursor: "pointer", caretColor: "transparent" },
+                  },
+                }}
               />
-            ))
-          }
-          renderInput={(params) => (
-            <TextField
-              {...params}
-              variant="filled"
-              label="Шари конструкції"
-              placeholder={"Оберіть або додайте шар"}
-              inputProps={{ ...params.inputProps, readOnly: true }}
-              InputProps={{
-                ...params.InputProps,
-                sx: {
-                  cursor: "pointer",
-                  input: { cursor: "pointer" },
-                },
-              }}
-            />
-          )}
-        />
-        <Button variant="outlined" onClick={handleClickOpen}>
-          <Add />
-        </Button>
-      </Stack>
-      <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Добавить опцию</DialogTitle>
-        <DialogContent>Тут должны быть поля для создания шару</DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose}>Отмена</Button>
-          <Button onClick={onSubmit}>Добавить</Button>
-        </DialogActions>
+            )}
+          />
+        )}
+      />
+      <Dialog open={open} onClose={handleClose} fullWidth maxWidth={false}>
+        {children}
       </Dialog>
     </>
   );

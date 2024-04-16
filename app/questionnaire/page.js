@@ -41,7 +41,7 @@ const steps = [
   {
     id: "step4",
     label: "Підлога та дах",
-    fields: ["ceiling.type", "floor.type"],
+    fields: ["ceiling.type", "ceiling.layers", "floor.type"],
   },
 ];
 
@@ -61,22 +61,29 @@ const FormSteps = ({ activeStep }) => {
 export default function Questionnarie() {
   const theme = useTheme();
   const router = useRouter();
-  const [activeStep, setActiveStep] = useState(0);
+  const [activeStep, setActiveStep] = useState(3);
   const [modelData, setModelData] = useModel();
   const methods = useForm({
     mode: "onChange",
     defaultValues: {
       ...modelData,
-      // city: "Харків",
-      // terrain: "B",
-      // purpose: "Багатоквартирні будинки, гуртожитки",
-      // heatCapacityClass: "Середній",
-      // tightness: "Герметична",
-      // typeAndCondition: "Утеплені органічними матеріалами в задовільному стані",
-      // buildingWidth: "44.295",
-      // buildingLength: "14.495",
-      // floorHeight: "3",
-      // numbersOfFloors: "9",
+      city: "Харків",
+      terrain: "B",
+      purpose: "Багатоквартирні будинки, гуртожитки",
+      heatCapacityClass: "Середній",
+      tightness: "Герметична",
+      typeAndCondition: "Утеплені органічними матеріалами в задовільному стані",
+      buildingWidth: "44.295",
+      buildingLength: "14.495",
+      floorHeight: "3",
+      numbersOfFloors: "9",
+      ceiling: {
+        type: "Суміщене покриття",
+        layers: [{ id: 1 }, { id: 2 }, { id: 3 }],
+      },
+      floor: {
+        type: "Технічне підпілля",
+      },
     },
   });
 
