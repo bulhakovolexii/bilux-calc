@@ -173,6 +173,15 @@ export default function Step4() {
                   {errors.floor?.type?.message || " "}
                 </FormHelperText>
               </FormControl>
+              <AutocompleteWithModal
+                name="floor.layers"
+                label="Шари конструкції"
+                optionPrefix="Шар №"
+                addTitlePrefix="Додати шар №"
+                editTitlePrefix="Редагувати шар №"
+              >
+                <LayerForm />
+              </AutocompleteWithModal>
             </TabPanel>
           </TabContext>
         </Stack>
