@@ -10,6 +10,7 @@ import {
   Stack,
   Tab,
   Typography,
+  Zoom,
 } from "@mui/material";
 import Information from "../Information";
 import InputsContainer from "../InputsContainer";
@@ -18,6 +19,7 @@ import { useEffect, useState } from "react";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import { CancelRounded, CheckCircleRounded } from "@mui/icons-material";
 import AutocompleteWithModal from "../AutocompleteWithModal";
+import LayerForm from "../LayerForm";
 
 const Info4 = () => {
   return (
@@ -57,14 +59,15 @@ export default function Step4() {
     control.register("ceiling.type", { required: "Оберіть тип даху" });
     control.register("ceiling.layers", { required: "Додайте хоча б один шар" });
     control.register("floor.type", { required: "Оберіть тип підлоги" });
+    control.register("floor.layers", { required: "Додайте хоча б один шар" });
   }, [control, value]);
 
   const handleChange = (event, newWalue) => {
     setValue(newWalue);
   };
 
-  const isCeilingInvalid = errors.ceiling?.type;
-  const isFloorInvalid = errors.floor?.type;
+  const isCeilingInvalid = errors.ceiling?.type || errors.ceiling?.layers;
+  const isFloorInvalid = errors.floor?.type || errors.floor?.layers;
 
   return (
     <Box height="100%" display="flex" gap={3}>
@@ -77,9 +80,12 @@ export default function Step4() {
                 <Tab
                   label="Дах"
                   value="ceiling"
+                  sx={{ minHeight: "42px" }}
                   icon={
                     isCeilingInvalid ? (
-                      <CancelRounded color="error" />
+                      <Zoom in={true}>
+                        <CancelRounded color="error" />
+                      </Zoom>
                     ) : (
                       <CheckCircleRounded />
                     )
@@ -89,9 +95,12 @@ export default function Step4() {
                 <Tab
                   label="Підлога"
                   value="floor"
+                  sx={{ minHeight: "42px" }}
                   icon={
                     isFloorInvalid ? (
-                      <CancelRounded color="error" />
+                      <Zoom in={true}>
+                        <CancelRounded color="error" />
+                      </Zoom>
                     ) : (
                       <CheckCircleRounded />
                     )
@@ -130,9 +139,11 @@ export default function Step4() {
               <AutocompleteWithModal
                 name="ceiling.layers"
                 label="Шари конструкції"
-                optionLabel="Шар"
+                optionPrefix="Шар №"
+                addTitlePrefix="Додати шар №"
+                editTitlePrefix="Редагувати шар №"
               >
-                123
+                <LayerForm />
               </AutocompleteWithModal>
             </TabPanel>
             <TabPanel value="floor" sx={{ p: 0 }}>

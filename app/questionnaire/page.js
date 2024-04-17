@@ -41,7 +41,7 @@ const steps = [
   {
     id: "step4",
     label: "Підлога та дах",
-    fields: ["ceiling.type", "ceiling.layers", "floor.type"],
+    fields: ["ceiling.type", "ceiling.layers", "floor.type", "floor.layers"],
   },
 ];
 
@@ -79,7 +79,6 @@ export default function Questionnarie() {
       numbersOfFloors: "9",
       ceiling: {
         type: "Суміщене покриття",
-        layers: [{ id: 1 }, { id: 2 }, { id: 3 }],
       },
       floor: {
         type: "Технічне підпілля",
