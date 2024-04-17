@@ -130,11 +130,12 @@ export default function AutocompleteWithModal({
                 label={label}
                 error={!!error}
                 helperText={error?.message || " "}
+                inputProps={{ ...params.inputProps, readOnly: true }}
                 InputProps={{
                   ...params.InputProps,
                   sx: {
                     cursor: "pointer",
-                    input: { cursor: "pointer", caretColor: "transparent" },
+                    input: { cursor: "pointer" },
                   },
                 }}
               />
