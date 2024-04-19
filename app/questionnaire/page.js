@@ -61,28 +61,28 @@ const FormSteps = ({ activeStep }) => {
 export default function Questionnarie() {
   const theme = useTheme();
   const router = useRouter();
-  const [activeStep, setActiveStep] = useState(0);
+  const [activeStep, setActiveStep] = useState(3);
   const [modelData, setModelData] = useModel();
   const methods = useForm({
     mode: "onChange",
     defaultValues: {
+      city: "Харків",
+      terrain: "B",
+      purpose: "Багатоквартирні будинки, гуртожитки",
+      heatCapacityClass: "Середній",
+      tightness: "Герметична",
+      typeAndCondition: "Утеплені органічними матеріалами в задовільному стані",
+      buildingWidth: "44.295",
+      buildingLength: "14.495",
+      floorHeight: "3",
+      numbersOfFloors: "9",
+      ceiling: {
+        type: "Суміщене покриття",
+      },
+      floor: {
+        type: "Технічне підпілля",
+      },
       ...modelData,
-      // city: "Харків",
-      // terrain: "B",
-      // purpose: "Багатоквартирні будинки, гуртожитки",
-      // heatCapacityClass: "Середній",
-      // tightness: "Герметична",
-      // typeAndCondition: "Утеплені органічними матеріалами в задовільному стані",
-      // buildingWidth: "44.295",
-      // buildingLength: "14.495",
-      // floorHeight: "3",
-      // numbersOfFloors: "9",
-      // ceiling: {
-      //   type: "Суміщене покриття",
-      // },
-      // floor: {
-      //   type: "Технічне підпілля",
-      // },
     },
   });
 

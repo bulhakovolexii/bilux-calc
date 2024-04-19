@@ -76,6 +76,7 @@ export default function AutocompleteWithModal({
       }
     }
     await trigger(name);
+    console.log(newOption);
   };
 
   const handleDeleteOption = async (deletedOption) => {
