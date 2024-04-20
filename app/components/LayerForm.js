@@ -15,6 +15,7 @@ import {
   ListItemText,
   Stack,
   TextField,
+  Typography,
 } from "@mui/material";
 import { Controller, useForm } from "react-hook-form";
 import materials from "../model/reference-data/metrials";
@@ -36,9 +37,11 @@ export default function LayerForm({ onSubmit, initialValues, handleClose }) {
   const [openAccordionType, setOpenAccordionType] = useState(
     getValues("material.type") || null
   );
+
   const [openAccordionSubtype, setOpenAccordionSubtype] = useState(
     getValues("material.subtype") || null
   );
+
   const [openAccordionMaterial, setOpenAccordionMaterial] = useState(
     getValues("material.name") || null
   );
@@ -70,8 +73,8 @@ export default function LayerForm({ onSubmit, initialValues, handleClose }) {
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <DialogContent>
-          <Stack spacing={1}>
+        <DialogContent sx={{ maxHeight: "calc(100vh - 192px)" }}>
+          <Stack spacing={1} sx={{ overflowY: "auto" }}>
             <Controller
               name="thickness"
               control={control}
@@ -120,7 +123,7 @@ export default function LayerForm({ onSubmit, initialValues, handleClose }) {
                       onChange={handleAccordionTypeChange(type)}
                     >
                       <AccordionSummary expandIcon={<ExpandMore />}>
-                        {type}
+                        <Typography>{type}</Typography>
                       </AccordionSummary>
                       <AccordionDetails>
                         {Object.entries(subtypes).map(
@@ -132,7 +135,7 @@ export default function LayerForm({ onSubmit, initialValues, handleClose }) {
                               onChange={handleAccordionSubtypeChange(subtype)}
                             >
                               <AccordionSummary expandIcon={<ExpandMore />}>
-                                {subtype}
+                                <Typography>{subtype}</Typography>
                               </AccordionSummary>
                               <AccordionDetails>
                                 {materials.map((material) => (
@@ -149,7 +152,7 @@ export default function LayerForm({ onSubmit, initialValues, handleClose }) {
                                     <AccordionSummary
                                       expandIcon={<ExpandMore />}
                                     >
-                                      {material.name}
+                                      <Typography>{material.name}</Typography>
                                     </AccordionSummary>
                                     <AccordionDetails>
                                       {material.variants.map((variant) => (
