@@ -19,6 +19,7 @@ import {
 import { Controller, useForm } from "react-hook-form";
 import materials from "../model/reference-data/metrials";
 import { Check, ExpandMore } from "@mui/icons-material";
+import { useState } from "react";
 
 export default function LayerForm({ onSubmit, initialValues, handleClose }) {
   const {
@@ -26,10 +27,33 @@ export default function LayerForm({ onSubmit, initialValues, handleClose }) {
     formState: { errors },
     handleSubmit,
     trigger,
+    getValues,
   } = useForm({
     mode: "onChange",
     defaultValues: initialValues,
   });
+
+  const [openAccordionType, setOpenAccordionType] = useState(
+    getValues("material.type") || null
+  );
+  const [openAccordionSubtype, setOpenAccordionSubtype] = useState(
+    getValues("material.subtype") || null
+  );
+  const [openAccordionMaterial, setOpenAccordionMaterial] = useState(
+    getValues("material.name") || null
+  );
+
+  const handleAccordionTypeChange = (panel) => (event, isExpanded) => {
+    setOpenAccordionType(isExpanded ? panel : null);
+  };
+
+  const handleAccordionSubtypeChange = (panel) => (event, isExpanded) => {
+    setOpenAccordionSubtype(isExpanded ? panel : null);
+  };
+
+  const handleAccordionMaterialChange = (panel) => (event, isExpanded) => {
+    setOpenAccordionMaterial(isExpanded ? panel : null);
+  };
 
   const groupedMaterials = {};
 
@@ -92,7 +116,8 @@ export default function LayerForm({ onSubmit, initialValues, handleClose }) {
                     <Accordion
                       variant="outlined"
                       key={type}
-                      defaultExpanded={field.value.type === type}
+                      expanded={openAccordionType === type}
+                      onChange={handleAccordionTypeChange(type)}
                     >
                       <AccordionSummary expandIcon={<ExpandMore />}>
                         {type}
@@ -103,7 +128,8 @@ export default function LayerForm({ onSubmit, initialValues, handleClose }) {
                             <Accordion
                               variant="outlined"
                               key={subtype}
-                              defaultExpanded={field.value.subtype === subtype}
+                              expanded={openAccordionSubtype === subtype}
+                              onChange={handleAccordionSubtypeChange(subtype)}
                             >
                               <AccordionSummary expandIcon={<ExpandMore />}>
                                 {subtype}
@@ -113,9 +139,12 @@ export default function LayerForm({ onSubmit, initialValues, handleClose }) {
                                   <Accordion
                                     variant="outlined"
                                     key={material.name}
-                                    defaultExpanded={
-                                      field.value.name == material.name
+                                    expanded={
+                                      openAccordionMaterial === material.name
                                     }
+                                    onChange={handleAccordionMaterialChange(
+                                      material.name
+                                    )}
                                   >
                                     <AccordionSummary
                                       expandIcon={<ExpandMore />}
