@@ -40,10 +40,10 @@ export default function Step4() {
     const ceilingTabIsInvalid = !!errors.ceiling?.type;
     const floorTabIsInvalid = !!errors.floor?.type;
 
-    if (!ceilingTabIsInvalid) {
-      setTab("floor");
-    } else if (!floorTabIsInvalid) {
+    if (!floorTabIsInvalid) {
       setTab("ceiling");
+    } else if (!ceilingTabIsInvalid) {
+      setTab("floor");
     }
   }, [isValidating]);
 
