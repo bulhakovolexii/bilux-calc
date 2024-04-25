@@ -1,15 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { useModel } from "../contexts/ModelContext";
+import { useInputData } from "../context/InputDataContext";
 
 export default function Results() {
-  const [modelData] = useModel();
+  const { inputData } = useInputData();
   return (
     <>
       <h1>Результати</h1>
       <Link href="/">На головну</Link>
-      <p>{JSON.stringify(modelData)}</p>
+      <p>{JSON.stringify(inputData)}</p>
     </>
   );
 }

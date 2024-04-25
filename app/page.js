@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <>
       <h1>Головна</h1>
-      <Link href="/questionnaire">Опитувальний лист</Link>
+      <Link href="/questionnaire/step-1">Опитувальний лист</Link>
     </>
   );
 }

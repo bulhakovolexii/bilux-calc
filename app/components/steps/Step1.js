@@ -1,6 +1,7 @@
+"use client";
+
 import {
   Autocomplete,
-  Box,
   FormControl,
   FormControlLabel,
   FormHelperText,
@@ -11,170 +12,157 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import Information from "../Information";
-import InputsContainer from "../InputsContainer";
 import { Controller, useFormContext } from "react-hook-form";
 
-const Info1 = () => {
-  return (
-    <Stack spacing={2}>
-      <Typography variant="h5">Характеристика місцевості</Typography>
-      <Typography variant="body1">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem iusto
-        amet beatae aut sapiente recusandae ratione consequuntur maiores,
-        commodi autem reiciendis illo nostrum adipisci accusantium sunt quidem
-        voluptate illum voluptatum?
-      </Typography>
-    </Stack>
-  );
-};
-
 const cities = [
-  { city: "Ай-Петрі", region: "Автономна Республіка Крим" },
-  { city: "Клепиніне", region: "Автономна Республіка Крим" },
-  { city: "Сімферополь", region: "Автономна Республіка Крим" },
-  { city: "Феодосія", region: "Автономна Республіка Крим" },
-  { city: "Ялта", region: "Автономна Республіка Крим" },
-  { city: "Вінниця", region: "Вінницька область" },
-  { city: "Ковель", region: "Волинська область" },
-  { city: "Луцьк", region: "Волинська область" },
-  { city: "Дніпро", region: "Дніпропетровська область" },
-  { city: "Комісарівка", region: "Дніпропетровська область" },
-  { city: "Кривий Ріг", region: "Дніпропетровська область" },
-  { city: "Донецьк", region: "Донецька область" },
-  { city: "Житомир", region: "Житомирська область" },
-  { city: "Овруч", region: "Житомирська область" },
-  { city: "Берегове", region: "Закарпатська область" },
-  { city: "Міжгір'я", region: "Закарпатська область" },
-  { city: "Плай", region: "Закарпатська область" },
-  { city: "Рахів", region: "Закарпатська область" },
-  { city: "Ужгород", region: "Закарпатська область" },
-  { city: "Хуст", region: "Закарпатська область" },
-  { city: "Гуляйполе", region: "Запорізька область" },
-  { city: "Запоріжжя", region: "Запорізька область" },
-  { city: "Кирилівка", region: "Запорізька область" },
-  { city: "Івано-Франківськ", region: "Івано-Франківська область" },
-  { city: "Пожежівська", region: "Івано-Франківська область" },
-  { city: "Гайворон", region: "Кіровоградська область" },
-  { city: "Знам'янка", region: "Кіровоградська область" },
-  { city: "Кропивницький", region: "Кіровоградська область" },
-  { city: "Київ", region: "Київська область" },
-  { city: "Миронівка", region: "Київська область" },
-  { city: "Луганськ", region: "Луганська область" },
-  { city: "Львів", region: "Львівська область" },
-  { city: "Миколаїв", region: "Миколаївська область" },
-  { city: "Ізмаїл", region: "Одеська область" },
-  { city: "Любашівка", region: "Одеська область" },
-  { city: "Одеса", region: "Одеська область" },
-  { city: "Роздільна", region: "Одеська область" },
-  { city: "Сарата", region: "Одеська область" },
-  { city: "Лубни", region: "Полтавська область" },
-  { city: "Полтава", region: "Полтавська область" },
-  { city: "Рівне", region: "Рівненська область" },
-  { city: "Сарни", region: "Рівненська область" },
-  { city: "Ромни", region: "Сумська область" },
-  { city: "Суми", region: "Сумська область" },
-  { city: "Тернопіль", region: "Тернопільська область" },
-  { city: "Лозова", region: "Харківська область" },
-  { city: "Харків", region: "Харківська область" },
-  { city: "Асканія-Нова", region: "Херсонська область" },
-  { city: "Генічеськ", region: "Херсонська область" },
-  { city: "Херсон", region: "Херсонська область" },
-  { city: "Хмельницький", region: "Хмельницька область" },
-  { city: "Золотоноша", region: "Черкаська область" },
-  { city: "Умань", region: "Черкаська область" },
-  { city: "Черкаси", region: "Черкаська область" },
-  { city: "Чернівці", region: "Чернівецька область" },
-  { city: "Семенівка", region: "Чернігівська область" },
-  { city: "Чернігів", region: "Чернігівська область" },
+  { name: "Ай-Петрі", region: "Автономна Республіка Крим" },
+  { name: "Клепиніне", region: "Автономна Республіка Крим" },
+  { name: "Сімферополь", region: "Автономна Республіка Крим" },
+  { name: "Феодосія", region: "Автономна Республіка Крим" },
+  { name: "Ялта", region: "Автономна Республіка Крим" },
+  { name: "Вінниця", region: "Вінницька область" },
+  { name: "Ковель", region: "Волинська область" },
+  { name: "Луцьк", region: "Волинська область" },
+  { name: "Дніпро", region: "Дніпропетровська область" },
+  { name: "Комісарівка", region: "Дніпропетровська область" },
+  { name: "Кривий Ріг", region: "Дніпропетровська область" },
+  { name: "Донецьк", region: "Донецька область" },
+  { name: "Житомир", region: "Житомирська область" },
+  { name: "Овруч", region: "Житомирська область" },
+  { name: "Берегове", region: "Закарпатська область" },
+  { name: "Міжгір'я", region: "Закарпатська область" },
+  { name: "Плай", region: "Закарпатська область" },
+  { name: "Рахів", region: "Закарпатська область" },
+  { name: "Ужгород", region: "Закарпатська область" },
+  { name: "Хуст", region: "Закарпатська область" },
+  { name: "Гуляйполе", region: "Запорізька область" },
+  { name: "Запоріжжя", region: "Запорізька область" },
+  { name: "Кирилівка", region: "Запорізька область" },
+  { name: "Івано-Франківськ", region: "Івано-Франківська область" },
+  { name: "Пожежівська", region: "Івано-Франківська область" },
+  { name: "Гайворон", region: "Кіровоградська область" },
+  { name: "Знам'янка", region: "Кіровоградська область" },
+  { name: "Кропивницький", region: "Кіровоградська область" },
+  { name: "Київ", region: "Київська область" },
+  { name: "Миронівка", region: "Київська область" },
+  { name: "Луганськ", region: "Луганська область" },
+  { name: "Львів", region: "Львівська область" },
+  { name: "Миколаїв", region: "Миколаївська область" },
+  { name: "Ізмаїл", region: "Одеська область" },
+  { name: "Любашівка", region: "Одеська область" },
+  { name: "Одеса", region: "Одеська область" },
+  { name: "Роздільна", region: "Одеська область" },
+  { name: "Сарата", region: "Одеська область" },
+  { name: "Лубни", region: "Полтавська область" },
+  { name: "Полтава", region: "Полтавська область" },
+  { name: "Рівне", region: "Рівненська область" },
+  { name: "Сарни", region: "Рівненська область" },
+  { name: "Ромни", region: "Сумська область" },
+  { name: "Суми", region: "Сумська область" },
+  { name: "Тернопіль", region: "Тернопільська область" },
+  { name: "Лозова", region: "Харківська область" },
+  { name: "Харків", region: "Харківська область" },
+  { name: "Асканія-Нова", region: "Херсонська область" },
+  { name: "Генічеськ", region: "Херсонська область" },
+  { name: "Херсон", region: "Херсонська область" },
+  { name: "Хмельницький", region: "Хмельницька область" },
+  { name: "Золотоноша", region: "Черкаська область" },
+  { name: "Умань", region: "Черкаська область" },
+  { name: "Черкаси", region: "Черкаська область" },
+  { name: "Чернівці", region: "Чернівецька область" },
+  { name: "Семенівка", region: "Чернігівська область" },
+  { name: "Чернігів", region: "Чернігівська область" },
 ];
 
 export default function Step1() {
-  const {
-    formState: { errors },
-    control,
-  } = useFormContext();
+  const { control } = useFormContext();
 
   return (
-    <Box height="100%" display="flex" gap={3}>
-      <InputsContainer>
-        <Stack spacing={2}>
-          <Typography variant="h4">Дані про місцевість</Typography>
-          <Controller
-            name="city"
-            control={control}
-            rules={{ required: "Оберіть місто" }}
-            render={({ field }) => (
-              <Autocomplete
-                {...field}
-                options={cities}
-                disableClearable
-                noOptionsText="Місто не знайдено"
-                groupBy={(option) => option.region}
-                getOptionLabel={(option) => option.city}
-                renderInput={(params) => (
-                  <TextField
-                    {...params}
-                    label="Місто"
-                    variant="filled"
-                    error={!!errors.city}
-                    helperText={errors.city?.message || " "}
-                  />
-                )}
-                onChange={(e, value) => {
-                  field.onChange(value?.city);
-                }}
-                value={
-                  cities.find((option) => option.city === field.value) || null
-                }
-              />
-            )}
-          />
-          <FormControl error={!!errors.terrain}>
-            <FormLabel>Тип місцевості</FormLabel>
-            <Controller
-              name="terrain"
-              control={control}
-              defaultValue=""
-              rules={{ required: "Оберіть варіант місцевості" }}
-              render={({ field }) => (
-                <RadioGroup
-                  aria-label="options"
-                  row
-                  {...field}
-                  sx={{ gap: 1, justifyContent: "center" }}
-                >
-                  <FormControlLabel
-                    value="A"
-                    control={<Radio />}
-                    label="A"
-                    labelPlacement="top"
-                  />
-                  <FormControlLabel
-                    value="B"
-                    control={<Radio />}
-                    label="B"
-                    labelPlacement="top"
-                  />
-                  <FormControlLabel
-                    value="C"
-                    control={<Radio />}
-                    label="C"
-                    labelPlacement="top"
-                  />
-                </RadioGroup>
+    <Stack spacing={1}>
+      <Typography variant="h4">Дані про місцевість</Typography>
+      <Controller
+        name="city"
+        control={control}
+        rules={{
+          required: "Оберіть місто",
+        }}
+        render={({ field, fieldState: { error } }) => {
+          const { onChange, value, ref } = field;
+          return (
+            <Autocomplete
+              options={cities}
+              getOptionLabel={(city) => {
+                return city.name;
+              }}
+              groupBy={(city) => city.region}
+              value={
+                value
+                  ? cities.find((city) => {
+                      return value === city.name;
+                    }) ?? null
+                  : null
+              }
+              onChange={(event, newValue) => {
+                onChange(newValue ? newValue.name : null);
+              }}
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  label="Місто"
+                  variant="filled"
+                  inputRef={ref}
+                  error={!!error}
+                  helperText={error?.message || " "}
+                />
               )}
             />
-            <FormHelperText sx={{ mx: 0 }}>
-              {errors.terrain?.message ||
-                "У разі невизначенності оберіть тип B"}
-            </FormHelperText>
-          </FormControl>
-        </Stack>
-      </InputsContainer>
-      <Information>
-        <Info1 />
-      </Information>
-    </Box>
+          );
+        }}
+      />
+      <Controller
+        name="terrain"
+        control={control}
+        rules={{
+          required: "Оберіть тип місцевості",
+        }}
+        render={({ field, fieldState: { error } }) => {
+          const { onChange, value, ref } = field;
+          return (
+            <FormControl error={!!error}>
+              <FormLabel>Тип місцевості</FormLabel>
+              <RadioGroup
+                value={value ? value : null}
+                onChange={(event) => onChange(event.target.value)}
+                row
+                sx={{ gap: 1, justifyContent: "center" }}
+              >
+                <FormControlLabel
+                  value="A"
+                  label="A"
+                  labelPlacement="top"
+                  control={<Radio />}
+                />
+                <FormControlLabel
+                  value="B"
+                  label="B"
+                  labelPlacement="top"
+                  control={<Radio />}
+                  inputRef={ref}
+                />
+                <FormControlLabel
+                  value="C"
+                  label="C"
+                  labelPlacement="top"
+                  control={<Radio />}
+                />
+              </RadioGroup>
+              <FormHelperText>
+                {error?.message || 'У разі невизначенності оберіть тип "B"'}
+              </FormHelperText>
+            </FormControl>
+          );
+        }}
+      />
+    </Stack>
   );
 }

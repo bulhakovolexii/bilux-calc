@@ -1,5 +1,6 @@
+"use client";
+
 import {
-  Box,
   FormControl,
   FormHelperText,
   InputLabel,
@@ -8,23 +9,7 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import Information from "../Information";
-import InputsContainer from "../InputsContainer";
 import { Controller, useFormContext } from "react-hook-form";
-
-const Info2 = () => {
-  return (
-    <Stack spacing={2}>
-      <Typography variant="h5">Внутрішня теплоємність будівлі</Typography>
-      <Typography variant="body1">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem iusto
-        amet beatae aut sapiente recusandae ratione consequuntur maiores,
-        commodi autem reiciendis illo nostrum adipisci accusantium sunt quidem
-        voluptate illum voluptatum?
-      </Typography>
-    </Stack>
-  );
-};
 
 const purposes = [
   "Одноквартирні будинки",
@@ -64,124 +49,135 @@ const typeAndConditionOptions = [
 ];
 
 export default function Step2() {
-  const {
-    formState: { errors },
-    control,
-  } = useFormContext();
+  const { control } = useFormContext();
 
   return (
-    <Box height="100%" display="flex" gap={3}>
-      <InputsContainer>
-        <Stack spacing={2}>
-          <Typography variant="h4">Загальні відомості про будівлю</Typography>
-          <FormControl error={!!errors.purpose}>
-            <InputLabel id="purpose" variant="filled">
-              Функційне призначення
-            </InputLabel>
-            <Controller
-              name="purpose"
-              rules={{ required: "Оберіть функційне призначення будівлі" }}
-              control={control}
-              defaultValue=""
-              render={({ field }) => (
-                <Select labelId="purpose" variant="filled" {...field}>
-                  {purposes.map((option) => (
-                    <MenuItem
-                      key={option}
-                      value={option}
-                      sx={{ whiteSpace: "normal" }}
-                    >
-                      {option}
-                    </MenuItem>
-                  ))}
-                </Select>
-              )}
-            />
-            <FormHelperText>{errors.purpose?.message || " "}</FormHelperText>
-          </FormControl>
-
-          <FormControl error={!!errors.heatCapacityClass}>
-            <InputLabel id="heatCapacityClass" variant="filled">
-              Клас теплоємності
-            </InputLabel>
-            <Controller
-              name="heatCapacityClass"
-              rules={{ required: "Оберіть клас теплоємності будівлі" }}
-              control={control}
-              defaultValue=""
-              render={({ field }) => (
-                <Select labelId="heatCapacityClass" variant="filled" {...field}>
-                  {heatCapacityClasses.map((option) => (
-                    <MenuItem key={option} value={option}>
-                      {option}
-                    </MenuItem>
-                  ))}
-                </Select>
-              )}
-            />
-            <FormHelperText>
-              {errors.heatCapacityClass?.message || " "}
-            </FormHelperText>
-          </FormControl>
-
-          <FormControl error={!!errors.tightness}>
-            <InputLabel id="tightness" variant="filled">
-              Характеристика герметичності
-            </InputLabel>
-            <Controller
-              name="tightness"
-              rules={{
-                required: "Оберіть характеристику герметичності будівлі",
-              }}
-              control={control}
-              defaultValue=""
-              render={({ field }) => (
-                <Select labelId="tightness" variant="filled" {...field}>
-                  {tightnessOptions.map((option) => (
-                    <MenuItem key={option} value={option}>
-                      {option}
-                    </MenuItem>
-                  ))}
-                </Select>
-              )}
-            />
-            <FormHelperText>{errors.tightness?.message || " "}</FormHelperText>
-          </FormControl>
-
-          <FormControl error={!!errors.typeAndCondition}>
-            <InputLabel id="typeAndCondition" variant="filled">
-              Тип і стан стін
-            </InputLabel>
-            <Controller
-              name="typeAndCondition"
-              rules={{
-                required: "Оберіть тип і стан стін будівлі",
-              }}
-              control={control}
-              defaultValue=""
-              render={({ field }) => (
-                <Select labelId="typeAndCondition" variant="filled" {...field}>
-                  {typeAndConditionOptions.map((option) => (
-                    <MenuItem
-                      key={option}
-                      value={option}
-                      sx={{ whiteSpace: "normal" }}
-                    >
-                      {option}
-                    </MenuItem>
-                  ))}
-                </Select>
-              )}
-            />
-            <FormHelperText>
-              {errors.typeAndCondition?.message || " "}
-            </FormHelperText>
-          </FormControl>
-        </Stack>
-      </InputsContainer>
-      <Information>
-        <Info2 />
-      </Information>
-    </Box>
+    <Stack spacing={1}>
+      <Typography variant="h4">Загальні відомості про будівлю</Typography>
+      <Controller
+        name="purpose"
+        control={control}
+        rules={{
+          required: "Оберіть функційне призначення будівлі",
+        }}
+        render={({ field, fieldState: { error } }) => {
+          const { onChange, value, ref } = field;
+          return (
+            <FormControl error={!!error} variant="filled">
+              <InputLabel>Тип місцевості</InputLabel>
+              <Select
+                value={value || ""}
+                onChange={(event) => onChange(event.target.value)}
+                inputRef={ref}
+              >
+                {purposes.map((purpose) => (
+                  <MenuItem
+                    key={purpose}
+                    value={purpose}
+                    sx={{ whiteSpace: "normal" }}
+                  >
+                    {purpose}
+                  </MenuItem>
+                ))}
+              </Select>
+              <FormHelperText>{error?.message || " "}</FormHelperText>
+            </FormControl>
+          );
+        }}
+      />
+      <Controller
+        name="heatCapacityClass"
+        control={control}
+        rules={{
+          required: "Оберіть характеристику герметичності будівлі",
+        }}
+        render={({ field, fieldState: { error } }) => {
+          const { onChange, value, ref } = field;
+          return (
+            <FormControl error={!!error} variant="filled">
+              <InputLabel>Характеристика герметичності</InputLabel>
+              <Select
+                value={value || ""}
+                onChange={(event) => onChange(event.target.value)}
+                inputRef={ref}
+              >
+                {heatCapacityClasses.map((heatCapacityClass) => (
+                  <MenuItem
+                    key={heatCapacityClass}
+                    value={heatCapacityClass}
+                    sx={{ whiteSpace: "normal" }}
+                  >
+                    {heatCapacityClass}
+                  </MenuItem>
+                ))}
+              </Select>
+              <FormHelperText>{error?.message || " "}</FormHelperText>
+            </FormControl>
+          );
+        }}
+      />
+      <Controller
+        name="tightness"
+        control={control}
+        rules={{
+          required: "Оберіть тип і стан стін будівлі",
+        }}
+        render={({ field, fieldState: { error } }) => {
+          const { onChange, value, ref } = field;
+          return (
+            <FormControl error={!!error} variant="filled">
+              <InputLabel>Тип і стан стін</InputLabel>
+              <Select
+                value={value || ""}
+                onChange={(event) => onChange(event.target.value)}
+                inputRef={ref}
+              >
+                {tightnessOptions.map((tightness) => (
+                  <MenuItem
+                    key={tightness}
+                    value={tightness}
+                    sx={{ whiteSpace: "normal" }}
+                  >
+                    {tightness}
+                  </MenuItem>
+                ))}
+              </Select>
+              <FormHelperText>{error?.message || " "}</FormHelperText>
+            </FormControl>
+          );
+        }}
+      />
+      <Controller
+        name="typeAndCondition"
+        control={control}
+        rules={{
+          required: "Оберіть функційне призначення будівлі",
+        }}
+        render={({ field, fieldState: { error } }) => {
+          const { onChange, value, ref } = field;
+          return (
+            <FormControl error={!!error} variant="filled">
+              <InputLabel>Тип місцевості</InputLabel>
+              <Select
+                value={value || ""}
+                onChange={(event) => onChange(event.target.value)}
+                inputRef={ref}
+              >
+                {typeAndConditionOptions.map((typeAndCondition) => (
+                  <MenuItem
+                    key={typeAndCondition}
+                    value={typeAndCondition}
+                    sx={{ whiteSpace: "normal" }}
+                  >
+                    {typeAndCondition}
+                  </MenuItem>
+                ))}
+              </Select>
+              <FormHelperText>{error?.message || " "}</FormHelperText>
+            </FormControl>
+          );
+        }}
+      />
+    </Stack>
   );
 }

@@ -5,7 +5,7 @@ import { Close, InfoOutlined } from "@mui/icons-material";
 import { Box, Drawer, Fab, Hidden, Paper } from "@mui/material";
 import { useState } from "react";
 
-export default function Information({ children }) {
+export default function FormInformation({ children }) {
   const [open, setOpen] = useState(false);
   const theme = useTheme();
   return (

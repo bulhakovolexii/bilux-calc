@@ -3,7 +3,7 @@
 import { useTheme } from "@emotion/react";
 import { Box } from "@mui/material";
 
-export default function InputsContainer({ children }) {
+export default function FormInputs({ children }) {
   const theme = useTheme();
   return (
     <Box
