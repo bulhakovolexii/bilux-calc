@@ -34,7 +34,7 @@ const steps = [
   {
     id: 3,
     label: "Підлога та дах",
-    fields: ["ceiling.type", "floor.type"],
+    fields: ["ceiling.type", "ceiling.layers", "floor.type", "floor.layers"],
   },
 ];
 

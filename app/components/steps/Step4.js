@@ -1,9 +1,15 @@
 "use client";
 
 import {
+  CancelRounded,
+  CheckCircleOutlineRounded,
+  CheckCircleRounded,
+} from "@mui/icons-material";
+import {
   Box,
   FormControl,
   FormHelperText,
+  Icon,
   InputLabel,
   MenuItem,
   Select,
@@ -11,6 +17,7 @@ import {
   Tab,
   Tabs,
   Typography,
+  Zoom,
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import { Controller, useFormContext } from "react-hook-form";
@@ -31,15 +38,19 @@ const floorTypes = [
 export default function Step4() {
   const {
     control,
-    formState: { submitCount },
+    formState: { isSubmitting, submitCount },
     getFieldState,
   } = useFormContext();
   const [tab, setTab] = useState("ceiling");
+  const [floorTabIsInvalid, setFloorTabIsInvalid] = useState(null);
+  const [ceilingTabIsInvalid, setCeilingTabIsInvalid] = useState(null);
 
   useEffect(() => {
-    const floorTabIsInvalid = getFieldState("floor.type").invalid;
-    const ceilingTabIsInvalid = getFieldState("ceiling.type").invalid;
+    setFloorTabIsInvalid(getFieldState("floor.type").invalid);
+    setCeilingTabIsInvalid(getFieldState("ceiling.type").invalid);
+  }, [isSubmitting]);
 
+  useEffect(() => {
     if (!floorTabIsInvalid) {
       setTab("ceiling");
     } else if (!ceilingTabIsInvalid) {
@@ -60,8 +71,36 @@ export default function Step4() {
         variant="fullWidth"
         sx={{ borderBottom: 1, borderColor: "divider" }}
       >
-        <Tab label="Дах" value="ceiling" />
-        <Tab label="Підлога" value="floor" />
+        <Tab
+          label="Дах"
+          value="ceiling"
+          sx={{ minHeight: "42px" }}
+          iconPosition="start"
+          icon={
+            ceilingTabIsInvalid ? (
+              <Zoom in={true}>
+                <CancelRounded color="error" />
+              </Zoom>
+            ) : (
+              <CheckCircleRounded color="primary" />
+            )
+          }
+        />
+        <Tab
+          label="Підлога"
+          value="floor"
+          sx={{ minHeight: "42px" }}
+          iconPosition="start"
+          icon={
+            floorTabIsInvalid ? (
+              <Zoom in={true}>
+                <CancelRounded color="error" />
+              </Zoom>
+            ) : (
+              <CheckCircleRounded color="primary" />
+            )
+          }
+        />
       </Tabs>
       <Box hidden={tab !== "ceiling"}>
         <Controller
