@@ -31,21 +31,21 @@ const floorTypes = [
 export default function Step4() {
   const {
     control,
-    trigger,
-    formState: { errors, isValidating },
+    formState: { submitCount },
+    getFieldState,
   } = useFormContext();
   const [tab, setTab] = useState("ceiling");
 
   useEffect(() => {
-    const ceilingTabIsInvalid = !!errors.ceiling?.type;
-    const floorTabIsInvalid = !!errors.floor?.type;
+    const floorTabIsInvalid = getFieldState("floor.type").invalid;
+    const ceilingTabIsInvalid = getFieldState("ceiling.type").invalid;
 
     if (!floorTabIsInvalid) {
       setTab("ceiling");
     } else if (!ceilingTabIsInvalid) {
       setTab("floor");
     }
-  }, [isValidating]);
+  }, [submitCount]);
 
   const handleChangeTab = (event, newTab) => {
     setTab(newTab);
