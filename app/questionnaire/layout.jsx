@@ -42,7 +42,7 @@ export default function QuestionnaireLayout({ children }) {
   const router = useRouter();
   const theme = useTheme();
   const { inputData, updateInputData } = useInputData();
-  const methods = useForm({ defaultValues: inputData });
+  const methods = useForm({mode: "onChange", defaultValues: inputData });
   const {
     handleSubmit,
     trigger,

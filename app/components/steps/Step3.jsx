@@ -122,7 +122,6 @@ export default function Step3() {
                 onChange={(e) => onChange(e.target.value)}
                 inputRef={ref}
                 inputProps={{ inputMode: "numeric", min: 1, step: 1 }}
-                InputProps={{ endAdornment: "м", sx: { gap: 1 } }}
                 variant="filled"
                 fullWidth
                 label="Кількість поверхів"
