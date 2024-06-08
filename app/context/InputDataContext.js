@@ -6,18 +6,8 @@ const InputDataContext = createContext(undefined);
 
 export const InputDataProvider = ({ children }) => {
   const [inputData, setInputData] = useState({
-    city: "Харків",
-    terrain: "B",
-    purpose: "Багатоквартирні будинки, гуртожитки",
-    heatCapacityClass: "Середній",
-    tightness: "Герметична",
-    typeAndCondition: "Утеплені органічними матеріалами в задовільному стані",
-    buildingWidth: "44.29",
-    buildingLength: "14.49",
-    floorHeight: "3",
-    numbersOfFloors: "9",
-    // ceiling: { type: "Суміщене покриття" },
-    // floor: { type: "Технічне підпілля" },
+    ceiling: { type: "Суміщене покриття" },
+    floor: { type: "Технічне підпілля" },
   });
 
   const updateInputData = (newValue) => {

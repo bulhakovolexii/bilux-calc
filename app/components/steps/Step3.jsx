@@ -102,7 +102,7 @@ export default function Step3() {
           }}
         />
         <Controller
-          name="numbersOfFloors"
+          name="numberOfFloors"
           control={control}
           rules={{
             required: "Введіть кількість поверхів",

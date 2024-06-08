@@ -1,5 +1,6 @@
 "use client";
 
+import citiesClimateData from "@/app/model/reference-data/citiesClimateData";
 import {
   Autocomplete,
   FormControl,
@@ -13,66 +14,6 @@ import {
   Typography,
 } from "@mui/material";
 import { Controller, useFormContext } from "react-hook-form";
-
-const cities = [
-  { name: "Ай-Петрі", region: "Автономна Республіка Крим" },
-  { name: "Клепиніне", region: "Автономна Республіка Крим" },
-  { name: "Сімферополь", region: "Автономна Республіка Крим" },
-  { name: "Феодосія", region: "Автономна Республіка Крим" },
-  { name: "Ялта", region: "Автономна Республіка Крим" },
-  { name: "Вінниця", region: "Вінницька область" },
-  { name: "Ковель", region: "Волинська область" },
-  { name: "Луцьк", region: "Волинська область" },
-  { name: "Дніпро", region: "Дніпропетровська область" },
-  { name: "Комісарівка", region: "Дніпропетровська область" },
-  { name: "Кривий Ріг", region: "Дніпропетровська область" },
-  { name: "Донецьк", region: "Донецька область" },
-  { name: "Житомир", region: "Житомирська область" },
-  { name: "Овруч", region: "Житомирська область" },
-  { name: "Берегове", region: "Закарпатська область" },
-  { name: "Міжгір'я", region: "Закарпатська область" },
-  { name: "Плай", region: "Закарпатська область" },
-  { name: "Рахів", region: "Закарпатська область" },
-  { name: "Ужгород", region: "Закарпатська область" },
-  { name: "Хуст", region: "Закарпатська область" },
-  { name: "Гуляйполе", region: "Запорізька область" },
-  { name: "Запоріжжя", region: "Запорізька область" },
-  { name: "Кирилівка", region: "Запорізька область" },
-  { name: "Івано-Франківськ", region: "Івано-Франківська область" },
-  { name: "Пожежівська", region: "Івано-Франківська область" },
-  { name: "Гайворон", region: "Кіровоградська область" },
-  { name: "Знам'янка", region: "Кіровоградська область" },
-  { name: "Кропивницький", region: "Кіровоградська область" },
-  { name: "Київ", region: "Київська область" },
-  { name: "Миронівка", region: "Київська область" },
-  { name: "Луганськ", region: "Луганська область" },
-  { name: "Львів", region: "Львівська область" },
-  { name: "Миколаїв", region: "Миколаївська область" },
-  { name: "Ізмаїл", region: "Одеська область" },
-  { name: "Любашівка", region: "Одеська область" },
-  { name: "Одеса", region: "Одеська область" },
-  { name: "Роздільна", region: "Одеська область" },
-  { name: "Сарата", region: "Одеська область" },
-  { name: "Лубни", region: "Полтавська область" },
-  { name: "Полтава", region: "Полтавська область" },
-  { name: "Рівне", region: "Рівненська область" },
-  { name: "Сарни", region: "Рівненська область" },
-  { name: "Ромни", region: "Сумська область" },
-  { name: "Суми", region: "Сумська область" },
-  { name: "Тернопіль", region: "Тернопільська область" },
-  { name: "Лозова", region: "Харківська область" },
-  { name: "Харків", region: "Харківська область" },
-  { name: "Асканія-Нова", region: "Херсонська область" },
-  { name: "Генічеськ", region: "Херсонська область" },
-  { name: "Херсон", region: "Херсонська область" },
-  { name: "Хмельницький", region: "Хмельницька область" },
-  { name: "Золотоноша", region: "Черкаська область" },
-  { name: "Умань", region: "Черкаська область" },
-  { name: "Черкаси", region: "Черкаська область" },
-  { name: "Чернівці", region: "Чернівецька область" },
-  { name: "Семенівка", region: "Чернігівська область" },
-  { name: "Чернігів", region: "Чернігівська область" },
-];
 
 export default function Step1() {
   const { control } = useFormContext();
@@ -90,20 +31,20 @@ export default function Step1() {
           const { onChange, value, ref } = field;
           return (
             <Autocomplete
-              options={cities}
+              options={citiesClimateData}
               getOptionLabel={(city) => {
-                return city.name;
+                return city.city;
               }}
               groupBy={(city) => city.region}
               value={
                 value
-                  ? cities.find((city) => {
-                      return value === city.name;
+                  ? citiesClimateData.find((city) => {
+                      return value === city.city;
                     }) ?? null
                   : null
               }
               onChange={(event, newValue) => {
-                onChange(newValue ? newValue.name : null);
+                onChange(newValue ? newValue.city : null);
               }}
               renderInput={(params) => (
                 <TextField

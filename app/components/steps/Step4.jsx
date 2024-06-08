@@ -1,9 +1,6 @@
 "use client";
 
-import {
-  CancelRounded,
-  CheckCircleRounded,
-} from "@mui/icons-material";
+import { CancelRounded, CheckCircleRounded } from "@mui/icons-material";
 import {
   Box,
   FormControl,
@@ -19,8 +16,6 @@ import {
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import { Controller, useFormContext } from "react-hook-form";
-import AutocompleteWithModal from "../AutocomlpleteWithModal";
-import LayerForm from "../LayerForm";
 
 const ceilingTypes = [
   "Суміщене покриття",
@@ -36,17 +31,16 @@ const floorTypes = [
 ];
 
 export default function Step4() {
-  const {
-    control,
-    formState,
-  } = useFormContext();
+  const { control, formState } = useFormContext();
   const [tab, setTab] = useState("ceiling");
   const [floorTabIsInvalid, setFloorTabIsInvalid] = useState(null);
   const [ceilingTabIsInvalid, setCeilingTabIsInvalid] = useState(null);
 
   useEffect(() => {
-    const ceilingErrors = !!formState.errors?.ceiling?.type || !!formState.errors?.ceiling?.layers
-    const floorErrors = !!formState.errors?.floor?.type || !!formState.errors?.floor?.layers
+    const ceilingErrors =
+      !!formState.errors?.ceiling?.type || !!formState.errors?.ceiling?.layers;
+    const floorErrors =
+      !!formState.errors?.floor?.type || !!formState.errors?.floor?.layers;
     setCeilingTabIsInvalid(ceilingErrors);
     setFloorTabIsInvalid(floorErrors);
   }, [formState]);
@@ -80,7 +74,9 @@ export default function Step4() {
           icon={
             ceilingTabIsInvalid ? (
               <Zoom in={true}>
-                <CancelRounded color={tab === "ceiling" ? "error": "inherit"}/>
+                <CancelRounded
+                  color={tab === "ceiling" ? "error" : "inherit"}
+                />
               </Zoom>
             ) : (
               <CheckCircleRounded />
@@ -95,10 +91,10 @@ export default function Step4() {
           icon={
             floorTabIsInvalid ? (
               <Zoom in={true}>
-                <CancelRounded color={tab === "floor" ? "error": "inherit"} />
+                <CancelRounded color={tab === "floor" ? "error" : "inherit"} />
               </Zoom>
             ) : (
-              <CheckCircleRounded/>
+              <CheckCircleRounded />
             )
           }
         />
@@ -135,15 +131,6 @@ export default function Step4() {
             );
           }}
         />
-        {/* <AutocompleteWithModal
-                name="ceiling.layers"
-                label="Шари конструкції"
-                optionPrefix="Шар №"
-                addTitlePrefix="Додати шар №"
-                editTitlePrefix="Редагувати шар №"
-              >
-
-              </AutocompleteWithModal> */}
       </Box>
       <Box hidden={tab !== "floor"}>
         <Controller

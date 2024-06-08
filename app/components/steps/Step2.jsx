@@ -1,5 +1,9 @@
 "use client";
 
+import airPermeabilityClasses from "@/app/model/reference-data/airPermeabilityClasses";
+import constructionTypes from "@/app/model/reference-data/constructionTypes";
+import heatCapacityClasses from "@/app/model/reference-data/heatCapacityClasses";
+import purposes from "@/app/model/reference-data/purposes";
 import {
   FormControl,
   FormHelperText,
@@ -10,43 +14,6 @@ import {
   Typography,
 } from "@mui/material";
 import { Controller, useFormContext } from "react-hook-form";
-
-const purposes = [
-  "Одноквартирні будинки",
-  "Багатоквартирні будинки, гуртожитки",
-  "Громадські будівлі адміністративного призначення, офіси",
-  "Будівлі закладів освіти",
-  "Будівлі закладів дошкільної освіти",
-  "Будівлі закладів охорони здоров’я",
-  "Готелі",
-  "Ресторани",
-  "Спортивні заклади",
-  "Будівлі закладів гуртової та роздрібної торгівлі",
-  "Будівлі культурно-розважальних установ",
-  "Інші види будівель",
-];
-
-const heatCapacityClasses = [
-  "Дуже легкий",
-  "Легкий",
-  "Середній",
-  "Важкий",
-  "Дуже важкий",
-];
-
-const tightnessOptions = [
-  "Продувна",
-  "Не герметична",
-  "Слабо герметична",
-  "Герметична",
-];
-
-const typeAndConditionOptions = [
-  "Неутеплені, залізобетонні панелі або кладка з крупноблокових елементів з міжпанельними стиками в незадовільному стані",
-  "Неутеплені, кладка з дрібноштучних виробів у незадовільному стані",
-  "Утеплені мінераловатними матеріалами в задовільному стані",
-  "Утеплені органічними матеріалами в задовільному стані",
-];
 
 export default function Step2() {
   const { control } = useFormContext();
@@ -64,13 +31,13 @@ export default function Step2() {
           const { onChange, value, ref } = field;
           return (
             <FormControl error={!!error} variant="filled">
-              <InputLabel>Тип місцевості</InputLabel>
+              <InputLabel>Функційне призначення</InputLabel>
               <Select
                 value={value || ""}
                 onChange={(event) => onChange(event.target.value)}
                 inputRef={ref}
               >
-                {purposes.map((purpose) => (
+                {purposes.map(({ purpose }) => (
                   <MenuItem
                     key={purpose}
                     value={purpose}
@@ -89,19 +56,19 @@ export default function Step2() {
         name="heatCapacityClass"
         control={control}
         rules={{
-          required: "Оберіть характеристику герметичності будівлі",
+          required: "Оберіть клас теплоємності будівлі",
         }}
         render={({ field, fieldState: { error } }) => {
           const { onChange, value, ref } = field;
           return (
             <FormControl error={!!error} variant="filled">
-              <InputLabel>Характеристика герметичності</InputLabel>
+              <InputLabel>Клас теплоємності</InputLabel>
               <Select
                 value={value || ""}
                 onChange={(event) => onChange(event.target.value)}
                 inputRef={ref}
               >
-                {heatCapacityClasses.map((heatCapacityClass) => (
+                {heatCapacityClasses.map(({ heatCapacityClass }) => (
                   <MenuItem
                     key={heatCapacityClass}
                     value={heatCapacityClass}
@@ -117,10 +84,41 @@ export default function Step2() {
         }}
       />
       <Controller
-        name="tightness"
+        name="airPermeabilityClass"
         control={control}
         rules={{
-          required: "Оберіть тип і стан стін будівлі",
+          required: "Оберіть рівень герметичності будівлі",
+        }}
+        render={({ field, fieldState: { error } }) => {
+          const { onChange, value, ref } = field;
+          return (
+            <FormControl error={!!error} variant="filled">
+              <InputLabel>Рівень герметичності</InputLabel>
+              <Select
+                value={value || ""}
+                onChange={(event) => onChange(event.target.value)}
+                inputRef={ref}
+              >
+                {airPermeabilityClasses.map(({ airPermeabilityClass }) => (
+                  <MenuItem
+                    key={airPermeabilityClass}
+                    value={airPermeabilityClass}
+                    sx={{ whiteSpace: "normal" }}
+                  >
+                    {airPermeabilityClass}
+                  </MenuItem>
+                ))}
+              </Select>
+              <FormHelperText>{error?.message || " "}</FormHelperText>
+            </FormControl>
+          );
+        }}
+      />
+      <Controller
+        name="constructionType"
+        control={control}
+        rules={{
+          required: "Оберіть тип і стан стін",
         }}
         render={({ field, fieldState: { error } }) => {
           const { onChange, value, ref } = field;
@@ -132,44 +130,13 @@ export default function Step2() {
                 onChange={(event) => onChange(event.target.value)}
                 inputRef={ref}
               >
-                {tightnessOptions.map((tightness) => (
+                {constructionTypes.map(({ constructionType }) => (
                   <MenuItem
-                    key={tightness}
-                    value={tightness}
+                    key={constructionType}
+                    value={constructionType}
                     sx={{ whiteSpace: "normal" }}
                   >
-                    {tightness}
-                  </MenuItem>
-                ))}
-              </Select>
-              <FormHelperText>{error?.message || " "}</FormHelperText>
-            </FormControl>
-          );
-        }}
-      />
-      <Controller
-        name="typeAndCondition"
-        control={control}
-        rules={{
-          required: "Оберіть функційне призначення будівлі",
-        }}
-        render={({ field, fieldState: { error } }) => {
-          const { onChange, value, ref } = field;
-          return (
-            <FormControl error={!!error} variant="filled">
-              <InputLabel>Тип місцевості</InputLabel>
-              <Select
-                value={value || ""}
-                onChange={(event) => onChange(event.target.value)}
-                inputRef={ref}
-              >
-                {typeAndConditionOptions.map((typeAndCondition) => (
-                  <MenuItem
-                    key={typeAndCondition}
-                    value={typeAndCondition}
-                    sx={{ whiteSpace: "normal" }}
-                  >
-                    {typeAndCondition}
+                    {constructionType}
                   </MenuItem>
                 ))}
               </Select>
