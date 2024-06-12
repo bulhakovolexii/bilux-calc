@@ -12,3 +12,5 @@ const monthlyDurationIntervals = [
   { month: "Листопад", days: 30, hours: 720 },
   { month: "Грудень", days: 31, hours: 744 },
 ];
+
+export default monthlyDurationIntervals;

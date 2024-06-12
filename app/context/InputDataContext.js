@@ -1,14 +1,12 @@
 "use client";
 
 import { createContext, useContext, useState } from "react";
+import testInputData from "./testInputData";
 
 const InputDataContext = createContext(undefined);
 
 export const InputDataProvider = ({ children }) => {
-  const [inputData, setInputData] = useState({
-    ceiling: { type: "Суміщене покриття" },
-    floor: { type: "Технічне підпілля" },
-  });
+  const [inputData, setInputData] = useState(testInputData);
 
   const updateInputData = (newValue) => {
     setInputData({ ...inputData, ...newValue });
