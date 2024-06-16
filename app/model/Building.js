@@ -1,13 +1,16 @@
+import Ceiling from "./constructions/Ceiling";
+import Floor from "./constructions/Floor";
+import Wall from "./constructions/Wall";
 import citiesClimateData from "./reference-data/citiesClimateData";
 import constructionTypes from "./reference-data/constructionTypes";
 import heatCapacityClasses from "./reference-data/heatCapacityClasses";
 import monthlyDurationIntervals from "./reference-data/monthlyDurationIntervals";
 import purposes from "./reference-data/purposes";
 
-const AIR_HEAT_CAPACITY = 0.336; // Теплоємність одиниці обʼєму повітря
-const INTERNAL_BARRIER_COEFFICIENT = 0.85; // Коефіцієнт зниження обʼєму повітря в будівлі, яким враховують наявність внутрішніх огороджувальних конструкцій
-
 export default class Building {
+  static AIR_HEAT_CAPACITY = 0.336; // Теплоємність одиниці обʼєму повітря
+  static INTERNAL_BARRIER_COEFFICIENT = 0.85; // Коефіцієнт зниження обʼєму повітря в будівлі, яким враховують наявність внутрішніх огороджувальних конструкцій
+
   constructor(inputData) {
     // Step 1
     this.city = inputData.city; // Місто розташування будівлі
@@ -18,22 +21,53 @@ export default class Building {
     this.airPermeabilityClass = inputData.airPermeabilityClass; // Клас повітропроникності конструкцій будівлі
     this.constructionType = inputData.constructionType; // Тип і стан стінових конструкцій
     // Step 3
-    this.buildingWidth = parseFloat(inputData.buildingLength); // Ширина будівлі
+    this.buildingWidth = parseFloat(inputData.buildingWidth); // Ширина будівлі
     this.buildingLength = parseFloat(inputData.buildingLength); // Довжина будівлі
     this.floorHeight = parseFloat(inputData.floorHeight); // Висота поверху
     this.numberOfFloors = parseInt(inputData.numberOfFloors); // Кількість поверхів
+    // Step 4
+    this.ceiling = new Ceiling({
+      ...inputData.ceiling,
+      width: this.buildingWidth,
+      height: this.buildingLength,
+    });
+    this.floor = new Floor({
+      ...inputData.floor,
+      width: this.buildingWidth,
+      height: this.buildingLength,
+    });
+    this.facades = inputData.facades.map((facade) => {
+      if (facade.direction === "north" || facade.direction === "south") {
+        return new Wall({
+          ...facade,
+          city: this.city,
+          width: this.buildingWidth,
+          height: this.height(),
+          buildingHeight: this.height(),
+          phi_int_set: this.indoorTemperature(),
+          buildingPurpose: this.purpose,
+          typeOfArea: this.terrain,
+          airtightness: this.airPermeabilityClass,
+        });
+      } else {
+        return new Wall({
+          ...facade,
+          city: this.city,
+          width: this.buildingLength,
+          height: this.height(),
+          buildingHeight: this.height(),
+          phi_int_set: this.indoorTemperature(),
+          buildingPurpose: this.purpose,
+          typeOfArea: this.terrain,
+          airtightness: this.airPermeabilityClass,
+        });
+      }
+    });
   }
 
   // Висота будівлі
   height() {
-    if (
-      typeof this.floorHeight === "number" &&
-      typeof this.numberOfFloors === "number"
-    ) {
-      return this.floorHeight * this.numberOfFloors;
-    } else {
-      throw new "Нечислові параметри для розрахунку висоти будівлі"();
-    }
+    return this.floorHeight * this.numberOfFloors;
   }
 
   // Кондиціонована площа будівлі
@@ -79,11 +113,9 @@ export default class Building {
       this.purpose === "Будівлі дитячих навчальних закладів" ||
       this.purpose === "Будівлі закладів охорони здоровʼя"
     ) {
-      period = citiesClimateData.find((data) => data.city === this.city)
-        .heatingPeriodDates.below10;
+      period = this.climateData().heatingPeriodDates.below10;
     } else {
-      period = citiesClimateData.find((data) => data.city === this.city)
-        .heatingPeriodDates.below8;
+      period = this.climateData().heatingPeriodDates.below8;
     }
 
     let hours;
@@ -113,7 +145,11 @@ export default class Building {
       this.utilizationFactor(month) * this.totalHeatGains(month);
 
     if (energyDemand > 0) {
-      return (energyDemand * (this.hours(month) / month.hours)) / 1000;
+      return (
+        (energyDemand *
+          (this.heatingPeriodDurationHours(month) / month.hours)) /
+        1000
+      );
     } else {
       return 0;
     }
@@ -137,11 +173,14 @@ export default class Building {
 
   // Узагальнений коефіцієнт теплопередачі трансмісією
   overallTransmissionHeatTransferCoefficient() {
-    // return (
-    //   this.ceiling.heatTransferCoefficient() +
-    //   this.floor.heatTransferCoefficient() +
-    //   this.facades.reduce((sum, obj) => sum + obj.heatTransferCoefficient(), 0)
-    // );
+    return (
+      this.ceiling.heatTransferCoefficient() +
+      this.floor.heatTransferCoefficient() +
+      this.facades.reduce(
+        (sum, facade) => sum + facade.heatTransferCoefficient(),
+        0
+      )
+    );
   }
 
   // Тепловтрати вентиляцією
@@ -155,7 +194,7 @@ export default class Building {
 
   // Узагальнений коефіцієнт теплопередачі вентиляцією
   overallVentilationHeatTransferCoefficient() {
-    return AIR_HEAT_CAPACITY * this.infiltrationAirFlowRate();
+    return Building.AIR_HEAT_CAPACITY * this.infiltrationAirFlowRate();
   }
 
   // Витрата повітря за рахунок інфільтрації
@@ -163,7 +202,7 @@ export default class Building {
     return (
       this.infiltrationAirExchangeRate() *
       this.conditionedVolume() *
-      INTERNAL_BARRIER_COEFFICIENT
+      Building.INTERNAL_BARRIER_COEFFICIENT
     );
   }
 
@@ -171,10 +210,10 @@ export default class Building {
   infiltrationAirExchangeRate() {
     return (
       this.facades.reduce(
-        (sum, obj) => sum + obj.q_inf_m(this.airLeakageAdjustmentFactor()),
+        (sum, facade) => sum + facade.adjustedAirflow(this.constructionType),
         0
       ) /
-      (this.conditionedVolume() * INTERNAL_BARRIER_COEFFICIENT)
+      (this.conditionedVolume() * Building.INTERNAL_BARRIER_COEFFICIENT)
     );
   }
 
@@ -206,22 +245,26 @@ export default class Building {
 
   // Графік використання
   usageHoursPerWeek() {
-    return purposes[this.purpose].usageHoursPerWeek;
+    return purposes.find((option) => option.purpose === this.purpose)
+      .usageHoursPerWeek;
   }
 
   // Тепловий потік від людей
   gainsFromMetabolicHeat() {
-    return purposes[this.purpose].gainsFromMetabolicHeat;
+    return purposes.find((option) => option.purpose === this.purpose)
+      .gainsFromMetabolicHeat;
   }
 
   // Тепловий потік від освітлення
   gainsFromLighting() {
-    return purposes[this.purpose].gainsFromLighting;
+    return purposes.find((option) => option.purpose === this.purpose)
+      .gainsFromLighting;
   }
 
   // Тепловий потік від обладнання
   gainsFromEquipment() {
-    return purposes[this.purpose].gainsFromEquipment;
+    return purposes.find((option) => option.purpose === this.purpose)
+      .gainsFromEquipment;
   }
 
   // Сонячні теплонадходження
@@ -232,7 +275,7 @@ export default class Building {
         (sum, facade) =>
           sum +
           facade.windows.reduce(
-            (sum, window) => sum + window.Phi_sol_k(this.city, month),
+            (sum, window) => sum + window.solarHeatGains(this.city, month),
             0
           ),
         0
@@ -252,9 +295,15 @@ export default class Building {
       );
     } else if (this.heatGainLossRatio(month) === 1) {
       return this.timeConstantFactor() / (this.timeConstantFactor() + 1);
-    } else if (this.heatGainLossRatio(month) < 0 && this.Q_gn(month) > 0) {
+    } else if (
+      this.heatGainLossRatio(month) < 0 &&
+      this.totalHeatGains(month) > 0
+    ) {
       return 1 / this.heatGainLossRatio(month);
-    } else if (this.heatGainLossRatio(month) <= 0 && this.Q_gn(month) <= 0) {
+    } else if (
+      this.heatGainLossRatio(month) <= 0 &&
+      this.totalHeatGains(month) <= 0
+    ) {
       return 1;
     } else {
       return 0;

@@ -11,12 +11,16 @@ export default function Results() {
   const buildingEnergyDemand = monthlyDurationIntervals.map((month) =>
     building.energyDemand(month)
   );
-  console.log(buildingEnergyDemand);
   return (
     <>
       <h1>Результати</h1>
       <Link href="/">На головну</Link>
-      <p>{JSON.stringify(inputData)}</p>
+      {buildingEnergyDemand.map((month, index) => (
+        <p key={index}>
+          <span>{monthlyDurationIntervals[index].month}</span>&nbsp;&nbsp;&nbsp;
+          {month.toFixed(2)}
+        </p>
+      ))}
     </>
   );
 }

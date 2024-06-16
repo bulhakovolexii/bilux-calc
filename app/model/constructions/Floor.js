@@ -1,0 +1,50 @@
+import Construction from "./Construction";
+
+export default class Floor extends Construction {
+  static h_si = 5.9;
+  static h_se = 17;
+
+  constructor(inputData) {
+    super(inputData);
+    this.type = inputData.type;
+    this.area = this.totalArea();
+  }
+
+  R_sum() {
+    let R_sum = 0;
+    this.layers.forEach((layer) => {
+      R_sum += layer.R();
+    });
+    if (this.type === "Технічне підпілля") {
+      return 1 / Floor.h_se + R_sum + 1 / Floor.h_si;
+    } else {
+      return R_sum;
+    }
+  }
+
+  b_U() {
+    return 0.3;
+  }
+
+  heatTransferCoefficient() {
+    if (this.type === "Підлога на ґругті") {
+      /**
+       *
+       *
+       * розрахунок підлоги на ґрунті
+       *
+       *
+       */
+    } else if (this.type === "Опалюваний підвал (цокольний поверх)") {
+      /**
+       *
+       *
+       * розрахунок цоколя
+       *
+       *
+       */
+    } else {
+      return this.b_U() * this.area * this.U_i();
+    }
+  }
+}
