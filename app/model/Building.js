@@ -49,7 +49,7 @@ export default class Building {
           typeOfArea: this.terrain,
           airtightness: this.airPermeabilityClass,
         });
-      } else {
+      } else if (facade.direction === "east" || facade.direction === "west") {
         return new Wall({
           ...facade,
           city: this.city,

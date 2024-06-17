@@ -1,7 +1,7 @@
 import citiesClimateData from "../reference-data/citiesClimateData";
 import environmentTypes from "../reference-data/environmentTypes";
 import monthlyDurationIntervals from "../reference-data/monthlyDurationIntervals";
-import windows from "./windows";
+import windows from "../reference-data/windows";
 
 export default class Window {
   constructor(inputData) {
