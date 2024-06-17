@@ -59,7 +59,6 @@ export default class Wall extends Construction {
     if (this.totalArea() >= totalIndludesArea) {
       return this.totalArea() - totalIndludesArea;
     } else {
-      console.log(this.width, this.totalArea(), includesArea);
       throw new Error("Площа включень перевищує площу стіни");
     }
   }

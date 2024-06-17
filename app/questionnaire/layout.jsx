@@ -9,6 +9,8 @@ import { useInputData } from "../context/InputDataContext";
 import FormStepper from "../components/FormStepper";
 import FormMobileStepper from "../components/FormMobileStepper";
 import FormNavigationButton from "../components/FormNavigationButton";
+import Building from "../model/Building";
+import monthlyDurationIntervals from "../model/reference-data/monthlyDurationIntervals";
 
 const steps = [
   {
@@ -42,7 +44,7 @@ export default function QuestionnaireLayout({ children }) {
   const router = useRouter();
   const theme = useTheme();
   const { inputData, updateInputData } = useInputData();
-  const methods = useForm({mode: "onChange", defaultValues: inputData });
+  const methods = useForm({ mode: "onChange", defaultValues: inputData });
   const {
     handleSubmit,
     trigger,
@@ -74,7 +76,7 @@ export default function QuestionnaireLayout({ children }) {
 
     if (!isLastStep() && stepIsValid) {
       handleStep(activeStep + 1);
-    } else if (isLastStep && isValid) {
+    } else if (isLastStep() && isValid) {
       router.push("/results");
     }
   };
@@ -89,8 +91,16 @@ export default function QuestionnaireLayout({ children }) {
 
   const onSubmit = (data) => {
     if (isLastStep() && isValid) {
-      updateInputData(data);
-      handleNextStep();
+      try {
+        const building = new Building(data);
+        building.energyDemand(monthlyDurationIntervals[0]);
+        updateInputData(data);
+        handleNextStep();
+      } catch (err) {
+        alert(err);
+        router.push("/questionnaire/step-3");
+        setActiveStep(2);
+      }
     }
   };
 
