@@ -14,7 +14,7 @@ export default class Wall {
     this.buildingHeight = inputData.buildingHeight;
     this.layers = inputData.layers.map((layer) => new Layer(layer));
     this.direction = inputData.direction;
-    this.enviroment = inputData.enviroment;
+    this.environment = inputData.environment;
     this.city = inputData.city;
     this.indoorTemperature = inputData.indoorTemperature;
     this.buildingPurpose = inputData.buildingPurpose;
@@ -40,12 +40,12 @@ export default class Wall {
           new Window({
             ...window,
             direction: this.direction,
-            enviroment: this.enviroment,
+            environment: this.environment,
           })
       ) || [];
     this.doors =
       inputData.doors?.map(
-        (door) => new Door({ ...door, enviroment: this.enviroment })
+        (door) => new Door({ ...door, environment: this.environment })
       ) || [];
   }
 
@@ -71,16 +71,16 @@ export default class Wall {
       0
     );
     const doorsArea = this.doors.reduce((sum, obj) => sum + obj.totalArea(), 0);
-    const totalIndludesArea = includesArea + windowsArea + doorsArea;
-    if (this.totalArea() >= totalIndludesArea) {
-      return this.totalArea() - totalIndludesArea;
+    const totalIncludesArea = includesArea + windowsArea + doorsArea;
+    if (this.totalArea() >= totalIncludesArea) {
+      return this.totalArea() - totalIncludesArea;
     } else {
       throw new Error("Площа включень перевищує площу стіни");
     }
   }
 
   h_se() {
-    return this.enviroment !== undefined ? 12 : 23;
+    return this.environment !== undefined ? 12 : 23;
   }
 
   R_sum() {
@@ -102,9 +102,9 @@ export default class Wall {
   }
 
   b_U() {
-    return this.enviroment
+    return this.environment
       ? environmentTypes.find(
-          (environment) => environment.type === this.enviroment
+          (environment) => environment.type === this.environment
         ).b_U
       : 1;
   }
@@ -162,7 +162,7 @@ export default class Wall {
   }
 
   V_e_seas_m() {
-    return citiesClimateData.find((citie) => citie.city === this.city)
+    return citiesClimateData.find((city) => city.city === this.city)
       .januaryWindSpeed[this.direction];
   }
 
@@ -186,10 +186,10 @@ export default class Wall {
       this.buildingPurpose === "Будівлі дитячих навчальних закладів" ||
       this.buildingPurpose === "Будівлі закладів охорони здоровʼя"
     ) {
-      return citiesClimateData.find((citie) => citie.city === this.city)
+      return citiesClimateData.find((city) => city.city === this.city)
         .averageTemperatureBelow10;
     } else {
-      return citiesClimateData.find((citie) => citie.city === this.city)
+      return citiesClimateData.find((city) => city.city === this.city)
         .averageTemperatureBelow8;
     }
   }
@@ -215,7 +215,7 @@ export default class Wall {
     }, 0);
     let includes_Q_100 = 0;
     this.includes.forEach((include) => {
-      if (!include.enviroment) {
+      if (!include.environment) {
         includes_Q_100 += include.windows.reduce(
           (sum, window) => sum + airPermeabilityClass * window.totalArea(),
           0

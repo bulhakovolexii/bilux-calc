@@ -5,7 +5,7 @@ import windows from "../reference-data/windows";
 
 export default class Window {
   constructor(inputData) {
-    this.enviroment = inputData.enviroment;
+    this.environment = inputData.environment;
     this.direction = inputData.direction;
     this.width = inputData.width;
     this.height = inputData.height;
@@ -43,9 +43,9 @@ export default class Window {
   }
 
   b_U() {
-    return this.enviroment
+    return this.environment
       ? environmentTypes.find(
-          (enviroment) => enviroment.type === this.enviroment
+          (environment) => environment.type === this.environment
         ).b_U
       : 1;
   }
@@ -72,11 +72,9 @@ export default class Window {
   }
 
   solarHeatGains(cityName, month) {
-    return (
-      this.A_sol() *
-      citiesClimateData.find((data) => data.city === cityName).solarRadiation[
-        monthlyDurationIntervals.indexOf(month)
-      ][this.direction]
-    );
+    const climateData = citiesClimateData.find((data) => data.city === cityName)
+      .solarRadiation[monthlyDurationIntervals.indexOf(month)];
+
+    return this.A_sol() * climateData[this.direction];
   }
 }
