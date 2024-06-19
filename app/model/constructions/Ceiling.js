@@ -1,13 +1,26 @@
-import Construction from "./Construction";
+import Layer from "./Layer";
 
-export default class Ceiling extends Construction {
+export default class Ceiling {
   static h_si = 10;
 
   constructor(inputData) {
-    super(inputData);
+    this.width = inputData.width;
+    this.height = inputData.height;
+    this.layers = inputData.layers.map((layer) => new Layer(layer));
     this.type = inputData.type;
-    this.area = this.totalArea();
   }
+
+  //  TEMPORARY METHODS
+  area() {
+    return this.width * this.height;
+  }
+  U_op() {
+    return 1 / this.R_sum();
+  }
+  U_i() {
+    return this.U_op();
+  }
+  //  TEMPORARY METHODS
 
   h_se() {
     if (this.type === "Cуміщене покриття") {
@@ -20,7 +33,7 @@ export default class Ceiling extends Construction {
   R_sum() {
     let R_sum = 0;
     this.layers.forEach((layer) => {
-      R_sum += layer.R();
+      R_sum += layer.thermalResistance();
     });
     return 1 / Ceiling.h_si + R_sum + 1 / this.h_se();
   }
@@ -37,6 +50,6 @@ export default class Ceiling extends Construction {
   }
 
   heatTransferCoefficient() {
-    return this.b_U() * this.area * this.U_i();
+    return this.b_U() * this.area() * this.U_i();
   }
 }

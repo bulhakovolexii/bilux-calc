@@ -44,10 +44,10 @@ export default class Building {
           width: this.buildingWidth,
           height: this.height(),
           buildingHeight: this.height(),
-          phi_int_set: this.indoorTemperature(),
+          indoorTemperature: this.indoorTemperature(),
           buildingPurpose: this.purpose,
-          typeOfArea: this.terrain,
-          airtightness: this.airPermeabilityClass,
+          terrain: this.terrain,
+          airPermeabilityClass: this.airPermeabilityClass,
         });
       } else if (facade.direction === "east" || facade.direction === "west") {
         return new Wall({
@@ -56,10 +56,10 @@ export default class Building {
           width: this.buildingLength,
           height: this.height(),
           buildingHeight: this.height(),
-          phi_int_set: this.indoorTemperature(),
+          indoorTemperature: this.indoorTemperature(),
           buildingPurpose: this.purpose,
-          typeOfArea: this.terrain,
-          airtightness: this.airPermeabilityClass,
+          terrain: this.terrain,
+          airPermeabilityClass: this.airPermeabilityClass,
         });
       }
     });

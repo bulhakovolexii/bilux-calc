@@ -1,22 +1,26 @@
 import environmentTypes from "../reference-data/environmentTypes";
-import Construction from "./Construction";
 import Window from "./Window";
 import Door from "./Door";
 import citiesClimateData from "../reference-data/citiesClimateData";
 import windSpeedCoefficients from "../reference-data/windSpeedCoefficients";
+import Layer from "./Layer";
 
-export default class Wall extends Construction {
+export default class Wall {
   static h_si = 8.7;
 
   constructor(inputData) {
-    super(inputData);
+    this.width = inputData.width;
+    this.height = inputData.height;
+    this.buildingHeight = inputData.buildingHeight;
+    this.layers = inputData.layers.map((layer) => new Layer(layer));
     this.direction = inputData.direction;
     this.enviroment = inputData.enviroment;
     this.city = inputData.city;
-    this.phi_int_set = inputData.phi_int_set;
+    this.indoorTemperature = inputData.indoorTemperature;
     this.buildingPurpose = inputData.buildingPurpose;
-    this.typeOfArea = inputData.typeOfArea;
-    this.airtightness = inputData.airtightness;
+    this.buildingHeight = inputData.buildingHeight;
+    this.terrain = inputData.terrain;
+    this.airPermeabilityClass = inputData.airPermeabilityClass;
     this.includes =
       inputData.includes?.map(
         (include) =>
@@ -24,10 +28,10 @@ export default class Wall extends Construction {
             ...include,
             direction: this.direction,
             city: this.city,
-            phi_int_set: this.phi_int_set,
+            indoorTemperature: this.indoorTemperature,
             buildingPurpose: this.buildingPurpose,
-            typeOfArea: this.typeOfArea,
-            airtightness: this.airtightness,
+            terrain: this.terrain,
+            airPermeabilityClass: this.airPermeabilityClass,
           })
       ) || [];
     this.windows =
@@ -44,6 +48,18 @@ export default class Wall extends Construction {
         (door) => new Door({ ...door, enviroment: this.enviroment })
       ) || [];
   }
+
+  //  TEMPORARY METHODS
+  totalArea() {
+    return this.width * this.height;
+  }
+  U_op() {
+    return 1 / this.R_sum();
+  }
+  U_i() {
+    return this.U_op();
+  }
+  //  TEMPORARY METHODS
 
   area() {
     const includesArea = this.includes.reduce(
@@ -70,7 +86,7 @@ export default class Wall extends Construction {
   R_sum() {
     let R_sum = 0;
     this.layers.forEach((layer) => {
-      R_sum += layer.R();
+      R_sum += layer.thermalResistance();
     });
     return 1 / Wall.h_si + R_sum + 1 / this.h_se();
   }
@@ -155,14 +171,14 @@ export default class Wall extends Construction {
       (height) =>
         this.buildingHeight > height.lower &&
         this.buildingHeight <= height.upper
-    )[this.typeOfArea];
+    )[this.terrain];
   }
 
   lambda_e_seas() {
     return 3463 / (273 + this.phi_e_seas());
   }
   lambda_int_set() {
-    return 3463 / (273 + this.phi_int_set);
+    return 3463 / (273 + this.indoorTemperature);
   }
   phi_e_seas() {
     if (
@@ -179,29 +195,29 @@ export default class Wall extends Construction {
   }
 
   Q_100_s_m() {
-    let airtightness;
-    switch (this.airtightness) {
+    let airPermeabilityClass;
+    switch (this.airPermeabilityClass) {
       case "Продувна":
-        airtightness = 50;
+        airPermeabilityClass = 50;
         break;
       case "Не герметична":
-        airtightness = 27;
+        airPermeabilityClass = 27;
         break;
       case "Слабо герметична":
-        airtightness = 9;
+        airPermeabilityClass = 9;
         break;
       case "Герметична":
-        airtightness = 3;
+        airPermeabilityClass = 3;
         break;
     }
     const this_Q_100 = this.windows.reduce((sum, window) => {
-      return sum + airtightness * window.totalArea();
+      return sum + airPermeabilityClass * window.totalArea();
     }, 0);
     let includes_Q_100 = 0;
     this.includes.forEach((include) => {
       if (!include.enviroment) {
         includes_Q_100 += include.windows.reduce(
-          (sum, window) => sum + airtightness * window.totalArea(),
+          (sum, window) => sum + airPermeabilityClass * window.totalArea(),
           0
         );
       }

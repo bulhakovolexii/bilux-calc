@@ -1,19 +1,32 @@
-import Construction from "./Construction";
+import Layer from "./Layer";
 
-export default class Floor extends Construction {
+export default class Floor {
   static h_si = 5.9;
   static h_se = 17;
 
   constructor(inputData) {
-    super(inputData);
+    this.width = inputData.width;
+    this.height = inputData.height;
+    this.layers = inputData.layers.map((layer) => new Layer(layer));
     this.type = inputData.type;
-    this.area = this.totalArea();
   }
+
+  //  TEMPORARY METHODS
+  area() {
+    return this.width * this.height;
+  }
+  U_op() {
+    return 1 / this.R_sum();
+  }
+  U_i() {
+    return this.U_op();
+  }
+  //  TEMPORARY METHODS
 
   R_sum() {
     let R_sum = 0;
     this.layers.forEach((layer) => {
-      R_sum += layer.R();
+      R_sum += layer.thermalResistance();
     });
     if (this.type === "Технічне підпілля") {
       return 1 / Floor.h_se + R_sum + 1 / Floor.h_si;
@@ -27,7 +40,7 @@ export default class Floor extends Construction {
   }
 
   heatTransferCoefficient() {
-    if (this.type === "Підлога на ґругті") {
+    if (this.type === "Підлога на ґрунті") {
       /**
        *
        *
@@ -44,7 +57,7 @@ export default class Floor extends Construction {
        *
        */
     } else {
-      return this.b_U() * this.area * this.U_i();
+      return this.b_U() * this.area() * this.U_i();
     }
   }
 }
