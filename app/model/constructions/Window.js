@@ -1,6 +1,3 @@
-import citiesClimateData from "../reference-data/citiesClimateData";
-import environmentTypes from "../reference-data/environmentTypes";
-import monthlyDurationIntervals from "../reference-data/monthlyDurationIntervals";
 import windows from "../reference-data/windows";
 
 export default class Window {
@@ -42,16 +39,8 @@ export default class Window {
     return this.U_op();
   }
 
-  b_U() {
-    return this.environment
-      ? environmentTypes.find(
-          (environment) => environment.type === this.environment
-        ).b_U
-      : 1;
-  }
-
-  H_X() {
-    return this.b_U() * this.totalArea() * this.U_i();
+  H_X(b_U) {
+    return b_U * this.totalArea() * this.U_i();
   }
 
   A_sol() {
@@ -71,10 +60,7 @@ export default class Window {
     );
   }
 
-  solarHeatGains(cityName, month) {
-    const climateData = citiesClimateData.find((data) => data.city === cityName)
-      .solarRadiation[monthlyDurationIntervals.indexOf(month)];
-
-    return this.A_sol() * climateData[this.direction];
+  solarHeatGains(solarRadiation) {
+    return this.A_sol() * solarRadiation[this.direction];
   }
 }

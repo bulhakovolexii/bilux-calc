@@ -1,7 +1,6 @@
 import environmentTypes from "../reference-data/environmentTypes";
 import Window from "./Window";
 import Door from "./Door";
-import citiesClimateData from "../reference-data/citiesClimateData";
 import windSpeedCoefficients from "../reference-data/windSpeedCoefficients";
 import Layer from "./Layer";
 
@@ -15,19 +14,18 @@ export default class Wall {
     this.layers = inputData.layers.map((layer) => new Layer(layer));
     this.direction = inputData.direction;
     this.environment = inputData.environment;
-    this.city = inputData.city;
+    this.climateData = inputData.climateData;
     this.indoorTemperature = inputData.indoorTemperature;
     this.buildingPurpose = inputData.buildingPurpose;
-    this.buildingHeight = inputData.buildingHeight;
     this.terrain = inputData.terrain;
     this.airPermeabilityClass = inputData.airPermeabilityClass;
-    this.includes =
-      inputData.includes?.map(
-        (include) =>
+    this.inclusions =
+      inputData.inclusions?.map(
+        (inclusion) =>
           new Wall({
-            ...include,
+            ...inclusion,
             direction: this.direction,
-            city: this.city,
+            climateData: this.climateData,
             indoorTemperature: this.indoorTemperature,
             buildingPurpose: this.buildingPurpose,
             terrain: this.terrain,
@@ -62,7 +60,7 @@ export default class Wall {
   //  TEMPORARY METHODS
 
   area() {
-    const includesArea = this.includes.reduce(
+    const inclusionsArea = this.inclusions.reduce(
       (sum, obj) => sum + obj.totalArea(),
       0
     );
@@ -71,9 +69,9 @@ export default class Wall {
       0
     );
     const doorsArea = this.doors.reduce((sum, obj) => sum + obj.totalArea(), 0);
-    const totalIncludesArea = includesArea + windowsArea + doorsArea;
-    if (this.totalArea() >= totalIncludesArea) {
-      return this.totalArea() - totalIncludesArea;
+    const totalInclusionsArea = inclusionsArea + windowsArea + doorsArea;
+    if (this.totalArea() >= totalInclusionsArea) {
+      return this.totalArea() - totalInclusionsArea;
     } else {
       throw new Error("Площа включень перевищує площу стіни");
     }
@@ -110,15 +108,15 @@ export default class Wall {
   }
 
   heatTransferCoefficient() {
-    const includesH_X =
-      this.includes.reduce(
+    const inclusionsH_X =
+      this.inclusions.reduce(
         (sum, obj) => sum + obj.heatTransferCoefficient(),
         0
       ) +
-      this.windows.reduce((sum, obj) => sum + obj.H_X(), 0) +
-      this.doors.reduce((sum, obj) => sum + obj.H_X(), 0);
+      this.windows.reduce((sum, obj) => sum + obj.H_X(this.b_U()), 0) +
+      this.doors.reduce((sum, obj) => sum + obj.H_X(this.b_U()), 0);
 
-    return this.b_U() * this.area() * this.U_i() + includesH_X;
+    return this.b_U() * this.area() * this.U_i() + inclusionsH_X;
   }
 
   adjustedAirflow(typeAndCondition) {
@@ -149,8 +147,7 @@ export default class Wall {
   }
 
   f_e_seas_m() {
-    return citiesClimateData.find((city) => this.city === city.city)
-      .windDirectionRepeatability[this.direction];
+    return this.climateData.windDirectionRepeatability[this.direction];
   }
   deltaP_gr_mn() {
     return (
@@ -162,8 +159,7 @@ export default class Wall {
   }
 
   V_e_seas_m() {
-    return citiesClimateData.find((city) => city.city === this.city)
-      .januaryWindSpeed[this.direction];
+    return this.climateData.januaryWindSpeed[this.direction];
   }
 
   beta_v() {
@@ -186,11 +182,9 @@ export default class Wall {
       this.buildingPurpose === "Будівлі дитячих навчальних закладів" ||
       this.buildingPurpose === "Будівлі закладів охорони здоровʼя"
     ) {
-      return citiesClimateData.find((city) => city.city === this.city)
-        .averageTemperatureBelow10;
+      return this.climateData.averageTemperatureBelow10;
     } else {
-      return citiesClimateData.find((city) => city.city === this.city)
-        .averageTemperatureBelow8;
+      return this.climateData.averageTemperatureBelow8;
     }
   }
 
@@ -213,15 +207,15 @@ export default class Wall {
     const this_Q_100 = this.windows.reduce((sum, window) => {
       return sum + airPermeabilityClass * window.totalArea();
     }, 0);
-    let includes_Q_100 = 0;
-    this.includes.forEach((include) => {
-      if (!include.environment) {
-        includes_Q_100 += include.windows.reduce(
+    let inclusions_Q_100 = 0;
+    this.inclusions.forEach((inclusion) => {
+      if (!inclusion.environment) {
+        inclusions_Q_100 += inclusion.windows.reduce(
           (sum, window) => sum + airPermeabilityClass * window.totalArea(),
           0
         );
       }
     });
-    return this_Q_100 + includes_Q_100;
+    return this_Q_100 + inclusions_Q_100;
   }
 }

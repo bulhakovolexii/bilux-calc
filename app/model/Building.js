@@ -2,7 +2,6 @@ import Ceiling from "./constructions/Ceiling";
 import Floor from "./constructions/Floor";
 import Wall from "./constructions/Wall";
 import citiesClimateData from "./reference-data/citiesClimateData";
-import constructionTypes from "./reference-data/constructionTypes";
 import heatCapacityClasses from "./reference-data/heatCapacityClasses";
 import monthlyDurationIntervals from "./reference-data/monthlyDurationIntervals";
 import purposes from "./reference-data/purposes";
@@ -40,7 +39,7 @@ export default class Building {
       if (facade.direction === "north" || facade.direction === "south") {
         return new Wall({
           ...facade,
-          city: this.city,
+          climateData: this.climateData(),
           width: this.buildingWidth,
           height: this.height(),
           buildingHeight: this.height(),
@@ -52,7 +51,7 @@ export default class Building {
       } else if (facade.direction === "east" || facade.direction === "west") {
         return new Wall({
           ...facade,
-          city: this.city,
+          climateData: this.climateData(),
           width: this.buildingLength,
           height: this.height(),
           buildingHeight: this.height(),
@@ -269,13 +268,18 @@ export default class Building {
 
   // Сонячні теплонадходження
   solarHeatGains(month) {
+    const solarRadiation =
+      this.climateData().solarRadiation[
+        monthlyDurationIntervals.indexOf(month)
+      ];
+
     return (
       month.hours *
       this.facades.reduce(
         (sum, facade) =>
           sum +
           facade.windows.reduce(
-            (sum, window) => sum + window.solarHeatGains(this.city, month),
+            (sum, window) => sum + window.solarHeatGains(solarRadiation),
             0
           ),
         0

@@ -120,7 +120,7 @@ const testInputData = {
           argon: 0,
         },
       ],
-      includes: [
+      inclusions: [
         {
           width: 6.31,
           height: 27,
@@ -189,7 +189,7 @@ const testInputData = {
           argon: 0,
         },
       ],
-      includes: [
+      inclusions: [
         {
           width: 3.19,
           height: 27,
@@ -284,7 +284,7 @@ const testInputData = {
           argon: 0,
         },
       ],
-      includes: [
+      inclusions: [
         {
           width: 11.4,
           height: 27,
@@ -376,7 +376,7 @@ const testInputData = {
           argon: 0,
         },
       ],
-      includes: [
+      inclusions: [
         {
           width: 3.19,
           height: 27,
