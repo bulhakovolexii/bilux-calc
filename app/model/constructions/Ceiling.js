@@ -4,10 +4,12 @@ export default class Ceiling {
   static h_si = 10;
 
   constructor(inputData) {
+    // Nested data
     this.width = inputData.width;
     this.height = inputData.height;
-    this.layers = inputData.layers.map((layer) => new Layer(layer));
+    // Entered data
     this.type = inputData.type;
+    this.layers = inputData.layers.map((layer) => new Layer(layer));
   }
 
   //  TEMPORARY METHODS

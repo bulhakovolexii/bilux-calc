@@ -39,25 +39,25 @@ export default class Building {
       if (facade.direction === "north" || facade.direction === "south") {
         return new Wall({
           ...facade,
-          climateData: this.climateData(),
           width: this.buildingWidth,
           height: this.height(),
           buildingHeight: this.height(),
           indoorTemperature: this.indoorTemperature(),
-          buildingPurpose: this.purpose,
+          climateData: this.climateData(),
           terrain: this.terrain,
+          buildingPurpose: this.purpose,
           airPermeabilityClass: this.airPermeabilityClass,
         });
       } else if (facade.direction === "east" || facade.direction === "west") {
         return new Wall({
           ...facade,
-          climateData: this.climateData(),
           width: this.buildingLength,
           height: this.height(),
           buildingHeight: this.height(),
           indoorTemperature: this.indoorTemperature(),
-          buildingPurpose: this.purpose,
+          climateData: this.climateData(),
           terrain: this.terrain,
+          buildingPurpose: this.purpose,
           airPermeabilityClass: this.airPermeabilityClass,
         });
       }

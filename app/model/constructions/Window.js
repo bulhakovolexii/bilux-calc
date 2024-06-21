@@ -2,8 +2,10 @@ import windows from "../reference-data/windows";
 
 export default class Window {
   constructor(inputData) {
+    // Nested data
     this.environment = inputData.environment;
     this.direction = inputData.direction;
+    // Entered data
     this.width = inputData.width;
     this.height = inputData.height;
     this.quantity = inputData.quantity;
