@@ -2,6 +2,7 @@ import Ceiling from "./constructions/Ceiling";
 import Floor from "./constructions/Floor";
 import Wall from "./constructions/Wall";
 import citiesClimateData from "./reference-data/citiesClimateData";
+import constructionTypes from "./reference-data/constructionTypes";
 import heatCapacityClasses from "./reference-data/heatCapacityClasses";
 import monthlyDurationIntervals from "./reference-data/monthlyDurationIntervals";
 import purposes from "./reference-data/purposes";
@@ -209,7 +210,8 @@ export default class Building {
   infiltrationAirExchangeRate() {
     return (
       this.facades.reduce(
-        (sum, facade) => sum + facade.adjustedAirflow(this.constructionType),
+        (sum, facade) =>
+          sum + facade.adjustedAirflow(this.airLeakageAdjustmentFactor()),
         0
       ) /
       (this.conditionedVolume() * Building.INTERNAL_BARRIER_COEFFICIENT)

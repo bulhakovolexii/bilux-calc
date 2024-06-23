@@ -1,8 +1,9 @@
-import environmentTypes from "../reference-data/environmentTypes";
 import Window from "./Window";
 import Door from "./Door";
-import windSpeedCoefficients from "../reference-data/windSpeedCoefficients";
 import Layer from "./Layer";
+import environmentTypes from "../reference-data/environmentTypes";
+import windSpeedCoefficients from "../reference-data/windSpeedCoefficients";
+import airPermeabilityClasses from "../reference-data/airPermeabilityClasses";
 
 export default class Wall {
   static h_si = 8.7;
@@ -119,25 +120,7 @@ export default class Wall {
     return this.b_U() * this.area() * this.U_i() + inclusionsH_X;
   }
 
-  adjustedAirflow(typeAndCondition) {
-    let a_inf_m;
-    switch (typeAndCondition) {
-      case "Неутеплені, залізобетонні панелі або кладка з крупноблокових елементів з міжпанельними стиками в незадовільному стані":
-        a_inf_m = 1.3;
-        break;
-      case "Неутеплені, кладка з дрібноштучних виробів у незадовільному стані":
-        a_inf_m = 1.2;
-        break;
-      case "Утеплені мінераловатними матеріалами в задовільному стані":
-        a_inf_m = 1.1;
-        break;
-      case "Утеплені органічними матеріалами в задовільному стані":
-        a_inf_m = 1.05;
-        break;
-      default:
-        a_inf_m = 1;
-        break;
-    }
+  adjustedAirflow(a_inf_m) {
     let expression =
       this.deltaP_gr_mn() + this.f_e_seas_m() * this.deltaP_wd_m();
     if (expression < 0) {
@@ -189,29 +172,20 @@ export default class Wall {
   }
 
   Q_100_s_m() {
-    let airPermeabilityClass;
-    switch (this.airPermeabilityClass) {
-      case "Продувна":
-        airPermeabilityClass = 50;
-        break;
-      case "Не герметична":
-        airPermeabilityClass = 27;
-        break;
-      case "Слабо герметична":
-        airPermeabilityClass = 9;
-        break;
-      case "Герметична":
-        airPermeabilityClass = 3;
-        break;
-    }
+    const airPermeability = airPermeabilityClasses.find(
+      (option) => option.airPermeabilityClass === this.airPermeabilityClass
+    ).airPermeability;
+
     const this_Q_100 = this.windows.reduce((sum, window) => {
-      return sum + airPermeabilityClass * window.totalArea();
+      return sum + airPermeability * window.totalArea();
     }, 0);
+
     let inclusions_Q_100 = 0;
+
     this.inclusions.forEach((inclusion) => {
       if (!inclusion.environment) {
         inclusions_Q_100 += inclusion.windows.reduce(
-          (sum, window) => sum + airPermeabilityClass * window.totalArea(),
+          (sum, window) => sum + airPermeability * window.totalArea(),
           0
         );
       }
