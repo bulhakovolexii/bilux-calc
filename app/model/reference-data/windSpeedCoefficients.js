@@ -1,7 +1,9 @@
 const windSpeedCoefficients = [
   {
+    // Висота будівлі, (від lower до upper)
     lower: 0,
     upper: 5,
+    // Характеристика місцевості
     A: 0.75,
     B: 0.5,
     C: 0.4,
