@@ -25,17 +25,7 @@ export default class Building {
     this.buildingLength = parseFloat(inputData.buildingLength); // Довжина будівлі
     this.floorHeight = parseFloat(inputData.floorHeight); // Висота поверху
     this.numberOfFloors = parseInt(inputData.numberOfFloors); // Кількість поверхів
-    // Step 4
-    this.ceiling = new Ceiling({
-      ...inputData.ceiling,
-      width: this.buildingWidth,
-      height: this.buildingLength,
-    });
-    this.floor = new Floor({
-      ...inputData.floor,
-      width: this.buildingWidth,
-      height: this.buildingLength,
-    });
+    // Step 5
     this.facades = inputData.facades.map((facade) => {
       if (facade.direction === "north" || facade.direction === "south") {
         return new Wall({
@@ -63,6 +53,19 @@ export default class Building {
         });
       }
     });
+    // Step 4.1
+    this.floor = new Floor({
+      ...inputData.floor,
+      width: this.buildingWidth,
+      height: this.buildingLength,
+      wallTotalThickness: this.wallTotalThickness(),
+    });
+    // Step 4.2
+    this.ceiling = new Ceiling({
+      ...inputData.ceiling,
+      width: this.buildingWidth,
+      height: this.buildingLength,
+    });
   }
 
   // Висота будівлі
@@ -78,6 +81,17 @@ export default class Building {
   // Кондиціонований обʼєм будівлі
   conditionedVolume() {
     return this.buildingWidth * this.buildingLength * this.height();
+  }
+
+  // Загальна товщина зовнішньої стіни
+  wallTotalThickness() {
+    const wallThickness = [];
+    this.facades.forEach((facade) =>
+      wallThickness.push(
+        facade.layers.reduce((sum, layer) => sum + layer.thickness, 0)
+      )
+    );
+    return Math.max(...wallThickness);
   }
 
   // Кліматичні дані для обраного міста
