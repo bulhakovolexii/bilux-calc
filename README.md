@@ -8,6 +8,6 @@
 - Layer OK
 - Door OK
 - Ceiling OK
-- Floor NOT OK
+- Floor OK
 - Window OK
 - Wall OK
