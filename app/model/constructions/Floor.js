@@ -31,26 +31,46 @@ export default class Floor {
   }
 
   heatTransferCoefficient() {
-    if (this.type === "Підлога на ґрунті") {
-      this.area() * this.groundFloorUFActor();
-    } else if (this.type === "Опалюваний підвал (цокольний поверх)") {
-      this.area() * this.heatedBasementUFActor() +
-        this.wallHeight * this.perimeter() * this.wallUFactor();
-    } else {
-      return (
-        Floor.TEMPERATURE_DIFFERENCE_CORRECTION_COEFFICIENT *
-        this.area() *
-        this.uFactor()
-      );
+    switch (this.type) {
+      case "Підлога на ґрунті":
+        return this.area() * this.groundFloorUFActor();
+
+      case "Опалюваний підвал (цокольний поверх)":
+        return (
+          this.area() * this.heatedBasementUFActor() +
+          this.wallHeight * this.perimeter() * this.wallUFactor()
+        );
+
+      default:
+        return (
+          Floor.TEMPERATURE_DIFFERENCE_CORRECTION_COEFFICIENT *
+          this.area() *
+          this.uFactor()
+        );
     }
   }
 
   groundFloorUFActor() {
-    if (this.floorEquivalentThickness() < this.floorCharacteristicDimension()) {
-      // Formula 9
+    const isIsolationBad =
+      this.floorEquivalentThickness() < this.floorCharacteristicDimension();
+    let groundFloorUFActor = 0;
+    if (isIsolationBad) {
+      groundFloorUFActor =
+        ((2 * Floor.SOIL_THERMAL_CONDUCTIVITY) /
+          (Math.PI * this.floorCharacteristicDimension() +
+            this.floorEquivalentThickness())) *
+        Math.log(
+          (Math.PI * this.floorCharacteristicDimension()) /
+            this.floorEquivalentThickness +
+            1
+        );
     } else {
-      // Formula 10
+      groundFloorUFActor =
+        Floor.SOIL_THERMAL_CONDUCTIVITY /
+        (0.475 * this.floorCharacteristicDimension() +
+          this.floorEquivalentThickness());
     }
+    return groundFloorUFActor;
   }
 
   floorCharacteristicDimension() {
@@ -77,17 +97,47 @@ export default class Floor {
   }
 
   heatedBasementUFActor() {
-    const expression = this.floorEquivalentThickness() + 0.5 * this.wallHeight;
+    const isIsolationBad =
+      this.floorEquivalentThickness() + 0.5 * this.wallHeight <
+      this.floorCharacteristicDimension();
+    let heatedBasementUFActor = 0;
 
-    if (expression < this.floorCharacteristicDimension()) {
-      // Formula 14
+    if (isIsolationBad) {
+      heatedBasementUFActor =
+        ((2 * Floor.SOIL_THERMAL_CONDUCTIVITY) /
+          (Math.PI * this.floorCharacteristicDimension() +
+            this.floorEquivalentThickness() +
+            0.5 * this.wallHeight)) *
+        Math.log(
+          (Math.PI * this.floorCharacteristicDimension()) /
+            (this.floorEquivalentThickness() + 0.5 * this.wallHeight) +
+            1
+        );
     } else {
-      // Formula 15
+      heatedBasementUFActor =
+        (2 * Floor.SOIL_THERMAL_CONDUCTIVITY) /
+        (0.475 * this.floorCharacteristicDimension() +
+          this.floorEquivalentThickness() +
+          0.5 * this.wallHeight);
     }
+    return heatedBasementUFActor;
   }
 
   wallUFactor() {
-    // Formula 16
+    let wallUFactor = 0;
+
+    const pi = Math.PI;
+    const numerator = 2 * Floor.SOIL_THERMAL_CONDUCTIVITY;
+    const denominator = pi * this.wallHeight;
+    const term =
+      1 +
+      (0.5 * this.floorEquivalentThickness()) /
+        (this.floorEquivalentThickness() + this.wallHeight);
+    const logArgument = this.wallHeight / this.wallEquivalentThickness + 1;
+
+    wallUFactor = (numerator / denominator) * term * Math.log(logArgument);
+
+    return wallUFactor;
   }
 
   uFactor() {
