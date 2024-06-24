@@ -44,9 +44,9 @@ export default class Building {
           height: this.height(),
           buildingHeight: this.height(),
           indoorTemperature: this.indoorTemperature(),
+          buildingPurpose: this.purpose,
           climateData: this.climateData(),
           terrain: this.terrain,
-          buildingPurpose: this.purpose,
           airPermeabilityClass: this.airPermeabilityClass,
         });
       } else if (facade.direction === "east" || facade.direction === "west") {
@@ -56,9 +56,9 @@ export default class Building {
           height: this.height(),
           buildingHeight: this.height(),
           indoorTemperature: this.indoorTemperature(),
+          buildingPurpose: this.purpose,
           climateData: this.climateData(),
           terrain: this.terrain,
-          buildingPurpose: this.purpose,
           airPermeabilityClass: this.airPermeabilityClass,
         });
       }
@@ -138,7 +138,7 @@ export default class Building {
     return hours;
   }
 
-  // Енергопотреба
+  // Енергопотреба (обмежена тривалістю опалювального періоду)
   energyDemand(month) {
     const energyDemand =
       this.totalHeatLosses(month) -
@@ -155,7 +155,7 @@ export default class Building {
     }
   }
 
-  // Тепловтрати
+  // Загальні тепловтрати
   totalHeatLosses(month) {
     return (
       this.transmissionHeatLosses(month) + this.ventilationHeatLosses(month)

@@ -1,8 +1,9 @@
 import Layer from "./Layer";
 
 export default class Floor {
-  static h_si = 5.9;
-  static h_se = 17;
+  static INTERNAL_HEAT_EMISSION_COEFFICIENT = 5.9;
+  static EXTERNAL_HEAT_EMISSION_COEFFICIENT = 17;
+  static TEMPERATURE_DIFFERENCE_CORRECTION_COEFFICIENT = 0.3;
 
   constructor(inputData) {
     // Nested data
@@ -13,32 +14,8 @@ export default class Floor {
     this.layers = inputData.layers.map((layer) => new Layer(layer));
   }
 
-  //  TEMPORARY METHODS
   area() {
     return this.width * this.height;
-  }
-  U_op() {
-    return 1 / this.R_sum();
-  }
-  U_i() {
-    return this.U_op();
-  }
-  //  TEMPORARY METHODS
-
-  R_sum() {
-    let R_sum = 0;
-    this.layers.forEach((layer) => {
-      R_sum += layer.thermalResistance();
-    });
-    if (this.type === "Технічне підпілля") {
-      return 1 / Floor.h_se + R_sum + 1 / Floor.h_si;
-    } else {
-      return R_sum;
-    }
-  }
-
-  b_U() {
-    return 0.3;
   }
 
   heatTransferCoefficient() {
@@ -59,7 +36,31 @@ export default class Floor {
        *
        */
     } else {
-      return this.b_U() * this.area() * this.U_i();
+      return (
+        Floor.TEMPERATURE_DIFFERENCE_CORRECTION_COEFFICIENT *
+        this.area() *
+        this.uFactor()
+      );
+    }
+  }
+
+  uFactor() {
+    return 1 / this.thermalResistance();
+  }
+
+  thermalResistance() {
+    let thermalResistance = 0;
+    this.layers.forEach((layer) => {
+      thermalResistance += layer.thermalResistance();
+    });
+    if (this.type === "Технічне підпілля") {
+      return (
+        1 / Floor.EXTERNAL_HEAT_EMISSION_COEFFICIENT +
+        thermalResistance +
+        1 / Floor.INTERNAL_HEAT_EMISSION_COEFFICIENT
+      );
+    } else {
+      return thermalResistance;
     }
   }
 }

@@ -6,7 +6,7 @@ import windSpeedCoefficients from "../reference-data/windSpeedCoefficients";
 import airPermeabilityClasses from "../reference-data/airPermeabilityClasses";
 
 export default class Wall {
-  static h_si = 8.7;
+  static INTERNAL_HEAT_EMISSION_COEFFICIENT = 8.7;
 
   constructor(inputData) {
     this.width = inputData.width;
@@ -48,18 +48,6 @@ export default class Wall {
       ) || [];
   }
 
-  //  TEMPORARY METHODS
-  totalArea() {
-    return this.width * this.height;
-  }
-  U_op() {
-    return 1 / this.R_sum();
-  }
-  U_i() {
-    return this.U_op();
-  }
-  //  TEMPORARY METHODS
-
   area() {
     const inclusionsArea = this.inclusions.reduce(
       (sum, obj) => sum + obj.totalArea(),
@@ -78,74 +66,117 @@ export default class Wall {
     }
   }
 
-  h_se() {
-    return this.environment !== undefined ? 12 : 23;
+  totalArea() {
+    return this.width * this.height;
   }
 
-  R_sum() {
-    let R_sum = 0;
-    this.layers.forEach((layer) => {
-      R_sum += layer.thermalResistance();
-    });
-    return 1 / Wall.h_si + R_sum + 1 / this.h_se();
-  }
-
-  U_i() {
-    if (this.U_op() >= 0.8) {
-      return this.U_op();
-    } else if (this.U_op() < 0.8 && this.U_op() >= 0.4) {
-      return this.U_op() + 0.05;
-    } else {
-      return this.U_op() + 0.1;
-    }
-  }
-
-  b_U() {
-    return this.environment
-      ? environmentTypes.find(
-          (environment) => environment.type === this.environment
-        ).b_U
-      : 1;
-  }
-
+  // Тепловтрати трансмісією
   heatTransferCoefficient() {
-    const inclusionsH_X =
+    const inclusionsHeatTransferCoefficient =
       this.inclusions.reduce(
         (sum, obj) => sum + obj.heatTransferCoefficient(),
         0
       ) +
-      this.windows.reduce((sum, obj) => sum + obj.H_X(this.b_U()), 0) +
-      this.doors.reduce((sum, obj) => sum + obj.H_X(this.b_U()), 0);
-
-    return this.b_U() * this.area() * this.U_i() + inclusionsH_X;
+      this.windows.reduce(
+        (sum, obj) =>
+          sum +
+          obj.heatTransferCoefficient(
+            this.temperatureDifferenceCorrectionCoefficient()
+          ),
+        0
+      ) +
+      this.doors.reduce(
+        (sum, obj) =>
+          sum +
+          obj.heatTransferCoefficient(
+            this.temperatureDifferenceCorrectionCoefficient()
+          ),
+        0
+      );
+    return (
+      this.temperatureDifferenceCorrectionCoefficient() *
+        this.area() *
+        this.uFactor() +
+      inclusionsHeatTransferCoefficient
+    );
   }
 
-  adjustedAirflow(a_inf_m) {
+  temperatureDifferenceCorrectionCoefficient() {
+    return this.environment
+      ? environmentTypes.find(
+          (environment) => environment.type === this.environment
+        ).temperatureDifferenceCorrectionCoefficient
+      : 1;
+  }
+
+  uFactor() {
+    const opaqueUFactor = 1 / this.thermalResistance();
+
+    if (opaqueUFactor >= 0.8) {
+      return opaqueUFactor;
+    } else if (opaqueUFactor < 0.8 && opaqueUFactor >= 0.4) {
+      return opaqueUFactor + 0.05;
+    } else {
+      return opaqueUFactor + 0.1;
+    }
+  }
+
+  externalHeatEmissionCoefficient() {
+    return this.environment !== undefined ? 12 : 23;
+  }
+
+  thermalResistance() {
+    let thermalResistance = 0;
+    this.layers.forEach((layer) => {
+      thermalResistance += layer.thermalResistance();
+    });
+    return (
+      1 / Wall.INTERNAL_HEAT_EMISSION_COEFFICIENT +
+      thermalResistance +
+      1 / this.externalHeatEmissionCoefficient()
+    );
+  }
+
+  // Тепловтрати вентиляцією
+  adjustedAirflow(airLeakageAdjustmentFactor) {
     let expression =
-      this.deltaP_gr_mn() + this.f_e_seas_m() * this.deltaP_wd_m();
+      this.gravitationalPressureDifference() +
+      this.windDirectionRepeatability() * this.windPressureDifference();
     if (expression < 0) {
       expression = -expression;
     }
-    return this.Q_100_s_m() * ((a_inf_m * expression) / 100) ** (2 / 3);
-  }
-
-  f_e_seas_m() {
-    return this.climateData.windDirectionRepeatability[this.direction];
-  }
-  deltaP_gr_mn() {
     return (
-      0.5 * this.buildingHeight * (this.lambda_e_seas() - this.lambda_int_set())
+      this.facadeOpeningsAirPermeability() *
+      ((airLeakageAdjustmentFactor * expression) / 100) ** (2 / 3)
     );
   }
-  deltaP_wd_m() {
-    return 0.03 * this.lambda_e_seas() * this.beta_v() * this.V_e_seas_m() ** 2;
+
+  gravitationalPressureDifference() {
+    return (
+      0.5 *
+      this.buildingHeight *
+      (this.externalAirSpecificWeight() - this.internalAirSpecificWeight())
+    );
   }
 
-  V_e_seas_m() {
+  windDirectionRepeatability() {
+    return this.climateData.windDirectionRepeatability[this.direction];
+  }
+
+  windPressureDifference() {
+    return (
+      0.03 *
+      this.externalAirSpecificWeight() *
+      this.airSpeedVariationWithHeightCoefficient() *
+      this.januaryWindSpeed() ** 2
+    );
+  }
+
+  januaryWindSpeed() {
     return this.climateData.januaryWindSpeed[this.direction];
   }
 
-  beta_v() {
+  airSpeedVariationWithHeightCoefficient() {
     return windSpeedCoefficients.find(
       (height) =>
         this.buildingHeight > height.lower &&
@@ -153,12 +184,14 @@ export default class Wall {
     )[this.terrain];
   }
 
-  lambda_e_seas() {
+  externalAirSpecificWeight() {
     return 3463 / (273 + this.phi_e_seas());
   }
-  lambda_int_set() {
+
+  internalAirSpecificWeight() {
     return 3463 / (273 + this.indoorTemperature);
   }
+
   phi_e_seas() {
     if (
       this.buildingPurpose === "Будівлі навчальних закладів" ||
@@ -171,25 +204,26 @@ export default class Wall {
     }
   }
 
-  Q_100_s_m() {
-    const airPermeability = airPermeabilityClasses.find(
+  facadeOpeningsAirPermeability() {
+    const airPermeabilityCoefficient = airPermeabilityClasses.find(
       (option) => option.airPermeabilityClass === this.airPermeabilityClass
     ).airPermeability;
 
-    const this_Q_100 = this.windows.reduce((sum, window) => {
-      return sum + airPermeability * window.totalArea();
+    const airPermeability = this.windows.reduce((sum, window) => {
+      return sum + airPermeabilityCoefficient * window.totalArea();
     }, 0);
 
-    let inclusions_Q_100 = 0;
+    let inclusionsAirPermeability = 0;
 
     this.inclusions.forEach((inclusion) => {
       if (!inclusion.environment) {
-        inclusions_Q_100 += inclusion.windows.reduce(
-          (sum, window) => sum + airPermeability * window.totalArea(),
+        inclusionsAirPermeability += inclusion.windows.reduce(
+          (sum, window) =>
+            sum + airPermeabilityCoefficient * window.totalArea(),
           0
         );
       }
     });
-    return this_Q_100 + inclusions_Q_100;
+    return airPermeability + inclusionsAirPermeability;
   }
 }

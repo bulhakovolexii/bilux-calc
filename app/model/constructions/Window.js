@@ -1,6 +1,8 @@
 import windows from "../reference-data/windows";
 
 export default class Window {
+  static FRAME_AREA_FRACTION = 0.3;
+  static NON_DIFFUSING_GLAZING_CORRECTION_COEFFICIENT = 0.9;
   constructor(inputData) {
     // Nested data
     this.environment = inputData.environment;
@@ -23,46 +25,54 @@ export default class Window {
     return this.area() * this.quantity;
   }
 
-  R_sum() {
+  // Тепловтрати
+  heatTransferCoefficient(temperatureDifferenceCorrectionCoefficient) {
+    return (
+      temperatureDifferenceCorrectionCoefficient *
+      this.totalArea() *
+      this.uFactor()
+    );
+  }
+
+  uFactor() {
+    return 1 / this.thermalResistance();
+  }
+
+  thermalResistance() {
     return windows.find(
       (window) =>
         window.variant === this.variant &&
         window.air === this.air &&
         window.krypton === this.krypton &&
         window.argon === this.argon
-    ).R_sum;
+    ).thermalResistance;
   }
 
-  U_op() {
-    return 1 / this.R_sum();
-  }
-
-  U_i() {
-    return this.U_op();
-  }
-
-  H_X(b_U) {
-    return b_U * this.totalArea() * this.U_i();
-  }
-
-  A_sol() {
-    return this.g_n() * (1 - 0.3) * this.totalArea();
-  }
-
-  g_n() {
+  // Теплонадходження
+  solarHeatGains(solarRadiation) {
     return (
-      0.9 *
+      this.equivalentSolarInsolationArea() * solarRadiation[this.direction]
+    );
+  }
+
+  equivalentSolarInsolationArea() {
+    return (
+      this.solarEnergyTransmittanceCoefficient() *
+      (1 - Window.FRAME_AREA_FRACTION) *
+      this.totalArea()
+    );
+  }
+
+  solarEnergyTransmittanceCoefficient() {
+    return (
+      Window.NON_DIFFUSING_GLAZING_CORRECTION_COEFFICIENT *
       windows.find(
         (window) =>
           window.variant === this.variant &&
           window.air === this.air &&
           window.krypton === this.krypton &&
           window.argon === this.argon
-      ).g_n
+      ).solarEnergyTransmittanceCoefficient
     );
-  }
-
-  solarHeatGains(solarRadiation) {
-    return this.A_sol() * solarRadiation[this.direction];
   }
 }

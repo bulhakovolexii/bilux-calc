@@ -1,7 +1,7 @@
 import Layer from "./Layer";
 
 export default class Ceiling {
-  static h_si = 10;
+  static INTERNAL_HEAT_EMISSION_COEFFICIENT = 10;
 
   constructor(inputData) {
     // Nested data
@@ -12,35 +12,19 @@ export default class Ceiling {
     this.layers = inputData.layers.map((layer) => new Layer(layer));
   }
 
-  //  TEMPORARY METHODS
   area() {
     return this.width * this.height;
   }
-  U_op() {
-    return 1 / this.R_sum();
-  }
-  U_i() {
-    return this.U_op();
-  }
-  //  TEMPORARY METHODS
 
-  h_se() {
-    if (this.type === "Cуміщене покриття") {
-      return 23;
-    } else {
-      return 6;
-    }
+  heatTransferCoefficient() {
+    return (
+      this.temperatureDifferenceCorrectionCoefficient() *
+      this.area() *
+      this.uFactor()
+    );
   }
 
-  R_sum() {
-    let R_sum = 0;
-    this.layers.forEach((layer) => {
-      R_sum += layer.thermalResistance();
-    });
-    return 1 / Ceiling.h_si + R_sum + 1 / this.h_se();
-  }
-
-  b_U() {
+  temperatureDifferenceCorrectionCoefficient() {
     switch (this.type) {
       case "Cуміщене покриття" || "Холодне горище односімейних будівель":
         return 1;
@@ -51,7 +35,27 @@ export default class Ceiling {
     }
   }
 
-  heatTransferCoefficient() {
-    return this.b_U() * this.area() * this.U_i();
+  uFactor() {
+    return 1 / this.thermalResistance();
+  }
+
+  thermalResistance() {
+    let thermalResistance = 0;
+    this.layers.forEach((layer) => {
+      thermalResistance += layer.thermalResistance();
+    });
+    return (
+      1 / Ceiling.INTERNAL_HEAT_EMISSION_COEFFICIENT +
+      thermalResistance +
+      1 / this.externalHeatEmissionCoefficient()
+    );
+  }
+
+  externalHeatEmissionCoefficient() {
+    if (this.type === "Cуміщене покриття") {
+      return 23;
+    } else {
+      return 6;
+    }
   }
 }

@@ -1,51 +1,51 @@
 const environmentTypes = [
   {
     type: "Опалюваний обʼєм", // Тип навколишнього середовища
-    b_U: 0, // Поправковий коефіцієнт
+    temperatureDifferenceCorrectionCoefficient: 0, // Поправковий коефіцієнт
   },
   {
     type: "Неопалювана сходова клітка всередині будівлі",
-    b_U: 0.4,
+    temperatureDifferenceCorrectionCoefficient: 0.4,
   },
   {
     type: "Неопалюване приміщення з трьома зовнішніми стінами (наприклад, зовнішні сходи)",
-    b_U: 0.8,
+    temperatureDifferenceCorrectionCoefficient: 0.8,
   },
   {
     type: "Неопалюване приміщення з двома зовнішніми стінами тa дверима (наприклад, тамбур, хол, гараж)",
-    b_U: 0.6,
+    temperatureDifferenceCorrectionCoefficient: 0.6,
   },
   {
     type: "Неопалюване приміщення з двома зовнішніми стінами без дверей",
-    b_U: 0.5,
+    temperatureDifferenceCorrectionCoefficient: 0.5,
   },
   {
     type: "Неопалюване приміщення з однією зовнішньою стіною",
-    b_U: 0.4,
+    temperatureDifferenceCorrectionCoefficient: 0.4,
   },
   {
     type: "Засклена лоджія для нового проєктування",
-    b_U: 0.5,
+    temperatureDifferenceCorrectionCoefficient: 0.5,
   },
   {
     type: "Засклений балкон для нового проектування",
-    b_U: 0.6,
+    temperatureDifferenceCorrectionCoefficient: 0.6,
   },
   {
     type: "Засклена лоджія наявних будівель - задовільний стан огородження",
-    b_U: 0.7,
+    temperatureDifferenceCorrectionCoefficient: 0.7,
   },
   {
     type: "Засклена лоджія наявних будівель - незадовільний стан огородження",
-    b_U: 0.85,
+    temperatureDifferenceCorrectionCoefficient: 0.85,
   },
   {
     type: "Засклений балкон наявних будівель - задовільний стан огородження",
-    b_U: 0.8,
+    temperatureDifferenceCorrectionCoefficient: 0.8,
   },
   {
     type: "Засклений балкон наявних будівель - задовільний стан огородження",
-    b_U: 0.9,
+    temperatureDifferenceCorrectionCoefficient: 0.9,
   },
 ];
 export default environmentTypes;
