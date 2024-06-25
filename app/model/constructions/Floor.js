@@ -53,6 +53,7 @@ export default class Floor {
   groundFloorUFActor() {
     const isIsolationBad =
       this.floorEquivalentThickness() < this.floorCharacteristicDimension();
+
     let groundFloorUFActor = 0;
     if (isIsolationBad) {
       groundFloorUFActor =
@@ -61,7 +62,7 @@ export default class Floor {
             this.floorEquivalentThickness())) *
         Math.log(
           (Math.PI * this.floorCharacteristicDimension()) /
-            this.floorEquivalentThickness +
+            this.floorEquivalentThickness() +
             1
         );
     } else {
@@ -70,6 +71,7 @@ export default class Floor {
         (0.475 * this.floorCharacteristicDimension() +
           this.floorEquivalentThickness());
     }
+
     return groundFloorUFActor;
   }
 
@@ -133,7 +135,7 @@ export default class Floor {
       1 +
       (0.5 * this.floorEquivalentThickness()) /
         (this.floorEquivalentThickness() + this.wallHeight);
-    const logArgument = this.wallHeight / this.wallEquivalentThickness + 1;
+    const logArgument = this.wallHeight / this.wallEquivalentThickness() + 1;
 
     wallUFactor = (numerator / denominator) * term * Math.log(logArgument);
 

@@ -26,12 +26,12 @@ export default class Ceiling {
 
   temperatureDifferenceCorrectionCoefficient() {
     switch (this.type) {
-      case "Cуміщене покриття" || "Холодне горище односімейних будівель":
-        return 1;
       case "Технічне (тепле) горище":
         return 0.7;
       case "Холодне горище багатоповерхових будівель":
         return 0.9;
+      default:
+        return 1;
     }
   }
 

@@ -185,14 +185,14 @@ export default class Wall {
   }
 
   externalAirSpecificWeight() {
-    return 3463 / (273 + this.phi_e_seas());
+    return 3463 / (273 + this.averageExternalTemperature());
   }
 
   internalAirSpecificWeight() {
     return 3463 / (273 + this.indoorTemperature);
   }
 
-  phi_e_seas() {
+  averageExternalTemperature() {
     if (
       this.buildingPurpose === "Будівлі навчальних закладів" ||
       this.buildingPurpose === "Будівлі дитячих навчальних закладів" ||
