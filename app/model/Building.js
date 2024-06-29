@@ -7,6 +7,7 @@ import heatCapacityClasses from "./reference-data/heatCapacityClasses";
 import heatGenerators from "./reference-data/heatGenerators";
 import monthlyDurationIntervals from "./reference-data/monthlyDurationIntervals";
 import purposes from "./reference-data/purposes";
+import temperatureGradients from "./reference-data/temperatureGradients";
 
 export default class Building {
   static AIR_HEAT_CAPACITY = 0.336; // Теплоємність одиниці обʼєму повітря
@@ -369,7 +370,7 @@ export default class Building {
     const Q_gen_ls = (Q_dis_in * (1 - this.ngen())) / this.ngen();
 
     return Q_dis_in + Q_gen_ls;
-  } // OK
+  }
 
   ngen() {
     const heatGenerator = heatGenerators.find(
@@ -377,7 +378,7 @@ export default class Building {
     );
 
     return heatGenerator.efficiency / 100;
-  } // OK
+  }
 
   // Неутилізовані тепловтрати
   Q_dis_ls_nrvd(month) {
@@ -385,7 +386,7 @@ export default class Building {
       this.Q_dis_ls_nrbl(month) +
       (this.Q_dis_ls_rbl(month) - this.Q_dis_ls_rvd(month))
     );
-  } // OK
+  }
 
   Q_dis_ls_nrbl(month) {
     if (this.floor.type === "Технічне підпілля") {
@@ -433,7 +434,7 @@ export default class Building {
       pipeLength *
       this.heatingPeriodDurationHours(month)
     );
-  } // OK
+  }
 
   pipesLength() {
     const pipesLength = { sectionV: 0, sectionS: 0, sectionA: 0 };
@@ -460,15 +461,33 @@ export default class Building {
     }
 
     return pipesLength;
-  } // OK
+  }
 
   heatCarrierTemperature(month) {
-    const mockData = [
-      53.19, 52.12, 45.26, 33.16, 24.41, 19.84, 17.42, 18.77, 26.3, 35.17,
-      43.91, 50.23,
-    ];
-    return mockData[monthlyDurationIntervals.indexOf(month)];
-  } // DEPENDS OF SOME SYSTEM DATA
+    const supplyTemp =
+      temperatureGradients.find(
+        (option) =>
+          option.temperatureGradient === this.system?.temperatureGradient
+      )?.supply || this.indoorTemperature(); // Температура подавального теплоносія
+    const returnTemp =
+      temperatureGradients.find(
+        (option) =>
+          option.temperatureGradient === this.system?.temperatureGradient
+      )?.return || this.indoorTemperature(); // Температура зворотного теплоносія
+    const x1 = this.indoorTemperature(); // Максимальна температура повітря
+    const y1 = this.indoorTemperature(); // Мінімальна температура теплоносія
+    const x2 = -23; // Мінімальна температура повітря
+    const y2 = returnTemp + (supplyTemp - returnTemp) / 2; // Максимальна температура теплоносія
+
+    // Коефіцієнти лінійної функції температурного графіку
+    const a = (y2 - y1) / (x2 - x1);
+    const b = y1 - a * x1;
+    const heatCarrierTemperature = (x) => a * x + b;
+
+    console.log(a, b);
+
+    return heatCarrierTemperature(this.outdoorTemperature(month));
+  }
 
   pipesHeatTransferCoefficient() {
     const area = this.conditionedArea();
@@ -487,14 +506,34 @@ export default class Building {
       default:
         return { sectionV: 0, sectionS: 0, sectionA: 0 };
     }
-  } // OK
+  }
 
   Q_dis_ls_rvd(month) {
     return this.Q_dis_ls_rbl(month) * 0.9 * this.utilizationFactor(month);
-  } // OK
+  }
 
   // Утилізовані тепловтрати
   Q_em_ls(month) {
     return 0;
+  }
+
+  f_hydr() {
+    return 1;
+  }
+
+  f_rad() {
+    return 1;
+  }
+
+  n_em() {
+    return 1 / (3 - (this.n_str + this.n_ctr));
+  }
+
+  n_str() {
+    return 1;
+  }
+
+  n_ctr() {
+    return 1;
   }
 }
