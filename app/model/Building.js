@@ -4,12 +4,14 @@ import Wall from "./constructions/Wall";
 import citiesClimateData from "./reference-data/citiesClimateData";
 import constructionTypes from "./reference-data/constructionTypes";
 import heatCapacityClasses from "./reference-data/heatCapacityClasses";
+import heatGenerators from "./reference-data/heatGenerators";
 import monthlyDurationIntervals from "./reference-data/monthlyDurationIntervals";
 import purposes from "./reference-data/purposes";
 
 export default class Building {
   static AIR_HEAT_CAPACITY = 0.336; // Теплоємність одиниці обʼєму повітря
   static INTERNAL_BARRIER_COEFFICIENT = 0.85; // Коефіцієнт зниження обʼєму повітря в будівлі, яким враховують наявність внутрішніх огороджувальних конструкцій
+  static BASEMENT_AIR_TEMPERATURE = 13; // Температура повітря в неопалюваному підвалі
 
   constructor(inputData) {
     // Step 1
@@ -66,6 +68,8 @@ export default class Building {
       width: this.buildingWidth,
       height: this.buildingLength,
     });
+    // Step 6
+    this.system = { ...inputData.system };
   }
 
   // Висота будівлі
@@ -356,5 +360,141 @@ export default class Building {
   // Безрозмірний числовий параметр, що залежить від часової константи
   timeConstantFactor() {
     return 1 + this.buildingTimeConstant() / 15;
+  }
+
+  // Енергоспоживання
+  energyConsumption(month) {
+    const Q_em_in = this.energyDemand(month) + this.Q_em_ls(month);
+    const Q_dis_in = this.Q_dis_ls_nrvd(month) + Q_em_in;
+    const Q_gen_ls = (Q_dis_in * (1 - this.ngen())) / this.ngen();
+
+    return Q_dis_in + Q_gen_ls;
+  } // OK
+
+  ngen() {
+    const heatGenerator = heatGenerators.find(
+      (option) => option.heatGenerator === this.system.heatGenerator
+    );
+
+    return heatGenerator.efficiency / 100;
+  } // OK
+
+  // Неутилізовані тепловтрати
+  Q_dis_ls_nrvd(month) {
+    return (
+      this.Q_dis_ls_nrbl(month) +
+      (this.Q_dis_ls_rbl(month) - this.Q_dis_ls_rvd(month))
+    );
+  } // OK
+
+  Q_dis_ls_nrbl(month) {
+    if (this.floor.type === "Технічне підпілля") {
+      return this.formula2(
+        this.pipesLength().sectionV,
+        this.heatCarrierTemperature(month),
+        Building.BASEMENT_AIR_TEMPERATURE,
+        this.pipesHeatTransferCoefficient().sectionV,
+        month
+      ); // Formula 2 (тільки для труб в підпіллі)
+    } else {
+      return 0;
+    }
+  }
+
+  Q_dis_ls_rbl(month) {
+    const losses = (section) => {
+      return this.formula2(
+        this.pipesLength()[section],
+        this.heatCarrierTemperature(month),
+        this.indoorTemperature(),
+        this.pipesHeatTransferCoefficient()[section],
+        month
+      );
+    };
+    if (this.floor.type !== "Технічне підпілля") {
+      const pipes = ["sectionV", "sectionS", "sectionA"];
+      return pipes.reduce((sum, pipe) => sum + losses(pipe), 0); // Formula 2 (для всіх труб)
+    } else {
+      const pipes = ["sectionS", "sectionA"];
+      return pipes.reduce((sum, pipe) => sum + losses(pipe), 0); // Formula 2 (для всіх труб окрім труб в підпіллі)
+    }
+  }
+
+  formula2(
+    pipeLength, // OK
+    heatCarrierTemperature,
+    environmentTemperature, // OK
+    pipeHeatTransferCoefficient, // OK
+    month // OK
+  ) {
+    return (
+      pipeHeatTransferCoefficient *
+      (heatCarrierTemperature - environmentTemperature) *
+      pipeLength *
+      this.heatingPeriodDurationHours(month)
+    );
+  } // OK
+
+  pipesLength() {
+    const pipesLength = { sectionV: 0, sectionS: 0, sectionA: 0 };
+    const system = this.system.type;
+    const width = this.buildingWidth;
+    const length = this.buildingLength;
+    const height = this.floorHeight;
+    const floors = this.numberOfFloors;
+
+    if (system === "Двотрубна") {
+      pipesLength.sectionV =
+        2 * length + 0.01625 * length * this.buildingWidth ** 2;
+      pipesLength.sectionS = 0.025 * length * width * height * floors;
+      pipesLength.sectionA = 0.55 * length * width * floors;
+    } else if (
+      system === "Однотрубна (постійний гідравлічний режим)" ||
+      system === "Однотрубна (змінний гідравлічний режим)"
+    ) {
+      pipesLength.sectionV = 2 * length + 0.0325 * length * width + 6;
+      pipesLength.sectionS =
+        0.025 * length * width * height * floors +
+        2 * (length + width) * floors;
+      pipesLength.sectionA = 0.1 * length * width * floors;
+    }
+
+    return pipesLength;
+  } // OK
+
+  heatCarrierTemperature(month) {
+    const mockData = [
+      53.19, 52.12, 45.26, 33.16, 24.41, 19.84, 17.42, 18.77, 26.3, 35.17,
+      43.91, 50.23,
+    ];
+    return mockData[monthlyDurationIntervals.indexOf(month)];
+  } // DEPENDS OF SOME SYSTEM DATA
+
+  pipesHeatTransferCoefficient() {
+    const area = this.conditionedArea();
+
+    switch (this.system.pipesInsulation) {
+      case "Ізольовані":
+        return { sectionV: 0.0002, sectionS: 0.0003, sectionA: 0.0004 };
+      case "Неізольовані":
+        if (area <= 200) {
+          return { sectionV: 0.001, sectionS: 0.001, sectionA: 0.001 };
+        } else if (area < 200 && area <= 500) {
+          return { sectionV: 0.002, sectionS: 0.002, sectionA: 0.002 };
+        } else {
+          return { sectionV: 0.003, sectionS: 0.003, sectionA: 0.003 };
+        }
+      default:
+        return { sectionV: 0, sectionS: 0, sectionA: 0 };
+    }
+  } // OK
+
+  Q_dis_ls_rvd(month) {
+    return this.Q_dis_ls_rbl(month) * 0.9 * this.utilizationFactor(month);
+  } // OK
+
+  // Утилізовані тепловтрати
+  Q_em_ls(month) {
+    return 0;
   }
 }
