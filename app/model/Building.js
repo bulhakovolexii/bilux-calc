@@ -559,11 +559,16 @@ export default class Building {
       (height) => floorHeight > height.lower && floorHeight <= height.upper
     ).heatingDevices;
 
-    const n_str = devices.find(
-      (device) =>
-        device.type === this.system.heatingDevices.type &&
-        device?.subtype === this.system.heatingDevices?.subtype
-    ).verticalTemperatureProfileEfficiency;
+    const n_str = devices.find((device) => {
+      if (this.system.heatingDevices.subtype && device.subtype) {
+        return (
+          device.type === this.system.heatingDevices.type &&
+          device.subtype === this.system.heatingDevices.subtype
+        );
+      } else {
+        return device.type === this.system.heatingDevices.type;
+      }
+    }).verticalTemperatureProfileEfficiency;
 
     if (floorHeight <= 4 && this.system.heatingDevices.type === "Радіатори") {
       return (
