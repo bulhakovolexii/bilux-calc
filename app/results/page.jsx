@@ -52,7 +52,7 @@ export default function Results() {
   return (
     <>
       <h1>Результати</h1>
-      <Link href="/">На головну</Link> {building.n_str()}
+      <Link href="/">На головну</Link>{" "}
       <div style={{ display: "flex", gap: 16 }}>
         <div>
           <p>Енергопотреба, кВт·год</p>
