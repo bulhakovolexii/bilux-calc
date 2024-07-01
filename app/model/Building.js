@@ -3,10 +3,13 @@ import Floor from "./constructions/Floor";
 import Wall from "./constructions/Wall";
 import citiesClimateData from "./reference-data/citiesClimateData";
 import constructionTypes from "./reference-data/constructionTypes";
+import controlTypes from "./reference-data/controlTypes";
 import heatCapacityClasses from "./reference-data/heatCapacityClasses";
 import heatGenerators from "./reference-data/heatGenerators";
+import heatingDevices from "./reference-data/heatingDevices";
 import monthlyDurationIntervals from "./reference-data/monthlyDurationIntervals";
 import purposes from "./reference-data/purposes";
+import systemTypes from "./reference-data/systemTypes";
 import temperatureGradients from "./reference-data/temperatureGradients";
 
 export default class Building {
@@ -372,12 +375,14 @@ export default class Building {
     return Q_dis_in + Q_gen_ls;
   }
 
-  ngen() {
-    const heatGenerator = heatGenerators.find(
+  heatGenerator() {
+    return heatGenerators.find(
       (option) => option.heatGenerator === this.system.heatGenerator
     );
+  }
 
-    return heatGenerator.efficiency / 100;
+  ngen() {
+    return this.heatGenerator().efficiency / 100;
   }
 
   // Неутилізовані тепловтрати
@@ -422,11 +427,11 @@ export default class Building {
   }
 
   formula2(
-    pipeLength, // OK
+    pipeLength,
     heatCarrierTemperature,
-    environmentTemperature, // OK
-    pipeHeatTransferCoefficient, // OK
-    month // OK
+    environmentTemperature,
+    pipeHeatTransferCoefficient,
+    month
   ) {
     return (
       pipeHeatTransferCoefficient *
@@ -464,16 +469,12 @@ export default class Building {
   }
 
   heatCarrierTemperature(month) {
-    const supplyTemp =
-      temperatureGradients.find(
-        (option) =>
-          option.temperatureGradient === this.system?.temperatureGradient
-      )?.supply || this.indoorTemperature(); // Температура подавального теплоносія
-    const returnTemp =
-      temperatureGradients.find(
-        (option) =>
-          option.temperatureGradient === this.system?.temperatureGradient
-      )?.return || this.indoorTemperature(); // Температура зворотного теплоносія
+    let supplyTemp = this.indoorTemperature();
+    let returnTemp = this.indoorTemperature();
+    if (this.heatGenerator().isHydraulic) {
+      supplyTemp = this.temperatureGradient().supply; // Температура подавального теплоносія
+      returnTemp = this.temperatureGradient().return; // Температура зворотного теплоносія
+    }
     const x1 = this.indoorTemperature(); // Максимальна температура повітря
     const y1 = this.indoorTemperature(); // Мінімальна температура теплоносія
     const x2 = -23; // Мінімальна температура повітря
@@ -484,9 +485,13 @@ export default class Building {
     const b = y1 - a * x1;
     const heatCarrierTemperature = (x) => a * x + b;
 
-    console.log(a, b);
-
     return heatCarrierTemperature(this.outdoorTemperature(month));
+  }
+
+  temperatureGradient() {
+    return temperatureGradients.find(
+      (option) => option.temperatureGradient === this.system.temperatureGradient
+    );
   }
 
   pipesHeatTransferCoefficient() {
@@ -514,26 +519,65 @@ export default class Building {
 
   // Утилізовані тепловтрати
   Q_em_ls(month) {
-    return 0;
+    return (
+      ((this.f_hydr() * this.f_rad()) / this.n_em() - 1) *
+      this.energyDemand(month)
+    );
   }
 
   f_hydr() {
-    return 1;
+    let hydraulicAdjustmentCoefficient = 1;
+    if (this.heatGenerator().isHydraulic) {
+      return systemTypes.find(
+        (system) =>
+          system.type === this.system.type &&
+          system.hydraulicAdjustment === this.system.hydraulicAdjustment
+      ).hydraulicAdjustmentCoefficient;
+    }
+    return hydraulicAdjustmentCoefficient;
   }
 
   f_rad() {
-    return 1;
+    if (
+      this.floorHeight > 4 &&
+      this.system.heatingDevices.type === "Стельові променеві обігрівачі"
+    ) {
+      return 0.85;
+    } else {
+      return 1;
+    }
   }
 
   n_em() {
-    return 1 / (3 - (this.n_str + this.n_ctr));
+    return 1 / (4 - (this.n_str() + this.n_ctr() + 1));
   }
 
   n_str() {
-    return 1;
+    const floorHeight = this.floorHeight;
+
+    const devices = heatingDevices.find(
+      (height) => floorHeight > height.lower && floorHeight <= height.upper
+    ).heatingDevices;
+
+    const n_str = devices.find(
+      (device) =>
+        device.type === this.system.heatingDevices.type &&
+        device?.subtype === this.system.heatingDevices?.subtype
+    ).verticalTemperatureProfileEfficiency;
+
+    if (floorHeight <= 4 && this.system.heatingDevices.type === "Радіатори") {
+      return (
+        (n_str +
+          this.temperatureGradient().verticalTemperatureProfileEfficiency) /
+        2
+      );
+    } else {
+      return n_str;
+    }
   }
 
   n_ctr() {
-    return 1;
+    return controlTypes.find((type) => this.system.controlType === type.type)
+      .temperatureControlEfficiency;
   }
 }

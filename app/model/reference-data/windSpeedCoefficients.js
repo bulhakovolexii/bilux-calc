@@ -87,7 +87,7 @@ const windSpeedCoefficients = [
   },
   {
     lower: 350,
-    upper: 999,
+    upper: Infinity,
     A: 2.75,
     B: 2.75,
     C: 2.35,
