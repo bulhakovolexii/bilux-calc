@@ -368,48 +368,57 @@ export default class Building {
 
   // Енергоспоживання
   energyConsumption(month) {
-    const Q_em_in = this.energyDemand(month) + this.Q_em_ls(month);
-    const Q_dis_in = this.Q_dis_ls_nrvd(month) + Q_em_in;
-    const Q_gen_ls = (Q_dis_in * (1 - this.ngen())) / this.ngen();
+    const heatEmissionSubsystemInputEnergy =
+      this.energyDemand(month) + this.totalHeatEmissionSubsystemLosses(month);
+    const distributionSubsystemInputEnergy =
+      this.nonRecoveredHeatLosses(month) + heatEmissionSubsystemInputEnergy;
+    const totalHeatLossEmissionSubsystem =
+      (distributionSubsystemInputEnergy *
+        (1 - this.heatGeneratorEfficiency())) /
+      this.heatGeneratorEfficiency();
 
-    return Q_dis_in + Q_gen_ls;
+    return distributionSubsystemInputEnergy + totalHeatLossEmissionSubsystem;
   }
 
+  // Характеристики  теплогенератора
   heatGenerator() {
     return heatGenerators.find(
       (option) => option.heatGenerator === this.system.heatGenerator
     );
   }
 
-  ngen() {
+  // ККД теплогенератора
+  heatGeneratorEfficiency() {
     return this.heatGenerator().efficiency / 100;
   }
 
   // Неутилізовані тепловтрати
-  Q_dis_ls_nrvd(month) {
+  nonRecoveredHeatLosses(month) {
     return (
-      this.Q_dis_ls_nrbl(month) +
-      (this.Q_dis_ls_rbl(month) - this.Q_dis_ls_rvd(month))
+      this.nonRecoverableHeatLosses(month) +
+      (this.recoverableHeatLosses(month) - this.recoveredHeatLosses(month))
     );
   }
 
-  Q_dis_ls_nrbl(month) {
+  // Тепловтрати трубопроводів в неопалюваних обʼємах
+  nonRecoverableHeatLosses(month) {
     if (this.floor.type === "Технічне підпілля") {
-      return this.formula2(
+      return this.distributionSubsystemHeatLosses(
         this.pipesLength().sectionV,
         this.heatCarrierTemperature(month),
         Building.BASEMENT_AIR_TEMPERATURE,
         this.pipesHeatTransferCoefficient().sectionV,
         month
-      ); // Formula 2 (тільки для труб в підпіллі)
+      ); // Тепловтрати підсистеми розподілення (тільки для труб в підпіллі)
     } else {
       return 0;
     }
   }
 
-  Q_dis_ls_rbl(month) {
+  // Тепловтрати трубопроводів в опалюваних обʼємах
+  recoverableHeatLosses(month) {
     const losses = (section) => {
-      return this.formula2(
+      return this.distributionSubsystemHeatLosses(
         this.pipesLength()[section],
         this.heatCarrierTemperature(month),
         this.indoorTemperature(),
@@ -419,14 +428,15 @@ export default class Building {
     };
     if (this.floor.type !== "Технічне підпілля") {
       const pipes = ["sectionV", "sectionS", "sectionA"];
-      return pipes.reduce((sum, pipe) => sum + losses(pipe), 0); // Formula 2 (для всіх труб)
+      return pipes.reduce((sum, pipe) => sum + losses(pipe), 0); // Тепловтрати підсистеми розподілення (для всіх труб)
     } else {
       const pipes = ["sectionS", "sectionA"];
-      return pipes.reduce((sum, pipe) => sum + losses(pipe), 0); // Formula 2 (для всіх труб окрім труб в підпіллі)
+      return pipes.reduce((sum, pipe) => sum + losses(pipe), 0); // Тепловтрати підсистеми розподілення (для всіх труб окрім труб в підпіллі)
     }
   }
 
-  formula2(
+  // Тепловтрати підсистеми розподілення
+  distributionSubsystemHeatLosses(
     pipeLength,
     heatCarrierTemperature,
     environmentTemperature,
@@ -441,6 +451,7 @@ export default class Building {
     );
   }
 
+  // Довжини трубопроводів
   pipesLength() {
     const pipesLength = { sectionV: 0, sectionS: 0, sectionA: 0 };
     const system = this.system.type;
@@ -468,6 +479,7 @@ export default class Building {
     return pipesLength;
   }
 
+  // Температура теплоносія
   heatCarrierTemperature(month) {
     let supplyTemp = this.indoorTemperature();
     let returnTemp = this.indoorTemperature();
@@ -488,12 +500,14 @@ export default class Building {
     return heatCarrierTemperature(this.outdoorTemperature(month));
   }
 
+  // Температурний графік
   temperatureGradient() {
     return temperatureGradients.find(
       (option) => option.temperatureGradient === this.system.temperatureGradient
     );
   }
 
+  // Лінійний коефіцієнт теплопередачі трубопроводів
   pipesHeatTransferCoefficient() {
     const area = this.conditionedArea();
 
@@ -513,19 +527,26 @@ export default class Building {
     }
   }
 
-  Q_dis_ls_rvd(month) {
-    return this.Q_dis_ls_rbl(month) * 0.9 * this.utilizationFactor(month);
+  // Втрати що підлягають утилізації
+  recoveredHeatLosses(month) {
+    return (
+      this.recoverableHeatLosses(month) * 0.9 * this.utilizationFactor(month)
+    );
   }
 
   // Утилізовані тепловтрати
-  Q_em_ls(month) {
+  totalHeatEmissionSubsystemLosses(month) {
     return (
-      ((this.f_hydr() * this.f_rad()) / this.n_em() - 1) *
+      ((this.hydraulicBalancingCoefficient() *
+        this.radiantHeatFluxCoefficient()) /
+        this.overallHeatEmissionEfficiency() -
+        1) *
       this.energyDemand(month)
     );
   }
 
-  f_hydr() {
+  // Коефіцієнт гідравлічного налагодження системи
+  hydraulicBalancingCoefficient() {
     let hydraulicAdjustmentCoefficient = 1;
     if (this.heatGenerator().isHydraulic) {
       return systemTypes.find(
@@ -537,7 +558,8 @@ export default class Building {
     return hydraulicAdjustmentCoefficient;
   }
 
-  f_rad() {
+  // Коефіцієнт променевої складової теплового потоку
+  radiantHeatFluxCoefficient() {
     if (
       this.floorHeight > 4 &&
       this.system.heatingDevices.type === "Стельові променеві обігрівачі"
@@ -548,18 +570,26 @@ export default class Building {
     }
   }
 
-  n_em() {
-    return 1 / (4 - (this.n_str() + this.n_ctr() + 1));
+  // Загальний рівень ефективності для тепловіддавальної складової системи
+  overallHeatEmissionEfficiency() {
+    return (
+      1 /
+      (4 -
+        (this.verticalTemperatureProfileEfficiency() +
+          this.temperatureControlEfficiency() +
+          1))
+    );
   }
 
-  n_str() {
+  // Складова загального рівня ефективності, яка враховує вертикальний профіль температури повітря приміщення
+  verticalTemperatureProfileEfficiency() {
     const floorHeight = this.floorHeight;
 
     const devices = heatingDevices.find(
       (height) => floorHeight > height.lower && floorHeight <= height.upper
     ).heatingDevices;
 
-    const n_str = devices.find((device) => {
+    const verticalTemperatureProfileEfficiency = devices.find((device) => {
       if (this.system.heatingDevices.subtype && device.subtype) {
         return (
           device.type === this.system.heatingDevices.type &&
@@ -572,16 +602,17 @@ export default class Building {
 
     if (floorHeight <= 4 && this.system.heatingDevices.type === "Радіатори") {
       return (
-        (n_str +
+        (verticalTemperatureProfileEfficiency +
           this.temperatureGradient().verticalTemperatureProfileEfficiency) /
         2
       );
     } else {
-      return n_str;
+      return verticalTemperatureProfileEfficiency;
     }
   }
 
-  n_ctr() {
+  // Складова загального рівня ефективності, яка враховує регулювання температури приміщення
+  temperatureControlEfficiency() {
     return controlTypes.find((type) => this.system.controlType === type.type)
       .temperatureControlEfficiency;
   }
