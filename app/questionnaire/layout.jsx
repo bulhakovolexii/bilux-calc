@@ -21,7 +21,12 @@ const steps = [
   {
     id: 1,
     label: "Загальне",
-    fields: ["purpose", "heatCapacityClass", "tightness", "typeAndCondition"],
+    fields: [
+      "purpose",
+      "heatCapacityClass",
+      "airPermeabilityClass",
+      "constructionType",
+    ],
   },
   {
     id: 2,
@@ -38,6 +43,33 @@ const steps = [
     label: "Підлога та дах",
     fields: ["ceiling.type", "ceiling.layers", "floor.type", "floor.layers"],
   },
+  {
+    id: 4,
+    label: "Фасади",
+    fields: [],
+  },
+  {
+    id: 5,
+    label: "Система",
+    fields: [
+      "system.heatGenerator",
+      "system.type",
+      "system.pipesInsulation",
+      "system.temperatureGradient",
+      "system.hydraulicAdjustment",
+    ],
+  },
+  {
+    id: 6,
+    label: "Прилади",
+    fields: [
+      "system.heatGenerator",
+      "system.type",
+      "system.pipesInsulation",
+      "system.temperatureGradient",
+      "system.hydraulicAdjustment",
+    ],
+  },
 ];
 
 export default function QuestionnaireLayout({ children }) {
@@ -48,12 +80,21 @@ export default function QuestionnaireLayout({ children }) {
   const {
     handleSubmit,
     trigger,
+    watch,
     formState: { isValid },
   } = methods;
   const [activeStep, setActiveStep] = useState(0);
 
   const totalSteps = () => {
-    return steps.length - 1;
+    const directElectricHeating =
+      "Електричні прилади прямого нагріву: конвектори, поверхневе опалення, променеве опалення, нагрівальний підлоговий кабель";
+    const directElectricHeatingIsSelected =
+      watch("system.heatGenerator") === directElectricHeating;
+    if (directElectricHeatingIsSelected) {
+      return steps.length - 2;
+    } else {
+      return steps.length - 1;
+    }
   };
 
   const isLastStep = () => {
