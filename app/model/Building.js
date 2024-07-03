@@ -512,9 +512,9 @@ export default class Building {
     const area = this.conditionedArea();
 
     switch (this.system.pipesInsulation) {
-      case "Ізольовані":
+      case true:
         return { sectionV: 0.0002, sectionS: 0.0003, sectionA: 0.0004 };
-      case "Неізольовані":
+      case false:
         if (area <= 200) {
           return { sectionV: 0.001, sectionS: 0.001, sectionA: 0.001 };
         } else if (area < 200 && area <= 500) {
