@@ -53,10 +53,6 @@ const systemTypes = [
       "Система налагоджена. Наявні автоматичні регулятори (обмежувачі) витрати з регулюванням температури теплоносія на виході зі стояка (горизонтальної вітки) за температурним графіком",
     hydraulicAdjustmentCoefficient: "1",
   },
-  {
-    type: "Не гідравлічна",
-    hydraulicAdjustmentCoefficient: "1",
-  },
 ];
 
 export default systemTypes;

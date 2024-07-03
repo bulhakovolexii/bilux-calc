@@ -86,15 +86,7 @@ export default function QuestionnaireLayout({ children }) {
   const [activeStep, setActiveStep] = useState(0);
 
   const totalSteps = () => {
-    const directElectricHeating =
-      "Електричні прилади прямого нагріву: конвектори, поверхневе опалення, променеве опалення, нагрівальний підлоговий кабель";
-    const directElectricHeatingIsSelected =
-      watch("system.heatGenerator") === directElectricHeating;
-    if (directElectricHeatingIsSelected) {
-      return steps.length - 2;
-    } else {
-      return steps.length - 1;
-    }
+    return steps.length - 1;
   };
 
   const isLastStep = () => {

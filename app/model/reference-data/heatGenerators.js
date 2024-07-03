@@ -185,13 +185,6 @@ const heatGenerators = [
     isHydraulic: true,
   },
   {
-    energyResource: "Деревина",
-    heatGenerator:
-      "Котли на біомасі (деревина: поліна, брикети, пелети, тріски), з ручним керуванням, потужністю до 100 кВт",
-    efficiency: 65,
-    isHydraulic: true,
-  },
-  {
     energyResource: "Солома",
     heatGenerator:
       "Котли на біомасі (солома) автоматичні потужністю до 100 кВт",
@@ -203,6 +196,13 @@ const heatGenerators = [
     heatGenerator:
       "Котли на біомасі (солома) автоматичні потужністю від 100 кВт до 600 кВт",
     efficiency: 75,
+    isHydraulic: true,
+  },
+  {
+    energyResource: "Деревина",
+    heatGenerator:
+      "Котли на біомасі (деревина: поліна, брикети, пелети, тріски), з ручним керуванням, потужністю до 100 кВт",
+    efficiency: 65,
     isHydraulic: true,
   },
   {

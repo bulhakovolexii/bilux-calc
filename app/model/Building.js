@@ -600,7 +600,11 @@ export default class Building {
       }
     }).verticalTemperatureProfileEfficiency;
 
-    if (floorHeight <= 4 && this.system.heatingDevices.type === "Радіатори") {
+    if (
+      floorHeight <= 4 &&
+      this.system.heatingDevices.type === "Радіатори" &&
+      this.heatGenerator().isHydraulic
+    ) {
       return (
         (verticalTemperatureProfileEfficiency +
           this.temperatureGradient().verticalTemperatureProfileEfficiency) /
