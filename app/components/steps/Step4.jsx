@@ -16,6 +16,8 @@ import {
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import { Controller, useFormContext } from "react-hook-form";
+import AutocompleteWithModal from "../AutocompleteWithModal";
+import LayerForm from "../LayerForm";
 
 const ceilingTypes = [
   "Суміщене покриття",
@@ -131,6 +133,18 @@ export default function Step4() {
             );
           }}
         />
+        <AutocompleteWithModal
+          name="ceiling.layers"
+          rules={{
+            validate: (value) => value.length > 0 || `Додайте хоча б один шар`,
+          }}
+          label="Шари конструкції"
+          optionPrefix="Шар №"
+          addTitlePrefix="Додати шар №"
+          editTitlePrefix="Редагувати шар №"
+        >
+          <LayerForm />
+        </AutocompleteWithModal>
       </Box>
       <Box hidden={tab !== "floor"}>
         <Controller

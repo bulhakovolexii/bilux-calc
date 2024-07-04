@@ -5,8 +5,8 @@ export default class Layer {
     this.type = inputData.type;
     this.subtype = inputData.subtype;
     this.name = inputData.name;
-    this.thickness = inputData.thickness;
-    this.density = inputData.density;
+    this.thickness = parseInt(inputData.thickness) / 1000;
+    this.density = parseInt(inputData.density);
   }
   conductivity() {
     const material = materials.find((material) => {
