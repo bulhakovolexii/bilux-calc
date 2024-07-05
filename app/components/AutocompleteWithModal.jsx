@@ -6,7 +6,7 @@ import {
   DialogTitle,
   TextField,
 } from "@mui/material";
-import { cloneElement, useEffect, useState } from "react";
+import { cloneElement, useState } from "react";
 import { Controller, useFormContext } from "react-hook-form";
 
 export default function AutocompleteWithModal({
@@ -18,13 +18,9 @@ export default function AutocompleteWithModal({
   addTitlePrefix,
   label,
 }) {
-  const { control, watch } = useFormContext();
+  const { control } = useFormContext();
   const [open, setOpen] = useState(false);
   const [editedOption, setEditedOption] = useState(null);
-
-  useEffect(() => {
-    console.log(watch(name));
-  });
 
   const handleOpen = () => {
     setOpen(true);

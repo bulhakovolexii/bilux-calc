@@ -8,6 +8,7 @@ import {
   TextField,
 } from "@mui/material";
 import { Controller, useForm } from "react-hook-form";
+import MaterialTreeSelect from "./MaterialTreeSelect";
 
 export default function LayerForm({ handleClose, onSubmit, initialValue }) {
   const { control, handleSubmit, getValues } = useForm({
@@ -48,6 +49,7 @@ export default function LayerForm({ handleClose, onSubmit, initialValue }) {
                 );
               }}
             />
+            <MaterialTreeSelect />
           </Stack>
         </DialogContent>
         <DialogActions>
