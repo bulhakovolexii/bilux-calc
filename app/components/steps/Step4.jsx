@@ -45,15 +45,12 @@ export default function Step4() {
       !!formState.errors?.floor?.type || !!formState.errors?.floor?.layers;
     setCeilingTabIsInvalid(ceilingErrors);
     setFloorTabIsInvalid(floorErrors);
-  }, [formState]);
-
-  useEffect(() => {
-    if (!floorTabIsInvalid) {
-      setTab("ceiling");
-    } else if (!ceilingTabIsInvalid) {
+    if (floorTabIsInvalid && tab !== "floor") {
       setTab("floor");
+    } else if (ceilingTabIsInvalid && tab !== "ceiling") {
+      setTab("ceiling");
     }
-  }, [formState.isSubmitting]);
+  }, [formState]);
 
   const handleChangeTab = (event, newTab) => {
     setTab(newTab);
@@ -178,6 +175,18 @@ export default function Step4() {
             );
           }}
         />
+        <AutocompleteWithModal
+          name="floor.layers"
+          rules={{
+            validate: (value) => value.length > 0 || `Додайте хоча б один шар`,
+          }}
+          label="Шари конструкції"
+          optionPrefix="Шар №"
+          addTitlePrefix="Додати шар №"
+          editTitlePrefix="Редагувати шар №"
+        >
+          <LayerForm />
+        </AutocompleteWithModal>
       </Box>
     </Stack>
   );

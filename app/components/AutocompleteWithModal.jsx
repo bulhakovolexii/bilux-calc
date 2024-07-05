@@ -47,6 +47,7 @@ export default function AutocompleteWithModal({
       );
       onChange(updatedOptions);
       handleClose();
+      console.log(newValue);
     } else {
       const currentOptions = value;
       if (currentOptions?.length > 0) {
@@ -61,6 +62,7 @@ export default function AutocompleteWithModal({
         onChange([{ ...newValue, id: 1 }]);
         handleClose();
       }
+      console.log(newValue);
     }
   };
 

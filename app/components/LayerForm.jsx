@@ -11,7 +11,7 @@ import { Controller, useForm } from "react-hook-form";
 import MaterialTreeSelect from "./MaterialTreeSelect";
 
 export default function LayerForm({ handleClose, onSubmit, initialValue }) {
-  const { control, handleSubmit, getValues } = useForm({
+  const { control, handleSubmit } = useForm({
     mode: "onChange",
     defaultValues: { ...initialValue },
   });
@@ -49,7 +49,7 @@ export default function LayerForm({ handleClose, onSubmit, initialValue }) {
                 );
               }}
             />
-            <MaterialTreeSelect />
+            <MaterialTreeSelect control={control} />
           </Stack>
         </DialogContent>
         <DialogActions>

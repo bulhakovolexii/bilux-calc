@@ -18,19 +18,13 @@ const testInputData = {
     layers: [
       {
         id: 1,
-        type: "Теплоізоляційні матеріали",
-        subtype: "Розчини теплоізоляційні",
-        name: "Розчини цементно-перлітові",
-        density: "600",
-        thickness: 100,
+        thickness: "100",
+        material: { id: "1-6-32-1", density: "600", conductivity: "0.23" },
       },
       {
         id: 2,
-        type: "Матеріали конструкційні",
-        subtype: "Бетони конструкційні",
-        name: "Залізобетон",
-        density: "2500",
         thickness: "220",
+        material: { id: "3-14-64-1", density: "2500", conductivity: "2.04" },
       },
     ],
   },
@@ -39,25 +33,19 @@ const testInputData = {
     type: "Технічне підпілля",
     layers: [
       {
-        type: "Теплоізоляційні матеріали",
-        subtype: "Полімерні матеріали",
-        name: "Вироби зі спіненого пінополіетилену",
-        density: "30",
+        id: 1,
         thickness: "30",
+        material: { id: "1-2-8-1", density: "30", conductivity: "0.047" },
       },
       {
-        type: "Конструкційно-теплоізоляційні матеріали",
-        subtype: "Вироби бетонні",
-        name: "Блоки кремнезитоцементні",
-        density: "800",
+        id: 2,
         thickness: "50",
+        material: { id: "2-10-50-2", density: "800", conductivity: "0.24" },
       },
       {
-        type: "Матеріали конструкційні",
-        subtype: "Бетони конструкційні",
-        name: "Залізобетон",
-        density: "2500",
+        id: 3,
         thickness: "220",
+        material: { id: "3-14-64-1", density: "2500", conductivity: "2.04" },
       },
     ],
   },
@@ -69,25 +57,19 @@ const testInputData = {
       layers: [
         // 1-510
         {
-          type: "Теплоізоляційні матеріали",
-          subtype: "Розчини теплоізоляційні",
-          name: "Розчини цементно-пінополістирольні",
-          density: "600",
+          id: 1,
           thickness: "10",
+          material: { id: "1-6-36-1", density: "600", conductivity: "0.17" },
         },
         {
-          type: "Теплоізоляційні матеріали",
-          subtype: "Полімерні матеріали",
-          name: "Вироби з жорсткого пінополіуретану",
-          density: "60",
+          id: 2,
           thickness: "150",
+          material: { id: "1-2-5-2", density: "60", conductivity: "0.041" },
         },
         {
-          type: "Матеріали конструкційні",
-          subtype: "Кладка цегляна з повнотілої цегли",
-          name: "Силікатної на цементно-піщаному розчині",
-          density: "1800",
+          id: 3,
           thickness: "510",
+          material: { id: "3-17-77-1", density: "1800", conductivity: "0.87" },
         },
       ],
       windows: [
@@ -129,25 +111,27 @@ const testInputData = {
           layers: [
             // 2-380
             {
-              type: "Теплоізоляційні матеріали",
-              subtype: "Розчини теплоізоляційні",
-              name: "Розчини цементно-пінополістирольні",
-              density: "600",
+              id: 1,
               thickness: "10",
+              material: {
+                id: "1-6-36-1",
+                density: "600",
+                conductivity: "0.17",
+              },
             },
             {
-              type: "Теплоізоляційні матеріали",
-              subtype: "Полімерні матеріали",
-              name: "Вироби з жорсткого пінополіуретану",
-              density: "60",
+              id: 2,
               thickness: "100",
+              material: { id: "1-2-5-2", density: "60", conductivity: "0.041" },
             },
             {
-              type: "Матеріали конструкційні",
-              subtype: "Кладка цегляна з повнотілої цегли",
-              name: "Силікатної на цементно-піщаному розчині",
-              density: "1800",
+              id: 3,
               thickness: "380",
+              material: {
+                id: "3-17-77-1",
+                density: "1800",
+                conductivity: "0.87",
+              },
             },
           ],
         },
@@ -158,25 +142,19 @@ const testInputData = {
       layers: [
         // 1-510
         {
-          type: "Теплоізоляційні матеріали",
-          subtype: "Розчини теплоізоляційні",
-          name: "Розчини цементно-пінополістирольні",
-          density: "600",
+          id: 1,
           thickness: "10",
+          material: { id: "1-6-36-1", density: "600", conductivity: "0.17" },
         },
         {
-          type: "Теплоізоляційні матеріали",
-          subtype: "Полімерні матеріали",
-          name: "Вироби з жорсткого пінополіуретану",
-          density: "60",
+          id: 2,
           thickness: "150",
+          material: { id: "1-2-5-2", density: "60", conductivity: "0.041" },
         },
         {
-          type: "Матеріали конструкційні",
-          subtype: "Кладка цегляна з повнотілої цегли",
-          name: "Силікатної на цементно-піщаному розчині",
-          density: "1800",
+          id: 3,
           thickness: "510",
+          material: { id: "3-17-77-1", density: "1800", conductivity: "0.87" },
         },
       ],
       windows: [
@@ -199,18 +177,22 @@ const testInputData = {
           layers: [
             // 1-510-0 (балкон)
             {
-              type: "Теплоізоляційні матеріали",
-              subtype: "Розчини теплоізоляційні",
-              name: "Розчини цементно-пінополістирольні",
-              density: "600",
+              id: 1,
               thickness: "10",
+              material: {
+                id: "1-6-36-1",
+                density: "600",
+                conductivity: "0.17",
+              },
             },
             {
-              type: "Матеріали конструкційні",
-              subtype: "Кладка цегляна з повнотілої цегли",
-              name: "Силікатної на цементно-піщаному розчині",
-              density: "1800",
+              id: 2,
               thickness: "510",
+              material: {
+                id: "3-17-77-1",
+                density: "1800",
+                conductivity: "0.87",
+              },
             },
           ],
           windows: [
@@ -243,25 +225,19 @@ const testInputData = {
       layers: [
         // 1-510
         {
-          type: "Теплоізоляційні матеріали",
-          subtype: "Розчини теплоізоляційні",
-          name: "Розчини цементно-пінополістирольні",
-          density: "600",
+          id: 1,
           thickness: "10",
+          material: { id: "1-6-36-1", density: "600", conductivity: "0.17" },
         },
         {
-          type: "Теплоізоляційні матеріали",
-          subtype: "Полімерні матеріали",
-          name: "Вироби з жорсткого пінополіуретану",
-          density: "60",
+          id: 2,
           thickness: "150",
+          material: { id: "1-2-5-2", density: "60", conductivity: "0.041" },
         },
         {
-          type: "Матеріали конструкційні",
-          subtype: "Кладка цегляна з повнотілої цегли",
-          name: "Силікатної на цементно-піщаному розчині",
-          density: "1800",
+          id: 3,
           thickness: "510",
+          material: { id: "3-17-77-1", density: "1800", conductivity: "0.87" },
         },
       ],
       windows: [
@@ -294,25 +270,27 @@ const testInputData = {
           layers: [
             // 1-510 (балкон)
             {
-              type: "Теплоізоляційні матеріали",
-              subtype: "Розчини теплоізоляційні",
-              name: "Розчини цементно-пінополістирольні",
-              density: "600",
+              id: 1,
               thickness: "10",
+              material: {
+                id: "1-6-36-1",
+                density: "600",
+                conductivity: "0.17",
+              },
             },
             {
-              type: "Теплоізоляційні матеріали",
-              subtype: "Полімерні матеріали",
-              name: "Вироби з жорсткого пінополіуретану",
-              density: "60",
+              id: 2,
               thickness: "150",
+              material: { id: "1-2-5-2", density: "60", conductivity: "0.041" },
             },
             {
-              type: "Матеріали конструкційні",
-              subtype: "Кладка цегляна з повнотілої цегли",
-              name: "Силікатної на цементно-піщаному розчині",
-              density: "1800",
+              id: 3,
               thickness: "510",
+              material: {
+                id: "3-17-77-1",
+                density: "1800",
+                conductivity: "0.87",
+              },
             },
           ],
           windows: [
@@ -345,25 +323,19 @@ const testInputData = {
       layers: [
         // 1-510
         {
-          type: "Теплоізоляційні матеріали",
-          subtype: "Розчини теплоізоляційні",
-          name: "Розчини цементно-пінополістирольні",
-          density: "600",
+          id: 1,
           thickness: "10",
+          material: { id: "1-6-36-1", density: "600", conductivity: "0.17" },
         },
         {
-          type: "Теплоізоляційні матеріали",
-          subtype: "Полімерні матеріали",
-          name: "Вироби з жорсткого пінополіуретану",
-          density: "60",
+          id: 2,
           thickness: "150",
+          material: { id: "1-2-5-2", density: "60", conductivity: "0.041" },
         },
         {
-          type: "Матеріали конструкційні",
-          subtype: "Кладка цегляна з повнотілої цегли",
-          name: "Силікатної на цементно-піщаному розчині",
-          density: "1800",
+          id: 3,
           thickness: "510",
+          material: { id: "3-17-77-1", density: "1800", conductivity: "0.87" },
         },
       ],
       windows: [
@@ -386,18 +358,22 @@ const testInputData = {
           layers: [
             // 1-510-0 (балкон)
             {
-              type: "Теплоізоляційні матеріали",
-              subtype: "Розчини теплоізоляційні",
-              name: "Розчини цементно-пінополістирольні",
-              density: "600",
+              id: 1,
               thickness: "10",
+              material: {
+                id: "1-6-36-1",
+                density: "600",
+                conductivity: "0.17",
+              },
             },
             {
-              type: "Матеріали конструкційні",
-              subtype: "Кладка цегляна з повнотілої цегли",
-              name: "Силікатної на цементно-піщаному розчині",
-              density: "1800",
+              id: 2,
               thickness: "510",
+              material: {
+                id: "3-17-77-1",
+                density: "1800",
+                conductivity: "0.87",
+              },
             },
           ],
           windows: [
