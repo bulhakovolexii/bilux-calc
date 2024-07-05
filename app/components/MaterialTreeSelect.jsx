@@ -86,6 +86,7 @@ export default function MaterialTreeSelect({ control }) {
         const { onChange, value, ref } = field;
         return (
           <TreeSelect
+            disableClearable
             value={value ? new Node(value) : null}
             onChange={(event, newValue) => {
               onChange(newValue ? newValue.value : null);
@@ -110,6 +111,14 @@ export default function MaterialTreeSelect({ control }) {
                 error={!!error}
                 helperText={error?.message || " "}
                 inputRef={ref}
+                inputProps={{ ...params.inputProps, readOnly: true }}
+                InputProps={{
+                  ...params.InputProps,
+                  sx: {
+                    cursor: "pointer",
+                    input: { cursor: "pointer" },
+                  },
+                }}
               />
             )}
           />
