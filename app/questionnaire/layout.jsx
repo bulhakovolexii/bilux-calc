@@ -46,7 +46,12 @@ const steps = [
   {
     id: 4,
     label: "Фасади",
-    fields: [],
+    fields: [
+      "facades[0].layers",
+      "facades[1].layers",
+      "facades[2].layers",
+      "facades[3].layers",
+    ],
   },
   {
     id: 5,
@@ -80,10 +85,9 @@ export default function QuestionnaireLayout({ children }) {
   const {
     handleSubmit,
     trigger,
-    watch,
     formState: { isValid },
   } = methods;
-  const [activeStep, setActiveStep] = useState(0);
+  const [activeStep, setActiveStep] = useState(4);
 
   const totalSteps = () => {
     return steps.length - 1;

@@ -62,7 +62,6 @@ export default function AutocompleteWithModal({
         onChange([{ ...newValue, id: 1 }]);
         handleClose();
       }
-      console.log(newValue);
     }
   };
 

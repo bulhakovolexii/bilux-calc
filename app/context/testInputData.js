@@ -75,39 +75,43 @@ const testInputData = {
       windows: [
         // ББО-1а
         {
-          width: 2.4,
-          height: 1.84,
-          quantity: 18,
+          id: 1,
+          width: "2.4",
+          height: "1.84",
+          quantity: "18",
           variant: "4M₁-16-4i",
-          air: 0,
-          krypton: 100,
-          argon: 0,
+          air: "0",
+          krypton: "100",
+          argon: "0",
         },
         // ОК-3
         {
-          width: 1.8,
-          height: 1.2,
-          quantity: 18,
+          id: 2,
+          width: "1.8",
+          height: "1.2",
+          quantity: "18",
           variant: "4M₁-16-4i",
-          air: 0,
-          krypton: 100,
-          argon: 0,
+          air: "0",
+          krypton: "100",
+          argon: "0",
         },
         // ОК-6
         {
-          width: 1.2,
-          height: 3.72,
-          quantity: 36,
+          id: 3,
+          width: "1.2",
+          height: "3.72",
+          quantity: "36",
           variant: "4M₁-16-4i",
-          air: 0,
-          krypton: 100,
-          argon: 0,
+          air: "0",
+          krypton: "100",
+          argon: "0",
         },
       ],
       inclusions: [
         {
-          width: 6.31,
-          height: 27,
+          id: 1,
+          width: "6.31",
+          height: "27",
           layers: [
             // 2-380
             {
@@ -160,19 +164,21 @@ const testInputData = {
       windows: [
         // ОК-4
         {
-          width: 1.8,
-          height: 1.5,
-          quantity: 27,
+          id: 1,
+          width: "1.8",
+          height: "1.5",
+          quantity: "27",
           variant: "4M₁-16-4i",
-          air: 0,
-          krypton: 100,
-          argon: 0,
+          air: "0",
+          krypton: "100",
+          argon: "0",
         },
       ],
       inclusions: [
         {
-          width: 3.19,
-          height: 27,
+          id: 1,
+          width: "3.19",
+          height: "27",
           environment: "Засклений балкон для нового проектування",
           layers: [
             // 1-510-0 (балкон)
@@ -198,23 +204,25 @@ const testInputData = {
           windows: [
             // ОК-1
             {
-              width: 1.8,
-              height: 0.75,
-              quantity: 9,
+              id: 1,
+              width: "1.8",
+              height: "0.75",
+              quantity: "9",
               variant: "4M₁-16-4i",
-              air: 0,
-              krypton: 100,
-              argon: 0,
+              air: "0",
+              krypton: "100",
+              argon: "0",
             },
             // ДБ-1
             {
-              width: 2.4,
-              height: 0.9,
-              quantity: 9,
+              id: 2,
+              width: "2.4",
+              height: "0.9",
+              quantity: "9",
               variant: "4M₁-16-4i",
-              air: 0,
-              krypton: 100,
-              argon: 0,
+              air: "0",
+              krypton: "100",
+              argon: "0",
             },
           ],
         },
@@ -243,29 +251,32 @@ const testInputData = {
       windows: [
         // ОК-5
         {
-          width: 1.8,
-          height: 1.8,
-          quantity: 54,
+          id: 1,
+          width: "1.8",
+          height: "1.8",
+          quantity: "54",
           variant: "4M₁-16-4i",
-          air: 0,
-          krypton: 100,
-          argon: 0,
+          air: "0",
+          krypton: "100",
+          argon: "0",
         },
         // ОК-4
         {
-          width: 1.8,
-          height: 1.5,
-          quantity: 18,
+          id: 2,
+          width: "1.8",
+          height: "1.5",
+          quantity: "18",
           variant: "4M₁-16-4i",
-          air: 0,
-          krypton: 100,
-          argon: 0,
+          air: "0",
+          krypton: "100",
+          argon: "0",
         },
       ],
       inclusions: [
         {
-          width: 11.4,
-          height: 27,
+          id: 1,
+          width: "11.4",
+          height: "27",
           environment: "Засклений балкон для нового проектування",
           layers: [
             // 1-510 (балкон)
@@ -296,23 +307,25 @@ const testInputData = {
           windows: [
             // ОК-1
             {
-              width: 1.8,
-              height: 0.75,
-              quantity: 36,
+              id: 1,
+              width: "1.8",
+              height: "0.75",
+              quantity: "36",
               variant: "4M₁-16-4i",
-              air: 0,
-              krypton: 100,
-              argon: 0,
+              air: "0",
+              krypton: "100",
+              argon: "0",
             },
             // ДБ-1
             {
-              width: 2.4,
-              height: 0.9,
-              quantity: 36,
+              id: 2,
+              width: "2.4",
+              height: "0.9",
+              quantity: "36",
               variant: "4M₁-16-4i",
-              air: 0,
-              krypton: 100,
-              argon: 0,
+              air: "0",
+              krypton: "100",
+              argon: "0",
             },
           ],
         },
@@ -341,19 +354,21 @@ const testInputData = {
       windows: [
         // ОК-4
         {
-          width: 1.8,
-          height: 1.5,
-          quantity: 27,
+          id: 1,
+          width: "1.8",
+          height: "1.5",
+          quantity: "27",
           variant: "4M₁-16-4i",
-          air: 0,
-          krypton: 100,
-          argon: 0,
+          air: "0",
+          krypton: "100",
+          argon: "0",
         },
       ],
       inclusions: [
         {
-          width: 3.19,
-          height: 27,
+          id: 1,
+          width: "3.19",
+          height: "27",
           environment: "Засклений балкон для нового проектування",
           layers: [
             // 1-510-0 (балкон)
@@ -379,23 +394,25 @@ const testInputData = {
           windows: [
             // ОК-1
             {
-              width: 1.8,
-              height: 0.75,
-              quantity: 9,
+              id: 1,
+              width: "1.8",
+              height: "0.75",
+              quantity: "9",
               variant: "4M₁-16-4i",
-              air: 0,
-              krypton: 100,
-              argon: 0,
+              air: "0",
+              krypton: "100",
+              argon: "0",
             },
             // ДБ-1
             {
-              width: 2.4,
-              height: 0.9,
-              quantity: 9,
+              id: 2,
+              width: "2.4",
+              height: "0.9",
+              quantity: "9",
               variant: "4M₁-16-4i",
-              air: 0,
-              krypton: 100,
-              argon: 0,
+              air: "0",
+              krypton: "100",
+              argon: "0",
             },
           ],
         },
