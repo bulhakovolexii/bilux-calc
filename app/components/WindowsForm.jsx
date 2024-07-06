@@ -1,6 +1,8 @@
 "use client";
 
 import {
+  Alert,
+  AlertTitle,
   Autocomplete,
   Button,
   DialogActions,
@@ -97,7 +99,7 @@ export default function WindowsForm({ handleClose, onSubmit, initialValue }) {
               name="type"
               control={control}
               rules={{
-                required: "Оберіть місто",
+                required: "Оберіть тип склопакета",
               }}
               render={({ field, fieldState: { error } }) => {
                 const { onChange, value, ref } = field;
@@ -134,6 +136,11 @@ export default function WindowsForm({ handleClose, onSubmit, initialValue }) {
                 );
               }}
             />
+            <Alert variant="outlined" severity="info">
+              <AlertTitle>Позначення скла</AlertTitle>
+              4М₁ — листове стандартне, К — енергозберігаюче зтвердим покриттям,
+              i — енергозберігаюче з мʼяким покриттям.
+            </Alert>
           </Stack>
         </DialogContent>
         <DialogActions>

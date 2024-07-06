@@ -87,7 +87,7 @@ export default function QuestionnaireLayout({ children }) {
     trigger,
     formState: { isValid },
   } = methods;
-  const [activeStep, setActiveStep] = useState(4);
+  const [activeStep, setActiveStep] = useState(0);
 
   const totalSteps = () => {
     return steps.length - 1;
