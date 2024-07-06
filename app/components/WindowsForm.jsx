@@ -65,7 +65,6 @@ export default function WindowsForm({ handleClose, onSubmit, initialValue }) {
         <DialogContent sx={{ maxHeight: "calc(100vh - 192px)" }}>
           <Stack spacing={1} sx={{ overflowY: "auto" }}>
             <Stack spacing={1} direction="row">
-              {/* name, rule, minValue, step, error, dimension, label, */}
               <NumberInput
                 name="width"
                 rule="Введіть ширину вікна"
@@ -94,7 +93,7 @@ export default function WindowsForm({ handleClose, onSubmit, initialValue }) {
                 label="Кількість"
               />
             </Stack>
-            {/* <Controller
+            <Controller
               name="type"
               control={control}
               rules={{
@@ -104,35 +103,37 @@ export default function WindowsForm({ handleClose, onSubmit, initialValue }) {
                 const { onChange, value, ref } = field;
                 return (
                   <Autocomplete
+                    disableClearable
                     options={windows}
-                    getOptionLabel={(city) => {
-                      return city.city;
-                    }}
-                    groupBy={(city) => city.region}
-                    value={
-                      value
-                        ? citiesClimateData.find((city) => {
-                            return value === city.city;
-                          }) ?? null
-                        : null
+                    getOptionLabel={(option) =>
+                      `${option.variant} – (Повітря: ${option.air}%, Криптон: ${option.krypton}%, Аргон: ${option.argon}%)`
                     }
+                    value={value}
                     onChange={(event, newValue) => {
-                      onChange(newValue ? newValue.city : null);
+                      onChange(newValue);
                     }}
                     renderInput={(params) => (
                       <TextField
                         {...params}
-                        label="Місто"
+                        label="Варіант склопакета"
                         variant="filled"
                         inputRef={ref}
                         error={!!error}
                         helperText={error?.message || " "}
+                        inputProps={{ ...params.inputProps, readOnly: true }}
+                        InputProps={{
+                          ...params.InputProps,
+                          sx: {
+                            cursor: "pointer",
+                            input: { cursor: "pointer" },
+                          },
+                        }}
                       />
                     )}
                   />
                 );
               }}
-            /> */}
+            />
           </Stack>
         </DialogContent>
         <DialogActions>

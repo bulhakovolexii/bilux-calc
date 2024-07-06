@@ -11,10 +11,10 @@ export default class Window {
     this.width = inputData.width;
     this.height = inputData.height;
     this.quantity = inputData.quantity;
-    this.variant = inputData.variant;
-    this.air = inputData.air;
-    this.krypton = inputData.krypton;
-    this.argon = inputData.argon;
+    this.variant = inputData.type.variant;
+    this.air = inputData.type.air;
+    this.krypton = inputData.type.krypton;
+    this.argon = inputData.type.argon;
   }
 
   area() {
