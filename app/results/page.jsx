@@ -4,9 +4,9 @@ import Link from "next/link";
 import { useInputData } from "../context/InputDataContext";
 import Building from "../model/Building";
 import monthlyDurationIntervals from "../model/reference-data/monthlyDurationIntervals";
+import { useRouter } from "next/navigation";
 
-export default function Results() {
-  const { inputData } = useInputData();
+const SuccessfulResult = ({ inputData }) => {
   const biluxSystem = {
     heatGenerator:
       "Електричні прилади прямого нагріву: конвектори, поверхневе опалення, променеве опалення, нагрівальний підлоговий кабель",
@@ -96,5 +96,15 @@ export default function Results() {
         </div>
       </div>
     </>
+  );
+};
+
+export default function Results() {
+  const router = useRouter();
+  const { inputData } = useInputData();
+  return !inputData.city ? (
+    router.push("/")
+  ) : (
+    <SuccessfulResult inputData={inputData} />
   );
 }
