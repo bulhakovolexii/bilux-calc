@@ -108,7 +108,7 @@ export default function WindowsForm({ handleClose, onSubmit, initialValue }) {
                     disableClearable
                     options={windows}
                     getOptionLabel={(option) =>
-                      `${option.variant} – (Повітря: ${option.air}%, Криптон: ${option.krypton}%, Аргон: ${option.argon}%)`
+                      `${option.variant} – (Повітря: ${option.air}%, Криптон: ${option.krypton}%, Аргон: ${option.argon}%), опір теплопередачі: ${option.thermalResistance}, м²·К/Вт`
                     }
                     value={value}
                     onChange={(event, newValue) => {
