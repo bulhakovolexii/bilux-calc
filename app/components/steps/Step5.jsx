@@ -37,9 +37,11 @@ function CustomTab(props) {
 }
 
 export default function Step5() {
-  const { control, formState } = useFormContext();
+  const { control, formState, getValues, setValue, clearErrors } =
+    useFormContext();
   const [tab, setTab] = useState("north");
   const [invalidTabs, setInvalidTabs] = useState([]);
+  const [copiedData, setCopiedData] = useState([]);
 
   useEffect(() => {
     const errors = formState.errors?.facades || [];
@@ -81,11 +83,25 @@ export default function Step5() {
     );
   };
 
+  const handleCopy = (name) => {
+    const value = getValues(name);
+    setCopiedData(value);
+    console.log(value);
+  };
+
+  const handlePaste = (name) => {
+    setValue(name, copiedData);
+    console.log(copiedData, name);
+    clearErrors(name);
+  };
+
   const StepFields = (direction) => {
     const directionIndex = directions.indexOf(direction);
     return (
       <Box hidden={tab !== direction}>
         <AutocompleteWithModal
+          handleCopy={handleCopy}
+          handlePaste={handlePaste}
           name={`facades[${directionIndex}].layers`}
           control={control}
           rules={{

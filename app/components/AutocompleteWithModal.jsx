@@ -1,10 +1,14 @@
-import { Add, Edit } from "@mui/icons-material";
+import { Add, ContentCopy, ContentPaste, Edit } from "@mui/icons-material";
 import {
   Autocomplete,
   Chip,
   Dialog,
   DialogTitle,
   TextField,
+  ButtonGroup,
+  Button,
+  Stack,
+  Tooltip,
 } from "@mui/material";
 import { cloneElement, useState } from "react";
 import { Controller } from "react-hook-form";
@@ -18,6 +22,8 @@ export default function AutocompleteWithModal({
   addTitlePrefix,
   label,
   control,
+  handleCopy,
+  handlePaste,
 }) {
   const [open, setOpen] = useState(false);
   const [editedOption, setEditedOption] = useState(null);
@@ -102,22 +108,48 @@ export default function AutocompleteWithModal({
                   ))
                 }
                 renderInput={(params) => (
-                  <TextField
-                    {...params}
-                    label={label}
-                    variant="filled"
-                    inputRef={ref}
-                    error={!!error}
-                    helperText={error?.message || " "}
-                    inputProps={{ ...params.inputProps, readOnly: true }}
-                    InputProps={{
-                      ...params.InputProps,
-                      sx: {
-                        cursor: "pointer",
-                        input: { cursor: "pointer" },
-                      },
-                    }}
-                  />
+                  <Stack direction="row" gap={1}>
+                    <TextField
+                      {...params}
+                      label={label}
+                      variant="filled"
+                      inputRef={ref}
+                      error={!!error}
+                      helperText={error?.message || " "}
+                      inputProps={{ ...params.inputProps, readOnly: true }}
+                      InputProps={{
+                        ...params.InputProps,
+                        sx: {
+                          cursor: "pointer",
+                          input: { cursor: "pointer" },
+                        },
+                      }}
+                    />
+                    {handleCopy && (
+                      <ButtonGroup>
+                        <Tooltip title="Копіювати">
+                          <Button
+                            size="small"
+                            sx={{ mb: "23px" }}
+                            onClick={() => handleCopy(name)}
+                          >
+                            <ContentCopy />
+                          </Button>
+                        </Tooltip>
+                        <Tooltip title="Вставити">
+                          <Button
+                            size="small"
+                            sx={{ mb: "23px" }}
+                            onClick={() => {
+                              handlePaste(name);
+                            }}
+                          >
+                            <ContentPaste />
+                          </Button>
+                        </Tooltip>
+                      </ButtonGroup>
+                    )}
+                  </Stack>
                 )}
               />
               <Dialog
