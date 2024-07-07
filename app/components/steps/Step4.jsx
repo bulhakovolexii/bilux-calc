@@ -183,10 +183,10 @@ export default function Step4() {
             name="floor.wallHeight"
             control={control}
             rules={{
-              required: "Введіть висоту цоколю",
+              required: "Введіть висоту стін що контактують з грунтом",
               min: {
                 value: "0.1",
-                message: "Висота цоколю повинна бути більше нуля",
+                message: "Висота стін повинна бути більше нуля",
               },
             }}
             render={({ field, fieldState: { error } }) => {
@@ -201,7 +201,7 @@ export default function Step4() {
                   inputProps={{ inputMode: "decimal", min: 0.1, step: 0.01 }}
                   InputProps={{ endAdornment: "м", sx: { gap: 1 } }}
                   variant="filled"
-                  label="Висота цоколю"
+                  label="Висота стін що контактують з грунтом"
                   error={!!error}
                   helperText={error?.message || " "}
                 />
