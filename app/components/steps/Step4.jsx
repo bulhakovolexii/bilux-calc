@@ -12,6 +12,7 @@ import {
   Tab,
   Tabs,
   Typography,
+  TextField,
   Zoom,
 } from "@mui/material";
 import { useEffect, useState } from "react";
@@ -33,7 +34,7 @@ const floorTypes = [
 ];
 
 export default function Step4() {
-  const { control, formState } = useFormContext();
+  const { control, formState, watch } = useFormContext();
   const [tab, setTab] = useState("ceiling");
   const [floorTabIsInvalid, setFloorTabIsInvalid] = useState(null);
   const [ceilingTabIsInvalid, setCeilingTabIsInvalid] = useState(null);
@@ -55,6 +56,9 @@ export default function Step4() {
   const handleChangeTab = (event, newTab) => {
     setTab(newTab);
   };
+
+  const floorTypeIsBasement =
+    watch("floor.type") === "Опалюваний підвал (цокольний поверх)";
 
   return (
     <Stack spacing={1}>
@@ -101,13 +105,13 @@ export default function Step4() {
           name="ceiling.type"
           control={control}
           rules={{
-            required: "Оберіть тип і стан стін будівлі",
+            required: "Оберіть тип даху",
           }}
           render={({ field, fieldState: { error } }) => {
             const { onChange, value, ref } = field;
             return (
               <FormControl error={!!error} variant="filled" fullWidth>
-                <InputLabel>Тип і стан стін</InputLabel>
+                <InputLabel>Тип даху</InputLabel>
                 <Select
                   value={value || ""}
                   onChange={(event) => onChange(event.target.value)}
@@ -147,13 +151,13 @@ export default function Step4() {
           name="floor.type"
           control={control}
           rules={{
-            required: "Оберіть тип і стан стін будівлі",
+            required: "Оберіть тип підлоги",
           }}
           render={({ field, fieldState: { error } }) => {
             const { onChange, value, ref } = field;
             return (
               <FormControl error={!!error} variant="filled" fullWidth>
-                <InputLabel>Тип і стан стін</InputLabel>
+                <InputLabel>Тип підлоги</InputLabel>
                 <Select
                   value={value || ""}
                   onChange={(event) => onChange(event.target.value)}
@@ -174,6 +178,37 @@ export default function Step4() {
             );
           }}
         />
+        {floorTypeIsBasement && (
+          <Controller
+            name="floor.wallHeight"
+            control={control}
+            rules={{
+              required: "Введіть висоту цоколю",
+              min: {
+                value: "0.1",
+                message: "Висота цоколю повинна бути більше нуля",
+              },
+            }}
+            render={({ field, fieldState: { error } }) => {
+              const { onChange, value, ref } = field;
+              return (
+                <TextField
+                  fullWidth
+                  type="number"
+                  value={value || ""}
+                  onChange={(e) => onChange(e.target.value)}
+                  inputRef={ref}
+                  inputProps={{ inputMode: "decimal", min: 0.1, step: 0.01 }}
+                  InputProps={{ endAdornment: "м", sx: { gap: 1 } }}
+                  variant="filled"
+                  label="Висота цоколю"
+                  error={!!error}
+                  helperText={error?.message || " "}
+                />
+              );
+            }}
+          />
+        )}
         <AutocompleteWithModal
           name="floor.layers"
           control={control}

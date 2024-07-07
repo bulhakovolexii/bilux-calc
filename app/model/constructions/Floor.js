@@ -17,7 +17,7 @@ export default class Floor {
     // Entered data
     this.type = inputData.type;
     this.layers = inputData.layers.map((layer) => new Layer(layer));
-    this.wallHeight = inputData.wallHeight;
+    this.wallHeight = parseFloat(inputData.wallHeight);
     this.wallLayers =
       inputData.wallLayers?.map((layer) => new Layer(layer)) || [];
   }
