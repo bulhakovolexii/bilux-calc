@@ -6,12 +6,14 @@ import {
   ArrowForward,
   ArrowUpward,
   CheckCircleRounded,
+  CancelRounded,
 } from "@mui/icons-material";
-import { Box, Stack, Tab, Tabs, Typography } from "@mui/material";
-import { useState } from "react";
+import { Box, Stack, Tab, Tabs, Typography, Zoom } from "@mui/material";
+import { useEffect, useState } from "react";
 import AutocompleteWithModal from "../AutocompleteWithModal";
 import LayerForm from "../LayerForm";
 import WindowsForm from "../WindowsForm";
+import { useFormContext } from "react-hook-form";
 
 const directions = ["north", "east", "south", "west"];
 
@@ -33,30 +35,49 @@ function CustomTab(props) {
   );
 }
 
-const DirectionTab = (direction) => {
-  const ukDirections = ["Пн", "Cх", "Пд", "Зх"];
-  const rows = [
-    <ArrowUpward />,
-    <ArrowForward />,
-    <ArrowDownward />,
-    <ArrowBack />,
-  ];
-  return (
-    <CustomTab
-      label={ukDirections[directions.indexOf(direction)]}
-      value={direction}
-      sx={{ minHeight: "42px" }}
-      iconStart={<CheckCircleRounded />}
-      iconEnd={rows[directions.indexOf(direction)]}
-    />
-  );
-};
-
 export default function Step5() {
+  const { formState } = useFormContext();
   const [tab, setTab] = useState("north");
+  const [invalidTabs, setInvalidTabs] = useState([]);
+
+  useEffect(() => {
+    const errors = formState.errors?.facades || [];
+    let newInvalidTabs = [];
+    for (let i = 0; i <= 3; i++) {
+      newInvalidTabs.push(errors[i] !== undefined);
+    }
+    setInvalidTabs(newInvalidTabs);
+  }, [formState]);
 
   const handleChangeTab = (event, newTab) => {
     setTab(newTab);
+  };
+
+  const DirectionTab = (direction) => {
+    const ukDirections = ["Пн", "Cх", "Пд", "Зх"];
+    const rows = [
+      <ArrowUpward />,
+      <ArrowForward />,
+      <ArrowDownward />,
+      <ArrowBack />,
+    ];
+    return (
+      <CustomTab
+        label={ukDirections[directions.indexOf(direction)]}
+        value={direction}
+        sx={{ minHeight: "42px" }}
+        iconStart={
+          invalidTabs[directions.indexOf(direction)] ? (
+            <Zoom in={true}>
+              <CancelRounded color="error" />
+            </Zoom>
+          ) : (
+            <CheckCircleRounded />
+          )
+        }
+        iconEnd={rows[directions.indexOf(direction)]}
+      />
+    );
   };
 
   const StepFields = (direction) => {

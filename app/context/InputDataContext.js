@@ -6,7 +6,15 @@ import testInputData from "./testInputData";
 const InputDataContext = createContext(undefined);
 
 export const InputDataProvider = ({ children }) => {
-  const [inputData, setInputData] = useState(testInputData);
+  const [inputData, setInputData] = useState({
+    facades: [
+      { direction: "north" },
+      { direction: "east" },
+      { direction: "south" },
+      { direction: "west" },
+    ],
+    ...testInputData,
+  });
 
   const updateInputData = (newValue) => {
     setInputData({ ...inputData, ...newValue });

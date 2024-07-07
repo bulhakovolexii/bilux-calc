@@ -45,9 +45,9 @@ export default function Step4() {
       !!formState.errors?.floor?.type || !!formState.errors?.floor?.layers;
     setCeilingTabIsInvalid(ceilingErrors);
     setFloorTabIsInvalid(floorErrors);
-    if (floorTabIsInvalid && tab !== "floor") {
+    if (floorTabIsInvalid && !ceilingTabIsInvalid && tab !== "floor") {
       setTab("floor");
-    } else if (ceilingTabIsInvalid && tab !== "ceiling") {
+    } else if (ceilingTabIsInvalid && !floorTabIsInvalid && tab !== "ceiling") {
       setTab("ceiling");
     }
   }, [formState]);
@@ -73,9 +73,7 @@ export default function Step4() {
           icon={
             ceilingTabIsInvalid ? (
               <Zoom in={true}>
-                <CancelRounded
-                  color={tab === "ceiling" ? "error" : "inherit"}
-                />
+                <CancelRounded color="error" />
               </Zoom>
             ) : (
               <CheckCircleRounded />
@@ -90,7 +88,7 @@ export default function Step4() {
           icon={
             floorTabIsInvalid ? (
               <Zoom in={true}>
-                <CancelRounded color={tab === "floor" ? "error" : "inherit"} />
+                <CancelRounded color="error" />
               </Zoom>
             ) : (
               <CheckCircleRounded />

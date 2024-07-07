@@ -45,12 +45,12 @@ const Info = (stepNumber) => {
 export default function ({ params: { step } }) {
   const router = useRouter();
   const stepNumber = parseInt(step.split("-")[1]);
-  const { getValues } = useFormContext();
+  const { watch } = useFormContext();
 
-  const values = getValues();
+  const inputDataIsEmpty = !watch("city") || !watch("terrain");
 
   useEffect(() => {
-    if (stepNumber > 1 && Object.keys(values).length < 1) {
+    if (stepNumber > 1 && inputDataIsEmpty) {
       router.push("/questionnaire/step-1");
     }
   }, []);
