@@ -130,6 +130,7 @@ export default function Step4() {
         />
         <AutocompleteWithModal
           name="ceiling.layers"
+          control={control}
           rules={{
             validate: (value) => value.length > 0 || `Додайте хоча б один шар`,
           }}
@@ -175,6 +176,7 @@ export default function Step4() {
         />
         <AutocompleteWithModal
           name="floor.layers"
+          control={control}
           rules={{
             validate: (value) => value.length > 0 || `Додайте хоча б один шар`,
           }}

@@ -14,6 +14,7 @@ import AutocompleteWithModal from "../AutocompleteWithModal";
 import LayerForm from "../LayerForm";
 import WindowsForm from "../WindowsForm";
 import { useFormContext } from "react-hook-form";
+import InclusionForm from "../InclustionForm";
 
 const directions = ["north", "east", "south", "west"];
 
@@ -36,7 +37,7 @@ function CustomTab(props) {
 }
 
 export default function Step5() {
-  const { formState } = useFormContext();
+  const { control, formState } = useFormContext();
   const [tab, setTab] = useState("north");
   const [invalidTabs, setInvalidTabs] = useState([]);
 
@@ -86,6 +87,7 @@ export default function Step5() {
       <Box hidden={tab !== direction}>
         <AutocompleteWithModal
           name={`facades[${directionIndex}].layers`}
+          control={control}
           rules={{
             validate: (value) => value.length > 0 || `Додайте хоча б один шар`,
           }}
@@ -98,6 +100,7 @@ export default function Step5() {
         </AutocompleteWithModal>
         <AutocompleteWithModal
           name={`facades[${directionIndex}].windows`}
+          control={control}
           label="Вікна"
           optionPrefix="ВК-"
           addTitlePrefix="Додати вікна ВК-"
@@ -107,6 +110,7 @@ export default function Step5() {
         </AutocompleteWithModal>
         <AutocompleteWithModal
           name={`facades[${directionIndex}].doors`}
+          control={control}
           label="Двері"
           optionPrefix="Д-"
           addTitlePrefix="Додати двері Д-"
@@ -116,12 +120,13 @@ export default function Step5() {
         </AutocompleteWithModal>
         <AutocompleteWithModal
           name={`facades[${directionIndex}].inclusions`}
+          control={control}
           label="Включення"
           optionPrefix="Включення №"
           addTitlePrefix="Додати включення №"
           editTitlePrefix="Редагувати Включення №"
         >
-          <></>
+          <InclusionForm />
         </AutocompleteWithModal>
       </Box>
     );

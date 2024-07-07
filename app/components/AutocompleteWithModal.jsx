@@ -7,7 +7,7 @@ import {
   TextField,
 } from "@mui/material";
 import { cloneElement, useState } from "react";
-import { Controller, useFormContext } from "react-hook-form";
+import { Controller } from "react-hook-form";
 
 export default function AutocompleteWithModal({
   children,
@@ -17,8 +17,8 @@ export default function AutocompleteWithModal({
   editTitlePrefix,
   addTitlePrefix,
   label,
+  control,
 }) {
-  const { control } = useFormContext();
   const [open, setOpen] = useState(false);
   const [editedOption, setEditedOption] = useState(null);
 
