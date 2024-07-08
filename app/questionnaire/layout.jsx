@@ -148,48 +148,50 @@ export default function QuestionnaireLayout({ children }) {
   };
 
   return (
-    <form onSubmit={(e) => e.preventDefault()}>
-      <Stack spacing={2} height="600px" py={1} justifyContent="space-between">
-        <Hidden mdDown>
-          <FormStepper
-            steps={steps}
-            activeStep={activeStep}
-            handleStep={handleStep}
-          />
-        </Hidden>
-        <Hidden mdUp>
-          <FormMobileStepper
-            steps={steps}
-            activeStep={activeStep}
-            isLastStep={isLastStep}
-            handlePrevStep={handlePrevStep}
-            handleNextStep={handleNextStep}
-            handleSubmit={handleSubmit}
-            onSubmit={onSubmit}
-          />
-        </Hidden>
-        <Box
-          sx={{
-            position: "relative",
-            [theme.breakpoints.up("md")]: { height: "496px" },
-            [theme.breakpoints.down("md")]: {
-              height: "537px",
-            },
-          }}
-        >
-          <FormProvider {...methods}>{children}</FormProvider>
-        </Box>
-        <Hidden mdDown>
-          <FormNavigationButton
-            activeStep={activeStep}
-            isLastStep={isLastStep}
-            handlePrevStep={handlePrevStep}
-            handleNextStep={handleNextStep}
-            handleSubmit={handleSubmit}
-            onSubmit={onSubmit}
-          />
-        </Hidden>
-      </Stack>
-    </form>
+    <Box maxWidth="1132px" height="632px" p={2} mx="auto">
+      <form onSubmit={(e) => e.preventDefault()}>
+        <Stack spacing={2} height="600px" py={1} justifyContent="space-between">
+          <Hidden mdDown>
+            <FormStepper
+              steps={steps}
+              activeStep={activeStep}
+              handleStep={handleStep}
+            />
+          </Hidden>
+          <Hidden mdUp>
+            <FormMobileStepper
+              steps={steps}
+              activeStep={activeStep}
+              isLastStep={isLastStep}
+              handlePrevStep={handlePrevStep}
+              handleNextStep={handleNextStep}
+              handleSubmit={handleSubmit}
+              onSubmit={onSubmit}
+            />
+          </Hidden>
+          <Box
+            sx={{
+              position: "relative",
+              [theme.breakpoints.up("md")]: { height: "496px" },
+              [theme.breakpoints.down("md")]: {
+                height: "537px",
+              },
+            }}
+          >
+            <FormProvider {...methods}>{children}</FormProvider>
+          </Box>
+          <Hidden mdDown>
+            <FormNavigationButton
+              activeStep={activeStep}
+              isLastStep={isLastStep}
+              handlePrevStep={handlePrevStep}
+              handleNextStep={handleNextStep}
+              handleSubmit={handleSubmit}
+              onSubmit={onSubmit}
+            />
+          </Hidden>
+        </Stack>
+      </form>
+    </Box>
   );
 }
