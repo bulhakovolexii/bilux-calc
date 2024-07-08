@@ -18,11 +18,27 @@ import AutocompleteWithModal from "./AutocompleteWithModal";
 import LayerForm from "./LayerForm";
 import WindowsForm from "./WindowsForm";
 
-export default function InclusionForm({ handleClose, onSubmit, initialValue }) {
-  const { control, handleSubmit, watch } = useForm({
+export default function InclusionForm({
+  handleClose,
+  onSubmit,
+  initialValue,
+  copiedData,
+  setCopiedData,
+}) {
+  const { control, handleSubmit, getValues, setValue, clearErrors } = useForm({
     mode: "onChange",
     defaultValues: { ...initialValue },
   });
+
+  const handleCopy = (name, type) => {
+    const newCopiedData = { type: type, value: getValues(name) };
+    setCopiedData(newCopiedData);
+  };
+
+  const handlePaste = (name) => {
+    setValue(name, copiedData.value);
+    clearErrors(name);
+  };
 
   const NumberInput = ({
     name,
@@ -119,6 +135,10 @@ export default function InclusionForm({ handleClose, onSubmit, initialValue }) {
             />
           </Stack>
           <AutocompleteWithModal
+            type="layer"
+            handleCopy={handleCopy}
+            handlePaste={handlePaste}
+            copiedData={copiedData}
             name="layers"
             control={control}
             rules={{
@@ -133,6 +153,10 @@ export default function InclusionForm({ handleClose, onSubmit, initialValue }) {
             <LayerForm />
           </AutocompleteWithModal>
           <AutocompleteWithModal
+            type="window"
+            handleCopy={handleCopy}
+            handlePaste={handlePaste}
+            copiedData={copiedData}
             name="windows"
             control={control}
             label="Вікна"
@@ -143,6 +167,10 @@ export default function InclusionForm({ handleClose, onSubmit, initialValue }) {
             <WindowsForm />
           </AutocompleteWithModal>
           <AutocompleteWithModal
+            type="door"
+            handleCopy={handleCopy}
+            handlePaste={handlePaste}
+            copiedData={copiedData}
             name="dors"
             control={control}
             label="Двері"

@@ -22,8 +22,10 @@ export default function AutocompleteWithModal({
   addTitlePrefix,
   label,
   control,
+  type,
   handleCopy,
   handlePaste,
+  copiedData,
 }) {
   const [open, setOpen] = useState(false);
   const [editedOption, setEditedOption] = useState(null);
@@ -131,7 +133,8 @@ export default function AutocompleteWithModal({
                           <Button
                             size="small"
                             sx={{ mb: "23px" }}
-                            onClick={() => handleCopy(name)}
+                            disabled={value.length < 1}
+                            onClick={() => handleCopy(name, type)}
                           >
                             <ContentCopy />
                           </Button>
@@ -140,6 +143,7 @@ export default function AutocompleteWithModal({
                           <Button
                             size="small"
                             sx={{ mb: "23px" }}
+                            disabled={copiedData.type !== type}
                             onClick={() => {
                               handlePaste(name);
                             }}

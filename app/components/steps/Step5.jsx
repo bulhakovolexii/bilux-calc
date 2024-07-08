@@ -83,15 +83,13 @@ export default function Step5() {
     );
   };
 
-  const handleCopy = (name) => {
-    const value = getValues(name);
-    setCopiedData(value);
-    console.log(value);
+  const handleCopy = (name, type) => {
+    const newCopiedData = { type: type, value: getValues(name) };
+    setCopiedData(newCopiedData);
   };
 
   const handlePaste = (name) => {
-    setValue(name, copiedData);
-    console.log(copiedData, name);
+    setValue(name, copiedData.value);
     clearErrors(name);
   };
 
@@ -100,8 +98,10 @@ export default function Step5() {
     return (
       <Box hidden={tab !== direction}>
         <AutocompleteWithModal
+          type="layer"
           handleCopy={handleCopy}
           handlePaste={handlePaste}
+          copiedData={copiedData}
           name={`facades[${directionIndex}].layers`}
           control={control}
           rules={{
@@ -115,6 +115,10 @@ export default function Step5() {
           <LayerForm />
         </AutocompleteWithModal>
         <AutocompleteWithModal
+          type="window"
+          handleCopy={handleCopy}
+          handlePaste={handlePaste}
+          copiedData={copiedData}
           name={`facades[${directionIndex}].windows`}
           control={control}
           label="Вікна"
@@ -125,6 +129,10 @@ export default function Step5() {
           <WindowsForm />
         </AutocompleteWithModal>
         <AutocompleteWithModal
+          type="door"
+          handleCopy={handleCopy}
+          handlePaste={handlePaste}
+          copiedData={copiedData}
           name={`facades[${directionIndex}].doors`}
           control={control}
           label="Двері"
@@ -135,6 +143,10 @@ export default function Step5() {
           <></>
         </AutocompleteWithModal>
         <AutocompleteWithModal
+          type="inclusion"
+          handleCopy={handleCopy}
+          handlePaste={handlePaste}
+          copiedData={copiedData}
           name={`facades[${directionIndex}].inclusions`}
           control={control}
           label="Включення"
@@ -142,7 +154,10 @@ export default function Step5() {
           addTitlePrefix="Додати включення №"
           editTitlePrefix="Редагувати Включення №"
         >
-          <InclusionForm />
+          <InclusionForm
+            copiedData={copiedData}
+            setCopiedData={setCopiedData}
+          />
         </AutocompleteWithModal>
       </Box>
     );
