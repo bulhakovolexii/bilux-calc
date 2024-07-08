@@ -15,6 +15,7 @@ import LayerForm from "../LayerForm";
 import WindowsForm from "../WindowsForm";
 import { useFormContext } from "react-hook-form";
 import InclusionForm from "../InclustionForm";
+import DoorsForm from "../DoorsForm";
 
 const directions = ["north", "east", "south", "west"];
 
@@ -140,7 +141,7 @@ export default function Step5() {
           addTitlePrefix="Додати двері Д-"
           editTitlePrefix="Редагувати двері Д-"
         >
-          <></>
+          <DoorsForm />
         </AutocompleteWithModal>
         <AutocompleteWithModal
           type="inclusion"

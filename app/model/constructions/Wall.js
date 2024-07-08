@@ -44,7 +44,11 @@ export default class Wall {
       ) || [];
     this.doors =
       inputData.doors?.map(
-        (door) => new Door({ ...door, environment: this.environment })
+        (door) =>
+          new Door({
+            ...door,
+            environment: this.environment,
+          })
       ) || [];
   }
 

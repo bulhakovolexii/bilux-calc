@@ -17,6 +17,7 @@ import environmentTypes from "../model/reference-data/environmentTypes";
 import AutocompleteWithModal from "./AutocompleteWithModal";
 import LayerForm from "./LayerForm";
 import WindowsForm from "./WindowsForm";
+import DoorsForm from "./DoorsForm";
 
 export default function InclusionForm({
   handleClose,
@@ -178,7 +179,7 @@ export default function InclusionForm({
             addTitlePrefix="Додати двері Д-"
             editTitlePrefix="Редагувати двері Д-"
           >
-            <></>
+            <DoorsForm />
           </AutocompleteWithModal>
         </Stack>
       </DialogContent>
