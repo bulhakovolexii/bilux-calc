@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { FormProvider, useForm } from "react-hook-form";
 import { useTheme } from "@emotion/react";
@@ -86,6 +86,7 @@ const steps = [
 
 export default function QuestionnaireLayout({ children }) {
   const router = useRouter();
+  const params = useParams();
   const theme = useTheme();
   const { inputData, updateInputData } = useInputData();
   const methods = useForm({ mode: "onChange", defaultValues: inputData });
@@ -95,9 +96,11 @@ export default function QuestionnaireLayout({ children }) {
     getValues,
     formState: { isValid },
   } = methods;
-  const [activeStep, setActiveStep] = useState(
-    inputData.city ? parseInt(useParams().step.split("-")[1]) - 1 : 0
-  );
+  const [activeStep, setActiveStep] = useState(0);
+
+  useEffect(() => {
+    setActiveStep(parseInt(params.step.split("-")[1]) - 1);
+  }, [params]);
 
   const totalSteps = () => {
     return steps.length - 1;
@@ -112,8 +115,7 @@ export default function QuestionnaireLayout({ children }) {
   };
 
   const handleStep = (step) => {
-    setActiveStep(step);
-    router.replace(`/questionnaire/step-${step + 1}`);
+    router.push(`/questionnaire/step-${step + 1}`);
     updateInputData(getValues());
   };
 
@@ -125,7 +127,7 @@ export default function QuestionnaireLayout({ children }) {
     if (!isLastStep() && stepIsValid) {
       handleStep(activeStep + 1);
     } else if (isLastStep() && isValid) {
-      router.replace("/results");
+      router.push("/results");
     }
   };
 
@@ -133,7 +135,7 @@ export default function QuestionnaireLayout({ children }) {
     if (!isFirstStep()) {
       handleStep(activeStep - 1);
     } else {
-      router.replace("/");
+      router.push("/");
     }
   };
 
@@ -146,8 +148,7 @@ export default function QuestionnaireLayout({ children }) {
         handleNextStep();
       } catch (err) {
         alert(err);
-        router.replace("/questionnaire/step-3");
-        setActiveStep(2);
+        router.push("/questionnaire/step-3");
       }
     }
   };

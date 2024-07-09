@@ -45,24 +45,22 @@ const Info = (stepNumber) => {
 export default function ({ params: { step } }) {
   const router = useRouter();
   const stepNumber = parseInt(step.split("-")[1]);
-  const { watch } = useFormContext();
+  const { getValues } = useFormContext();
 
-  const inputDataIsEmpty = !watch("city") || !watch("terrain");
+  const inputDataIsEmpty = !getValues("city") || !getValues("terrain");
 
-  useEffect(() => {
-    if (stepNumber > 1 && inputDataIsEmpty) {
-      router.replace("/questionnaire/step-1");
-    }
-  }, []);
-
-  return (
-    <Box height="100%" width="100%" overflow="hidden">
-      <Slide direction="left" in={true}>
-        <Box height="100%" display="flex" gap={3}>
-          <FormInputs>{Step(stepNumber)}</FormInputs>
-          <FormInformation>{Info(stepNumber)}</FormInformation>
-        </Box>
-      </Slide>
-    </Box>
-  );
+  if (stepNumber > 1 && inputDataIsEmpty) {
+    router.push("/questionnaire/step-1");
+  } else {
+    return (
+      <Box height="100%" width="100%" overflow="hidden">
+        <Slide direction="left" in={true}>
+          <Box height="100%" display="flex" gap={3}>
+            <FormInputs>{Step(stepNumber)}</FormInputs>
+            <FormInformation>{Info(stepNumber)}</FormInformation>
+          </Box>
+        </Slide>
+      </Box>
+    );
+  }
 }
