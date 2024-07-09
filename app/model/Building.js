@@ -23,6 +23,9 @@ export default class Building {
     this.terrain = inputData.terrain; // Характеристика місцевості
     // Step 2
     this.purpose = inputData.purpose; // Функційне призначення будівлі
+    this.indoorTemperature = purposes.find(
+      (option) => option.purpose === this.purpose
+    ).indoorTemperature;
     this.heatCapacityClass = inputData.heatCapacityClass; // Клас внутрішньої теплоємності будівлі
     this.airPermeabilityClass = inputData.airPermeabilityClass; // Клас повітропроникності конструкцій будівлі
     this.constructionType = inputData.constructionType; // Тип і стан стінових конструкцій
@@ -39,7 +42,7 @@ export default class Building {
           width: this.buildingWidth,
           height: this.height(),
           buildingHeight: this.height(),
-          indoorTemperature: this.indoorTemperature(),
+          indoorTemperature: this.indoorTemperature,
           buildingPurpose: this.purpose,
           climateData: this.climateData(),
           terrain: this.terrain,
@@ -51,7 +54,7 @@ export default class Building {
           width: this.buildingLength,
           height: this.height(),
           buildingHeight: this.height(),
-          indoorTemperature: this.indoorTemperature(),
+          indoorTemperature: this.indoorTemperature,
           buildingPurpose: this.purpose,
           climateData: this.climateData(),
           terrain: this.terrain,
@@ -119,13 +122,6 @@ export default class Building {
     return monthlyTemperatures[monthIndex];
   }
 
-  // Внутрішня температура будівлі
-  indoorTemperature() {
-    const purpose = purposes.find((option) => option.purpose === this.purpose);
-
-    return purpose.indoorTemperature;
-  }
-
   // Тривалість опалювального періоду
   heatingPeriodDurationHours(month) {
     let period;
@@ -188,7 +184,7 @@ export default class Building {
   transmissionHeatLosses(month) {
     return (
       this.overallTransmissionHeatTransferCoefficient() *
-      (this.indoorTemperature() - this.outdoorTemperature(month)) *
+      (this.indoorTemperature - this.outdoorTemperature(month)) *
       month.hours
     );
   }
@@ -209,7 +205,7 @@ export default class Building {
   ventilationHeatLosses(month) {
     return (
       this.overallVentilationHeatTransferCoefficient() *
-      (this.indoorTemperature() - this.outdoorTemperature(month)) *
+      (this.indoorTemperature - this.outdoorTemperature(month)) *
       month.hours
     );
   }
@@ -421,7 +417,7 @@ export default class Building {
       return this.distributionSubsystemHeatLosses(
         this.pipesLength()[section],
         this.heatCarrierTemperature(month),
-        this.indoorTemperature(),
+        this.indoorTemperature,
         this.pipesHeatTransferCoefficient()[section],
         month
       );
@@ -481,14 +477,14 @@ export default class Building {
 
   // Температура теплоносія
   heatCarrierTemperature(month) {
-    let supplyTemp = this.indoorTemperature();
-    let returnTemp = this.indoorTemperature();
+    let supplyTemp = this.indoorTemperature;
+    let returnTemp = this.indoorTemperature;
     if (this.heatGenerator().isHydraulic) {
       supplyTemp = this.temperatureGradient().supply; // Температура подавального теплоносія
       returnTemp = this.temperatureGradient().return; // Температура зворотного теплоносія
     }
-    const x1 = this.indoorTemperature(); // Максимальна температура повітря
-    const y1 = this.indoorTemperature(); // Мінімальна температура теплоносія
+    const x1 = this.indoorTemperature; // Максимальна температура повітря
+    const y1 = this.indoorTemperature; // Мінімальна температура теплоносія
     const x2 = -23; // Мінімальна температура повітря
     const y2 = returnTemp + (supplyTemp - returnTemp) / 2; // Максимальна температура теплоносія
 
@@ -619,5 +615,20 @@ export default class Building {
   temperatureControlEfficiency() {
     return controlTypes.find((type) => this.system.controlType === type.type)
       .temperatureControlEfficiency;
+  }
+
+  // Встановлення альтернативної внутрішньої температури
+  setIndoorTemperature(newTemp) {
+    this.indoorTemperature = newTemp;
+  }
+  // Необхідна встановлена потужність теплогенератора
+  estimatedHeatGeneratorPower(outdoorTemperature) {
+    return (
+      (this.overallTransmissionHeatTransferCoefficient() *
+        (this.indoorTemperature - outdoorTemperature) +
+        this.overallVentilationHeatTransferCoefficient() *
+          (this.indoorTemperature - outdoorTemperature)) /
+      1000
+    );
   }
 }

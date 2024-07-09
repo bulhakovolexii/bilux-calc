@@ -5,6 +5,7 @@ import { useInputData } from "../context/InputDataContext";
 import Building from "../model/Building";
 import monthlyDurationIntervals from "../model/reference-data/monthlyDurationIntervals";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const SuccessfulResult = ({ inputData }) => {
   const biluxSystem = {
@@ -13,8 +14,18 @@ const SuccessfulResult = ({ inputData }) => {
     heatingDevices: { type: "Стельові променеві обігрівачі" },
     controlType: "Двопозиційне регулювання",
   };
-  const building = new Building(inputData);
-  const buildingWithBilux = new Building({ ...inputData, system: biluxSystem });
+  const [building, setBuilding] = useState(new Building(inputData));
+  const [buildingWithBilux, setBuildingWithBilux] = useState(
+    new Building({
+      ...inputData,
+      system: biluxSystem,
+    })
+  );
+  const [indoorTemp, setIndoorTemp] = useState(building.indoorTemperature);
+  useEffect(() => {
+    building.setIndoorTemperature(indoorTemp);
+    buildingWithBilux.setIndoorTemperature(indoorTemp);
+  }, [indoorTemp]);
   const buildingEnergyDemand = monthlyDurationIntervals.map((month) =>
     building.energyDemand(month)
   );
@@ -46,13 +57,27 @@ const SuccessfulResult = ({ inputData }) => {
     return percentageDifferences;
   }
   const economy = calculatePercentageDifference(
-    buildingEnergyConsumption,
-    buildingWithBiluxEnergyConsumption
+    buildingWithBiluxEnergyConsumption,
+    buildingEnergyConsumption
   );
   return (
     <>
       <h1>Результати</h1>
-      <Link href="/">На головну</Link>{" "}
+      <Link href="/">На головну</Link>
+      <div>
+        <label id="temp">Кімнатна температура </label>
+        <input
+          type="number"
+          name="temp"
+          id="temp"
+          value={indoorTemp}
+          onChange={(e) => setIndoorTemp(e.target.value)}
+        />
+        <span>
+          &nbsp;Встановлена потужність теплогенератора:{" "}
+          {building.estimatedHeatGeneratorPower(-23).toFixed()}, кВт
+        </span>
+      </div>
       <div style={{ display: "flex", gap: 16 }}>
         <div>
           <p>Енергопотреба, кВт·год</p>

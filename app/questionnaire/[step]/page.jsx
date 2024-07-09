@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useFormContext } from "react-hook-form";
 import { Box, Slide } from "@mui/material";
