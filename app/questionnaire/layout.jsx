@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { FormProvider, useForm } from "react-hook-form";
 import { useTheme } from "@emotion/react";
 import { Box, Hidden, Stack, Toolbar, Container } from "@mui/material";
@@ -92,9 +92,12 @@ export default function QuestionnaireLayout({ children }) {
   const {
     handleSubmit,
     trigger,
+    getValues,
     formState: { isValid },
   } = methods;
-  const [activeStep, setActiveStep] = useState(0);
+  const [activeStep, setActiveStep] = useState(
+    inputData.city ? parseInt(useParams().step.split("-")[1]) - 1 : 0
+  );
 
   const totalSteps = () => {
     return steps.length - 1;
@@ -110,7 +113,8 @@ export default function QuestionnaireLayout({ children }) {
 
   const handleStep = (step) => {
     setActiveStep(step);
-    router.push(`/questionnaire/step-${step + 1}`);
+    router.replace(`/questionnaire/step-${step + 1}`);
+    updateInputData(getValues());
   };
 
   const handleNextStep = async () => {
@@ -121,7 +125,7 @@ export default function QuestionnaireLayout({ children }) {
     if (!isLastStep() && stepIsValid) {
       handleStep(activeStep + 1);
     } else if (isLastStep() && isValid) {
-      router.push("/results");
+      router.replace("/results");
     }
   };
 
@@ -129,7 +133,7 @@ export default function QuestionnaireLayout({ children }) {
     if (!isFirstStep()) {
       handleStep(activeStep - 1);
     } else {
-      router.push("/");
+      router.replace("/");
     }
   };
 
@@ -142,7 +146,7 @@ export default function QuestionnaireLayout({ children }) {
         handleNextStep();
       } catch (err) {
         alert(err);
-        router.push("/questionnaire/step-3");
+        router.replace("/questionnaire/step-3");
         setActiveStep(2);
       }
     }

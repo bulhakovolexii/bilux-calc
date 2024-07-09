@@ -51,7 +51,7 @@ export default function ({ params: { step } }) {
 
   useEffect(() => {
     if (stepNumber > 1 && inputDataIsEmpty) {
-      router.push("/questionnaire/step-1");
+      router.replace("/questionnaire/step-1");
     }
   }, []);
 
