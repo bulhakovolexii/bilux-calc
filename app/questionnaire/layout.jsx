@@ -4,13 +4,14 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { FormProvider, useForm } from "react-hook-form";
 import { useTheme } from "@emotion/react";
-import { Box, Hidden, Stack } from "@mui/material";
+import { Box, Hidden, Stack, Toolbar, Container } from "@mui/material";
 import { useInputData } from "../context/InputDataContext";
 import FormStepper from "../components/FormStepper";
 import FormMobileStepper from "../components/FormMobileStepper";
 import FormNavigationButton from "../components/FormNavigationButton";
 import Building from "../model/Building";
 import monthlyDurationIntervals from "../model/reference-data/monthlyDurationIntervals";
+import CustomAppBar from "../components/MyAppBar";
 
 const steps = [
   {
@@ -148,50 +149,59 @@ export default function QuestionnaireLayout({ children }) {
   };
 
   return (
-    <Box maxWidth="1132px" height="632px" p={2} mx="auto">
-      <form onSubmit={(e) => e.preventDefault()}>
-        <Stack spacing={2} height="600px" py={1} justifyContent="space-between">
-          <Hidden mdDown>
-            <FormStepper
-              steps={steps}
-              activeStep={activeStep}
-              handleStep={handleStep}
-            />
-          </Hidden>
-          <Hidden mdUp>
-            <FormMobileStepper
-              steps={steps}
-              activeStep={activeStep}
-              isLastStep={isLastStep}
-              handlePrevStep={handlePrevStep}
-              handleNextStep={handleNextStep}
-              handleSubmit={handleSubmit}
-              onSubmit={onSubmit}
-            />
-          </Hidden>
-          <Box
-            sx={{
-              position: "relative",
-              [theme.breakpoints.up("md")]: { height: "496px" },
-              [theme.breakpoints.down("md")]: {
-                height: "537px",
-              },
-            }}
+    <>
+      <CustomAppBar color="secondary" />
+      <Toolbar />
+      <Container maxWidth="lg" sx={{ mt: 2 }}>
+        <form onSubmit={(e) => e.preventDefault()}>
+          <Stack
+            spacing={2}
+            height="600px"
+            py={1}
+            justifyContent="space-between"
           >
-            <FormProvider {...methods}>{children}</FormProvider>
-          </Box>
-          <Hidden mdDown>
-            <FormNavigationButton
-              activeStep={activeStep}
-              isLastStep={isLastStep}
-              handlePrevStep={handlePrevStep}
-              handleNextStep={handleNextStep}
-              handleSubmit={handleSubmit}
-              onSubmit={onSubmit}
-            />
-          </Hidden>
-        </Stack>
-      </form>
-    </Box>
+            <Hidden mdDown>
+              <FormStepper
+                steps={steps}
+                activeStep={activeStep}
+                handleStep={handleStep}
+              />
+            </Hidden>
+            <Hidden mdUp>
+              <FormMobileStepper
+                steps={steps}
+                activeStep={activeStep}
+                isLastStep={isLastStep}
+                handlePrevStep={handlePrevStep}
+                handleNextStep={handleNextStep}
+                handleSubmit={handleSubmit}
+                onSubmit={onSubmit}
+              />
+            </Hidden>
+            <Box
+              sx={{
+                position: "relative",
+                [theme.breakpoints.up("md")]: { height: "496px" },
+                [theme.breakpoints.down("md")]: {
+                  height: "537px",
+                },
+              }}
+            >
+              <FormProvider {...methods}>{children}</FormProvider>
+            </Box>
+            <Hidden mdDown>
+              <FormNavigationButton
+                activeStep={activeStep}
+                isLastStep={isLastStep}
+                handlePrevStep={handlePrevStep}
+                handleNextStep={handleNextStep}
+                handleSubmit={handleSubmit}
+                onSubmit={onSubmit}
+              />
+            </Hidden>
+          </Stack>
+        </form>
+      </Container>
+    </>
   );
 }
