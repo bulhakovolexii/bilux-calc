@@ -140,13 +140,13 @@ export default function Home() {
           sx={{
             minHeight: "calc(100vh - 64px)",
             display: "flex",
-            gap: 2,
+            gap: 6,
             pb: 2,
             flexDirection: "column",
             justifyContent: "space-around",
           }}
         >
-          <Stack maxWidth={416} spacing={2}>
+          <Stack maxWidth={512} spacing={2}>
             <Typography variant="h3">Bilux CALC</Typography>
             <Typography variant="body1">
               Онлайн-калькулятор для розрахунку потенційної економії та строку
@@ -174,7 +174,7 @@ export default function Home() {
               </Button>
             </Stack>
           </Stack>
-          <Grid container spacing={2}>
+          <Grid container spacing={4}>
             <Grid item xs={12} md={6} lg={4}>
               <CustomCard
                 header="Що ви отримаєте"
