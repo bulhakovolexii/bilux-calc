@@ -8,7 +8,6 @@ const chartSetting = {
       barGapRatio: 0,
     },
   ],
-
   height: 600,
 };
 
@@ -24,12 +23,20 @@ export default function SavingsBarChart({ data }) {
 
   return (
     <BarChart
+      sx={{ py: 2, bgcolor: "rgba(255, 255, 255, 0.2)" }}
       dataset={data.map((item) => ({
         ...item,
         offset: Math.min(item.systemA, item.systemB),
         saving: item.systemA - item.systemB,
       }))}
       yAxis={[{ scaleType: "band", dataKey: "month" }]}
+      grid={{ vertical: true }}
+      slotProps={{
+        legend: {
+          direction: "column",
+          position: { vertical: "middle", horizontal: "right" },
+        },
+      }}
       series={[
         {
           dataKey: "systemB",

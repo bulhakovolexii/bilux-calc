@@ -60,7 +60,7 @@ export default function Results() {
     router.push("/")
   ) : (
     <Container maxWidth="lg">
-      <MyAppBar color="secondary" />
+      <MyAppBar color="transparent" />
       <Background maxWidth="lg" />
       <SuccessfulResult inputData={inputData} />
     </Container>
