@@ -63,8 +63,8 @@ export default function SavingsBarChart({ data }) {
       tooltipLabelFormatter={(value, { dataKey }) => {
         return dataKey !== "offset" ? value : null;
       }}
-      barLabel={(item) => {
-        if (item.seriesId === "saving" && item.value > 0) {
+      barLabel={(item, { bar }) => {
+        if (item.seriesId === "saving" && item.value !== 0 && bar.width > 36) {
           return `${calculateDifferenceInPercentage(item.dataIndex)} %`;
         }
         return null;

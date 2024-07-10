@@ -38,8 +38,6 @@ const SuccessfulResult = ({ inputData }) => {
     setBarData(results(building, biluxBuilding));
   }, [indoorTemp]);
 
-  console.log(barData);
-
   return (
     <>
       <Link href="/">На головну</Link>
