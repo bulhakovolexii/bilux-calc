@@ -148,7 +148,8 @@ const SuccessfulResult = ({ inputData }) => {
           <Box display="flex" gap={1} flexWrap="wrap">
             <Typography variant="h6">Скорочення енергоспоживання:</Typography>
             <Typography variant="h6" flexGrow={1} align="right">
-              {savings}, кВт ({numberFormatter(savingsInPercentage, 1)}%)
+              {numberFormatter(savings, 0)}, кВт (
+              {numberFormatter(savingsInPercentage, 1)}%)
             </Typography>
           </Box>
           <Divider />
