@@ -66,11 +66,8 @@ export default function SavingsBarChart({ data }) {
         },
       ]}
       layout="horizontal"
-      tooltip={{
-        enterTouchDelay: 700,
-        labelFormatter: (value, { dataKey }) => {
-          return dataKey !== "offset" ? value : null;
-        },
+      tooltipLabelFormatter={(value, { dataKey }) => {
+        return dataKey !== "offset" ? value : null;
       }}
       barLabel={(item, { bar }) => {
         if (item.seriesId === "saving" && item.value !== 0 && bar.width > 36) {
