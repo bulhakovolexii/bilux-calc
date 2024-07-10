@@ -1,7 +1,8 @@
 import { useTheme } from "@emotion/react";
 import { BarChart } from "@mui/x-charts/BarChart";
 
-const valueFormatter = (value) => `${value}, кВт·год`;
+const valueFormatter = (value) =>
+  `${value.toLocaleString("uk-UA", { useGrouping: true })}, кВт·год`;
 
 export default function SavingsBarChart({ data }) {
   const palette = useTheme().palette;
@@ -14,12 +15,8 @@ export default function SavingsBarChart({ data }) {
   return (
     <BarChart
       height={600}
-      sx={{ py: 2, bgcolor: "rgba(255, 255, 255, 0.2)" }}
-      dataset={data.map((item) => ({
-        ...item,
-        offset: Math.min(item.systemA, item.systemB),
-        saving: item.systemA - item.systemB,
-      }))}
+      sx={{ py: 2, bgcolor: "rgba(255, 255, 255, 0.5)", borderRadius: 2 }}
+      dataset={data}
       xAxis={[
         {
           label: "Енергоспоживання, кВт",
