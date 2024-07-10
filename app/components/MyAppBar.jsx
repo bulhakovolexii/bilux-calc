@@ -8,6 +8,7 @@ import {
   Container,
   Button,
   useScrollTrigger,
+  Hidden,
 } from "@mui/material";
 import Link from "next/link";
 import { cloneElement } from "react";
@@ -61,14 +62,16 @@ export default function MyAppBar({ color, elevation, ref }) {
               BILUX CALC
             </Typography>
             <Box sx={{ flexGrow: 1 }}>{/* pages */}</Box>
-            <Button
-              color="primary"
-              variant="contained"
-              target="_blob"
-              href="https://bilux.ua/dealership/"
-            >
-              Стати дилером
-            </Button>
+            <Hidden smDown>
+              <Button
+                color="primary"
+                variant="contained"
+                target="_blob"
+                href="https://bilux.ua/dealership/"
+              >
+                Стати дилером
+              </Button>
+            </Hidden>
           </Toolbar>
         </Container>
       </AppBar>

@@ -13,11 +13,13 @@ import {
   List,
   ListItem,
   Divider,
+  Icon,
 } from "@mui/material";
 
 import CustomAppBar from "./components/MyAppBar";
 import Link from "next/link";
 import { Assessment, Checklist, House } from "@mui/icons-material";
+import { cloneElement } from "react";
 
 const Background = ({ maxWidth }) => {
   return (
@@ -85,6 +87,7 @@ const CustomCard = ({ header, icon, points }) => {
   return (
     <Card elevation={24} sx={{ minHeight: "100%" }}>
       <CardHeader
+        sx={{ pb: 0 }}
         title={
           <Box
             display="flex"
@@ -93,7 +96,9 @@ const CustomCard = ({ header, icon, points }) => {
             alignItems="center"
           >
             <Box>{header}</Box>
-            <Avatar>{icon}</Avatar>
+            <Icon fontSize="large" color="primary">
+              {cloneElement(icon, { fontSize: "large" })}
+            </Icon>
           </Box>
         }
       />

@@ -74,7 +74,7 @@ const SuccessfulResult = ({ inputData }) => {
           onChange={(e) => setIndoorTemp(e.target.value)}
         />
         <span>
-          &nbsp;Встановлена потужність теплогенератора:{" "}
+          &nbsp;Встановлена потужність теплогенератора:
           {building.estimatedHeatGeneratorPower(-23).toFixed()}, кВт
         </span>
       </div>

@@ -1,6 +1,7 @@
 import { Add, ContentCopy, ContentPaste, Edit } from "@mui/icons-material";
 import {
   Autocomplete,
+  Box,
   Chip,
   Dialog,
   DialogTitle,
@@ -130,26 +131,28 @@ export default function AutocompleteWithModal({
                     {handleCopy && (
                       <ButtonGroup>
                         <Tooltip title="Копіювати">
-                          <Button
-                            size="small"
-                            sx={{ mb: "23px" }}
-                            disabled={value.length < 1}
-                            onClick={() => handleCopy(name, type)}
-                          >
-                            <ContentCopy />
-                          </Button>
+                          <Box display="flex" height="56px">
+                            <Button
+                              size="small"
+                              disabled={value.length < 1}
+                              onClick={() => handleCopy(name, type)}
+                            >
+                              <ContentCopy />
+                            </Button>
+                          </Box>
                         </Tooltip>
                         <Tooltip title="Вставити">
-                          <Button
-                            size="small"
-                            sx={{ mb: "23px" }}
-                            disabled={copiedData.type !== type}
-                            onClick={() => {
-                              handlePaste(name);
-                            }}
-                          >
-                            <ContentPaste />
-                          </Button>
+                          <Box display="flex" height="56px">
+                            <Button
+                              size="small"
+                              disabled={copiedData.type !== type}
+                              onClick={() => {
+                                handlePaste(name);
+                              }}
+                            >
+                              <ContentPaste />
+                            </Button>
+                          </Box>
                         </Tooltip>
                       </ButtonGroup>
                     )}
