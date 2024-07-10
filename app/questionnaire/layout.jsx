@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { FormProvider, useForm } from "react-hook-form";
 import { useTheme } from "@emotion/react";
-import { Box, Hidden, Stack, Toolbar, Container } from "@mui/material";
+import { Box, Hidden, Stack, Container } from "@mui/material";
 import { useInputData } from "../context/InputDataContext";
 import FormStepper from "../components/FormStepper";
 import FormMobileStepper from "../components/FormMobileStepper";
@@ -156,7 +156,6 @@ export default function QuestionnaireLayout({ children }) {
   return (
     <>
       <CustomAppBar color="secondary" />
-      <Toolbar />
       <Container maxWidth="lg" sx={{ mt: 2 }}>
         <form onSubmit={(e) => e.preventDefault()}>
           <Stack

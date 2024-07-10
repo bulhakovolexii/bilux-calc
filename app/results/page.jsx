@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useInputData } from "../context/InputDataContext";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -8,6 +7,8 @@ import Building from "../model/Building";
 import monthlyDurationIntervals from "../model/reference-data/monthlyDurationIntervals";
 import SavingsBarChart from "../components/SavingsBarChart";
 import { Container } from "@mui/material";
+import Background from "../components/Background";
+import MyAppBar from "../components/MyAppBar";
 
 const biluxSystem = {
   heatGenerator:
@@ -40,13 +41,14 @@ const SuccessfulResult = ({ inputData }) => {
 
   return (
     <>
-      <Link href="/">На головну</Link>
+      <SavingsBarChart data={barData} />
+      <label id="temp">Кімнатна температура: </label>
       <input
         type="number"
+        id="temp"
         value={indoorTemp}
         onChange={(e) => setIndoorTemp(+e.target.value)}
       />
-      <SavingsBarChart data={barData} />
     </>
   );
 };
@@ -58,6 +60,8 @@ export default function Results() {
     router.push("/")
   ) : (
     <Container maxWidth="lg">
+      <MyAppBar color="secondary" />
+      <Background maxWidth="lg" />
       <SuccessfulResult inputData={inputData} />
     </Container>
   );
