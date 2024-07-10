@@ -1,16 +1,6 @@
 import { useTheme } from "@emotion/react";
 import { BarChart } from "@mui/x-charts/BarChart";
 
-const chartSetting = {
-  xAxis: [
-    {
-      label: "Енергоспоживання (кВт)",
-      barGapRatio: 0,
-    },
-  ],
-  height: 600,
-};
-
 const valueFormatter = (value) => `${value}, кВт·год`;
 
 export default function SavingsBarChart({ data }) {
@@ -23,13 +13,26 @@ export default function SavingsBarChart({ data }) {
 
   return (
     <BarChart
+      height={600}
       sx={{ py: 2, bgcolor: "rgba(255, 255, 255, 0.2)" }}
       dataset={data.map((item) => ({
         ...item,
         offset: Math.min(item.systemA, item.systemB),
         saving: item.systemA - item.systemB,
       }))}
-      yAxis={[{ scaleType: "band", dataKey: "month" }]}
+      xAxis={[
+        {
+          label: "Енергоспоживання, кВт",
+        },
+      ]}
+      yAxis={[
+        {
+          scaleType: "band",
+          dataKey: "month",
+          categoryGapRatio: 0,
+          barGapRatio: 0,
+        },
+      ]}
       grid={{ vertical: true }}
       slotProps={{
         legend: {
@@ -46,7 +49,6 @@ export default function SavingsBarChart({ data }) {
         },
         {
           dataKey: "offset",
-
           stack: "difference",
           color: "transparent",
           valueFormatter: () => null,
@@ -76,7 +78,6 @@ export default function SavingsBarChart({ data }) {
         }
         return null;
       }}
-      {...chartSetting}
     />
   );
 }
