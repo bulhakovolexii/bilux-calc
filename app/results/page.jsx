@@ -50,11 +50,15 @@ const SuccessfulResult = ({ inputData }) => {
   const biluxBuilding = new Building({ ...inputData, system: biluxSystem });
   const defaultTemp = building.indoorTemperature;
   const [indoorTemp, setIndoorTemp] = useState(defaultTemp);
+  const [estimatedHeatGeneratorPower, setEstimatedHeatGeneratorPower] =
+    useState(building.estimatedHeatGeneratorPower(-23));
   const [barData, setBarData] = useState(results(building, biluxBuilding));
+
   useEffect(() => {
     building.setIndoorTemperature(indoorTemp);
     biluxBuilding.setIndoorTemperature(indoorTemp);
     setBarData(results(building, biluxBuilding));
+    setEstimatedHeatGeneratorPower(building.estimatedHeatGeneratorPower(-23));
     console.log(indoorTemp);
   }, [indoorTemp]);
 
@@ -122,8 +126,7 @@ const SuccessfulResult = ({ inputData }) => {
               Розрахункова потужність системи:
             </Typography>
             <Typography variant="h6" flexGrow={1} align="right">
-              {numberFormatter(building.estimatedHeatGeneratorPower(-23), 2)},
-              кВт
+              {numberFormatter(estimatedHeatGeneratorPower, 2)}, кВт
             </Typography>
           </Box>
           <Divider />
