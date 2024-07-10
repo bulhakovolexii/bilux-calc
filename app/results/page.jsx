@@ -59,7 +59,6 @@ const SuccessfulResult = ({ inputData }) => {
     biluxBuilding.setIndoorTemperature(indoorTemp);
     setBarData(results(building, biluxBuilding));
     setEstimatedHeatGeneratorPower(building.estimatedHeatGeneratorPower(-23));
-    console.log(indoorTemp);
   }, [indoorTemp]);
 
   const annualSystemA = barData.reduce((sum, month) => sum + month.systemA, 0);
