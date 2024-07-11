@@ -5,37 +5,37 @@ const heatingDevices = [
     heatingDevices: [
       {
         type: "Радіатори",
-        subtype: "встановлені біля внутрішньої стіни",
+        subtype: "Встановлені біля внутрішньої стіни",
         verticalTemperatureProfileEfficiency: 0.87,
       },
       {
         type: "Радіатори",
-        subtype: "встановлені біля зовнішньої стіни",
+        subtype: "Встановлені біля зовнішньої стіни",
         verticalTemperatureProfileEfficiency: 0.95,
       },
       {
         type: "Радіатори",
-        subtype: "встановлені під вікном без радіаційного захисту",
+        subtype: "Встановлені під вікном без радіаційного захисту",
         verticalTemperatureProfileEfficiency: 0.83,
       },
       {
         type: "Радіатори",
-        subtype: "встановлені під вікном з радіаційним захистом",
+        subtype: "Встановлені під вікном з радіаційним захистом",
         verticalTemperatureProfileEfficiency: 0.88,
       },
       {
         type: "Теплі підлоги",
-        subtype: "з вологою підлогою",
+        subtype: "З вологою підлогою",
         verticalTemperatureProfileEfficiency: 0.955,
       },
       {
         type: "Теплі підлоги",
-        subtype: "з сухою підлогою",
+        subtype: "З сухою підлогою",
         verticalTemperatureProfileEfficiency: 0.965,
       },
       {
         type: "Теплі підлоги",
-        subtype: "з сухою підлогою та незначним покриттям",
+        subtype: "З сухою підлогою та незначним покриттям",
         verticalTemperatureProfileEfficiency: 0.94,
       },
       {
@@ -51,22 +51,22 @@ const heatingDevices = [
       { type: "Радіатори", verticalTemperatureProfileEfficiency: 0.98 },
       {
         type: "Тепловентилятори без додаткової вертикальної рециркуляції",
-        subtype: "горизонтальне витікання",
+        subtype: "Горизонтальне витікання",
         verticalTemperatureProfileEfficiency: 0.98,
       },
       {
         type: "Тепловентилятори з додатковою вертикальною рециркуляцією",
-        subtype: "вертикальне витікання",
+        subtype: "Вертикальне витікання",
         verticalTemperatureProfileEfficiency: 0.99,
       },
       {
         type: "Тепловентилятори без додаткової вертикальної рециркуляції",
-        subtype: "горизонтальне витікання",
+        subtype: "Горизонтальне витікання",
         verticalTemperatureProfileEfficiency: 0.99,
       },
       {
         type: "Тепловентилятори без додаткової вертикальної рециркуляції",
-        subtype: "вертикальне витікання",
+        subtype: "Вертикальне витікання",
         verticalTemperatureProfileEfficiency: 0.99,
       },
       {
@@ -83,12 +83,12 @@ const heatingDevices = [
       { type: "Радіатори", verticalTemperatureProfileEfficiency: 0.94 },
       {
         type: "Тепловентилятори без додаткової вертикальної рециркуляції",
-        subtype: "горизонтальне витікання",
+        subtype: "Горизонтальне витікання",
         verticalTemperatureProfileEfficiency: 0.94,
       },
       {
         type: "Тепловентилятори з додатковою вертикальною рециркуляцією",
-        subtype: "вертикальне витікання",
+        subtype: "Вертикальне витікання",
         verticalTemperatureProfileEfficiency: 0.96,
       },
       {
@@ -98,7 +98,7 @@ const heatingDevices = [
       },
       {
         type: "Тепловентилятори без додаткової вертикальної рециркуляції",
-        subtype: "вертикальне витікання",
+        subtype: "Вертикальне витікання",
         verticalTemperatureProfileEfficiency: 0.98,
       },
       {
@@ -115,22 +115,22 @@ const heatingDevices = [
       { type: "Радіатори", verticalTemperatureProfileEfficiency: 0.88 },
       {
         type: "Тепловентилятори без додаткової вертикальної рециркуляції",
-        subtype: "горизонтальне витікання",
+        subtype: "Горизонтальне витікання",
         verticalTemperatureProfileEfficiency: 0.88,
       },
       {
         type: "Тепловентилятори з додатковою вертикальною рециркуляцією",
-        subtype: "вертикальне витікання",
+        subtype: "Вертикальне витікання",
         verticalTemperatureProfileEfficiency: 0.91,
       },
       {
         type: "Тепловентилятори без додаткової вертикальної рециркуляції",
-        subtype: "горизонтальне витікання",
+        subtype: "Горизонтальне витікання",
         verticalTemperatureProfileEfficiency: 0.94,
       },
       {
         type: "Тепловентилятори без додаткової вертикальної рециркуляції",
-        subtype: "вертикальне витікання",
+        subtype: "Вертикальне витікання",
         verticalTemperatureProfileEfficiency: 0.96,
       },
       {
@@ -147,22 +147,22 @@ const heatingDevices = [
       { type: "Радіатори", verticalTemperatureProfileEfficiency: 0.83 },
       {
         type: "Тепловентилятори без додаткової вертикальної рециркуляції",
-        subtype: "горизонтальне витікання",
+        subtype: "Горизонтальне витікання",
         verticalTemperatureProfileEfficiency: 0.83,
       },
       {
         type: "Тепловентилятори з додатковою вертикальною рециркуляцією",
-        subtype: "вертикальне витікання",
+        subtype: "Вертикальне витікання",
         verticalTemperatureProfileEfficiency: 0.87,
       },
       {
         type: "Тепловентилятори без додаткової вертикальної рециркуляції",
-        subtype: "горизонтальне витікання",
+        subtype: "Горизонтальне витікання",
         verticalTemperatureProfileEfficiency: 0.91,
       },
       {
         type: "Тепловентилятори без додаткової вертикальної рециркуляції",
-        subtype: "вертикальне витікання",
+        subtype: "Вертикальне витікання",
         verticalTemperatureProfileEfficiency: 0.93,
       },
       {
@@ -178,22 +178,22 @@ const heatingDevices = [
     heatingDevices: [
       {
         type: "Тепловентилятори без додаткової вертикальної рециркуляції",
-        subtype: "горизонтальне витікання",
+        subtype: "Горизонтальне витікання",
         verticalTemperatureProfileEfficiency: 0.78,
       },
       {
         type: "Тепловентилятори з додатковою вертикальною рециркуляцією",
-        subtype: "вертикальне витікання",
+        subtype: "Вертикальне витікання",
         verticalTemperatureProfileEfficiency: 0.84,
       },
       {
         type: "Тепловентилятори без додаткової вертикальної рециркуляції",
-        subtype: "горизонтальне витікання",
+        subtype: "Горизонтальне витікання",
         verticalTemperatureProfileEfficiency: 0.88,
       },
       {
         type: "Тепловентилятори без додаткової вертикальної рециркуляції",
-        subtype: "вертикальне витікання",
+        subtype: "Вертикальне витікання",
         verticalTemperatureProfileEfficiency: 0.91,
       },
       {
@@ -209,22 +209,22 @@ const heatingDevices = [
     heatingDevices: [
       {
         type: "Тепловентилятори без додаткової вертикальної рециркуляції",
-        subtype: "горизонтальне витікання",
+        subtype: "Горизонтальне витікання",
         verticalTemperatureProfileEfficiency: 0.72,
       },
       {
         type: "Тепловентилятори з додатковою вертикальною рециркуляцією",
-        subtype: "вертикальне витікання",
+        subtype: "Вертикальне витікання",
         verticalTemperatureProfileEfficiency: 0.78,
       },
       {
         type: "Тепловентилятори без додаткової вертикальної рециркуляції",
-        subtype: "горизонтальне витікання",
+        subtype: "Горизонтальне витікання",
         verticalTemperatureProfileEfficiency: 0.84,
       },
       {
         type: "Тепловентилятори без додаткової вертикальної рециркуляції",
-        subtype: "вертикальне витікання",
+        subtype: "Вертикальне витікання",
         verticalTemperatureProfileEfficiency: 0.88,
       },
       {
@@ -240,22 +240,22 @@ const heatingDevices = [
     heatingDevices: [
       {
         type: "Тепловентилятори без додаткової вертикальної рециркуляції",
-        subtype: "горизонтальне витікання",
+        subtype: "Горизонтальне витікання",
         verticalTemperatureProfileEfficiency: 0.63,
       },
       {
         type: "Тепловентилятори з додатковою вертикальною рециркуляцією",
-        subtype: "вертикальне витікання",
+        subtype: "Вертикальне витікання",
         verticalTemperatureProfileEfficiency: 0.71,
       },
       {
         type: "Тепловентилятори без додаткової вертикальної рециркуляції",
-        subtype: "горизонтальне витікання",
+        subtype: "Горизонтальне витікання",
         verticalTemperatureProfileEfficiency: 0.77,
       },
       {
         type: "Тепловентилятори без додаткової вертикальної рециркуляції",
-        subtype: "вертикальне витікання",
+        subtype: "Вертикальне витікання",
         verticalTemperatureProfileEfficiency: 0.83,
       },
       {
