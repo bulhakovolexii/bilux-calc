@@ -78,7 +78,13 @@ const resourceTypes = [
     defaultRate: 4.32,
     rate: 4.23,
   },
-  { type: "Солома", calorificValue: 4.3, units: "кг", defaultRate: 0.48, rate: 0.48 },
+  {
+    type: "Солома",
+    calorificValue: 4.3,
+    units: "кг",
+    defaultRate: 0.48,
+    rate: 0.48,
+  },
   {
     type: "Деревина",
     calorificValue: 3.9,
