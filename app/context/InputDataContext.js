@@ -13,7 +13,7 @@ export const InputDataProvider = ({ children }) => {
       { direction: "south" },
       { direction: "west" },
     ],
-    // ...testInputData,
+    ...testInputData,
   });
 
   const updateInputData = (newValue) => {
