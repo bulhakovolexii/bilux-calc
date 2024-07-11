@@ -495,7 +495,7 @@ const testInputData = {
     // Step 7
     heatingDevices: {
       type: "Радіатори",
-      subtype: "встановлені під вікном без радіаційного захисту",
+      subtype: "Встановлені під вікном без радіаційного захисту",
     },
     controlType: "Відсутнє",
   },
