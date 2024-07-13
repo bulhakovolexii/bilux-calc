@@ -37,7 +37,7 @@ const steps = [
       "buildingWidth",
       "buildingLength",
       "floorHeight",
-      "numbersOfFloors",
+      "numberOfFloors",
     ],
   },
   {
