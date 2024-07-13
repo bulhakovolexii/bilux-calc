@@ -15,6 +15,7 @@ import Step7 from "@/app/components/steps/Step7";
 import Info1 from "@/app/components/instructions/Info1";
 import Info2 from "@/app/components/instructions/Info2";
 import Info3 from "@/app/components/instructions/Info3";
+import Info4 from "@/app/components/instructions/Info4";
 
 const Step = (stepNumber) => {
   switch (stepNumber) {
@@ -45,8 +46,8 @@ const Info = (stepNumber) => {
       return <Info2 />;
     case 3:
       return <Info3 />;
-    // case 4:
-    //   return <Info4 />;
+    case 4:
+      return <Info4 />;
     // case 5:
     //   return <Info5 />;
     // case 6:
