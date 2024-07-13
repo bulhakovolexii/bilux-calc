@@ -19,6 +19,7 @@ import Link from "next/link";
 import { Assessment, Checklist, House } from "@mui/icons-material";
 import { cloneElement } from "react";
 import Background from "./components/Background";
+import Footer from "./components/Footer";
 
 const CustomCard = ({ header, icon, points }) => {
   return (
@@ -74,7 +75,6 @@ const points3 = [
 export default function Home() {
   return (
     <Box>
-      <Background maxWidth="lg" />
       <CustomAppBar color="transparent" />
       <Container maxWidth="lg">
         <Box
@@ -82,12 +82,18 @@ export default function Home() {
             minHeight: "calc(100vh - 64px)",
             display: "flex",
             gap: 6,
+            pt: 6,
             pb: 2,
             flexDirection: "column",
             justifyContent: "space-around",
           }}
         >
-          <Stack maxWidth={512} spacing={2}>
+          <Stack
+            maxWidth={512}
+            spacing={2}
+            flexGrow={1}
+            justifyContent="center"
+          >
             <Typography variant="h3">Bilux CALC</Typography>
             <Typography variant="body1">
               Онлайн-калькулятор для розрахунку потенційної економії та строку
@@ -115,7 +121,7 @@ export default function Home() {
               </Button>
             </Stack>
           </Stack>
-          <Grid container spacing={4}>
+          <Grid container spacing={4} flexGrow={1} alignItems="center">
             <Grid item xs={12} md={6} lg={4}>
               <CustomCard
                 header="Що ви отримаєте"
@@ -138,6 +144,7 @@ export default function Home() {
               />
             </Grid>
           </Grid>
+          <Footer />
         </Box>
       </Container>
     </Box>

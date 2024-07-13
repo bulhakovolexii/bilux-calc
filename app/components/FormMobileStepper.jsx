@@ -27,7 +27,7 @@ export default function FormMobileStepper({
       steps={steps.length}
       activeStep={activeStep}
       position="static"
-      sx={{ p: 0 }}
+      sx={{ p: 0, bgcolor: "transparent" }}
       backButton={
         <Button
           size="small"

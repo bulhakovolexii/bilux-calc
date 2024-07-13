@@ -12,6 +12,7 @@ import FormNavigationButton from "../components/FormNavigationButton";
 import Building from "../model/Building";
 import monthlyDurationIntervals from "../model/reference-data/monthlyDurationIntervals";
 import CustomAppBar from "../components/MyAppBar";
+import Background from "../components/Background";
 
 const steps = [
   {
@@ -156,7 +157,14 @@ export default function QuestionnaireLayout({ children }) {
   return (
     <>
       <CustomAppBar color="secondary" />
-      <Container maxWidth="lg" sx={{ mt: 2 }}>
+      <Container
+        maxWidth="lg"
+        sx={{
+          mt: { md: 2 },
+          bgcolor: "rgba(255,255,255,0.8)",
+          borderRadius: 1,
+        }}
+      >
         <form onSubmit={(e) => e.preventDefault()}>
           <Stack
             spacing={2}

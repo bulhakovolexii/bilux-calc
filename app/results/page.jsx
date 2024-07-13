@@ -305,7 +305,6 @@ export default function Results() {
   ) : (
     <Container maxWidth="lg">
       <MyAppBar color="transparent" />
-      <Background maxWidth="lg" />
       <SuccessfulResult inputData={inputData} />
     </Container>
   );
