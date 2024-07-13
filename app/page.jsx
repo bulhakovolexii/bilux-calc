@@ -57,19 +57,20 @@ const CustomCard = ({ header, icon, points }) => {
 };
 
 const points1 = [
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec felis arcu.",
-  "Donec consequat lobortis quam, sed maximus magna fringilla ac.",
-  "Aliquam auctor egestas lacus eget molestie.",
+  "Для розрахунку необхідно мати дані про геометричні характеристики будівлі",
+  "Інформацію про тип і склад багатошарових огороджуючих конструкцій (підлога, дах, стіни)",
+  "Тип і розміри віконних та дверних прорізів",
+  "Тип і склад системи опалення",
 ];
 const points2 = [
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec felis arcu.",
-  "Donec consequat lobortis quam, sed maximus magna fringilla ac.",
-  "Aliquam auctor egestas lacus eget molestie.",
+  "Вхідні дані приймають за допомогою інтерактивного опитувального листа",
+  "Загальна кількість кроків – 7",
+  "Приблизний час заповнення 15 хвилин",
 ];
 const points3 = [
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec felis arcu.",
-  "Donec consequat lobortis quam, sed maximus magna fringilla ac.",
-  "Aliquam auctor egestas lacus eget molestie.",
+  "Розрахунок енергопотреби і енергоспоживання будівлі, визначені за методикою наближеної до державного стандарту ДСТУ 9190",
+  "Необхідна потужність довгохвильових інфрачервоних обігрівачів BILUX",
+  "Потенційна економія порівняно з вашою системою опалення, з врахуванням різниці тарифів",
 ];
 
 export default function Home() {
@@ -120,29 +121,31 @@ export default function Home() {
               </Button>
             </Stack>
           </Stack>
-          <Grid container spacing={4} flexGrow={1} alignItems="center">
-            <Grid item xs={12} md={6} lg={4}>
-              <CustomCard
-                header="Що ви отримаєте"
-                icon={<Assessment />}
-                points={points1}
-              />
+          <Box flexGrow={1} alignItems="center">
+            <Grid container spacing={4}>
+              <Grid item xs={12} md={6} lg={4}>
+                <CustomCard
+                  icon={<House />}
+                  header="Перед початком"
+                  points={points1}
+                />
+              </Grid>
+              <Grid item xs={12} md={6} lg={4}>
+                <CustomCard
+                  header="Опитувальний лист"
+                  icon={<Checklist />}
+                  points={points2}
+                />
+              </Grid>
+              <Grid item xs={12} md={12} lg={4}>
+                <CustomCard
+                  header="Що ви отримаєте"
+                  icon={<Assessment />}
+                  points={points3}
+                />
+              </Grid>
             </Grid>
-            <Grid item xs={12} md={6} lg={4}>
-              <CustomCard
-                header="Перед початком"
-                icon={<House />}
-                points={points2}
-              />
-            </Grid>
-            <Grid item xs={12} md={12} lg={4}>
-              <CustomCard
-                header="Опитувальний лист"
-                icon={<Checklist />}
-                points={points3}
-              />
-            </Grid>
-          </Grid>
+          </Box>
         </Box>
       </Container>
       <Footer />
