@@ -1,4 +1,4 @@
-import { Box, Typography, Stack, Alert } from "@mui/material";
+import { Box, Typography, Stack } from "@mui/material";
 import Image from "next/image";
 
 export default function Info4() {

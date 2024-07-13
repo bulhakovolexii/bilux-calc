@@ -57,19 +57,19 @@ const CustomCard = ({ header, icon, points }) => {
 };
 
 const points1 = [
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec felis arcu. Etiam vitae lacus sapien. Maecenas id libero facilisis, tempus turpis id, maximus nunc.",
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec felis arcu.",
   "Donec consequat lobortis quam, sed maximus magna fringilla ac.",
-  "Aliquam auctor egestas lacus eget molestie. Sed ut est et metus venenatis vulputate. Vestibulum ac diam ex.",
+  "Aliquam auctor egestas lacus eget molestie.",
 ];
 const points2 = [
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec felis arcu. Etiam vitae lacus sapien. Maecenas id libero facilisis, tempus turpis id, maximus nunc.",
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec felis arcu.",
   "Donec consequat lobortis quam, sed maximus magna fringilla ac.",
-  "Aliquam auctor egestas lacus eget molestie. Sed ut est et metus venenatis vulputate. Vestibulum ac diam ex.",
+  "Aliquam auctor egestas lacus eget molestie.",
 ];
 const points3 = [
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec felis arcu. Etiam vitae lacus sapien. Maecenas id libero facilisis, tempus turpis id, maximus nunc.",
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec felis arcu.",
   "Donec consequat lobortis quam, sed maximus magna fringilla ac.",
-  "Aliquam auctor egestas lacus eget molestie. Sed ut est et metus venenatis vulputate. Vestibulum ac diam ex.",
+  "Aliquam auctor egestas lacus eget molestie.",
 ];
 
 export default function Home() {

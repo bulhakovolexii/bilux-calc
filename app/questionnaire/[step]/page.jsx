@@ -16,6 +16,9 @@ import Info1 from "@/app/components/instructions/Info1";
 import Info2 from "@/app/components/instructions/Info2";
 import Info3 from "@/app/components/instructions/Info3";
 import Info4 from "@/app/components/instructions/Info4";
+import Info5 from "@/app/components/instructions/Info5";
+import Info7 from "@/app/components/instructions/Info7";
+import Info6 from "@/app/components/instructions/Info6";
 
 const Step = (stepNumber) => {
   switch (stepNumber) {
@@ -48,12 +51,12 @@ const Info = (stepNumber) => {
       return <Info3 />;
     case 4:
       return <Info4 />;
-    // case 5:
-    //   return <Info5 />;
-    // case 6:
-    //   return <Info6 />;
-    // case 7:
-    //   return <Info7 />;
+    case 5:
+      return <Info5 />;
+    case 6:
+      return <Info6 />;
+    case 7:
+      return <Info7 />;
     default:
       return <>Info component not found</>;
   }
