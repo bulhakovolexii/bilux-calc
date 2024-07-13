@@ -79,11 +79,10 @@ export default function Home() {
       <Container maxWidth="lg">
         <Box
           sx={{
-            minHeight: "calc(100vh - 64px - 51px)",
+            minHeight: "calc(100vh - 128px)",
             display: "flex",
             gap: 6,
-            pt: 6,
-            pb: 2,
+            py: 6,
             flexDirection: "column",
             justifyContent: "space-around",
           }}

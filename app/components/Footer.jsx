@@ -9,6 +9,7 @@ export default function Footer() {
         justifyContent="center"
         gap={1}
         flexWrap="wrap"
+        sx={{ pb: "5.5px" }}
       >
         <Box display="flex" flexGrow={1} alignItems="center" gap={1}>
           <Typography noWrap>Розроблено за підтримки:</Typography>
@@ -16,7 +17,7 @@ export default function Footer() {
             flexGrow={1}
             display="flex"
             gap={1}
-            sx={{ justifyContent: { xs: "end", sm: "start" } }}
+            sx={{ justifyContent: { xs: "end", sm: "center", md: "start" } }}
           >
             <Tooltip title='Кафедра електричних станцій НТУ "ХПІ"'>
               <Link
