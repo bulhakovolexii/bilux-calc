@@ -12,7 +12,7 @@ export default function Footer() {
         sx={{ pb: "5.5px" }}
       >
         <Box display="flex" flexGrow={1} alignItems="center" gap={1}>
-          <Typography noWrap>Розроблено за підтримки:</Typography>
+          <Typography>Розроблено за підтримки:</Typography>
           <Box
             flexGrow={1}
             display="flex"
