@@ -79,7 +79,7 @@ export default function Home() {
       <Container maxWidth="lg">
         <Box
           sx={{
-            minHeight: "calc(100vh - 64px)",
+            minHeight: "calc(100vh - 64px - 51px)",
             display: "flex",
             gap: 6,
             pt: 6,
@@ -144,9 +144,9 @@ export default function Home() {
               />
             </Grid>
           </Grid>
-          <Footer />
         </Box>
       </Container>
+      <Footer />
     </Box>
   );
 }
