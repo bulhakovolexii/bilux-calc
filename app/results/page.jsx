@@ -202,6 +202,14 @@ const SuccessfulResult = ({ inputData }) => {
   return (
     <Grid container spacing={2} mt={1}>
       <Grid item xs={12} md={6} spacing={2}>
+        <Button
+          href="/questionnaire/step-7"
+          color="primary"
+          variant="contained"
+          sx={{ mb: 2 }}
+        >
+          Назад
+        </Button>
         <Stack spacing={2}>
           <Typography variant="h4" mt={2}>
             Результати розрахунку
