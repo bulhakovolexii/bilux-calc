@@ -1,13 +1,23 @@
+$yellow-000: #f4e982;
+$yellow-100: #efdf4f;
+$yellow-200: #eab842;
+$yellow-300: #df7c28;
+
+$green-000: #8fc58f;
+$green-100: #62ad5f;
+$green-200: #4d8c4b;
+$green-300: #305c2e;
+
 // Default dark scheme
 $color-scheme: dark;
 $body-background-color: $grey-dk-300;
 $body-heading-color: $grey-lt-000;
 $body-text-color: $grey-lt-300;
-$link-color: $blue-000;
+$link-color: $yellow-200;
 $nav-child-link-color: $grey-dk-000;
 $sidebar-color: $grey-dk-300;
 $base-button-color: $grey-dk-250;
-$btn-primary-color: $blue-200;
+$btn-primary-color: $yellow-200;
 $code-background-color: #31343f; // OneDarkJekyll default for syntax-one-dark-vivid
 $code-linenumber-color: #dee2f7; // OneDarkJekyll .nf for syntax-one-dark-vivid
 $feedback-color: darken($sidebar-color, 3%);
@@ -21,5 +31,4 @@ $border-color: $grey-dk-200;
 // Custom variables for callouts in dark scheme
 $purple-300: #7b5af8;
 $blue-300: #347efd;
-$green-300: #009d77;
 $red-300: #f87171;

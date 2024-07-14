@@ -1,0 +1,27 @@
+$yellow-000: #f4e982;
+$yellow-100: #efdf4f;
+$yellow-200: #eab842;
+$yellow-300: #df7c28;
+
+$green-000: #8fc58f;
+$green-100: #62ad5f;
+$green-200: #4d8c4b;
+$green-300: #305c2e;
+
+// Default light scheme
+$color-scheme: light !default;
+$body-background-color: $white !default;
+$body-heading-color: $grey-dk-300 !default;
+$body-text-color: $grey-dk-100 !default;
+$link-color: $green-000 !default;
+$nav-child-link-color: $grey-dk-100 !default;
+$sidebar-color: $grey-lt-000 !default;
+$base-button-color: #f7f7f7 !default;
+$btn-primary-color: $green-100 !default;
+$code-background-color: $grey-lt-000 !default;
+$feedback-color: darken($sidebar-color, 3%) !default;
+$table-background-color: $white !default;
+$search-background-color: $white !default;
+$search-result-preview-color: $grey-dk-000 !default;
+
+@import "./vendor/OneLightJekyll/syntax";
