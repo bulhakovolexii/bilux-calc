@@ -17,8 +17,9 @@ import {
   Button,
   TextField,
 } from "@mui/material";
-import Background from "../components/Background";
 import MyAppBar from "../components/MyAppBar";
+import UnsavedChangesWarning from "../components/UnsavedChangesWarning";
+import Link from "next/link";
 
 const biluxSystem = {
   heatGenerator:
@@ -203,6 +204,7 @@ const SuccessfulResult = ({ inputData }) => {
     <Grid container spacing={2} mt={1}>
       <Grid item xs={12} md={6} spacing={2}>
         <Button
+          LinkComponent={Link}
           href="/questionnaire/step-7"
           color="primary"
           variant="contained"
@@ -311,9 +313,12 @@ export default function Results() {
   return !inputData.city ? (
     router.push("/")
   ) : (
-    <Container maxWidth="lg">
-      <MyAppBar color="transparent" />
-      <SuccessfulResult inputData={inputData} />
-    </Container>
+    <>
+      <UnsavedChangesWarning />
+      <Container maxWidth="lg">
+        <MyAppBar color="transparent" />
+        <SuccessfulResult inputData={inputData} />
+      </Container>
+    </>
   );
 }

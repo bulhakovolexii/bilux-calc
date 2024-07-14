@@ -12,7 +12,7 @@ import FormNavigationButton from "../components/FormNavigationButton";
 import Building from "../model/Building";
 import monthlyDurationIntervals from "../model/reference-data/monthlyDurationIntervals";
 import CustomAppBar from "../components/MyAppBar";
-import Background from "../components/Background";
+import UnsavedChangesWarning from "../components/UnsavedChangesWarning";
 
 const steps = [
   {
@@ -156,6 +156,7 @@ export default function QuestionnaireLayout({ children }) {
 
   return (
     <>
+      <UnsavedChangesWarning />
       <CustomAppBar color="secondary" />
       <Container
         maxWidth="lg"
