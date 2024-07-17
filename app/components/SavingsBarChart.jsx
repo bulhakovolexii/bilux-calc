@@ -19,7 +19,7 @@ export default function SavingsBarChart({ data }) {
       dataset={data}
       xAxis={[
         {
-          label: "Енергоспоживання, кВт",
+          label: "Енергоспоживання, кВт·год",
         },
       ]}
       yAxis={[
