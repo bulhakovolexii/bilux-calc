@@ -345,7 +345,6 @@ export default class Building {
 
   // Безрозмірне співвідношення надходжень і втрат теплоти
   heatGainLossRatio(month) {
-    console.log();
     return this.totalHeatLosses(month) !== 0
       ? this.totalHeatGains(month) / this.totalHeatLosses(month)
       : Number.MAX_SAFE_INTEGER;

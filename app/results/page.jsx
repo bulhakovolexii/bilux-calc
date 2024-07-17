@@ -20,6 +20,7 @@ import {
 import MyAppBar from "../components/MyAppBar";
 import UnsavedChangesWarning from "../components/UnsavedChangesWarning";
 import Link from "next/link";
+import { Controller, useForm } from "react-hook-form";
 
 const biluxSystem = {
   heatGenerator:
@@ -118,6 +119,7 @@ const SuccessfulResult = ({ inputData }) => {
   const [electricity, setElectricity] = useState(
     resourceTypes.find((resource) => resource.type === "Електроенергія")
   );
+  const { control } = useForm({ mode: "onChange" });
 
   useEffect(() => {
     building.setIndoorTemperature(indoorTemp);
@@ -256,36 +258,82 @@ const SuccessfulResult = ({ inputData }) => {
             <Typography>Ціна енергоресурсу</Typography>
             <Stack direction="row" spacing={2}>
               {userResource.type !== "Електроенергія" && (
-                <TextField
-                  fullWidth
-                  type="number"
-                  inputProps={{ min: 0.01, step: 0.01 }}
-                  label={userResource.type}
-                  InputProps={{
-                    endAdornment: (
-                      <Typography variant="caption">
-                        грн/{userResource.units}
-                      </Typography>
-                    ),
+                <Controller
+                  name="userResource"
+                  rules={{
+                    required: "Введіть вартість енергоресурсу",
+                    min: {
+                      value: "0.1",
+                      message: "Вартість повинна бути більше нуля",
+                    },
                   }}
-                  variant="filled"
-                  value={userResource.rate}
-                  onChange={(e) => handleChangeUserResource(e.target.value)}
+                  control={control}
+                  render={({
+                    field: { value, onChange },
+                    fieldState: { error },
+                  }) => (
+                    <TextField
+                      fullWidth
+                      type="number"
+                      inputProps={{ min: 0.01, step: 0.01 }}
+                      label={userResource.type}
+                      InputProps={{
+                        endAdornment: (
+                          <Typography variant="caption">
+                            грн/{userResource.units}
+                          </Typography>
+                        ),
+                      }}
+                      variant="filled"
+                      defaultValue={userResource.rate}
+                      value={value}
+                      onChange={(e) => {
+                        onChange(e.target.value);
+                        handleChangeUserResource(e.target.value);
+                      }}
+                      error={!!error}
+                      helperText={error?.message || " "}
+                    />
+                  )}
                 />
               )}
-              <TextField
-                fullWidth
-                type="number"
-                inputProps={{ min: 0.01, step: 0.01 }}
-                label="Електроенергія"
-                InputProps={{
-                  endAdornment: (
-                    <Typography variant="caption">грн/кВт·год</Typography>
-                  ),
+              <Controller
+                name="electricity"
+                rules={{
+                  required: "Введіть вартість електроенергії",
+                  min: {
+                    value: "0.1",
+                    message: "Вартість повинна бути більше нуля",
+                  },
                 }}
-                variant="filled"
-                value={electricity.rate}
-                onChange={(e) => handleChangeElectricity(e.target.value)}
+                control={control}
+                render={({
+                  field: { value, onChange },
+                  fieldState: { error },
+                }) => (
+                  <TextField
+                    fullWidth
+                    type="number"
+                    inputProps={{ min: 0.01, step: 0.01 }}
+                    label={electricity.type}
+                    InputProps={{
+                      endAdornment: (
+                        <Typography variant="caption">
+                          грн/{electricity.units}
+                        </Typography>
+                      ),
+                    }}
+                    variant="filled"
+                    defaultValue={electricity.rate}
+                    value={value}
+                    onChange={(e) => {
+                      onChange(e.target.value);
+                      handleChangeElectricity(e.target.value);
+                    }}
+                    error={!!error}
+                    helperText={error?.message || " "}
+                  />
+                )}
               />
             </Stack>
           </Box>
