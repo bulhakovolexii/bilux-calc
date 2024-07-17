@@ -30,7 +30,7 @@ const testInputData = {
   },
   // Step 4.2
   floor: {
-    type: "Технічне підпілля",
+    type: "Підлога над підвалом",
     layers: [
       {
         id: 1,

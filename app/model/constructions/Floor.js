@@ -151,7 +151,7 @@ export default class Floor {
       (sum, layer) => sum + layer.thermalResistance(),
       0
     );
-    if (this.type === "Технічне підпілля") {
+    if (this.type === "Підлога над підвалом") {
       return (
         1 / Floor.EXTERNAL_HEAT_EMISSION_COEFFICIENT +
         thermalResistance +
