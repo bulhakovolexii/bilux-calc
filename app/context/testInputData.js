@@ -6,7 +6,7 @@ const testInputData = {
   purpose: "Багатоквартирні будинки, гуртожитки",
   heatCapacityClass: "Середній",
   airPermeabilityClass: "Герметична",
-  constructionType: "Утеплені мінераловатними матеріалами в задовільному стані",
+  constructionType: "Утеплені мінераловатними матеріалами",
   // Step 3,
   buildingWidth: "44.295",
   buildingLength: "14.495",
