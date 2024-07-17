@@ -692,5 +692,23 @@ const windows = [
     thermalResistance: 1.14,
     solarEnergyTransmittanceCoefficient: 0.5,
   },
+  {
+    variant: "Подвійне скління в деревʼяних спарених плетіннях",
+    numberOfCameras: 1,
+    air: 1,
+    krypton: 0,
+    argon: 0,
+    thermalResistance: 0.39,
+    solarEnergyTransmittanceCoefficient: 0.75,
+  },
+  {
+    variant: "Потрійне скління в деревʼяних роздільно-спарених плетіннях",
+    numberOfCameras: 2,
+    air: 1,
+    krypton: 0,
+    argon: 0,
+    thermalResistance: 0.55,
+    solarEnergyTransmittanceCoefficient: 0.67,
+  },
 ];
 export default windows;

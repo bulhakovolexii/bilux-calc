@@ -118,13 +118,13 @@ export default function Step2() {
         name="constructionType"
         control={control}
         rules={{
-          required: "Оберіть тип і стан стін",
+          required: "Оберіть тип зовнішніх стін",
         }}
         render={({ field, fieldState: { error } }) => {
           const { onChange, value, ref } = field;
           return (
             <FormControl error={!!error} variant="filled">
-              <InputLabel>Тип і стан стін</InputLabel>
+              <InputLabel>Тип зовнішніх стін</InputLabel>
               <Select
                 value={value || ""}
                 onChange={(event) => onChange(event.target.value)}

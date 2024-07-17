@@ -401,7 +401,7 @@ export default class Building {
 
   // Тепловтрати трубопроводів в неопалюваних обʼємах
   nonRecoverableHeatLosses(month) {
-    if (this.floor.type === "Технічне підпілля") {
+    if (this.floor.type === "Підлога над підвалом") {
       return this.distributionSubsystemHeatLosses(
         this.pipesLength().sectionV,
         this.heatCarrierTemperature(month),
@@ -425,7 +425,7 @@ export default class Building {
         month
       );
     };
-    if (this.floor.type !== "Технічне підпілля") {
+    if (this.floor.type !== "Підлога над підвалом") {
       const pipes = ["sectionV", "sectionS", "sectionA"];
       return pipes.reduce((sum, pipe) => sum + losses(pipe), 0); // Тепловтрати підсистеми розподілення (для всіх труб)
     } else {

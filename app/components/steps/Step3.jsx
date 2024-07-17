@@ -33,7 +33,8 @@ export default function Step3() {
               label="Ширина"
               error={!!error}
               helperText={
-                error?.message || "Проекція північного/південного фасаду"
+                error?.message ||
+                "Проекція північного/південного фасаду (в межах внутрішніх поверхонь)"
               }
             />
           );
@@ -63,7 +64,8 @@ export default function Step3() {
               label="Довжина"
               error={!!error}
               helperText={
-                error?.message || "Проекція східного/західного фасаду"
+                error?.message ||
+                "Проекція східного/західного фасаду  (в межах внутрішніх поверхонь)"
               }
             />
           );

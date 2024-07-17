@@ -53,7 +53,9 @@ export default function Step1() {
                   variant="filled"
                   inputRef={ref}
                   error={!!error}
-                  helperText={error?.message || " "}
+                  helperText={
+                    error?.message || "Або найближчий до вас населений пункт"
+                  }
                 />
               )}
             />
