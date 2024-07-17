@@ -232,7 +232,7 @@ const SuccessfulResult = ({ inputData }) => {
               Розрахункове енергоспоживання користувацької системи:
             </Typography>
             <Typography variant="h6" flexGrow={1} align="right">
-              {numberFormatter(annualSystemA)}, кВт
+              {numberFormatter(annualSystemA)}, кВт·год
             </Typography>
           </Box>
           <Divider />
@@ -241,14 +241,14 @@ const SuccessfulResult = ({ inputData }) => {
               Розрахункове енергоспоживання системи BILUX:
             </Typography>
             <Typography variant="h6" flexGrow={1} align="right">
-              {numberFormatter(annualSystemB)}, кВт
+              {numberFormatter(annualSystemB)}, кВт·год
             </Typography>
           </Box>
           <Divider />
           <Box display="flex" gap={1} flexWrap="wrap">
             <Typography variant="h6">Скорочення енергоспоживання:</Typography>
             <Typography variant="h6" flexGrow={1} align="right">
-              {numberFormatter(savings, 0)}, кВт (
+              {numberFormatter(savings, 0)}, кВт·год (
               {numberFormatter(savingsInPercentage, 1)}%)
             </Typography>
           </Box>
