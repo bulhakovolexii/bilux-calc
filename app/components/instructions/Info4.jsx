@@ -21,12 +21,21 @@ export default function Info4() {
         <Typography align="center">1.3 Тепле горище</Typography>
         <Typography variant="h5">2. Варіанти конструкцій підлоги</Typography>
         <Image
+          src="/non-heated-basement.svg"
+          width={550}
+          height={550}
+          layout="responsive"
+        />
+        <Typography align="center">
+          2.1 Підлога над неопалюваним підпіллям
+        </Typography>
+        <Image
           src="/ground-floor.svg"
           width={550}
           height={550}
           layout="responsive"
         />
-        <Typography align="center">2.1 Підлога на ґрунті</Typography>
+        <Typography align="center">2.2 Підлога на ґрунті</Typography>
         <Image
           src="/heated-basement.svg"
           width={550}
@@ -34,7 +43,7 @@ export default function Info4() {
           layout="responsive"
         />
         <Typography align="center">
-          2.2 Опалюваний підвал (Цокольний поверх)
+          2.3 Опалюваний підвал (Цокольний поверх)
         </Typography>
       </Stack>
     </Box>
