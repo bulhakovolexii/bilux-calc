@@ -10,10 +10,6 @@ import {
   Box,
   Stack,
   Divider,
-  Dialog,
-  DialogTitle,
-  DialogActions,
-  DialogContent,
   Grid,
   Container,
   Typography,
@@ -26,6 +22,7 @@ import UnsavedChangesWarning from "../components/UnsavedChangesWarning";
 import Link from "next/link";
 import { Controller, useForm } from "react-hook-form";
 import EmailForm from "../components/EmailForm";
+import { PdfPreview } from "../components/PdfReport";
 
 const biluxSystem = {
   heatGenerator:
@@ -377,6 +374,7 @@ const SuccessfulResult = ({ inputData }) => {
         </Typography>
         <SavingsBarChart data={barData} />
       </Grid>
+      {/* <PdfPreview inputData={inputData} barData={barData} /> */}
     </Grid>
   );
 };
