@@ -10,6 +10,10 @@ import {
   Box,
   Stack,
   Divider,
+  Dialog,
+  DialogTitle,
+  DialogActions,
+  DialogContent,
   Grid,
   Container,
   Typography,
@@ -21,6 +25,7 @@ import MyAppBar from "../components/MyAppBar";
 import UnsavedChangesWarning from "../components/UnsavedChangesWarning";
 import Link from "next/link";
 import { Controller, useForm } from "react-hook-form";
+import EmailForm from "../components/EmailForm";
 
 const biluxSystem = {
   heatGenerator:
@@ -120,6 +125,7 @@ const SuccessfulResult = ({ inputData }) => {
     resourceTypes.find((resource) => resource.type === "Електроенергія")
   );
   const { control } = useForm({ mode: "onChange" });
+  const [openForm, setOpenForm] = useState(false);
 
   useEffect(() => {
     building.setIndoorTemperature(indoorTemp);
@@ -127,6 +133,10 @@ const SuccessfulResult = ({ inputData }) => {
     setBarData(results(building, biluxBuilding));
     setEstimatedHeatGeneratorPower(getEstimatedPower(building));
   }, [indoorTemp]);
+
+  const handleOpenForm = () => {
+    setOpenForm(!openForm);
+  };
 
   const annualSystemA = barData.reduce((sum, month) => sum + month.systemA, 0);
   const annualSystemB = barData.reduce((sum, month) => sum + month.systemB, 0);
@@ -204,7 +214,13 @@ const SuccessfulResult = ({ inputData }) => {
 
   return (
     <Grid container spacing={2} mt={1}>
-      <Grid item xs={12} md={6} spacing={2}>
+      <EmailForm
+        openForm={openForm}
+        handleOpenForm={handleOpenForm}
+        inputData={inputData}
+        barData={barData}
+      />
+      <Grid item xs={12} display="flex" justifyContent="space-between">
         <Button
           LinkComponent={Link}
           href="/questionnaire/step-7"
@@ -214,6 +230,16 @@ const SuccessfulResult = ({ inputData }) => {
         >
           Назад
         </Button>
+        <Button
+          color="primary"
+          variant="contained"
+          sx={{ mb: 2 }}
+          onClick={handleOpenForm}
+        >
+          Повний звіт
+        </Button>
+      </Grid>
+      <Grid item xs={12} md={6} spacing={2}>
         <Stack spacing={2}>
           <Typography variant="h4" mt={2}>
             Результати розрахунку
