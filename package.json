@@ -17,6 +17,7 @@
     "@mui/material-nextjs": "^5.15.11",
     "@mui/x-charts": "^7.9.0",
     "@react-pdf/renderer": "^3.4.4",
+    "html-to-image": "^1.11.11",
     "mui-tree-select": "^1.0.0-beta.11",
     "next": "^14.1.4",
     "react": "^18.2.0",
