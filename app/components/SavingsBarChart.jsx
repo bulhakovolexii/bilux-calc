@@ -1,12 +1,26 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import { useTheme } from "@emotion/react";
 import { BarChart } from "@mui/x-charts/BarChart";
-import { Box } from "@mui/material";
+import { toPng } from "html-to-image";
 
 const valueFormatter = (value) =>
   `${value.toLocaleString("uk-UA", { useGrouping: true })}, кВт·год`;
 
-export default function SavingsBarChart({ data }) {
+export default function SavingsBarChart({ data, onImageGenerated, height }) {
   const palette = useTheme().palette;
+  const chartRef = useRef();
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (chartRef.current) {
+        toPng(chartRef.current).then((dataUrl) => {
+          onImageGenerated ? onImageGenerated(dataUrl) : null;
+        });
+      }
+    }, 1000);
+  }, []);
 
   const calculateDifferenceInPercentage = (index) => {
     const item = data[index];
@@ -14,9 +28,9 @@ export default function SavingsBarChart({ data }) {
   };
 
   return (
-    <Box>
+    <div ref={chartRef}>
       <BarChart
-        height={600}
+        height={height}
         sx={{ py: 2, bgcolor: "rgba(255, 255, 255, 0.5)", borderRadius: 2 }}
         dataset={data}
         xAxis={[
@@ -82,6 +96,6 @@ export default function SavingsBarChart({ data }) {
           return null;
         }}
       />
-    </Box>
+    </div>
   );
 }

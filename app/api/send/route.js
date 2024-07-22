@@ -3,9 +3,9 @@ import { Resend } from "resend";
 import { renderToBuffer } from "@react-pdf/renderer";
 import { PdfReport } from "../../components/PdfReport";
 
-export async function generatePdf(inputData, barData) {
+export async function generatePdf(inputData, img) {
   const pdfBuffer = await renderToBuffer(
-    <PdfReport inputData={inputData} barData={barData} />
+    <PdfReport inputData={inputData} img={img} />
   );
   return pdfBuffer;
 }
@@ -13,10 +13,10 @@ export async function generatePdf(inputData, barData) {
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req, res) {
-  const { email, inputData, barData } = await req.json();
+  const { email, inputData, img } = await req.json();
 
   try {
-    const pdfBuffer = await generatePdf(inputData, barData);
+    const pdfBuffer = await generatePdf(inputData, img);
     const { data, error } = await resend.emails.send({
       from: "Bilux-CALC <results@bulhakov.dev>",
       to: [email],

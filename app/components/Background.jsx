@@ -4,6 +4,7 @@ const Background = ({ maxWidth }) => {
   return (
     <Box
       sx={{
+        bgcolor: "#fff",
         position: "fixed",
         overflow: "hidden",
         height: "100vh",

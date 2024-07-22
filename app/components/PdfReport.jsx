@@ -7,6 +7,7 @@ import {
   StyleSheet,
   PDFViewer,
   Font,
+  Image,
 } from "@react-pdf/renderer";
 
 Font.register({
@@ -28,21 +29,25 @@ const styles = StyleSheet.create({
   },
 });
 
-const PdfReport = ({ inputData, barData }) => (
+const PdfReport = ({ inputData, img }) => (
   <Document>
     <Page style={styles.page}>
       <View style={styles.section}>
-        <Text style={styles.text}>{JSON.stringify(inputData)}</Text>
-        <Text style={styles.text}>{JSON.stringify(barData)}</Text>
+        {/* <Text style={styles.text}>{JSON.stringify(inputData)}</Text> */}
+      </View>
+      <View>
+        <Image style={styles.barChart} src={img} />
       </View>
     </Page>
   </Document>
 );
 
-const PdfPreview = ({ inputData, barData }) => (
-  <PDFViewer width="100%" height="900px">
-    <PdfReport inputData={inputData} barData={barData} />
-  </PDFViewer>
-);
+const PdfPreview = ({ inputData, img }) => {
+  return (
+    <PDFViewer width="100%" height="900px">
+      <PdfReport inputData={inputData} img={img} />
+    </PDFViewer>
+  );
+};
 
 export { PdfReport, PdfPreview };
