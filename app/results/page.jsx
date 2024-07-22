@@ -187,6 +187,26 @@ const SuccessfulResult = ({ inputData }) => {
     setIndoorTemp(defaultTemp);
   };
 
+  const PdfChart = ({ barData, setImg }) => {
+    return (
+      <div
+        style={{
+          width: "1100px",
+          position: "absolute",
+          top: 0,
+          left: 0,
+          zIndex: "-3",
+        }}
+      >
+        <SavingsBarChart
+          data={barData}
+          onImageGenerated={setImg}
+          height={800}
+        />
+      </div>
+    );
+  };
+
   const TempSlider = () => {
     return (
       <Box>
@@ -211,7 +231,13 @@ const SuccessfulResult = ({ inputData }) => {
   };
 
   return (
-    <Grid container spacing={2} mt={1}>
+    <Grid
+      container
+      spacing={2}
+      mt={1}
+      sx={{ position: "relative", maxWidth: "100vw", overflowX: "hidden" }}
+    >
+      <PdfChart barData={barData} setImg={setImg} />
       <EmailForm
         openForm={openForm}
         handleOpenForm={handleOpenForm}
@@ -374,21 +400,6 @@ const SuccessfulResult = ({ inputData }) => {
           Розподіл витрат по місяцям
         </Typography>
         <SavingsBarChart data={barData} height={600} />
-        <div
-          style={{
-            width: "1100px",
-            position: "absolute",
-            top: 0,
-            left: 0,
-            zIndex: "-3",
-          }}
-        >
-          <SavingsBarChart
-            data={barData}
-            onImageGenerated={setImg}
-            height={800}
-          />
-        </div>
       </Grid>
       {/* {img && <PdfPreview inputData={inputData} img={img} />} */}
     </Grid>

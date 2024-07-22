@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
           `}
         </Script>
       </head>
-      <body style={{ overflowX: "hidden" }}>
+      <body>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <CssBaseline />
