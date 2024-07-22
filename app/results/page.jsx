@@ -123,6 +123,7 @@ const SuccessfulResult = ({ inputData }) => {
   );
   const { control } = useForm({ mode: "onChange" });
   const [openForm, setOpenForm] = useState(false);
+  const [img, setImg] = useState();
 
   useEffect(() => {
     building.setIndoorTemperature(indoorTemp);
@@ -215,7 +216,7 @@ const SuccessfulResult = ({ inputData }) => {
         openForm={openForm}
         handleOpenForm={handleOpenForm}
         inputData={inputData}
-        barData={barData}
+        img={img}
       />
       <Grid item xs={12} display="flex" justifyContent="space-between">
         <Button
@@ -372,9 +373,24 @@ const SuccessfulResult = ({ inputData }) => {
         <Typography variant="h4" mb={2}>
           Розподіл витрат по місяцям
         </Typography>
-        <SavingsBarChart data={barData} />
+        <SavingsBarChart data={barData} height={600} />
+        <div
+          style={{
+            width: "1100px",
+            position: "absolute",
+            top: 0,
+            left: 0,
+            zIndex: "-3",
+          }}
+        >
+          <SavingsBarChart
+            data={barData}
+            onImageGenerated={setImg}
+            height={800}
+          />
+        </div>
       </Grid>
-      {/* <PdfPreview inputData={inputData} barData={barData} /> */}
+      {/* {img && <PdfPreview inputData={inputData} img={img} />} */}
     </Grid>
   );
 };

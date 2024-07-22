@@ -12,7 +12,12 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 
-export default function ({ openForm, handleOpenForm, inputData, barData }) {
+export default function EmailForm({
+  openForm,
+  handleOpenForm,
+  inputData,
+  img,
+}) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState({ ok: null, message: "" });
 
@@ -25,7 +30,7 @@ export default function ({ openForm, handleOpenForm, inputData, barData }) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, inputData, barData }),
+        body: JSON.stringify({ email, inputData, img }),
       });
 
       if (response.ok) {
