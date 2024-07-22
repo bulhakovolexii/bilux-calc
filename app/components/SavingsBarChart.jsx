@@ -19,7 +19,7 @@ export default function SavingsBarChart({ data, onImageGenerated, height }) {
           onImageGenerated ? onImageGenerated(dataUrl) : null;
         });
       }
-    }, 1000);
+    }, 3000);
   }, []);
 
   const calculateDifferenceInPercentage = (index) => {
