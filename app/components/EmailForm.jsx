@@ -17,6 +17,7 @@ export default function EmailForm({
   handleOpenForm,
   inputData,
   img,
+  results,
 }) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState({ ok: null, message: "" });
@@ -30,7 +31,7 @@ export default function EmailForm({
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, inputData, img }),
+        body: JSON.stringify({ email, inputData, img, results }),
       });
 
       if (response.ok) {
@@ -47,7 +48,7 @@ export default function EmailForm({
     <Dialog open={openForm} onClose={handleOpenForm}>
       <form onSubmit={handleSubmit}>
         <DialogTitle>Отримати повний звіт</DialogTitle>
-        <DialogContent sx={{ minWidth: 500 }}>
+        <DialogContent sx={{ maxWidth: 500 }}>
           <Stack spacing={2}>
             <Typography>
               Ми відправимо вам результати розрахунку на вказану поштову адресу.

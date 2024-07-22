@@ -235,7 +235,7 @@ const SuccessfulResult = ({ inputData }) => {
       container
       spacing={2}
       mt={1}
-      sx={{ position: "relative", maxWidth: "100vw", overflowX: "hidden" }}
+      sx={{ position: "relative", maxWidth: "100vw", overflow: "hidden" }}
     >
       <PdfChart barData={barData} setImg={setImg} />
       <EmailForm
@@ -243,6 +243,17 @@ const SuccessfulResult = ({ inputData }) => {
         handleOpenForm={handleOpenForm}
         inputData={inputData}
         img={img}
+        results={{
+          indoorTemp,
+          estimatedHeatGeneratorPower,
+          annualSystemA,
+          annualSystemB,
+          savings,
+          savingsInPercentage,
+          userResource,
+          electricity,
+          economy: calculateEconomy(),
+        }}
       />
       <Grid item xs={12} display="flex" justifyContent="space-between">
         <Button
@@ -401,7 +412,23 @@ const SuccessfulResult = ({ inputData }) => {
         </Typography>
         <SavingsBarChart data={barData} height={600} />
       </Grid>
-      {/* {img && <PdfPreview inputData={inputData} img={img} />} */}
+      {/* {img && (
+        <PdfPreview
+          inputData={inputData}
+          img={img}
+          results={{
+            indoorTemp,
+            estimatedHeatGeneratorPower,
+            annualSystemA,
+            annualSystemB,
+            savings,
+            savingsInPercentage,
+            userResource,
+            electricity,
+            economy: calculateEconomy(),
+          }}
+        />
+      )} */}
     </Grid>
   );
 };
@@ -414,7 +441,7 @@ export default function Results() {
   ) : (
     <>
       <UnsavedChangesWarning />
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" sx={{ mb: 2 }}>
         <MyAppBar color="transparent" />
         <SuccessfulResult inputData={inputData} />
       </Container>
