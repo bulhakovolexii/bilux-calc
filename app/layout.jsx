@@ -5,6 +5,12 @@ import theme from "./theme";
 import Script from "next/script";
 import Background from "./components/Background";
 
+export const metadata = {
+  title: "Bilux-CALC",
+  description:
+    "Онлайн-калькулятор для розрахунку потенційної економії та строку окупності системи стельового променевого опалення. Введіть параметри приміщення та поточної системи опалення і отримайте оцінку витрат та строку окупності для переходу на інноваційне опалювання «Білюкс».",
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="uk">
