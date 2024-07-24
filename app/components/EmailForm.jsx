@@ -9,7 +9,9 @@ import {
   Button,
   Typography,
   TextField,
+  CircularProgress,
 } from "@mui/material";
+import { LoadingButton } from "@mui/lab";
 import { useState } from "react";
 
 export default function EmailForm({
@@ -24,6 +26,7 @@ export default function EmailForm({
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setStatus("pending");
 
     try {
       const response = await fetch("/api/send", {
@@ -70,9 +73,13 @@ export default function EmailForm({
         </DialogContent>
         <DialogActions>
           <Button onClick={handleOpenForm}>Назад</Button>
-          <Button type="submit" disabled={status?.ok}>
-            Відправити
-          </Button>
+          <LoadingButton
+            type="submit"
+            loading={status === "pending"}
+            disabled={status?.ok}
+          >
+            {status.ok ? "Відправлено" : "Відправити"}
+          </LoadingButton>
         </DialogActions>
       </form>
     </Dialog>
