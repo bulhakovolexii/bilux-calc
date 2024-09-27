@@ -63,7 +63,7 @@ export default function Footer() {
             </Tooltip>
           </Box>
         </Box>
-        <Typography>Copyright © 2023-2024</Typography>
+        <Typography>Copyright © 2023-{new Date().getFullYear()}</Typography>
       </Box>
     </Container>
   );
