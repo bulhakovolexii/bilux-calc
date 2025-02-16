@@ -92,7 +92,7 @@ export default function AutocompleteWithModal({
                 onChange={(event, newValue) => {
                   onChange(newValue ? newValue : null);
                 }}
-                PopperComponent={() => <></>}
+                PopperComponent={() => null}
                 popupIcon={<Add />}
                 openText="Додати"
                 open={open}
