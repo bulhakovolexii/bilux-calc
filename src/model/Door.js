@@ -1,4 +1,4 @@
-import doors from "../reference-data/doors";
+import doors from "./reference-data/doors";
 
 export default class Door {
   constructor(inputData) {

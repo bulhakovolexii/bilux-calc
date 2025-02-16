@@ -17,8 +17,8 @@ import {
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import { Controller, useFormContext } from "react-hook-form";
-import AutocompleteWithModal from "../AutocompleteWithModal";
-import LayerForm from "../LayerForm";
+import AutocompleteWithModal from "@/components/AutocompleteWithModal";
+import LayerForm from "@/components/LayerForm";
 
 const ceilingTypes = [
   "Суміщене покриття",

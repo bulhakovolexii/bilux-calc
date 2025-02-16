@@ -13,11 +13,11 @@ import {
   TextField,
 } from "@mui/material";
 import { Controller, useForm } from "react-hook-form";
-import environmentTypes from "../model/reference-data/environmentTypes";
-import AutocompleteWithModal from "./AutocompleteWithModal";
-import LayerForm from "./LayerForm";
-import WindowsForm from "./WindowsForm";
-import DoorsForm from "./DoorsForm";
+import environmentTypes from "@/model/reference-data/environmentTypes";
+import AutocompleteWithModal from "@/components/AutocompleteWithModal";
+import LayerForm from "@/components/LayerForm";
+import WindowsForm from "@/components/WindowsForm";
+import DoorsForm from "@/components/DoorsForm";
 
 export default function InclusionForm({
   handleClose,

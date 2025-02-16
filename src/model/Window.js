@@ -1,4 +1,4 @@
-import windows from "../reference-data/windows";
+import windows from "./reference-data/windows";
 
 export default class Window {
   static FRAME_AREA_FRACTION = 0.3;

@@ -1,8 +1,6 @@
 "use client";
 
 import {
-  Alert,
-  AlertTitle,
   Autocomplete,
   Button,
   DialogActions,
@@ -11,9 +9,9 @@ import {
   TextField,
 } from "@mui/material";
 import { Controller, useForm } from "react-hook-form";
-import windows from "../model/reference-data/windows";
+import doors from "@/model/reference-data/doors";
 
-export default function WindowsForm({ handleClose, onSubmit, initialValue }) {
+export default function DoorsForm({ handleClose, onSubmit, initialValue }) {
   const { control, handleSubmit } = useForm({
     mode: "onChange",
     defaultValues: { ...initialValue },
@@ -69,7 +67,7 @@ export default function WindowsForm({ handleClose, onSubmit, initialValue }) {
             <Stack spacing={1} direction="row">
               <NumberInput
                 name="width"
-                rule="Введіть ширину вікна"
+                rule="Введіть ширину дверей"
                 minValue={0.01}
                 step={0.01}
                 error="Ширина повинна бути більше нуля"
@@ -78,7 +76,7 @@ export default function WindowsForm({ handleClose, onSubmit, initialValue }) {
               />
               <NumberInput
                 name="height"
-                rule="Введіть висоту вікна"
+                rule="Введіть висоту дверей"
                 minValue={0.01}
                 step={0.01}
                 error="Висота повинна бути більше нуля"
@@ -87,7 +85,7 @@ export default function WindowsForm({ handleClose, onSubmit, initialValue }) {
               />
               <NumberInput
                 name="quantity"
-                rule="Введіть кількість вікон"
+                rule="Введіть кількість дверей"
                 minValue={1}
                 step={1}
                 error="Кількість повинна бути більше нуля"
@@ -96,28 +94,28 @@ export default function WindowsForm({ handleClose, onSubmit, initialValue }) {
               />
             </Stack>
             <Controller
-              name="type"
+              name="variant"
               control={control}
               rules={{
-                required: "Оберіть тип склопакета",
+                required: "Оберіть тип дверей",
               }}
               render={({ field, fieldState: { error } }) => {
                 const { onChange, value, ref } = field;
                 return (
                   <Autocomplete
                     disableClearable
-                    options={windows}
+                    options={doors}
                     getOptionLabel={(option) =>
-                      `${option.variant} – (Повітря: ${option.air}%, Криптон: ${option.krypton}%, Аргон: ${option.argon}%), опір теплопередачі: ${option.thermalResistance}, м²·К/Вт`
+                      `${option.variant}, опір теплопередачі: ${option.thermalResistance}, м²·К/Вт`
                     }
-                    value={value}
+                    value={doors.find((door) => door.variant === value)}
                     onChange={(event, newValue) => {
-                      onChange(newValue);
+                      onChange(newValue.variant);
                     }}
                     renderInput={(params) => (
                       <TextField
                         {...params}
-                        label="Варіант склопакета"
+                        label="Тип дверей"
                         variant="filled"
                         inputRef={ref}
                         error={!!error}
@@ -136,11 +134,6 @@ export default function WindowsForm({ handleClose, onSubmit, initialValue }) {
                 );
               }}
             />
-            <Alert variant="outlined" severity="info">
-              <AlertTitle>Позначення скла</AlertTitle>
-              4М₁ — листове стандартне, К — енергозберігаюче зтвердим покриттям,
-              i — енергозберігаюче з мʼяким покриттям.
-            </Alert>
           </Stack>
         </DialogContent>
         <DialogActions>

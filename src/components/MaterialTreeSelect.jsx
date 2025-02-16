@@ -1,7 +1,7 @@
 "use client";
 
 import TreeSelect, { FreeSoloNode } from "mui-tree-select";
-import materials from "../model/reference-data/materials";
+import materials from "@/model/reference-data/materials";
 import { TextField } from "@mui/material";
 import { Controller } from "react-hook-form";
 

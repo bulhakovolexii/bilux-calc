@@ -1,11 +1,11 @@
 "use client";
 
-import { useInputData } from "../context/InputDataContext";
+import { useInputData } from "@/context/InputDataContext";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import Building from "../model/Building";
-import monthlyDurationIntervals from "../model/reference-data/monthlyDurationIntervals";
-import SavingsBarChart from "../components/SavingsBarChart";
+import Building from "@/model/Building";
+import monthlyDurationIntervals from "@/model/reference-data/monthlyDurationIntervals";
+import SavingsBarChart from "@/components/SavingsBarChart";
 import {
   Box,
   Stack,
@@ -17,12 +17,11 @@ import {
   Button,
   TextField,
 } from "@mui/material";
-import MyAppBar from "../components/MyAppBar";
-import UnsavedChangesWarning from "../components/UnsavedChangesWarning";
+import MyAppBar from "@/components/MyAppBar";
 import Link from "next/link";
 import { Controller, useForm } from "react-hook-form";
-import EmailForm from "../components/EmailForm";
-import { PdfPreview } from "../components/PdfReport";
+import EmailForm from "@/components/EmailForm";
+import useUnsavedChanges from "@/hooks/useUnsavedChanges";
 
 const biluxSystem = {
   heatGenerator:
@@ -412,35 +411,18 @@ const SuccessfulResult = ({ inputData }) => {
         </Typography>
         <SavingsBarChart data={barData} height={600} />
       </Grid>
-      {/* {img && (
-        <PdfPreview
-          inputData={inputData}
-          img={img}
-          results={{
-            indoorTemp,
-            estimatedHeatGeneratorPower,
-            annualSystemA,
-            annualSystemB,
-            savings,
-            savingsInPercentage,
-            userResource,
-            electricity,
-            economy: calculateEconomy(),
-          }}
-        />
-      )} */}
     </Grid>
   );
 };
 
 export default function Results() {
+  useUnsavedChanges();
   const router = useRouter();
   const { inputData } = useInputData();
   return !inputData.city ? (
     router.push("/")
   ) : (
     <>
-      <UnsavedChangesWarning />
       <Container maxWidth="lg" sx={{ mb: 2 }}>
         <MyAppBar color="transparent" />
         <SuccessfulResult inputData={inputData} />

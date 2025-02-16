@@ -1,8 +1,8 @@
 "use client";
 
-import heatGenerators from "@/app/model/reference-data/heatGenerators";
-import systemTypes from "@/app/model/reference-data/systemTypes";
-import temperatureGradients from "@/app/model/reference-data/temperatureGradients";
+import heatGenerators from "@/model/reference-data/heatGenerators";
+import systemTypes from "@/model/reference-data/systemTypes";
+import temperatureGradients from "@/model/reference-data/temperatureGradients";
 import {
   Autocomplete,
   FormControl,
