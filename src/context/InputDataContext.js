@@ -6,15 +6,20 @@ import testInputData from "@/mock/testInputData";
 const InputDataContext = createContext(undefined);
 
 export const InputDataProvider = ({ children }) => {
-  const [inputData, setInputData] = useState({
-    facades: [
-      { direction: "north" },
-      { direction: "east" },
-      { direction: "south" },
-      { direction: "west" },
-    ],
-    // ...testInputData,
-  });
+  const useTestData = process.env.NEXT_PUBLIC_USE_TEST_DATA === "true";
+
+  const [inputData, setInputData] = useState(
+    !useTestData
+      ? {
+          facades: [
+            { direction: "north" },
+            { direction: "east" },
+            { direction: "south" },
+            { direction: "west" },
+          ],
+        }
+      : { ...testInputData }
+  );
 
   const updateInputData = (newValue) => {
     setInputData({ ...inputData, ...newValue });
