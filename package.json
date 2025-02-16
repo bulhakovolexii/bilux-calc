@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "test -f .env.local || cp .env.example .env.local",
     "dev": "next dev",
+    "dev:test": "NEXT_PUBLIC_USE_TEST_DATA=true next dev",
+    "dev:prod": "NEXT_PUBLIC_USE_TEST_DATA=false next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
