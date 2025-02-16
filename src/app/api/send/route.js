@@ -1,7 +1,7 @@
-import EmailTemplate from "@/app/components/EmailTemplate";
+import EmailTemplate from "@/components/EmailTemplate";
 import { Resend } from "resend";
 import { renderToBuffer } from "@react-pdf/renderer";
-import { PdfReport } from "../../components/PdfReport";
+import { PdfReport } from "@/components/PdfReport";
 
 export async function generatePdf(email, inputData, img, results) {
   const pdfBuffer = await renderToBuffer(

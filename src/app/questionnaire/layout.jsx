@@ -5,14 +5,14 @@ import { useParams, useRouter } from "next/navigation";
 import { FormProvider, useForm } from "react-hook-form";
 import { useTheme } from "@emotion/react";
 import { Box, Hidden, Stack, Container } from "@mui/material";
-import { useInputData } from "../context/InputDataContext";
-import FormStepper from "../components/FormStepper";
-import FormMobileStepper from "../components/FormMobileStepper";
-import FormNavigationButton from "../components/FormNavigationButton";
-import Building from "../model/Building";
-import monthlyDurationIntervals from "../model/reference-data/monthlyDurationIntervals";
-import CustomAppBar from "../components/MyAppBar";
-import UnsavedChangesWarning from "../components/UnsavedChangesWarning";
+import { useInputData } from "@/context/InputDataContext";
+import FormStepper from "@/components/FormStepper";
+import FormMobileStepper from "@/components/FormMobileStepper";
+import FormNavigationButton from "@/components/FormNavigationButton";
+import Building from "@/model/Building";
+import monthlyDurationIntervals from "@/model/reference-data/monthlyDurationIntervals";
+import CustomAppBar from "@/components/MyAppBar";
+import useUnsavedChanges from "@/hooks/useUnsavedChanges";
 
 const steps = [
   {
@@ -86,6 +86,7 @@ const steps = [
 ];
 
 export default function QuestionnaireLayout({ children }) {
+  useUnsavedChanges();
   const router = useRouter();
   const params = useParams();
   const theme = useTheme();
@@ -156,7 +157,6 @@ export default function QuestionnaireLayout({ children }) {
 
   return (
     <>
-      <UnsavedChangesWarning />
       <CustomAppBar color="secondary" />
       <Container
         maxWidth="lg"

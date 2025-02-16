@@ -3,22 +3,22 @@
 import { useRouter } from "next/navigation";
 import { useFormContext } from "react-hook-form";
 import { Box, Slide } from "@mui/material";
-import FormInputs from "@/app/components/FormInputs";
-import FormInformation from "@/app/components/FormInformation";
-import Step1 from "@/app/components/steps/Step1";
-import Step2 from "@/app/components/steps/Step2";
-import Step3 from "@/app/components/steps/Step3";
-import Step4 from "@/app/components/steps/Step4";
-import Step5 from "@/app/components/steps/Step5";
-import Step6 from "@/app/components/steps/Step6";
-import Step7 from "@/app/components/steps/Step7";
-import Info1 from "@/app/components/instructions/Info1";
-import Info2 from "@/app/components/instructions/Info2";
-import Info3 from "@/app/components/instructions/Info3";
-import Info4 from "@/app/components/instructions/Info4";
-import Info5 from "@/app/components/instructions/Info5";
-import Info7 from "@/app/components/instructions/Info7";
-import Info6 from "@/app/components/instructions/Info6";
+import FormInputs from "@/components/FormInputs";
+import FormInformation from "@/components/FormInformation";
+import Step1 from "@/components/steps/Step1";
+import Step2 from "@/components/steps/Step2";
+import Step3 from "@/components/steps/Step3";
+import Step4 from "@/components/steps/Step4";
+import Step5 from "@/components/steps/Step5";
+import Step6 from "@/components/steps/Step6";
+import Step7 from "@/components/steps/Step7";
+import Info1 from "@/components/instructions/Info1";
+import Info2 from "@/components/instructions/Info2";
+import Info3 from "@/components/instructions/Info3";
+import Info4 from "@/components/instructions/Info4";
+import Info5 from "@/components/instructions/Info5";
+import Info7 from "@/components/instructions/Info7";
+import Info6 from "@/components/instructions/Info6";
 
 const Step = (stepNumber) => {
   switch (stepNumber) {

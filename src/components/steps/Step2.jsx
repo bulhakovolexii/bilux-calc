@@ -1,9 +1,9 @@
 "use client";
 
-import airPermeabilityClasses from "@/app/model/reference-data/airPermeabilityClasses";
-import constructionTypes from "@/app/model/reference-data/constructionTypes";
-import heatCapacityClasses from "@/app/model/reference-data/heatCapacityClasses";
-import purposes from "@/app/model/reference-data/purposes";
+import airPermeabilityClasses from "@/model/reference-data/airPermeabilityClasses";
+import constructionTypes from "@/model/reference-data/constructionTypes";
+import heatCapacityClasses from "@/model/reference-data/heatCapacityClasses";
+import purposes from "@/model/reference-data/purposes";
 import {
   FormControl,
   FormHelperText,

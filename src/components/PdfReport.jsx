@@ -11,7 +11,7 @@ import {
   Path,
   Text,
 } from "@react-pdf/renderer";
-import materials from "../model/reference-data/materials";
+import materials from "@/model/reference-data/materials";
 
 Font.register({
   family: "Roboto",

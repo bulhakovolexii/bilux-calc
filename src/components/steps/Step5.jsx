@@ -10,12 +10,12 @@ import {
 } from "@mui/icons-material";
 import { Box, Stack, Tab, Tabs, Typography, Zoom } from "@mui/material";
 import { useEffect, useState } from "react";
-import AutocompleteWithModal from "../AutocompleteWithModal";
-import LayerForm from "../LayerForm";
-import WindowsForm from "../WindowsForm";
+import AutocompleteWithModal from "@/components/AutocompleteWithModal";
+import LayerForm from "@/components/LayerForm";
+import WindowsForm from "@/components/WindowsForm";
 import { useFormContext } from "react-hook-form";
-import InclusionForm from "../InclustionForm";
-import DoorsForm from "../DoorsForm";
+import InclusionForm from "@/components/InclustionForm";
+import DoorsForm from "@/components/DoorsForm";
 
 const directions = ["north", "east", "south", "west"];
 

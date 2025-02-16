@@ -2,11 +2,11 @@
 
 import { useEffect } from "react";
 
-const UnsavedChangesWarning = () => {
+const useUnsavedChanges = () => {
   useEffect(() => {
     const handleBeforeUnload = (event) => {
       event.preventDefault();
-      event.returnValue = ""; // Современные браузеры требуют, чтобы значение было пустой строкой
+      event.returnValue = ""; // Modern browsers require the value to be an empty string
     };
 
     window.addEventListener("beforeunload", handleBeforeUnload);
@@ -15,8 +15,6 @@ const UnsavedChangesWarning = () => {
       window.removeEventListener("beforeunload", handleBeforeUnload);
     };
   }, []);
-
-  return null;
 };
 
-export default UnsavedChangesWarning;
+export default useUnsavedChanges;

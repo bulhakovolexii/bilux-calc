@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useState } from "react";
-import testInputData from "./testInputData";
+import testInputData from "@/mock/testInputData";
 
 const InputDataContext = createContext(undefined);
 
@@ -13,7 +13,7 @@ export const InputDataProvider = ({ children }) => {
       { direction: "south" },
       { direction: "west" },
     ],
-    ...testInputData,
+    // ...testInputData,
   });
 
   const updateInputData = (newValue) => {

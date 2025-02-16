@@ -1,9 +1,9 @@
-import { InputDataProvider } from "@/app/context/InputDataContext";
+import { InputDataProvider } from "@/context/InputDataContext";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import { CssBaseline, ThemeProvider } from "@mui/material";
-import theme from "./theme";
+import theme from "@/app/theme";
 import Script from "next/script";
-import Background from "./components/Background";
+import Background from "@/components/Background";
 
 export const metadata = {
   title: "Bilux-CALC",

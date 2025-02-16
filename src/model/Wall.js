@@ -1,9 +1,9 @@
 import Window from "./Window";
 import Door from "./Door";
 import Layer from "./Layer";
-import environmentTypes from "../reference-data/environmentTypes";
-import windSpeedCoefficients from "../reference-data/windSpeedCoefficients";
-import airPermeabilityClasses from "../reference-data/airPermeabilityClasses";
+import environmentTypes from "./reference-data/environmentTypes";
+import windSpeedCoefficients from "./reference-data/windSpeedCoefficients";
+import airPermeabilityClasses from "./reference-data/airPermeabilityClasses";
 
 export default class Wall {
   static INTERNAL_HEAT_EMISSION_COEFFICIENT = 8.7;

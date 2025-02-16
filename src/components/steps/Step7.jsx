@@ -1,7 +1,7 @@
 "use client";
 
-import controlTypes from "@/app/model/reference-data/controlTypes";
-import heatingDevices from "@/app/model/reference-data/heatingDevices";
+import controlTypes from "@/model/reference-data/controlTypes";
+import heatingDevices from "@/model/reference-data/heatingDevices";
 import {
   FormControl,
   FormHelperText,

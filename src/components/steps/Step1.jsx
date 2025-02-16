@@ -1,6 +1,6 @@
 "use client";
 
-import citiesClimateData from "@/app/model/reference-data/citiesClimateData";
+import citiesClimateData from "@/model/reference-data/citiesClimateData";
 import {
   Autocomplete,
   FormControl,

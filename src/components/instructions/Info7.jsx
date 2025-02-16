@@ -1,4 +1,4 @@
-import { Box, Typography, Stack, List, ListItem, Alert } from "@mui/material";
+import { Box, Typography, List, ListItem, Alert } from "@mui/material";
 
 export default function Info7() {
   return (
