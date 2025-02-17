@@ -160,6 +160,7 @@ export default function AutocompleteWithModal({
                 )}
               />
               <Dialog
+                closeAfterTransition={false}
                 open={open}
                 onClose={handleClose}
                 TransitionProps={{ onExited: handleExited }}
