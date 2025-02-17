@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { InputDataProvider } from "@/context/InputDataContext";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import { CssBaseline, ThemeProvider } from "@mui/material";
@@ -45,19 +46,6 @@ export default function RootLayout({ children }) {
         <meta name="application-name" content="Bilux-CALC" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#fefefe" />
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-N1RH5HL6QP"
-        ></Script>
-        <Script id="google-analytics">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-N1RH5HL6QP');
-          `}
-        </Script>
       </head>
       <body>
         <AppRouterCacheProvider>
@@ -70,6 +58,7 @@ export default function RootLayout({ children }) {
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
+      <GoogleAnalytics gaId="G-N1RH5HL6QP" />
     </html>
   );
 }

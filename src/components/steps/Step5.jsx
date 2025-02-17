@@ -57,7 +57,7 @@ export default function Step5() {
     setTab(newTab);
   };
 
-  const DirectionTab = (direction) => {
+  const DirectionTab = (direction, key) => {
     const ukDirections = ["Пн", "Cх", "Пд", "Зх"];
     const rows = [
       <ArrowUpward />,
@@ -67,6 +67,7 @@ export default function Step5() {
     ];
     return (
       <CustomTab
+        key={key}
         label={ukDirections[directions.indexOf(direction)]}
         value={direction}
         sx={{ minHeight: "42px" }}
@@ -94,10 +95,10 @@ export default function Step5() {
     clearErrors(name);
   };
 
-  const StepFields = (direction) => {
+  const StepFields = (direction, key) => {
     const directionIndex = directions.indexOf(direction);
     return (
-      <Box hidden={tab !== direction}>
+      <Box hidden={tab !== direction} key={key}>
         <AutocompleteWithModal
           type="layer"
           handleCopy={handleCopy}
@@ -173,9 +174,11 @@ export default function Step5() {
         variant="fullWidth"
         sx={{ borderBottom: 1, borderColor: "divider" }}
       >
-        {directions.map((direction) => DirectionTab(direction))}
+        {directions.map((direction) =>
+          DirectionTab(direction, `tab-key-${direction}`)
+        )}
       </Tabs>
-      {directions.map((direction) => StepFields(direction))}
+      {directions.map((direction) => StepFields(direction, `key-${direction}`))}
     </Stack>
   );
 }

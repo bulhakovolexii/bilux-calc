@@ -47,7 +47,11 @@ export default function EmailForm({
     }
   };
   return (
-    <Dialog open={openForm} onClose={handleOpenForm}>
+    <Dialog
+      open={openForm}
+      onClose={handleOpenForm}
+      closeAfterTransition={false}
+    >
       <form onSubmit={handleSubmit}>
         <DialogTitle>Отримати повний звіт</DialogTitle>
         <DialogContent sx={{ maxWidth: 500 }}>
