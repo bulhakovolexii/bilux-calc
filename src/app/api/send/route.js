@@ -1,4 +1,4 @@
-import EmailTemplate from "@/components/EmailTemplate";
+import EmailTemplate from "@/components/forms/EmailTemplate";
 import { Resend } from "resend";
 import { renderToBuffer } from "@react-pdf/renderer";
 import { PdfReport } from "@/components/PdfReport";

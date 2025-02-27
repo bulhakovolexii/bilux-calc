@@ -3,8 +3,8 @@
 import { useRouter } from "next/navigation";
 import { useFormContext } from "react-hook-form";
 import { Box, Slide } from "@mui/material";
-import FormInputs from "@/components/FormInputs";
-import FormInformation from "@/components/FormInformation";
+import FormInputs from "@/components/FieldsWrapper";
+import FormInformation from "@/components/InformationWrapper";
 import Step1 from "@/components/steps/Step1";
 import Step2 from "@/components/steps/Step2";
 import Step3 from "@/components/steps/Step3";

@@ -13,10 +13,10 @@ import {
 } from "@mui/material";
 import { Controller, useForm } from "react-hook-form";
 import environmentTypes from "@/model/reference-data/environmentTypes";
-import AutocompleteWithModal from "@/components/AutocompleteWithModal";
-import LayerForm from "@/components/LayerForm";
-import WindowsForm from "@/components/WindowsForm";
-import DoorsForm from "@/components/DoorsForm";
+import AutocompleteWithModal from "@/components/forms/AutocompleteWithModal";
+import LayerForm from "@/components/forms/Layer";
+import WindowsForm from "@/components/forms/Windows";
+import DoorsForm from "@/components/forms/Doors";
 import DimensionsField from "./InclusionDimensionFlied";
 
 export default function InclusionForm({

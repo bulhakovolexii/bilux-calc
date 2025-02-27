@@ -8,7 +8,7 @@ import {
   TextField,
 } from "@mui/material";
 import { Controller, useForm } from "react-hook-form";
-import MaterialTreeSelect from "@/components/TreeSelect";
+import MaterialTreeSelect from "@/components/forms/TreeSelect";
 
 export default function LayerForm({ handleClose, onSubmit, initialValue }) {
   const { control, handleSubmit } = useForm({

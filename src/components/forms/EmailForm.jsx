@@ -21,11 +21,15 @@ export default function EmailForm({
   results,
 }) {
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState({ ok: null, message: "" });
+  const [status, setStatus] = useState({
+    ok: null,
+    message: "",
+    pending: false,
+  });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus("pending");
+    setStatus({ ok: null, message: "", pending: true });
 
     try {
       const response = await fetch("/api/send", {
@@ -78,7 +82,7 @@ export default function EmailForm({
           <Button onClick={handleOpenForm}>Назад</Button>
           <LoadingButton
             type="submit"
-            loading={status === "pending"}
+            loading={status.pending}
             disabled={status?.ok}
           >
             {status.ok ? "Відправлено" : "Відправити"}
