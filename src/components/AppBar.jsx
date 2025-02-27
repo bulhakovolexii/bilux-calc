@@ -1,7 +1,7 @@
 "use client";
 
 import {
-  AppBar,
+  AppBar as MuiAppBar,
   Toolbar,
   Typography,
   Box,
@@ -34,11 +34,11 @@ function ElevationScroll(props) {
   }
 }
 
-export default function MyAppBar({ color, elevation, ref }) {
+export default function AppBar({ color, elevation, ref }) {
   return (
     <>
       <ElevationScroll color={color}>
-        <AppBar color={color} elevation={elevation}>
+        <MuiAppBar color={color} elevation={elevation}>
           <Container maxWidth="xl">
             <Toolbar disableGutters ref={ref}>
               <Box
@@ -75,7 +75,7 @@ export default function MyAppBar({ color, elevation, ref }) {
               </Hidden>
             </Toolbar>
           </Container>
-        </AppBar>
+        </MuiAppBar>
       </ElevationScroll>
       <Toolbar />
     </>

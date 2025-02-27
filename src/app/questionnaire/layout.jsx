@@ -11,7 +11,7 @@ import FormMobileStepper from "@/components/FormMobileStepper";
 import FormNavigationButton from "@/components/FormNavigationButton";
 import Building from "@/model/Building";
 import monthlyDurationIntervals from "@/model/reference-data/monthlyDurationIntervals";
-import CustomAppBar from "@/components/MyAppBar";
+import CustomAppBar from "@/components/AppBar";
 import useUnsavedChanges from "@/hooks/useUnsavedChanges";
 
 const steps = [

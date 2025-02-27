@@ -17,7 +17,7 @@ import {
   Button,
   TextField,
 } from "@mui/material";
-import MyAppBar from "@/components/MyAppBar";
+import AppBar from "@/components/AppBar";
 import Link from "next/link";
 import { Controller, useForm } from "react-hook-form";
 import EmailForm from "@/components/EmailForm";
@@ -425,7 +425,7 @@ export default function Results() {
   ) : (
     <>
       <Container maxWidth="lg" sx={{ mb: 2 }}>
-        <MyAppBar color="transparent" />
+        <AppBar color="transparent" />
         <SuccessfulResult inputData={inputData} />
       </Container>
     </>
