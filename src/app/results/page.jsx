@@ -20,7 +20,7 @@ import {
 import AppBar from "@/components/AppBar";
 import Link from "next/link";
 import { Controller, useForm } from "react-hook-form";
-import EmailForm from "@/components/EmailForm";
+import EmailForm from "@/components/forms/EmailForm";
 import useUnsavedChanges from "@/hooks/useUnsavedChanges";
 
 const biluxSystem = {
