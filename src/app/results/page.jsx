@@ -104,6 +104,27 @@ const resourceTypes = [
   },
 ];
 
+const PdfChart = ({ barData, setImg }) => {
+  return (
+    <div
+      style={{
+        width: "1100px",
+        position: "absolute",
+        top: 0,
+        left: 0,
+        zIndex: "-3",
+      }}
+    >
+      <SavingsBarChart
+        data={barData}
+        onImageGenerated={setImg}
+        height={800}
+        skipAnimation={true}
+      />
+    </div>
+  );
+};
+
 const SuccessfulResult = ({ inputData }) => {
   const building = new Building(inputData);
   const biluxBuilding = new Building({ ...inputData, system: biluxSystem });
@@ -184,26 +205,6 @@ const SuccessfulResult = ({ inputData }) => {
 
   const resetTemp = () => {
     setIndoorTemp(defaultTemp);
-  };
-
-  const PdfChart = ({ barData, setImg }) => {
-    return (
-      <div
-        style={{
-          width: "1100px",
-          position: "absolute",
-          top: 0,
-          left: 0,
-          zIndex: "-3",
-        }}
-      >
-        <SavingsBarChart
-          data={barData}
-          onImageGenerated={setImg}
-          height={800}
-        />
-      </div>
-    );
   };
 
   const TempSlider = () => {
@@ -409,7 +410,7 @@ const SuccessfulResult = ({ inputData }) => {
         <Typography variant="h4" mb={2}>
           Розподіл витрат по місяцям
         </Typography>
-        <SavingsBarChart data={barData} height={600} />
+        <SavingsBarChart data={barData} height={600} skipAnimation={false} />
       </Grid>
     </Grid>
   );

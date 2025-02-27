@@ -8,18 +8,25 @@ import { toPng } from "html-to-image";
 const valueFormatter = (value) =>
   `${value.toLocaleString("uk-UA", { useGrouping: true })}, кВт·год`;
 
-export default function SavingsBarChart({ data, onImageGenerated, height }) {
+export default function SavingsBarChart({
+  data,
+  onImageGenerated,
+  height,
+  skipAnimation,
+}) {
   const palette = useTheme().palette;
   const chartRef = useRef();
 
   useEffect(() => {
-    setTimeout(() => {
-      if (chartRef.current) {
-        toPng(chartRef.current).then((dataUrl) => {
-          onImageGenerated ? onImageGenerated(dataUrl) : null;
+    if (chartRef.current) {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          toPng(chartRef.current).then((dataUrl) => {
+            onImageGenerated?.(dataUrl);
+          });
         });
-      }
-    }, 2000);
+      });
+    }
   }, []);
 
   const calculateDifferenceInPercentage = (index) => {
@@ -30,6 +37,7 @@ export default function SavingsBarChart({ data, onImageGenerated, height }) {
   return (
     <div ref={chartRef}>
       <BarChart
+        skipAnimation={skipAnimation}
         height={height}
         sx={{ py: 2, bgcolor: "rgba(255, 255, 255, 0.5)", borderRadius: 2 }}
         dataset={data}
