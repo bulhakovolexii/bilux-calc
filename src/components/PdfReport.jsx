@@ -4,7 +4,6 @@ import {
   View,
   Document,
   StyleSheet,
-  PDFViewer,
   Font,
   Image,
   Svg,
@@ -38,24 +37,16 @@ const Logo = ({ size }) => (
 
 function findParentNameById(id) {
   for (const material of materials) {
-    // Проверяем, является ли текущий материал корневым элементом
     if (material.id === id.split("-")[0]) {
-      // Проходим по всем подтипам материала
       for (const subtype of material.subtypes) {
-        // Проверяем, является ли текущий подтип родительским элементом
         if (subtype.id === id.split("-")[0] + "-" + id.split("-")[1]) {
-          // Проходим по всем именам подтипа
           for (const name of subtype.names) {
-            // Проверяем, является ли текущее имя родительским элементом
             if (
               name.id ===
               id.split("-")[0] + "-" + id.split("-")[1] + "-" + id.split("-")[2]
             ) {
-              // Проверяем, является ли текущий вариант родительским элементом
               for (const variant of name.variants) {
-                // Проверяем, соответствует ли id варианта искомому id
                 if (variant.id === id) {
-                  // Возвращаем имя родителя
                   return name.name;
                 }
               }
@@ -65,7 +56,7 @@ function findParentNameById(id) {
       }
     }
   }
-  // Если родитель не найден, возвращаем null
+
   return null;
 }
 
@@ -434,12 +425,4 @@ const PdfReport = ({ email, inputData, img, results }) => {
   );
 };
 
-const PdfPreview = ({ inputData, img, results }) => {
-  return (
-    <PDFViewer width="100%" height="900px">
-      <PdfReport inputData={inputData} img={img} results={results} />
-    </PDFViewer>
-  );
-};
-
-export { PdfReport, PdfPreview };
+export { PdfReport };
