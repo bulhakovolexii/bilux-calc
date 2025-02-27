@@ -10,7 +10,6 @@ import {
   Select,
   MenuItem,
   FormHelperText,
-  TextField,
 } from "@mui/material";
 import { Controller, useForm } from "react-hook-form";
 import environmentTypes from "@/model/reference-data/environmentTypes";
@@ -18,6 +17,7 @@ import AutocompleteWithModal from "@/components/AutocompleteWithModal";
 import LayerForm from "@/components/LayerForm";
 import WindowsForm from "@/components/WindowsForm";
 import DoorsForm from "@/components/DoorsForm";
+import DimensionsField from "./InclusionDimensionFlied";
 
 export default function InclusionForm({
   handleClose,
@@ -39,48 +39,6 @@ export default function InclusionForm({
   const handlePaste = (name) => {
     setValue(name, copiedData.value);
     clearErrors(name);
-  };
-
-  const NumberInput = ({
-    name,
-    rule,
-    minValue,
-    step,
-    error,
-    dimension,
-    label,
-  }) => {
-    return (
-      <Controller
-        name={name}
-        control={control}
-        rules={{
-          required: rule,
-          min: {
-            value: minValue,
-            message: error,
-          },
-        }}
-        render={({ field, fieldState: { error } }) => {
-          const { onChange, value, ref } = field;
-          return (
-            <TextField
-              fullWidth
-              type="number"
-              value={value || ""}
-              onChange={(e) => onChange(e.target.value)}
-              inputRef={ref}
-              inputProps={{ inputMode: "numeric", min: minValue, step: step }}
-              InputProps={{ endAdornment: dimension, sx: { gap: 1 } }}
-              variant="filled"
-              label={label}
-              error={!!error}
-              helperText={error?.message || " "}
-            />
-          );
-        }}
-      />
-    );
   };
 
   return (
@@ -116,7 +74,7 @@ export default function InclusionForm({
             }}
           />
           <Stack spacing={1} direction="row">
-            <NumberInput
+            <DimensionsField
               name="width"
               rule="Введіть ширину вікна"
               minValue={0.01}
@@ -124,8 +82,9 @@ export default function InclusionForm({
               error="Ширина повинна бути більше нуля"
               dimension="м"
               label="Ширина"
+              control={control}
             />
-            <NumberInput
+            <DimensionsField
               name="height"
               rule="Введіть висоту вікна"
               minValue={0.01}
@@ -133,6 +92,7 @@ export default function InclusionForm({
               error="Висота повинна бути більше нуля"
               dimension="м"
               label="Висота"
+              control={control}
             />
           </Stack>
           <AutocompleteWithModal
