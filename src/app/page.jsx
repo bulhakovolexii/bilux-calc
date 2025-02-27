@@ -14,7 +14,7 @@ import {
   Icon,
 } from "@mui/material";
 
-import CustomAppBar from "@/components/MyAppBar";
+import CustomAppBar from "@/components/AppBar";
 import Link from "next/link";
 import { Assessment, Checklist, House } from "@mui/icons-material";
 import { cloneElement } from "react";
