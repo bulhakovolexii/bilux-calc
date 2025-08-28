@@ -6,10 +6,9 @@ import testInputData from "@/mock/testInputData";
 const InputDataContext = createContext(undefined);
 
 export const InputDataProvider = ({ children }) => {
-  const isBrowser = typeof window !== "undefined";
-  const useTestData = isBrowser
-    ? new URLSearchParams(window.location.search).get("useTestData") === "true"
-    : process.env.NEXT_PUBLIC_USE_TEST_DATA === "true";
+  const useTestData =
+    process.env.NEXT_PUBLIC_USE_TEST_DATA === "true" ||
+    new URLSearchParams(window.location.search).get("useTestData") === "true";
 
   const [inputData, setInputData] = useState(
     !useTestData

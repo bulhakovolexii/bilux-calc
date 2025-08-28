@@ -131,6 +131,7 @@ const testInputData = {
           id: 1,
           width: "6.31",
           height: "27",
+          environment: "Засклений балкон для нового проектування",
           layers: [
             // 2-380
             {
