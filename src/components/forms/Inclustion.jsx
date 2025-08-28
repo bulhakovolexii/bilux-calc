@@ -48,6 +48,9 @@ export default function InclusionForm({
           <Controller
             name="environment"
             control={control}
+            rules={{
+              required: "Оберіть навколишнє середовище",
+            }}
             render={({ field, fieldState: { error } }) => {
               const { onChange, value, ref } = field;
               return (

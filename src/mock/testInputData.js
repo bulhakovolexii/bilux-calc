@@ -47,6 +47,11 @@ const testInputData = {
         thickness: "220",
         material: { id: "3-14-64-1", density: "2500", conductivity: "2.04" },
       },
+      {
+        id: 4,
+        thickness: "130",
+        material: { id: "1-1-1-1", density: "30", conductivity: "0.05" },
+      },
     ],
   },
   // Step 5
@@ -126,6 +131,7 @@ const testInputData = {
           id: 1,
           width: "6.31",
           height: "27",
+          environment: "Засклений балкон для нового проектування",
           layers: [
             // 2-380
             {

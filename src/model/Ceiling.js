@@ -9,7 +9,7 @@ export default class Ceiling {
     this.height = inputData.height;
     // Entered data
     this.type = inputData.type;
-    this.layers = inputData.layers.map((layer) => new Layer(layer));
+    this.layers = inputData.layers.map((layer) => new Layer(layer)) || [];
   }
 
   area() {
@@ -30,6 +30,8 @@ export default class Ceiling {
         return 0.7;
       case "Холодне горище багатоповерхових будівель":
         return 0.9;
+      case "Опалюваний обʼєм":
+        return 0;
       default:
         return 1;
     }

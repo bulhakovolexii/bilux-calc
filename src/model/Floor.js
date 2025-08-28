@@ -16,7 +16,7 @@ export default class Floor {
     this.wallTotalThickness = inputData.wallTotalThickness;
     // Entered data
     this.type = inputData.type;
-    this.layers = inputData.layers.map((layer) => new Layer(layer));
+    this.layers = inputData.layers.map((layer) => new Layer(layer)) || [];
     this.wallHeight = parseFloat(inputData.wallHeight);
     this.wallLayers =
       inputData.wallLayers?.map((layer) => new Layer(layer)) || [];
@@ -40,6 +40,9 @@ export default class Floor {
           this.area() * this.heatedBasementUFActor() +
           this.wallHeight * this.perimeter() * this.wallUFactor()
         );
+
+      case "Опалюваний обʼєм":
+        return 0;
 
       default:
         return (

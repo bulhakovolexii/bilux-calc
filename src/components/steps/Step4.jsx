@@ -25,12 +25,14 @@ const ceilingTypes = [
   "Технічне (тепле) горище",
   "Холодне горище багатоповерхових будівель",
   "Холодне горище односімейних будівель",
+  "Опалюваний обʼєм",
 ];
 
 const floorTypes = [
   "Підлога над підвалом",
   "Підлога на ґрунті",
   "Опалюваний підвал (цокольний поверх)",
+  "Опалюваний обʼєм",
 ];
 
 export default function Step4() {
@@ -56,6 +58,10 @@ export default function Step4() {
   const handleChangeTab = (event, newTab) => {
     setTab(newTab);
   };
+
+  const ceilingTypeIsNone = watch("ceiling.type") === "Опалюваний обʼєм";
+
+  const floorTypeIsNone = watch("floor.type") === "Опалюваний обʼєм";
 
   const floorTypeIsBasement =
     watch("floor.type") === "Опалюваний підвал (цокольний поверх)";
@@ -132,19 +138,22 @@ export default function Step4() {
             );
           }}
         />
-        <AutocompleteWithModal
-          name="ceiling.layers"
-          control={control}
-          rules={{
-            validate: (value) => value.length > 0 || `Додайте хоча б один шар`,
-          }}
-          label="Шари конструкції"
-          optionPrefix="Шар №"
-          addTitlePrefix="Додати шар №"
-          editTitlePrefix="Редагувати шар №"
-        >
-          <LayerForm />
-        </AutocompleteWithModal>
+        {!ceilingTypeIsNone && (
+          <AutocompleteWithModal
+            name="ceiling.layers"
+            control={control}
+            rules={{
+              validate: (value) =>
+                value.length > 0 || `Додайте хоча б один шар`,
+            }}
+            label="Шари конструкції"
+            optionPrefix="Шар №"
+            addTitlePrefix="Додати шар №"
+            editTitlePrefix="Редагувати шар №"
+          >
+            <LayerForm />
+          </AutocompleteWithModal>
+        )}
       </Box>
       <Box hidden={tab !== "floor"}>
         <Controller
@@ -209,19 +218,22 @@ export default function Step4() {
             }}
           />
         )}
-        <AutocompleteWithModal
-          name="floor.layers"
-          control={control}
-          rules={{
-            validate: (value) => value.length > 0 || `Додайте хоча б один шар`,
-          }}
-          label="Шари конструкції"
-          optionPrefix="Шар №"
-          addTitlePrefix="Додати шар №"
-          editTitlePrefix="Редагувати шар №"
-        >
-          <LayerForm />
-        </AutocompleteWithModal>
+        {!floorTypeIsNone && (
+          <AutocompleteWithModal
+            name="floor.layers"
+            control={control}
+            rules={{
+              validate: (value) =>
+                value.length > 0 || `Додайте хоча б один шар`,
+            }}
+            label="Шари конструкції"
+            optionPrefix="Шар №"
+            addTitlePrefix="Додати шар №"
+            editTitlePrefix="Редагувати шар №"
+          >
+            <LayerForm />
+          </AutocompleteWithModal>
+        )}
       </Box>
     </Stack>
   );
