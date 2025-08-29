@@ -30,6 +30,8 @@ const Background = ({ maxWidth }) => {
             bgcolor: "#F4E982",
             borderRadius: "50%",
             filter: "blur(276px)",
+            transform: "translateZ(0)",
+            willChange: "filter",
           }}
         />
         <Box
@@ -42,6 +44,8 @@ const Background = ({ maxWidth }) => {
             bgcolor: "#8FC590",
             borderRadius: "50%",
             filter: "blur(276px)",
+            transform: "translateZ(0)",
+            willChange: "filter",
           }}
         />
         <Box
