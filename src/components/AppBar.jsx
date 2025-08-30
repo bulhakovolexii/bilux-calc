@@ -13,6 +13,8 @@ import {
 import Link from "next/link";
 import { cloneElement } from "react";
 
+import { open } from "@tauri-apps/plugin-opener";
+
 function ElevationScroll(props) {
   const { children, window, color } = props;
   const trigger = useScrollTrigger({
@@ -67,8 +69,14 @@ export default function AppBar({ color, elevation, ref }) {
                 <Button
                   color="primary"
                   variant="contained"
-                  target="_blob"
                   href="https://bilux.ua/dealership/"
+                  target="_blank"
+                  onClick={(e) => {
+                    if (window.__TAURI__) {
+                      e.preventDefault();
+                      open("https://bilux.ua/dealership/");
+                    }
+                  }}
                 >
                   Стати дилером
                 </Button>

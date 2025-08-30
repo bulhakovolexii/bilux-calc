@@ -23,6 +23,24 @@ import { Controller, useForm } from "react-hook-form";
 import EmailForm from "@/components/forms/EmailForm";
 import useUnsavedChanges from "@/hooks/useUnsavedChanges";
 
+import { pdf } from "@react-pdf/renderer";
+import PdfReport from "@/components/PdfReport"; // ваш компонент для PDF
+
+const handleDownloadPdf = async ({ inputData, img, results }) => {
+  const blob = await pdf(
+    <PdfReport inputData={inputData} img={img} results={results} />
+  ).toBlob();
+
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "report.pdf";
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+};
+
 const biluxSystem = {
   heatGenerator:
     "Електричні прилади прямого нагріву: конвектори, поверхневе опалення, променеве опалення, нагрівальний підлоговий кабель",
@@ -265,14 +283,30 @@ const SuccessfulResult = ({ inputData }) => {
         >
           Назад
         </Button>
-        <Button
+        {/* <Button
           color="primary"
           variant="contained"
           sx={{ mb: 2 }}
-          onClick={handleOpenForm}
+          onClick={() =>
+            handleDownloadPdf({
+              inputData,
+              img,
+              results: {
+                indoorTemp,
+                estimatedHeatGeneratorPower,
+                annualSystemA,
+                annualSystemB,
+                savings,
+                savingsInPercentage,
+                userResource,
+                electricity,
+                economy: calculateEconomy(),
+              },
+            })
+          }
         >
-          Повний звіт
-        </Button>
+          Завантажити PDF
+        </Button> */}
       </Grid>
       <Grid item xs={12} md={6} spacing={2}>
         <Stack spacing={2}>
