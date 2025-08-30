@@ -15,23 +15,46 @@ import { useEffect, useState } from "react";
 import { Controller, useFormContext } from "react-hook-form";
 
 export default function Step7() {
-  const { control, watch } = useFormContext();
+  const { control, watch, setValue, trigger } = useFormContext();
   const [filteredSubtypes, setFilteredSubtypes] = useState([]);
 
   const floorHeight = watch("floorHeight");
   const selectedType = watch("system.heatingDevices.type");
+  const selectedSubtype = watch("system.heatingDevices.subtype");
 
-  const filteredByHeightHeatingDevices = heatingDevices.find(
-    (height) => floorHeight > height.lower && floorHeight <= height.upper
-  ).heatingDevices;
+  const filteredByHeightHeatingDevices =
+    heatingDevices.find(
+      (height) => floorHeight > height.lower && floorHeight <= height.upper
+    )?.heatingDevices ?? [];
+
+  useEffect(() => {
+    const validTypes = filteredByHeightHeatingDevices.map((item) => item.type);
+    if (selectedType && !validTypes.includes(selectedType)) {
+      setValue("system.heatingDevices.type", "");
+      setValue("system.heatingDevices.subtype", "");
+      trigger("system.heatingDevices.type");
+      trigger("system.heatingDevices.subtype");
+    }
+  }, [filteredByHeightHeatingDevices, selectedType, setValue, trigger]);
 
   useEffect(() => {
     const subtypes = filteredByHeightHeatingDevices.filter(
       (item) => item.subtype && item.type === selectedType
     );
-
     setFilteredSubtypes(subtypes);
-  }, [selectedType, filteredByHeightHeatingDevices]);
+
+    const validSubtypes = subtypes.map((item) => item.subtype);
+    if (selectedSubtype && !validSubtypes.includes(selectedSubtype)) {
+      setValue("system.heatingDevices.subtype", "");
+      trigger("system.heatingDevices.subtype");
+    }
+  }, [
+    selectedType,
+    filteredByHeightHeatingDevices,
+    selectedSubtype,
+    setValue,
+    trigger,
+  ]);
 
   const uniqueHeatingDevicesTypes = filteredByHeightHeatingDevices.reduce(
     (acc, current) => {
